@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | AutomateSuite</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button onclick="setLanguage('en')">EN</button>
+        <button onclick="setLanguage('fr')">FR</button>
+    </div>
+
+    <!-- Contact Title -->
+    <h1
+        data-lang-en="Contact Us"
+        data-lang-fr="Contactez-nous">
+        Contact Us
+    </h1>
+
+    <!-- Contact Description -->
+    <p
+        data-lang-en="Have a project, automation idea or business solution in mind? Get in touch with AutomateSuite."
+        data-lang-fr="Vous avez un projet, une idée d’automatisation ou une solution business en tête ? Contactez AutomateSuite.">
+        
+        Have a project, automation idea or business solution in mind? Get in touch with AutomateSuite.
+    </p>
+
+    <!-- Contact Form -->
+    <form>
+
+        <!-- Name -->
+        <label
+            data-lang-en="Your Name"
+            data-lang-fr="Votre Nom">
+            Your Name
+        </label>
+
+        <input type="text" placeholder="John Doe">
+
+        <br><br>
+
+        <!-- Email -->
+        <label
+            data-lang-en="Your Email"
+            data-lang-fr="Votre Email">
+            Your Email
+        </label>
+
+        <input type="email" placeholder="example@email.com">
+
+        <br><br>
+
+        <!-- Message -->
+        <label
+            data-lang-en="Your Message"
+            data-lang-fr="Votre Message">
+            Your Message
+        </label>
+
+        <textarea rows="5" placeholder="Write your message..."></textarea>
+
+        <br><br>
+
+        <!-- Submit Button -->
+        <button
+            type="submit"
+            data-lang-en="Send Message"
+            data-lang-fr="Envoyer le message">
+            Send Message
+        </button>
+
+    </form>
+
+    <script src="assets/js/script.js"></script>
+
+</body>
+</html>
