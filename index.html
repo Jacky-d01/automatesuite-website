@@ -10,32 +10,68 @@
 
 <body>
 
-    <!-- Language Switcher -->
-    <div class="language-switcher">
-        <button onclick="setLanguage('en')">EN</button>
-        <button onclick="setLanguage('fr')">FR</button>
-    </div>
+    <!-- NAVBAR -->
+    <nav class="navbar">
 
-    <!-- Hero Section -->
-    <h1
-        data-lang-en="Smart Automation for Modern Businesses"
-        data-lang-fr="Automatisation intelligente pour les entreprises modernes">
-        Smart Automation for Modern Businesses
-    </h1>
+        <div class="nav-container">
 
-    <p
-        data-lang-en="AutomateSuite helps businesses automate workflows, manage operations and build scalable digital solutions."
-        data-lang-fr="AutomateSuite aide les entreprises à automatiser leurs processus, gérer leurs opérations et créer des solutions digitales évolutives.">
+            <div class="logo">
+                AutomateSuite
+            </div>
 
-        AutomateSuite helps businesses automate workflows, manage operations and build scalable digital solutions.
-    </p>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="products.html">Products</a>
+                <a href="contact.html">Contact</a>
+            </div>
 
-    <!-- CTA Button -->
-    <button
-        data-lang-en="Discover Our Solutions"
-        data-lang-fr="Découvrir nos solutions">
-        Discover Our Solutions
-    </button>
+            <!-- Language Switcher -->
+            <div class="language-switcher">
+                <button id="theme-toggle">
+    ☀️
+            </button>
+                <button onclick="setLanguage('en')">EN</button>
+                <button onclick="setLanguage('fr')">FR</button>
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1
+                data-lang-en="Smart Automation for Modern Businesses"
+                data-lang-fr="Automatisation intelligente pour les entreprises modernes">
+
+                Smart Automation for Modern Businesses
+
+            </h1>
+
+            <p
+                data-lang-en="AutomateSuite helps businesses automate workflows, manage operations and build scalable SaaS solutions."
+                data-lang-fr="AutomateSuite aide les entreprises à automatiser leurs processus, gérer leurs opérations et créer des solutions SaaS évolutives.">
+
+                AutomateSuite helps businesses automate workflows, manage operations and build scalable SaaS solutions.
+
+            </p>
+
+            <button
+                data-lang-en="Discover Our Solutions"
+                data-lang-fr="Découvrir nos solutions">
+
+                Discover Our Solutions
+
+            </button>
+
+        </div>
+
+    </section>
 
     <script src="assets/js/script.js"></script>
 
