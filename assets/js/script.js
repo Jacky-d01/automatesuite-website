@@ -27,3 +27,44 @@ themeToggle.addEventListener("click", () => {
     }
 
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("nav-menu");
+    const menuOverlay = document.getElementById("menu-overlay");
+
+    /* Open / Close Menu */
+
+    hamburger.addEventListener("click", () => {
+
+        navMenu.classList.toggle("active");
+        menuOverlay.classList.toggle("active");
+
+    });
+
+    /* Close Menu On Overlay Click */
+
+    menuOverlay.addEventListener("click", () => {
+
+        navMenu.classList.remove("active");
+        menuOverlay.classList.remove("active");
+
+    });
+
+    /* Close Menu When Clicking Links */
+
+    const navItems = document.querySelectorAll(".nav-links a");
+
+    navItems.forEach(item => {
+
+        item.addEventListener("click", () => {
+
+            navMenu.classList.remove("active");
+            menuOverlay.classList.remove("active");
+
+        });
+
+    });
+
+});

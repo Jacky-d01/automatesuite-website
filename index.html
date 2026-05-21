@@ -10,35 +10,83 @@
 
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
+<!-- NAVBAR -->
+<nav class="navbar">
 
-        <div class="nav-container">
+    <div class="nav-container">
 
-            <div class="logo">
-                AutomateSuite
-            </div>
+        <!-- Logo -->
+        <div class="logo">
+            AutomateSuite
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="nav-menu" id="nav-menu">
 
             <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="services.html">Services</a>
-                <a href="products.html">Products</a>
-                <a href="contact.html">Contact</a>
-            </div>
 
-            <!-- Language Switcher -->
-            <div class="language-switcher">
-                <button id="theme-toggle">
-    ☀️
-            </button>
-                <button onclick="setLanguage('en')">EN</button>
-                <button onclick="setLanguage('fr')">FR</button>
+                <a href="index.html"
+                   data-lang-en="Home"
+                   data-lang-fr="Accueil">
+                   Home
+                </a>
+
+                <a href="about.html"
+                   data-lang-en="About"
+                   data-lang-fr="À propos">
+                   About
+                </a>
+
+                <a href="services.html"
+                   data-lang-en="Services"
+                   data-lang-fr="Services">
+                   Services
+                </a>
+
+                <a href="products.html"
+                   data-lang-en="Products"
+                   data-lang-fr="Produits">
+                   Products
+                </a>
+
+                <a href="contact.html"
+                   data-lang-en="Contact"
+                   data-lang-fr="Contact">
+                   Contact
+                </a>
+
             </div>
 
         </div>
 
-    </nav>
+        <!-- Right Controls -->
+        <div class="menu-controls">
+
+            <button id="theme-toggle">
+                ☀️
+            </button>
+
+            <div class="language-selector">
+
+                <span onclick="setLanguage('en')">EN</span>
+                <span>|</span>
+                <span onclick="setLanguage('fr')">FR</span>
+
+            </div>
+
+        </div>
+
+        <!-- Hamburger -->
+        <div class="hamburger" id="hamburger">
+            ☰
+        </div>
+
+        <!-- Overlay -->
+        <div class="menu-overlay" id="menu-overlay"></div>
+
+    </div>
+
+</nav>
 
     <!-- HERO SECTION -->
     <section class="hero">

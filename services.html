@@ -9,61 +9,116 @@
 </head>
 
 <body>
+<nav class="navbar">
 
-    <!-- Language Switcher -->
-    <div class="language-switcher">
-        <button onclick="setLanguage('en')">EN</button>
-        <button onclick="setLanguage('fr')">FR</button>
+    <div class="nav-container">
+
+        <!-- Logo -->
+        <div class="logo">
+            AutomateSuite
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="nav-menu" id="nav-menu">
+
+            <div class="nav-links">
+
+                <a href="index.html"
+                   data-lang-en="Home"
+                   data-lang-fr="Accueil">
+                   Home
+                </a>
+
+                <a href="about.html"
+                   data-lang-en="About"
+                   data-lang-fr="À propos">
+                   About
+                </a>
+
+                <a href="services.html"
+                   data-lang-en="Services"
+                   data-lang-fr="Services">
+                   Services
+                </a>
+
+                <a href="products.html"
+                   data-lang-en="Products"
+                   data-lang-fr="Produits">
+                   Products
+                </a>
+
+                <a href="contact.html"
+                   data-lang-en="Contact"
+                   data-lang-fr="Contact">
+                   Contact
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Right Controls -->
+        <div class="menu-controls">
+
+            <button id="theme-toggle">
+                ☀️
+            </button>
+
+            <div class="language-selector">
+
+                <span onclick="setLanguage('en')">EN</span>
+                <span>|</span>
+                <span onclick="setLanguage('fr')">FR</span>
+
+            </div>
+
+        </div>
+        
+        <!-- Hamburger -->
+        <div class="hamburger" id="hamburger">
+            ☰
+        </div>
+
+        <!-- Overlay -->
+        <div class="menu-overlay" id="menu-overlay"></div>
+      
     </div>
 
+</nav>
+    
+
     <!-- Services Title -->
-    <h1
+    <section class="page-section">
+
+    <div class="container">
+
+        <h1
         data-lang-en="Our Services"
         data-lang-fr="Nos Services">
         Our Services
-    </h1>
+        </h1>
 
-    <p
+        <p
         data-lang-en="We provide automation services, CRM systems, AI integrations and business solutions for modern companies."
-        data-lang-fr="Nous proposons des services d’automatisation, des systèmes CRM, des intégrations IA et des solutions business pour les entreprises modernes.">
+        data-lang-fr="Nous proposons des services d'automatisation, des CRM, des intégrations IA et des solutions professionnelles modernes.">
 
         We provide automation services, CRM systems, AI integrations and business solutions for modern companies.
-    </p>
 
-    <!-- Services List -->
-    <ul>
+        </p>
 
-        <li
-            data-lang-en="Business Automation"
-            data-lang-fr="Automatisation des entreprises">
-            Business Automation
-        </li>
+        <ul class="service-list">
 
-        <li
-            data-lang-en="CRM Development"
-            data-lang-fr="Développement CRM">
-            CRM Development
-        </li>
+            <li>Business Automation</li>
+            <li>CRM Development</li>
+            <li>Excel Automation</li>
+            <li>AI Integrations</li>
+            <li>Custom Dashboards</li>
 
-        <li
-            data-lang-en="Excel Automation"
-            data-lang-fr="Automatisation Excel">
-            Excel Automation
-        </li>
+        </ul>
 
-        <li
-            data-lang-en="AI Integrations"
-            data-lang-fr="Intégrations IA">
-            AI Integrations
-        </li>
+    </div>
 
-        <li
-            data-lang-en="Custom Dashboards"
-            data-lang-fr="Tableaux de bord personnalisés">
-            Custom Dashboards
-        </li>
-
-    </ul>
+</section>
 
     <script src="assets/js/script.js"></script>
 
