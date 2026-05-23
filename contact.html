@@ -100,58 +100,54 @@
         <!-- Contact Description -->
         <p
             data-lang-en="Have a project, automation idea or business solution in mind? Get in touch with AutomateSuite."
-            data-lang-fr="Vous avez un projet, une idée d’automatisation ou une solution business en tête ? Contactez AutomateSuite.">
+            data-lang-fr="Vous avez un projet, une idée d'automatisation ou une solution business en tête ? Contactez AutomateSuite.">
             
             Have a project, automation idea or business solution in mind? Get in touch with AutomateSuite.
         </p>
 
         <!-- Contact Form -->
-        <form>
+        <form id="contact-form">
 
             <!-- Name -->
-            <label
-                data-lang-en="Your Name"
-                data-lang-fr="Votre Nom">
-                Your Name
-            </label>
-
-            <input type="text" placeholder="John Doe">
-
-            <br><br>
+            <input
+            type="text"
+            name="user_name"
+            placeholder="Max Well"
+            data-placeholder-en="Max Well"
+            data-placeholder-fr="Jean Dupont">
 
             <!-- Email -->
-            <label
-                data-lang-en="Your Email"
-                data-lang-fr="Votre Email">
-                Your Email
-            </label>
-
-            <input type="email" placeholder="example@email.com">
-
-            <br><br>
+            <input
+            type="email"
+            name="user_email"
+            placeholder="example@email.com"
+            data-placeholder-en="example@email.com"
+            data-placeholder-fr="exemple@email.com">
 
             <!-- Message -->
-            <label
-                data-lang-en="Your Message"
-                data-lang-fr="Votre Message">
-                Your Message
-            </label>
-
-            <textarea rows="5" placeholder="Write your message..."></textarea>
-
-            <br><br>
+            <textarea
+            rows="5"
+            name="message"
+            placeholder="Write your message..."
+            data-placeholder-en="Write your message..."
+            data-placeholder-fr="Écrivez votre message..."></textarea>
 
             <!-- Submit Button -->
             <button
-                type="submit"
-                data-lang-en="Send Message"
-                data-lang-fr="Envoyer le message">
-                Send Message
+            type="submit"
+            data-lang-en="Send Message"
+            data-lang-fr="Envoyer le message">
+            Send Message
             </button>
 
         </form>
     </div>
     </section>
+
+    <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
 
     <script src="assets/js/script.js"></script>
 
