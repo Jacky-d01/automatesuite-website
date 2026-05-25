@@ -896,7 +896,7 @@ button {
 
     color: var(--primary-color);
 
-    padding: 8px 14px;
+    padding: 8px 11px;
 
     border-radius: 999px;
 
@@ -1121,7 +1121,7 @@ button {
 
     width: 100%;
 
-    max-width: 360%;
+    max-width: 360px;
 }
 
 .service-card:hover {
@@ -2378,7 +2378,7 @@ section,
 
     border-radius: 24px;
 
-    background: var(--card-bg);
+    background: var(--card-color);
 
     border: 1px solid var(--border-color);
 
