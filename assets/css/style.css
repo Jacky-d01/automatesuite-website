@@ -923,21 +923,52 @@ button {
     align-items: center;
 }
 
-.product-tags span {
+.product-meta {
 
-    background-color: rgba(124, 77, 255, 0.12);
+    display: flex;
 
-    color: var(--primary-color);
+    flex-wrap: wrap;
 
-    padding: 8px 11px;
+    gap: 16px;
 
-    border-radius: 999px;
+    row-gap: 10px;
+
+}
+
+.product-meta span {
+
+    position: relative;
 
     font-size: 0.85rem;
 
+    color: var(--text-secondary);
+
+    font-weight: 500;
+
+    padding-left: 12px;
     white-space: nowrap;
 
-    color: var(--text-color);
+}
+
+/* Dot */
+
+.product-meta span::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 50%;
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #7c4dff;
+
+    transform: translateY(-50%);
 }
 
 .product-card {
@@ -2078,6 +2109,13 @@ section,
     transition-delay: 0.75s;
 }
 
+.delay-5 {
+    transition-delay: 0.95s;
+}
+
+.delay-6 {
+    transition-delay: 1.15s;
+}
 /* =========================
    CONTACT FORM
 ========================= */
@@ -2513,5 +2551,349 @@ section,
     line-height: 1.8;
 
     color: var(--text-secondary);
+
+}
+
+/* =========================
+   SERVICES CTA BUTTON
+========================= */
+
+.services-preview-button {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 70px;
+
+}
+
+/* =========================
+   PRICING SECTION
+========================= */
+
+.pricing-section {
+
+    padding: 100px 0;
+}
+
+/* =========================
+   PRICING GRID
+========================= */
+
+.pricing-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 30px;
+
+    margin-top: 70px;
+
+    align-items: stretch;
+}
+
+/* =========================
+   PRICING CARD
+========================= */
+
+.pricing-card {
+
+    background-color: var(--card-color);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 28px;
+
+    padding: 40px 35px;
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+
+}
+
+.pricing-card:hover {
+
+    translate: 0 -6px;
+
+    border-color: var(--accent-blue);
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,0.25),
+    0 0 25px var(--blue-glow);
+
+}
+
+/* =========================
+   FEATURED CARD
+========================= */
+
+.pricing-card.featured {
+
+    border: 1px solid rgba(124, 77, 255, 0.4);
+
+    box-shadow:
+    0 0 30px rgba(124, 77, 255, 0.12);
+
+}
+
+/* =========================
+   POPULAR BADGE
+========================= */
+
+.popular-badge {
+
+    position: absolute;
+
+    top: 20px;
+    right: 20px;
+
+    padding: 8px 14px;
+
+    border-radius: 999px;
+
+    font-size: 0.8rem;
+
+    font-weight: 600;
+
+    background:
+    linear-gradient(
+        135deg,
+        #7c4dff,
+        #5f2dff
+    );
+
+    color: white;
+
+}
+
+/* =========================
+   PLAN LABEL
+========================= */
+
+.pricing-plan {
+
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    color: var(--primary-color);
+
+    font-size: 0.95rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.4px;
+
+    text-transform: uppercase;
+
+}
+
+/* =========================
+   TITLES
+========================= */
+
+.pricing-card h3 {
+
+    font-size: 1.8rem;
+
+    line-height: 1.3;
+
+    margin-bottom: 25px;
+
+}
+
+/* =========================
+   PRICE BLOCK
+========================= */
+
+.pricing-price {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-bottom: 25px;
+
+}
+
+.price {
+
+    font-size: 2rem;
+
+    font-weight: 700;
+
+    color: var(--text-color);
+
+}
+
+.maintenance {
+
+    color: var(--text-secondary);
+
+    font-size: 0.95rem;
+
+}
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.pricing-description {
+
+    color: var(--text-secondary);
+
+    line-height: 1.8;
+
+    margin-bottom: 30px;
+
+}
+
+/* =========================
+   FEATURES LIST
+========================= */
+
+.pricing-features {
+
+    list-style: none;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 16px;
+
+    margin-bottom: 40px;
+
+}
+
+.pricing-features li {
+
+    position: relative;
+
+    padding-left: 22px;
+
+    color: var(--text-secondary);
+
+}
+
+/* Dot */
+
+.pricing-features li::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 10px;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #7c4dff;
+
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.pricing-button {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-top: auto;
+
+    padding: 16px 24px;
+
+    border-radius: 16px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #7c4dff,
+        #5f2dff
+    );
+
+    color: white;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+
+}
+
+.pricing-button:hover {
+
+    translate: 0 -3px;
+
+    box-shadow:
+    0 10px 25px rgba(124, 77, 255, 0.35);
+
+}
+
+/* =========================
+   SECONDARY BUTTON
+========================= */
+
+.secondary-pricing-btn {
+
+    background:
+    rgba(124, 77, 255, 0.08);
+
+    border: 1px solid rgba(124, 77, 255, 0.25);
+
+    color: var(--text-color);
+
+}
+
+.secondary-pricing-btn:hover {
+
+    background:
+    rgba(124, 77, 255, 0.14);
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .pricing-section {
+
+        padding: 80px 0;
+    }
+
+    .pricing-card {
+
+        padding: 30px 25px;
+    }
+
+    .pricing-card h3 {
+
+        font-size: 1.5rem;
+    }
+
+    .price {
+
+        font-size: 1.7rem;
+    }
 
 }
