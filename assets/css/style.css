@@ -2897,3 +2897,79 @@ section,
     }
 
 }
+
+/* =========================
+   SERVICE CTA
+========================= */
+
+.service-cta {
+
+    text-align: center;
+
+    margin: 120px auto;
+
+    max-width: 800px;
+
+}
+
+.service-cta h2 {
+
+    font-size: 2.5rem;
+
+    margin-bottom: 20px;
+
+}
+
+.service-cta p {
+
+    color: var(--text-secondary);
+
+    line-height: 1.8;
+
+    margin-bottom: 35px;
+
+}
+
+/* =========================
+   STICKY SERVICES BUTTON
+========================= */
+
+.sticky-services-btn {
+
+    position: fixed;
+
+    bottom: 30px;
+    right: 30px;
+
+    z-index: 999;
+
+    padding: 14px 18px;
+
+    border-radius: 14px;
+
+    background:
+    rgba(124, 77, 255, 0.12);
+
+    border:
+    1px solid rgba(124, 77, 255, 0.25);
+
+    backdrop-filter: blur(10px);
+
+    color: var(--text-color);
+
+    font-size: 0.95rem;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+
+}
+
+.sticky-services-btn:hover {
+
+    transform: translateY(-3px);
+
+    background:
+    rgba(124, 77, 255, 0.18);
+
+}
