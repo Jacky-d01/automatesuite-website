@@ -703,6 +703,17 @@ button {
     line-height: 1.8;
 }
 
+.service-description-box{
+    text-align:center;
+    max-width:900px;
+    margin:0 auto 60px;
+}
+
+.service-description-box p{
+    max-width:700px;
+    margin:0 auto 50px;
+}
+
 /* Service List */
 
 .service-list {
@@ -2722,9 +2733,11 @@ body.light-mode .pricing-service-label {
 
 .pricing-maintenance {
 
-    font-size: 0.92rem;
+    font-size: 0.95rem;
+    
+    font-weight: 500;
 
-    color: var(--text-secondary);
+    color: #8b8f96;
 
     margin-top: -10px;
 
@@ -2754,10 +2767,10 @@ body.light-mode .pricing-service-label {
 
     position: absolute;
 
-    top: 11px;
-    right: 18px;
+    top: 6px;
+    right: 14px;
 
-    padding: 8px 14px;
+    padding: 4px 14px;
 
     border-radius: 999px;
 
@@ -2768,8 +2781,8 @@ body.light-mode .pricing-service-label {
     background:
     linear-gradient(
         135deg,
-        #ff9f43,
-        #5f2dff
+        #614ba8,
+        #614ba8
     );
 
     color: white;
@@ -2892,8 +2905,6 @@ body.light-mode .pricing-service-label {
 
 .pricing-features li::before {
 
-    content: "";
-
     position: absolute;
 
     left: 0;
@@ -2902,10 +2913,7 @@ body.light-mode .pricing-service-label {
     width: 7px;
     height: 7px;
 
-    border-radius: 50%;
-
-    background: #7c4dff;
-
+    border-radius: 50%;    
 }
 
 /* =========================
@@ -3032,7 +3040,7 @@ body.light-mode .pricing-service-label {
 }
 
 /* =========================
-   STICKY SERVICES BUTTON SERVICES 2
+   STICKY SERVICES BUTTON SERVICES
 ========================= */
 
 .sticky-services-btn {
@@ -3040,31 +3048,31 @@ body.light-mode .pricing-service-label {
     position: fixed;
 
     bottom: 30px;
-    right: 10px;
+    right: 30px;
 
-    z-index: 999;
+    z-index: 9999;
 
     display: inline-flex;
 
     align-items: center;
     justify-content: center;
 
-    padding: 20px 20px;
+    padding: 16px 24px;
 
-    border-radius: 16px;
+    border-radius: 20px;
 
     background:
     linear-gradient(
         135deg,
-        #ffcc70,
-        #ff9f43
+        #ffb347,
+        #ffb347
     );
 
     color: #111;
 
     font-size: 0.95rem;
 
-    font-weight: 700;
+    font-weight: 600;
 
     text-decoration: none;
 
@@ -3087,8 +3095,14 @@ body.light-mode .pricing-service-label {
     transform: translateY(-4px);
 
     box-shadow:
-    0 15px 35px rgba(255, 159, 67, 0.35);
+    0 15px 35px rgba(255, 179, 71, 0.45);
 
+}
+
+.back-to-top-btn,
+.sticky-services-btn {
+
+    backdrop-filter: blur(10px);
 }
 
 /* Mobile */
@@ -3233,5 +3247,247 @@ body.light-mode .pricing-service-label {
         padding-top: 10px;
 
     }
+
+}
+
+/* =========================
+   ENTERPRISE SECTION
+========================= */
+
+.enterprise-section {
+    padding: 100px 0;
+}
+
+.enterprise-card {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 50px;
+    text-align: center;
+    border-radius: 24px;
+    border: 1px solid rgba(124, 58, 237, 0.25);
+    background: var(--card-bg);
+}
+
+.enterprise-card h3 {
+    margin-bottom: 20px;
+}
+
+.enterprise-card p {
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.enterprise-features {
+    list-style: none;
+    margin-bottom: 35px;
+}
+
+.enterprise-features li {
+    margin-bottom: 12px;
+}
+
+.enterprise-icon{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+/* =========================
+   BACK TO TOP BUTTON
+========================= */
+
+.back-to-top-btn {
+
+    position: fixed;
+
+    bottom: 30px;
+    left: 30px;
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        135deg,
+        #ffb347,
+        #ffcc70
+    );
+
+    color: #111;
+
+    text-decoration: none;
+
+    font-size: 1.2rem;
+    font-weight: 700;
+
+    z-index: 9998;
+
+    box-shadow:
+        0 10px 25px rgba(255,179,71,0.30);
+
+}
+
+.back-to-top-btn.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+
+}
+
+.pricing-note {
+
+    max-width: 800px;
+
+    margin: 40px auto 0;
+
+    text-align: center;
+
+}
+
+.pricing-note p {
+
+    color: #9ca3af;
+
+    font-size: 0.95rem;
+
+    line-height: 1.8;
+
+    font-style: italic;
+
+}
+
+/* =========================
+   REQUEST SETUP PAGE
+========================= */
+
+.request-setup-section {
+
+    padding: 140px 0 100px;
+
+    min-height: 100vh;
+
+}
+
+.request-header {
+
+    text-align: center;
+
+    max-width: 800px;
+
+    margin: 0 auto 60px;
+
+}
+
+.request-footer {
+
+    text-align: center;
+
+    margin-top: 60px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(255,255,255,0.08);
+
+}
+
+.selected-solution {
+
+    max-width: 700px;
+
+    margin: 0 auto 40px;
+
+    padding: 24px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    background: rgba(255,255,255,0.03);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+}
+
+#selected-plan {
+
+    margin-top: 10px;
+
+    font-size: 1.2rem;
+
+    font-weight: 700;
+
+}
+
+#setupForm {
+
+    max-width: 800px;
+
+    margin: 0 auto;
+
+}
+
+.form-group {
+
+    margin-bottom: 24px;
+
+}
+
+.form-group label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: 600;
+
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    background: rgba(255,255,255,0.03);
+
+    color: inherit;
+
+}
+
+.submit-btn {
+
+    width: 100%;
+
+    padding: 18px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    font-weight: 700;
+
+    background: linear-gradient(
+        135deg,
+        #ffb347,
+        #ffcc70
+    );
+
+    color: #111;
 
 }

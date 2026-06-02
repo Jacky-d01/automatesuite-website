@@ -1,3 +1,5 @@
+console.log("SCRIPT START");
+
 function setLanguage(language) {
 
     localStorage.setItem("language", language);
@@ -141,46 +143,49 @@ revealSections();
    EMAILJS CONTACT FORM
 ========================= */
 
-emailjs.init("rY5u_6m_UtVfQsO5G");
+if (typeof emailjs !== "undefined") {
 
-const contactForm = document.getElementById("contact-form");
+    emailjs.init("rY5u_6m_UtVfQsO5G");
 
-if(contactForm) {
+    const contactForm =
+    document.getElementById("contact-form");
 
-    contactForm.addEventListener("submit", function(e) {
+    if(contactForm) {
 
-        e.preventDefault();
+        contactForm.addEventListener("submit", function(e) {
 
-        emailjs.sendForm(
-            "service_fnchujr",
-            "template_cqii9iu",
-            this
-        )
+            e.preventDefault();
 
-        .then(() => {
+            emailjs.sendForm(
+                "service_fnchujr",
+                "template_cqii9iu",
+                this
+            )
 
-            const currentLang = localStorage.getItem("language") || "en";
+            .then(() => {
 
-            const successMessage = currentLang === "fr"
-                ? "Message envoyé avec succès !"
-                : "Message sent successfully!";
-            alert(successMessage);
+                const currentLang =
+                localStorage.getItem("language") || "en";
 
-            contactForm.reset();
+                alert(
+                    currentLang === "fr"
+                    ? "Message envoyé avec succès !"
+                    : "Message sent successfully!"
+                );
 
-        })
+                contactForm.reset();
 
-        .catch((error) => {
+            })
 
-            console.error("EmailJS Error:", error);
+            .catch((error) => {
 
-            alert(
-                "Failed to send message. Check console for details."
-            );
+                console.error(error);
+
+            });
 
         });
 
-    });
+    }
 
 }
 
@@ -188,50 +193,37 @@ if(contactForm) {
    NEWSLETTER FORM
 ========================= */
 
-const newsletterForm =
+if (typeof emailjs !== "undefined") {
+
+    const newsletterForm =
     document.querySelector(".newsletter-form");
 
-if(newsletterForm) {
+    if(newsletterForm) {
 
-    newsletterForm.addEventListener("submit", function(e) {
+        newsletterForm.addEventListener("submit", function(e) {
 
-        e.preventDefault();
+            e.preventDefault();
 
-        emailjs.sendForm(
-            "service_fnchujr",
-            "template_ipivbnt",
-            this
-        )
+            emailjs.sendForm(
+                "service_fnchujr",
+                "template_ipivbnt",
+                this
+            )
 
-        .then(() => {
+            .then(() => {
 
-            const currentLanguage =
-                localStorage.getItem("language") || "en";
+                newsletterForm.reset();
 
-            const successMessage =
-                currentLanguage === "fr"
-                ? "Inscription réussie !"
-                : "Subscription successful!";
+            })
 
-            alert(successMessage);
+            .catch((error) => {
 
-            newsletterForm.reset();
+                console.error(error);
 
-        })
-
-        .catch((error) => {
-
-            console.error(
-                "Newsletter Error:",
-                error
-            );
-
-            alert(
-                "Newsletter subscription failed."
-            );
+            });
 
         });
 
-    });
+    }
 
 }

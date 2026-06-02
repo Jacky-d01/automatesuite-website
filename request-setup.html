@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Request Setup | AutomateSuite</title>
+
+<link rel="stylesheet"
+      href="assets/css/style.css">
+
+</head>
+
+<body>
+
+<!-- BACK TO PRICING -->
+
+<a href="pricing.html"
+class="back-pricing-btn">
+
+← Back to Pricing
+
+</a>
+
+<!-- FORM SECTION -->
+
+<section class="request-setup-section">
+
+<div class="container">
+
+    <div class="request-header">
+
+        <span class="section-badge"
+
+              data-lang-en="Automation Setup"
+              data-lang-fr="Configuration d'automatisation">
+
+              Automation Setup
+
+        </span>
+
+        <h1
+
+            data-lang-en="Request Your Automation Setup"
+            data-lang-fr="Demandez votre automatisation">
+
+            Request Your Automation Setup
+
+        </h1>
+
+        <p
+
+            data-lang-en="Tell us about your business and automation goals. We'll review your requirements and get back to you shortly."
+            data-lang-fr="Parlez-nous de votre activité et de vos objectifs d'automatisation. Nous étudierons votre demande et reviendrons vers vous rapidement.">
+
+            Tell us about your business and automation goals.
+
+        </p>
+
+    </div>
+
+    <!-- SELECTED PLAN / SERVICE -->
+
+    <div class="selected-solution">
+
+        <h3
+
+            data-lang-en="Selected Solution"
+            data-lang-fr="Solution sélectionnée">
+
+            Selected Solution
+
+        </h3>
+
+        <p id="selected-plan">
+
+            Loading...
+
+        </p>
+
+    </div>
+
+    <!-- FORM -->
+
+    <form id="setupForm">
+
+        <!-- Hidden field -->
+
+        <input type="hidden"
+               id="selectedSolution"
+               name="selectedSolution">
+
+        <!-- CONTACT -->
+
+        <div class="form-group">
+
+            <label
+
+                data-lang-en="Full Name"
+                data-lang-fr="Nom complet">
+
+                Full Name
+
+            </label>
+
+            <input type="text"
+                   name="fullName"
+                   required>
+
+        </div>
+
+        <div class="form-group">
+
+            <label
+
+                data-lang-en="Business Email"
+                data-lang-fr="Email professionnel">
+
+                Business Email
+
+            </label>
+
+            <input type="email"
+                   name="email"
+                   required>
+
+        </div>
+
+        <div class="form-group">
+
+            <label
+
+                data-lang-en="Company Name"
+                data-lang-fr="Nom de l'entreprise">
+
+                Company Name
+
+            </label>
+
+            <input type="text"
+                   name="company">
+
+        </div>
+
+        <!-- BUSINESS -->
+
+        <div class="form-group">
+
+            <label
+
+                data-lang-en="Industry"
+                data-lang-fr="Secteur d'activité">
+
+                Industry
+
+            </label>
+
+            <select name="industry">
+
+                <option>E-commerce</option>
+                <option>Real Estate</option>
+                <option>Marketing Agency</option>
+                <option>Consulting</option>
+                <option>Healthcare</option>
+                <option>Education</option>
+                <option>Other</option>
+
+            </select>
+
+        </div>
+
+        <div class="form-group">
+
+            <label
+
+                data-lang-en="Team Size"
+                data-lang-fr="Taille de l'équipe">
+
+                Team Size
+
+            </label>
+
+            <select name="teamSize">
+
+                <option>Solo Entrepreneur</option>
+                <option>2-10 Employees</option>
+                <option>11-50 Employees</option>
+                <option>51+ Employees</option>
+
+            </select>
+
+        </div>
+
+        <!-- REQUIREMENTS -->
+
+        <div class="form-group">
+
+            <label
+
+                data-lang-en="What would you like to automate?"
+                data-lang-fr="Que souhaitez-vous automatiser ?">
+
+                What would you like to automate?
+
+            </label>
+
+            <textarea
+                name="automationGoal"
+                rows="5"
+                required>
+
+            </textarea>
+
+        </div>
+
+        <div class="form-group">
+
+            <label
+
+                data-lang-en="Current Tools & Software (Optional)"
+                data-lang-fr="Outils et logiciels actuels (Optionnel)">
+
+                Current Tools & Software (Optional)
+
+            </label>
+
+            <textarea
+                name="currentTools"
+                rows="4">
+
+            </textarea>
+
+        </div>
+
+        <!-- SUBMIT -->
+
+        <button
+            type="submit"
+            class="submit-btn"
+
+            data-lang-en="Request My Automation Setup"
+            data-lang-fr="Demander mon automatisation">
+
+            Request My Automation Setup
+
+        </button>
+
+    </form>
+
+    <!-- SUCCESS MESSAGE -->
+
+    <div id="successMessage"
+         style="display:none;">
+
+        <h2
+
+            data-lang-en="✓ Request Received"
+            data-lang-fr="✓ Demande reçue">
+
+            ✓ Request Received
+
+        </h2>
+
+        <p
+
+            data-lang-en="Thank you for contacting AutomateSuite. We'll review your requirements and get back to you shortly."
+            data-lang-fr="Merci d'avoir contacté AutomateSuite. Nous étudierons votre demande et reviendrons vers vous rapidement.">
+
+            Thank you for contacting AutomateSuite.
+
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+
+    © 2026 AutomateSuite
+
+</p>
+
+</footer>
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+
+const plan =
+params.get("plan");
+
+const service =
+params.get("service");
+
+const selectedPlan =
+document.getElementById("selected-plan");
+
+const hiddenField =
+document.getElementById("selectedSolution");
+
+let selectedText = "";
+
+/* BUNDLES */
+
+if (plan === "core-bundle") {
+
+    selectedText = "Core Automation Bundle";
+
+}
+
+else if (plan === "growth-bundle") {
+
+    selectedText = "Growth Automation Suite";
+
+}
+
+else if (plan === "elite-bundle") {
+
+    selectedText = "Elite AI Automation Ecosystem";
+
+}
+
+/* SERVICES */
+
+else if (service === "whatsapp") {
+
+    selectedText = "WhatsApp Expiration Trigger";
+
+}
+
+else if (service === "lead-enrichment") {
+
+    selectedText = "AI Lead Enrichment";
+
+}
+
+else if (service === "email-triage") {
+
+    selectedText = "Support Email Triage";
+
+}
+
+/* FALLBACK */
+
+else {
+
+    selectedText = "Custom Automation Request";
+
+}
+
+selectedPlan.textContent =
+selectedText;
+
+hiddenField.value =
+selectedText;
+
+</script>
+</body>
+
+</html>
