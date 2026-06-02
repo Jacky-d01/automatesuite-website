@@ -3491,3 +3491,27 @@ body.light-mode .pricing-service-label {
     color: #111;
 
 }
+
+.form-group select {
+
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    background: #111;
+
+    color: #fff;
+
+}
+
+.form-group select option {
+
+    background: #111;
+
+    color: #fff;
+
+}

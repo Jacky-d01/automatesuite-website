@@ -14,6 +14,8 @@
 <link rel="stylesheet"
       href="assets/css/style.css">
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>      
+
 </head>
 
 <body>
@@ -95,6 +97,11 @@ class="back-pricing-btn">
                id="selectedSolution"
                name="selectedSolution">
 
+        <input
+            type="hidden"
+            name="leadType"
+            value="Setup Request">
+
         <!-- CONTACT -->
 
         <div class="form-group">
@@ -109,7 +116,7 @@ class="back-pricing-btn">
             </label>
 
             <input type="text"
-                   name="fullName"
+                   name="user_name"
                    required>
 
         </div>
@@ -126,7 +133,7 @@ class="back-pricing-btn">
             </label>
 
             <input type="email"
-                   name="email"
+                   name="user_email"
                    required>
 
         </div>
@@ -143,7 +150,8 @@ class="back-pricing-btn">
             </label>
 
             <input type="text"
-                   name="company">
+                   name="company"
+                    required>
 
         </div>
 
@@ -160,15 +168,66 @@ class="back-pricing-btn">
 
             </label>
 
-            <select name="industry">
+            <select name="industry" required>
 
-                <option>E-commerce</option>
-                <option>Real Estate</option>
-                <option>Marketing Agency</option>
-                <option>Consulting</option>
-                <option>Healthcare</option>
-                <option>Education</option>
-                <option>Other</option>
+                <option value=""
+                disabled
+                selected
+                data-lang-en="Select your industry"
+                data-lang-fr="Secteur d'activité">
+
+                Select your industry
+
+                </option>
+                <option
+                data-lang-en="E-Commerce"
+                data-lang-fr="Commerce électronique">
+
+                E-Commerce
+                </option>
+
+                <option
+                data-lang-en="Real Estate"
+                data-lang-fr="Immobilier">
+
+                Real Estate
+
+                </option>
+                <option
+                data-lang-en="Marketing Agency"
+                data-lang-fr="Agence de marketing">
+
+                Marketing Agency
+
+                </option>
+                <option
+                data-lang-en="Consulting"
+                data-lang-fr="Consulting">
+
+                Consulting
+
+                </option>
+                <option
+                data-lang-en="Healthcare"
+                data-lang-fr="Santé">
+
+                Healthcare
+
+                </option>
+                <option
+                data-lang-en="Education"
+                data-lang-fr="Éducation">
+
+                Education
+
+                </option>
+                <option
+                data-lang-en="Other"
+                data-lang-fr="Autre">
+
+                Other
+
+                </option>
 
             </select>
 
@@ -185,12 +244,46 @@ class="back-pricing-btn">
 
             </label>
 
-            <select name="teamSize">
+            <select name="teamSize" required>
 
-                <option>Solo Entrepreneur</option>
-                <option>2-10 Employees</option>
-                <option>11-50 Employees</option>
-                <option>51+ Employees</option>
+                <option value=""
+                disabled
+                selected
+                data-lang-en="Select your team size"
+                data-lang-fr="Sélectionnez la taille de votre équipe">
+
+                Select your team size
+
+                </option>
+                <option
+                data-lang-en="Solo Entrepreneur"
+                data-lang-fr="Entrepreneur solo">
+
+                Solo Entrepreneur
+
+                </option>
+
+                <option
+                data-lang-en="2-10 Employees"
+                data-lang-fr="2-10 Employés">
+
+                2-10 Employees
+
+                </option>
+                <option
+                data-lang-en="11-50 Employees"
+                data-lang-fr="11-50 Employés">
+
+                11-50 Employees
+
+                </option>
+                <option
+                data-lang-en="51+ Employees"
+                data-lang-fr="51+ Employés">
+
+                51+ Employees
+
+                </option>
 
             </select>
 
@@ -204,7 +297,6 @@ class="back-pricing-btn">
 
                 data-lang-en="What would you like to automate?"
                 data-lang-fr="Que souhaitez-vous automatiser ?">
-
                 What would you like to automate?
 
             </label>
@@ -309,23 +401,35 @@ document.getElementById("selectedSolution");
 
 let selectedText = "";
 
+const currentLanguage =
+localStorage.getItem("language") || "en";
+
 /* BUNDLES */
 
 if (plan === "core-bundle") {
 
-    selectedText = "Core Automation Bundle";
+    selectedText =
+    currentLanguage === "fr"
+    ? "Pack d'automatisation de base"
+    : "Core Automation Bundle";
 
 }
 
 else if (plan === "growth-bundle") {
 
-    selectedText = "Growth Automation Suite";
+    selectedText =
+    currentLanguage === "fr"
+    ? "Suite d'automatisation pour entreprises en croissance"
+    : "Growth Automation Suite";
 
 }
 
 else if (plan === "elite-bundle") {
 
-    selectedText = "Elite AI Automation Ecosystem";
+    selectedText =
+    currentLanguage === "fr"
+    ? "Écosystème d'automatisation IA d'élite"
+    : "Elite AI Automation Ecosystem";
 
 }
 
@@ -333,19 +437,28 @@ else if (plan === "elite-bundle") {
 
 else if (service === "whatsapp") {
 
-    selectedText = "WhatsApp Expiration Trigger";
+    selectedText =
+    currentLanguage === "fr"
+    ? "Déclencheur d'expiration WhatsApp"
+    : "WhatsApp Expiration Trigger";
 
 }
 
 else if (service === "lead-enrichment") {
 
-    selectedText = "AI Lead Enrichment";
+    selectedText =
+    currentLanguage === "fr"
+    ? "Enrichissement de prospects par IA"
+    : "AI Lead Enrichment";
 
 }
 
 else if (service === "email-triage") {
 
-    selectedText = "Support Email Triage";
+    selectedText =
+    currentLanguage === "fr"
+    ? "Tri intelligent des emails de support"
+    : "Support Email Triage";
 
 }
 
@@ -353,7 +466,10 @@ else if (service === "email-triage") {
 
 else {
 
-    selectedText = "Custom Automation Request";
+    selectedText =
+    currentLanguage === "fr"
+    ? "Demande d'automatisation personnalisée"
+    : "Custom Automation Request";
 
 }
 
@@ -362,6 +478,78 @@ selectedText;
 
 hiddenField.value =
 selectedText;
+
+/* =========================
+   LANGUAGE DETECTION
+========================= */
+
+document
+.querySelectorAll("[data-lang-en]")
+.forEach(el => {
+
+    const translation =
+        currentLanguage === "fr"
+        ? el.dataset.langFr
+        : el.dataset.langEn;
+
+    if (!translation) return;
+
+    if (
+        el.tagName === "OPTION" ||
+        el.tagName === "LABEL" ||
+        el.tagName === "BUTTON" ||
+        el.tagName === "P" ||
+        el.tagName === "H1" ||
+        el.tagName === "H2" ||
+        el.tagName === "H3" ||
+        el.tagName === "SPAN"
+    ) {
+
+        el.textContent =
+        translation;
+
+    }
+
+});
+
+</script>
+
+<script>
+
+emailjs.init({
+    publicKey: "rY5u_6m_UtVfQsO5G"
+});
+
+document
+.getElementById("setupForm")
+.addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    emailjs.sendForm(
+        "service_fnchujr",
+        "template_cqii9iu",
+        this
+    )
+
+    .then(function() {
+
+        window.location.href =
+        "thank-you-setup.html";
+
+    })
+
+    .catch(function(error) {
+
+        console.error(error);
+
+        alert(
+            "An error occurred while sending your request."
+        );
+
+    });
+
+});
 
 </script>
 </body>

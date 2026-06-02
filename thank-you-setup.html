@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title data-lang-en="Setup Request Received" data-lang-fr="Demande de configuration reçue" id="dynamic-title">
+   Demande de configuration reçue
+  </title>
+    <p
+    data-lang-en="Our team will review your request within 1 business day."
+    data-lang-fr="Notre équipe examinera votre demande sous 1 jour ouvré.">
+
+    Our team will review your request within 1 business day.
+
+    </p>
+    
+  <style>
+   body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      padding: 40px 20px;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .thank-you-container {
+      background: white;
+      padding: 30px 35px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #7c4dff;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #7c4dff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    a:hover {
+      background-color: #0056b3;
+    }
+  </style>
+<style>
+    .home-button {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .home-button a {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #7c4dff;;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+    .home-button a:hover {
+      background-color: #125bb5;
+    }
+    </style></head>
+ </head>
+ <body class="lang-fr">
+  <div class="thank-you-container">
+   <h1 data-lang-en="Thank You!" data-lang-fr="Merci pour votre demande !">
+    Merci pour votre demande !
+   </h1>
+   <p data-lang-en="Your automation request has been successfully received."
+    data-lang-fr="Votre demande d'automatisation a été reçue avec succès.">
+    Your automation request has been successfully received.
+    </p>
+
+    <p data-lang-en="We'll review your requirements and get back to you shortly."
+    data-lang-fr="Nous examinerons vos exigences et vous répondrons dans les plus brefs délais.">
+    </p>
+    We'll review your requirements and get back to you shortly.
+
+    <p data-lang-en="Reference: AutomateSuite Setup Request"
+    data-lang-fr="Référence : Demande de configuration AutomateSuite">
+   Reference: AutomateSuite Setup Request
+    </p>
+   
+   <!-- BACK TO PRICING -->
+
+    <a href="pricing.html"
+    class="back-pricing-btn"
+    data-lang-en="← Back to Pricing"
+    data-lang-fr="← Retour aux tarifs">
+
+    ← Back to Pricing
+
+    </a>
+  </div>
+  <script>
+   function detectLanguage() {
+    const urlLang = new URLSearchParams(window.location.search).get("lang");
+    const localLang = localStorage.getItem("language");
+    return urlLang || localLang || "fr";
+  }
+
+  const lang = detectLanguage();
+  document.body.classList.remove("lang-fr", "lang-en");
+  document.body.classList.add("lang-" + lang);
+
+  document.querySelectorAll("[data-lang-fr]").forEach(el => {
+    el.textContent = el.getAttribute("data-lang-" + lang);
+  });
+
+  // Mise à jour du <title>
+const titleEl = document.getElementById("dynamic-title");
+if (titleEl) {
+  const newTitle = titleEl.getAttribute("data-lang-" + lang);
+  if (newTitle) titleEl.textContent = newTitle;
+}
+  </script>
+ </body>
+</html>
