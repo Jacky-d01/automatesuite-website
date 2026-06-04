@@ -6,19 +6,12 @@
   <title data-lang-en="Setup Request Received" data-lang-fr="Demande de configuration reçue" id="dynamic-title">
    Demande de configuration reçue
   </title>
-    <p
-    data-lang-en="Our team will review your request within 1 business day."
-    data-lang-fr="Notre équipe examinera votre demande sous 1 jour ouvré.">
-
-    Our team will review your request within 1 business day.
-
-    </p>
     
   <style>
    body {
       font-family: Arial, sans-serif;
-      background: #f0f4f8;
-      color: #333;
+      background: #050505;
+      color: #ffffff;
       padding: 40px 20px;
       margin: 0;
       display: flex;
@@ -26,11 +19,12 @@
     }
 
     .thank-you-container {
-      background: white;
+      background: #111111;
       padding: 30px 35px;
+      border: 1px solid rgba(124, 77, 255, .2);
       border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-      max-width: 600px;
+      box-shadow: 0 10px 40px rgba(124, 77, 255, .15);
+      max-width: 500px;
       text-align: center;
     }
 
@@ -59,28 +53,101 @@
       background-color: #0056b3;
     }
   </style>
-<style>
-    .home-button {
-      text-align: center;
-      margin-top: 30px;
+  <style>
+      .home-button {
+        text-align: center;
+        margin-top: 30px;
+      }
+      .home-button a {
+        display: inline-block;
+        padding: 12px 24px;
+        background-color: #7c4dff;;
+        color: #fff;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1rem;
+      }
+      .home-button a:hover {
+        background-color: #125bb5;
+      }
+
+      .setup-badge {
+
+        display: inline-block;
+
+        padding: 10px 22px;
+
+        border-radius: 999px;
+
+        border: 1px solid rgba(124,77,255,.35);
+
+        background: rgba(124,77,255,.1);
+
+        color: #ffffff;
+
+        font-weight: 600;
+
+        margin-bottom: 25px;
+
+      }
+
+        .back-pricing-btn {
+
+        display: inline-block;
+
+        margin-top: 20px;
+
+        padding: 14px 28px;
+
+        border-radius: 10px;
+
+        background: linear-gradient(
+            135deg,
+            #8b5cf6,
+            #6d28d9
+        );
+
+        color: #ffffff;
+
+        text-decoration: none;
+
+        font-weight: 600;
+
+        transition: 0.3s ease;
+
+      }
+
+    .back-pricing-btn:hover {
+
+        transform: translateY(-2px);
+
+        opacity: 0.9;
+
+      }
+
+      .success-icon {
+
+      font-size: 3rem;
+
+      color: #8b5cf6;
+
+      margin-bottom: 15px;
+
     }
-    .home-button a {
-      display: inline-block;
-      padding: 12px 24px;
-      background-color: #7c4dff;;
-      color: #fff;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1rem;
-    }
-    .home-button a:hover {
-      background-color: #125bb5;
-    }
-    </style></head>
+
+  </style></head>
  </head>
  <body class="lang-fr">
   <div class="thank-you-container">
+    <div class="setup-badge">
+
+    AutomateSuite
+
+    </div>
+    <div class="success-icon">
+    ✓
+    </div>
    <h1 data-lang-en="Thank You!" data-lang-fr="Merci pour votre demande !">
     Merci pour votre demande !
    </h1>
@@ -91,12 +158,27 @@
 
     <p data-lang-en="We'll review your requirements and get back to you shortly."
     data-lang-fr="Nous examinerons vos exigences et vous répondrons dans les plus brefs délais.">
+    We'll review your requirements and get back to you shortly.  
     </p>
-    We'll review your requirements and get back to you shortly.
+
+      <p
+    data-lang-en="Our team will review your request within 1 business day."
+    data-lang-fr="Notre équipe examinera votre demande sous 1 jour ouvré.">
+    Our team will review your request within 1 business day.
+
+    </p>
 
     <p data-lang-en="Reference: AutomateSuite Setup Request"
     data-lang-fr="Référence : Demande de configuration AutomateSuite">
    Reference: AutomateSuite Setup Request
+    </p>
+
+    <p id="redirect-message"
+   data-lang-en="Returning to Pricing in 10 seconds..."
+   data-lang-fr="Retour aux tarifs dans 10 secondes...">
+
+   Returning to Pricing in 10 seconds...
+
     </p>
    
    <!-- BACK TO PRICING -->
@@ -131,6 +213,13 @@ if (titleEl) {
   const newTitle = titleEl.getAttribute("data-lang-" + lang);
   if (newTitle) titleEl.textContent = newTitle;
 }
+
+setTimeout(() => {
+
+    window.location.href =
+    "pricing.html";
+
+}, 10000);
   </script>
  </body>
 </html>

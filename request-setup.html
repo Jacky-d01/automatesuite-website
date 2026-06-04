@@ -304,9 +304,10 @@ class="back-pricing-btn">
             <textarea
                 name="automationGoal"
                 rows="5"
-                required>
-
-            </textarea>
+                required
+                placeholder="Describe what you want to automate, your goals, and any specific requirements."
+                data-placeholder-en="Describe what you want to automate, your goals, and any specific requirements."
+                data-placeholder-fr="Décrivez ce que vous souhaitez automatiser, vos objectifs et toute exigence spécifique que vous avez."></textarea>
 
         </div>
 
@@ -323,9 +324,10 @@ class="back-pricing-btn">
 
             <textarea
                 name="currentTools"
-                rows="4">
-
-            </textarea>
+                rows="4"
+                placeholder="List any current tools or software you are using (optional)"
+                data-placeholder-en="List any current tools or software you are using (optional)"
+                data-placeholder-fr="Listez tous les outils ou logiciels que vous utilisez actuellement (optionnel)"></textarea>
 
         </div>
 
@@ -392,6 +394,13 @@ params.get("plan");
 
 const service =
 params.get("service");
+
+console.log("PLAN =", plan);
+console.log("SERVICE =", service);
+console.log("URL =", window.location.href);
+
+const tier =
+params.get("tier");
 
 const selectedPlan =
 document.getElementById("selected-plan");
@@ -462,9 +471,104 @@ else if (service === "email-triage") {
 
 }
 
+/* SERVICE TIERS */
+
+if(service === "whatsapp") {
+
+    if(tier === "starter") {
+
+        selectedText =
+        currentLanguage === "fr"
+        ? "Déclencheur d'expiration WhatsApp - Automatisation de base"
+        : "WhatsApp Expiration Trigger - Starter Automation";
+
+    }
+
+    else if(tier === "growth") {
+
+        selectedText =
+        currentLanguage === "fr"
+        ? "Déclencheur d'expiration WhatsApp - Automatisation des flux de travail d'entreprise"
+        : "WhatsApp Expiration Trigger - Business Workflow Automation";
+
+    }
+
+    else if(tier === "elite") {
+
+        selectedText =
+        currentLanguage === "fr"
+        ? "Déclencheur d'expiration WhatsApp - Automatisation IA Avancée"
+        : "WhatsApp Expiration Trigger - Advanced AI Automation";
+
+    }
+
+}
+
+if(service === "lead-enrichment") {
+
+    if(tier === "starter") {
+
+        selectedText =
+        currentLanguage === "fr"
+        ? "Enrichissement de prospects par IA - Automatisation de base"
+        : "AI Lead Enrichment - Starter Automation";
+
+    }
+
+    else if(tier === "growth") {
+
+        selectedText =
+        currentLanguage === "fr"
+        ? "Enrichissement de prospects par IA - Automatisation des flux de travail d'entreprise"
+        : "AI Lead Enrichment - Business Workflow Automation";
+
+    }
+
+    else if(tier === "elite") {
+
+        selectedText =
+        currentLanguage === "fr"
+        ? "Enrichissement de prospects par IA - Automatisation IA Avancée"
+        : "AI Lead Enrichment - Advanced AI Automation";
+
+    }
+
+}
+
+if(service === "email-triage") {
+
+    if(tier === "starter") {
+
+        selectedText =
+        currentLanguage === "fr"
+        ? "Tri intelligent des emails de support - Automatisation de base"
+        : "Support Email Triage - Starter Automation";
+
+    }
+
+    else if(tier === "growth") {
+
+        selectedText =
+        currentLanguage === "fr"
+        ? "Tri intelligent des emails de support - Automatisation des flux de travail d'entreprise"
+        : "Support Email Triage - Business Workflow Automation";
+
+    }
+
+    else if(tier === "elite") {
+
+        selectedText =
+        currentLanguage === "fr"
+        ? "Tri intelligent des emails de support - Automatisation IA Avancée"
+        : "Support Email Triage - Advanced AI Automation";
+
+    }
+
+}
+
 /* FALLBACK */
 
-else {
+if (!selectedText) {
 
     selectedText =
     currentLanguage === "fr"
@@ -509,6 +613,21 @@ document
         translation;
 
     }
+
+});
+
+/* =========================
+   PLACEHOLDERS
+========================= */
+
+document
+.querySelectorAll("[data-placeholder-en]")
+.forEach(el => {
+
+    el.placeholder =
+        currentLanguage === "fr"
+        ? el.dataset.placeholderFr
+        : el.dataset.placeholderEn;
 
 });
 

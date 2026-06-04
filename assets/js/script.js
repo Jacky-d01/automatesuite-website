@@ -52,6 +52,15 @@ function setLanguage(language) {
 
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+
+    const savedLanguage =
+        localStorage.getItem("language") || "en";
+
+    setLanguage(savedLanguage);
+
+});
+
 const themeToggle = document.getElementById("theme-toggle");
 
 themeToggle.addEventListener("click", () => {
