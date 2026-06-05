@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Custom Automation Setup | AutomateSuite</title>
+
+<link rel="stylesheet"
+      href="assets/css/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>      
+
+</head>
+
+<body>
+
+<!-- BACK TO PRICING -->
+
+<a href="pricing.html"
+class="back-pricing-btn">
+
+← Back to Pricing
+
+</a>
+
+<!-- FORM SECTION -->
+
+<section class="request-setup-section">
+
+<div class="container">
+
+    <div class="request-header">
+
+        <span class="section-badge"
+
+              data-lang-en="Custom Automation"
+              data-lang-fr="Automatisation Sur Mesure">
+
+              Custom Automation
+
+        </span>
+
+        <h1
+
+            data-lang-en="Request A Custom Automation Solution"
+            data-lang-fr="Demandez une Solution d'Automatisation Personnalisée">
+
+            Request A Custom Automation Solution
+
+        </h1>
+
+        <p
+
+            data-lang-en="Tell us about your business and automation goals. We'll review your requirements and get back to you shortly."
+            data-lang-fr="Parlez-nous de votre activité et de vos objectifs d'automatisation. Nous étudierons votre demande et reviendrons vers vous rapidement.">
+
+            Tell us about your business and automation goals.
+
+        </p>
+
+    </div>
+
+    <!-- FORM -->
+
+    <form id="setupForm">
+
+        <!-- Hidden field -->
+
+        <input type="hidden"
+               name="selectedSolution"
+               value="Custom Automation Request">
+
+        <input
+            type="hidden"
+            name="leadType"
+            value="Custom Automation Request">
+
+        <!-- CONTACT -->
+
+        <div class="form-group">
+
+            <label
+
+                data-lang-en="Full Name"
+                data-lang-fr="Nom complet">
+
+                Full Name
+
+            </label>
+
+            <input type="text"
+                   name="user_name"
+                   required>
+
+        </div>
+
+        <div class="form-group">
+
+            <label
+
+                data-lang-en="Business Email"
+                data-lang-fr="Email professionnel">
+
+                Business Email
+
+            </label>
+
+            <input type="email"
+                   name="user_email"
+                   required>
+
+        </div>
+
+        <div class="form-group">
+
+            <label
+
+                data-lang-en="Company Name"
+                data-lang-fr="Nom de l'entreprise">
+
+                Company Name
+
+            </label>
+
+            <input type="text"
+                   name="company"
+                    required>
+
+        </div>
+
+        <!-- BUSINESS -->
+
+        <div class="form-group">
+
+            <label
+
+                data-lang-en="Industry"
+                data-lang-fr="Secteur d'activité">
+
+                Industry
+
+            </label>
+
+            <select name="industry" required>
+
+                <option value=""
+                disabled
+                selected
+                data-lang-en="Select your industry"
+                data-lang-fr="Secteur d'activité">
+
+                Select your industry
+
+                </option>
+                <option
+                data-lang-en="E-Commerce"
+                data-lang-fr="Commerce électronique">
+
+                E-Commerce
+                </option>
+
+                <option
+                data-lang-en="Real Estate"
+                data-lang-fr="Immobilier">
+
+                Real Estate
+
+                </option>
+                <option
+                data-lang-en="Marketing Agency"
+                data-lang-fr="Agence de marketing">
+
+                Marketing Agency
+
+                </option>
+                <option
+                data-lang-en="Consulting"
+                data-lang-fr="Consulting">
+
+                Consulting
+
+                </option>
+                <option
+                data-lang-en="Healthcare"
+                data-lang-fr="Santé">
+
+                Healthcare
+
+                </option>
+                <option
+                data-lang-en="Education"
+                data-lang-fr="Éducation">
+
+                Education
+
+                </option>
+                <option
+                data-lang-en="Other"
+                data-lang-fr="Autre">
+
+                Other
+
+                </option>
+
+            </select>
+
+        </div>
+
+        <div class="form-group">
+
+            <label
+
+                data-lang-en="Team Size"
+                data-lang-fr="Taille de l'équipe">
+
+                Team Size
+
+            </label>
+
+            <select name="teamSize" required>
+
+                <option value=""
+                disabled
+                selected
+                data-lang-en="Select your team size"
+                data-lang-fr="Sélectionnez la taille de votre équipe">
+
+                Select your team size
+
+                </option>
+                <option
+                data-lang-en="Solo Entrepreneur"
+                data-lang-fr="Entrepreneur solo">
+
+                Solo Entrepreneur
+
+                </option>
+
+                <option
+                data-lang-en="2-10 Employees"
+                data-lang-fr="2-10 Employés">
+
+                2-10 Employees
+
+                </option>
+                <option
+                data-lang-en="11-50 Employees"
+                data-lang-fr="11-50 Employés">
+
+                11-50 Employees
+
+                </option>
+                <option
+                data-lang-en="51+ Employees"
+                data-lang-fr="51+ Employés">
+
+                51+ Employees
+
+                </option>
+
+            </select>
+
+        </div>
+
+        <div class="form-group">
+
+            <label
+            data-lang-en="Estimated Budget"
+            data-lang-fr="Budget estimé">
+
+            Estimated Budget
+
+            </label>
+
+        <select name="budget" required>
+
+            <option value=""
+            data-lang-en="Select Budget"
+            data-lang-fr="Sélectionnez le budget">
+
+            Select Budget
+
+            </option>
+
+            <option
+            data-lang-en="$500 - $1,000"
+            data-lang-fr="$500 - $1,000">
+
+            $500 - $1,000
+
+            </option>
+
+            <option
+            data-lang-en="$1,000 - $3,000"
+            data-lang-fr="$1,000 - $3,000">
+
+            $1,000 - $3,000
+
+            </option>
+
+            <option
+            data-lang-en="$3,000 - $5,000"
+            data-lang-fr="$3,000 - $5,000">
+
+            $3,000 - $5,000
+
+            </option>
+
+            <option
+            data-lang-en="$5,000+"
+            data-lang-fr="$5,000+">
+
+            $5,000+
+
+            </option>
+
+        </select>
+
+        </div>
+
+        <div class="form-group">
+
+        <label
+        data-lang-en="Desired Timeline"
+        data-lang-fr="Délai souhaité">
+
+        Desired Timeline
+
+        </label>
+
+        <select name="timeline" required>
+
+        <option value=""
+        data-lang-en="Select Timeline"
+        data-lang-fr="Sélectionnez le délai">
+
+        Select Timeline
+
+        </option>
+
+        <option
+        data-lang-en="ASAP"
+        data-lang-fr="Dès que possible">
+
+        ASAP
+
+        </option>
+
+        <option
+        data-lang-en="Within 30 Days"
+        data-lang-fr="Dans les 30 jours">
+
+        Within 30 Days
+
+        </option>
+
+        <option
+        data-lang-en="Within 3 Months"
+        data-lang-fr="Dans les 3 mois">
+
+        Within 3 Months
+
+        </option>
+
+        <option
+        data-lang-en="Flexible"
+        data-lang-fr="Flexible">
+
+        Flexible
+
+        </option>
+
+        </select>
+
+        </div>    
+            
+
+        <!-- REQUIREMENTS -->
+
+        <div class="form-group">
+
+            <label
+
+                data-lang-en="Describe Your Automation Project"
+                data-lang-fr="Décrivez votre Projet d'Automatisation">
+
+                Describe Your Automation Project
+
+            </label>
+
+            <textarea
+                name="automationGoal"
+                rows="5"
+                required
+                placeholder="Describe your project, current workflow, challenges, and the outcome you want to achieve."
+                data-placeholder-en="Describe your project, current workflow, challenges, and the outcome you want to achieve."
+                data-placeholder-fr="Décrivez votre projet, votre flux de travail actuel, les défis rencontrés et le résultat que vous souhaitez obtenir."></textarea>
+
+        </div>
+
+        <div class="form-group">
+
+            <label
+
+                data-lang-en="Current Tools & Software (Optional)"
+                data-lang-fr="Outils et logiciels actuels (Optionnel)">
+
+                Current Tools & Software (Optional)
+
+            </label>
+
+            <textarea
+                name="currentTools"
+                rows="4"
+                placeholder="List any current tools or software you are using (optional)"
+                data-placeholder-en="List any current tools or software you are using (optional)"
+                data-placeholder-fr="Listez tous les outils ou logiciels que vous utilisez actuellement (optionnel)"></textarea>
+
+        </div>
+
+        <!-- SUBMIT -->
+
+        <button
+            type="submit"
+            class="submit-btn"
+
+            data-lang-en="Request My Custom Solution"
+            data-lang-fr="Demander ma solution sur mesure">
+
+            Request My Custom Solution
+
+        </button>
+
+    </form>
+
+    <!-- SUCCESS MESSAGE -->
+
+    <div id="successMessage"
+         style="display:none;">
+
+        <h2
+
+            data-lang-en="✓ Request Received"
+            data-lang-fr="✓ Demande reçue">
+
+            ✓ Request Received
+
+        </h2>
+
+        <p
+
+            data-lang-en="Thank you for contacting AutomateSuite. We'll review your requirements and get back to you shortly."
+            data-lang-fr="Merci d'avoir contacté AutomateSuite. Nous étudierons votre demande et reviendrons vers vous rapidement.">
+
+            Thank you for contacting AutomateSuite.
+
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+
+    © 2026 AutomateSuite
+
+</p>
+
+</footer>
+
+<script>
+
+/* =========================
+   LANGUAGE DETECTION
+========================= */
+
+const currentLanguage =
+localStorage.getItem("language") || "en";
+
+document
+.querySelectorAll("[data-lang-en]")
+.forEach(el => {
+
+    const translation =
+        currentLanguage === "fr"
+        ? el.dataset.langFr
+        : el.dataset.langEn;
+
+    if (!translation) return;
+
+    if (
+        el.tagName === "OPTION" ||
+        el.tagName === "LABEL" ||
+        el.tagName === "BUTTON" ||
+        el.tagName === "P" ||
+        el.tagName === "H1" ||
+        el.tagName === "H2" ||
+        el.tagName === "H3" ||
+        el.tagName === "SPAN"
+    ) {
+
+        el.textContent =
+        translation;
+
+    }
+
+});
+
+/* =========================
+   PLACEHOLDERS
+========================= */
+
+document
+.querySelectorAll("[data-placeholder-en]")
+.forEach(el => {
+
+    el.placeholder =
+        currentLanguage === "fr"
+        ? el.dataset.placeholderFr
+        : el.dataset.placeholderEn;
+
+});
+
+</script>
+
+<script>
+
+emailjs.init({
+    publicKey: "rY5u_6m_UtVfQsO5G"
+});
+
+document
+.getElementById("setupForm")
+.addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    emailjs.sendForm(
+        "service_fnchujr",
+        "template_cqii9iu",
+        this
+    )
+
+    .then(function() {
+
+        window.location.href =
+        "custom-request-success.html";
+
+    })
+
+    .catch(function(error) {
+
+        console.error(error);
+
+        alert(
+            "An error occurred while sending your request."
+        );
+
+    });
+
+});
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title data-lang-en="Contact Success" data-lang-fr="Contact Réussi" id="dynamic-title">
+   Contact Réussi
+  </title>
+    
+  <style>
+   body {
+      font-family: Arial, sans-serif;
+      background: #050505;
+      color: #ffffff;
+      padding: 40px 20px;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .thank-you-container {
+      background: #111111;
+      padding: 30px 35px;
+      border: 1px solid rgba(124, 77, 255, .2);
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(124, 77, 255, .15);
+      max-width: 500px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #7c4dff;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #7c4dff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    a:hover {
+      background-color: #0056b3;
+    }
+  </style>
+  <style>
+      .home-button {
+        text-align: center;
+        margin-top: 30px;
+      }
+      .home-button a {
+        display: inline-block;
+        padding: 12px 24px;
+        background-color: #7c4dff;;
+        color: #fff;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1rem;
+      }
+      .home-button a:hover {
+        background-color: #125bb5;
+      }
+
+      .setup-badge {
+
+        display: inline-block;
+
+        padding: 10px 22px;
+
+        border-radius: 999px;
+
+        border: 1px solid rgba(124,77,255,.35);
+
+        background: rgba(124,77,255,.1);
+
+        color: #ffffff;
+
+        font-weight: 600;
+
+        margin-bottom: 25px;
+
+      }
+
+        .back-pricing-btn {
+
+        display: inline-block;
+
+        margin-top: 20px;
+
+        padding: 14px 28px;
+
+        border-radius: 10px;
+
+        background: linear-gradient(
+            135deg,
+            #8b5cf6,
+            #6d28d9
+        );
+
+        color: #ffffff;
+
+        text-decoration: none;
+
+        font-weight: 600;
+
+        transition: 0.3s ease;
+
+      }
+
+    .back-pricing-btn:hover {
+
+        transform: translateY(-2px);
+
+        opacity: 0.9;
+
+      }
+
+      .success-icon {
+
+      font-size: 3rem;
+
+      color: #8b5cf6;
+
+      margin-bottom: 15px;
+
+    }
+
+  </style></head>
+ </head>
+ <body class="lang-fr">
+  <div class="thank-you-container">
+    <div class="setup-badge">
+
+    AutomateSuite
+
+    </div>
+    <div class="success-icon">
+    ✓
+    </div>
+   <h1 data-lang-en="Thank You!" data-lang-fr="Merci pour votre contact !">
+    Merci pour votre contact !
+   </h1>
+   <p data-lang-en="Your contact request has been successfully received."
+    data-lang-fr="Votre demande de contact a été reçue avec succès.">
+    Your contact request has been successfully received.
+    </p>
+
+    <p data-lang-en="We'll get back to you shortly."
+    data-lang-fr="Nous vous répondrons dans les plus brefs délais.">
+    We'll get back to you shortly.
+    </p>
+
+      <p
+    data-lang-en="Our team will review your request within 1 business day."
+    data-lang-fr="Notre équipe examinera votre demande sous 1 jour ouvré.">
+    Our team will review your request within 1 business day.
+
+    </p>
+
+    <p data-lang-en="Reference: Contact Request"
+    data-lang-fr="Référence : Demande de contact">
+    Reference: Contact Request
+    </p>
+
+    <p id="redirect-message"
+   data-lang-en="Returning to Pricing in 10 seconds..."
+   data-lang-fr="Retour aux tarifs dans 10 secondes...">
+
+   Returning to Pricing in 10 seconds...
+
+    </p>
+   
+  </div>
+  <script>
+   function detectLanguage() {
+    const urlLang = new URLSearchParams(window.location.search).get("lang");
+    const localLang = localStorage.getItem("language");
+    return urlLang || localLang || "fr";
+  }
+
+  const lang = detectLanguage();
+  document.body.classList.remove("lang-fr", "lang-en");
+  document.body.classList.add("lang-" + lang);
+
+  document.querySelectorAll("[data-lang-fr]").forEach(el => {
+    el.textContent = el.getAttribute("data-lang-" + lang);
+  });
+
+  // Mise à jour du <title>
+const titleEl = document.getElementById("dynamic-title");
+if (titleEl) {
+  const newTitle = titleEl.getAttribute("data-lang-" + lang);
+  if (newTitle) titleEl.textContent = newTitle;
+}
+
+setTimeout(() => {
+
+    window.location.href =
+    "index.html";
+
+}, 10000);
+  </script>
+ </body>
+</html>

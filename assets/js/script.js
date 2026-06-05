@@ -176,11 +176,8 @@ if (typeof emailjs !== "undefined") {
                 const currentLang =
                 localStorage.getItem("language") || "en";
 
-                alert(
-                    currentLang === "fr"
-                    ? "Message envoyé avec succès !"
-                    : "Message sent successfully!"
-                );
+                window.location.href =
+                `contact-success.html?lang=${currentLang}`;
 
                 contactForm.reset();
 
