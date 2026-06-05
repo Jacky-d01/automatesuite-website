@@ -236,3 +236,36 @@ if (typeof emailjs !== "undefined") {
     }
 
 }
+
+document
+.querySelectorAll(".accordion-header")
+.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const content =
+        button.nextElementSibling;
+
+        content.style.display =
+        content.style.display === "block"
+        ? "none"
+        : "block";
+
+    });
+
+});
+
+const icon =
+button.querySelector(".accordion-icon");
+
+if(content.style.display === "block") {
+
+    content.style.display = "none";
+    icon.textContent = "+";
+
+} else {
+
+    content.style.display = "block";
+    icon.textContent = "−";
+
+}

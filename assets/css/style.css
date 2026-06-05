@@ -3515,3 +3515,47 @@ body.light-mode .pricing-service-label {
     color: #fff;
 
 }
+
+.accordion-header {
+
+    width: 100%;
+
+    padding: 20px 25px;
+
+    background: rgba(124,77,255,.08);
+
+    border: 1px solid rgba(124,77,255,.15);
+
+    border-radius: 12px;
+
+    color: #fff;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    font-size: 1.1rem;
+
+    font-weight: 600;
+
+    margin-bottom: 15px;
+
+}
+
+.accordion-content {
+
+    display: none;
+
+}
+
+.accordion-header {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.service-accordion:not(:first-child) {
+    margin-top: 60px;
+}
