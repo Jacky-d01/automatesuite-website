@@ -3,8 +3,8 @@
  <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title data-lang-en="Setup Request Received" data-lang-fr="Demande de configuration reçue" id="dynamic-title">
-   Demande de configuration reçue
+  <title data-lang-en="Contact Success" data-lang-fr="Contact Réussi" id="dynamic-title">
+   Contact Réussi
   </title>
     
   <style>
@@ -148,17 +148,17 @@
     <div class="success-icon">
     ✓
     </div>
-   <h1 data-lang-en="Thank You!" data-lang-fr="Merci pour votre demande !">
-    Merci pour votre demande !
+   <h1 data-lang-en="Thank You!" data-lang-fr="Merci pour votre contact !">
+    Merci pour votre contact !
    </h1>
-   <p data-lang-en="Your automation request has been successfully received."
-    data-lang-fr="Votre demande d'automatisation a été reçue avec succès.">
-    Your automation request has been successfully received.
+   <p data-lang-en="Your contact request has been successfully received."
+    data-lang-fr="Votre demande de contact a été reçue avec succès.">
+    Your contact request has been successfully received.
     </p>
 
-    <p data-lang-en="We'll review your requirements and get back to you shortly."
-    data-lang-fr="Nous examinerons vos exigences et vous répondrons dans les plus brefs délais.">
-    We'll review your requirements and get back to you shortly.  
+    <p data-lang-en="We'll get back to you shortly."
+    data-lang-fr="Nous vous répondrons dans les plus brefs délais.">
+    We'll get back to you shortly.
     </p>
 
       <p
@@ -168,29 +168,28 @@
 
     </p>
 
-    <p data-lang-en="Reference: AutomateSuite Setup Request"
-    data-lang-fr="Référence : Demande de configuration AutomateSuite">
-   Reference: AutomateSuite Setup Request
+    <p data-lang-en="Reference: Contact Request"
+    data-lang-fr="Référence : Demande de contact">
+    Reference: Contact Request
     </p>
 
     <p id="redirect-message"
-   data-lang-en="Returning to Pricing in 10 seconds..."
-   data-lang-fr="Retour aux tarifs dans 10 secondes...">
+   data-lang-en="Returning to Home in 10 seconds..."
+   data-lang-fr="Retour à l'accueil dans 10 secondes...">
 
-   Returning to Pricing in 10 seconds...
+   Returning to Home in 10 seconds...
 
     </p>
-   
-   <!-- BACK TO PRICING -->
 
-    <a href="pricing.html"
-    class="back-pricing-btn"
-    data-lang-en="← Back to Pricing"
-    data-lang-fr="← Retour aux tarifs">
+    <a href="index.html"
+    class="back-index-btn"
+    data-lang-en="← Back to Home"
+    data-lang-fr="← Retour à l'accueil">
 
-    ← Back to Pricing
+    ← Back to Home
 
     </a>
+   
   </div>
   <script>
    function detectLanguage() {
@@ -214,12 +213,30 @@ if (titleEl) {
   if (newTitle) titleEl.textContent = newTitle;
 }
 
-setTimeout(() => {
+let countdown = 10;
 
-    window.location.href =
-    "pricing.html";
+const countdownElement =
+document.getElementById("redirect-message");
 
-}, 10000);
+const interval = setInterval(() => {
+
+    countdown--;
+
+    countdownElement.textContent =
+    lang === "fr"
+    ? `Retour à l'accueil dans ${countdown} secondes...`
+    : `Returning to Home in ${countdown} seconds...`;
+
+    if (countdown <= 0) {
+
+        clearInterval(interval);
+
+        window.location.href =
+        "index.html";
+
+    }
+
+}, 1000);
   </script>
  </body>
 </html>

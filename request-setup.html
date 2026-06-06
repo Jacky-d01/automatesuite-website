@@ -645,6 +645,16 @@ document
 
     e.preventDefault();
 
+    const submitBtn =
+    document.querySelector(".submit-btn");
+
+    submitBtn.disabled = true;
+
+    submitBtn.textContent =
+    currentLanguage === "fr"
+    ? "Envoi en cours..."
+    : "Sending...";
+
     emailjs.sendForm(
         "service_fnchujr",
         "template_cqii9iu",
@@ -654,7 +664,7 @@ document
     .then(function() {
 
         window.location.href =
-        "thank-you-setup.html";
+        "setup-success.html";
 
     })
 

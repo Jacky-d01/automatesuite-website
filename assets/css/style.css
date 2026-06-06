@@ -3559,3 +3559,73 @@ body.light-mode .pricing-service-label {
 .service-accordion:not(:first-child) {
     margin-top: 60px;
 }
+
+.submit-btn,
+.pricing-btn,
+.bundle-btn,
+.back-pricing-btn {
+
+    transition: all 0.3s ease;
+
+}
+
+.submit-btn:hover,
+.pricing-btn:hover,
+.bundle-btn:hover,
+.back-pricing-btn:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 25px rgba(124,77,255,.35);
+
+}
+
+.submit-btn:active,
+.pricing-btn:active,
+.bundle-btn:active,
+.back-pricing-btn:active {
+
+    transform: scale(0.97);
+
+}
+
+.notification {
+
+    position: fixed;
+
+    bottom: 30px;
+    right: 30px;
+
+    background: #111111;
+
+    color: #ffffff;
+
+    padding: 16px 24px;
+
+    border-radius: 10px;
+
+    border: 1px solid rgba(124,77,255,.4);
+
+    box-shadow: 0 10px 30px rgba(124,77,255,.2);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(20px);
+
+    transition: all .3s ease;
+
+    z-index: 9999;
+
+}
+
+.notification.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+
+}

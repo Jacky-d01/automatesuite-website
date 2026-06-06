@@ -165,6 +165,19 @@ if (typeof emailjs !== "undefined") {
 
             e.preventDefault();
 
+            const currentLang =
+            localStorage.getItem("language") || "en";
+
+            const submitBtn =
+            contactForm.querySelector("button[type='submit']");
+
+            submitBtn.disabled = true;
+
+            submitBtn.textContent =
+            currentLang === "fr"
+            ? "Envoi en cours..."
+            : "Sending...";
+
             emailjs.sendForm(
                 "service_fnchujr",
                 "template_cqii9iu",
@@ -210,6 +223,19 @@ if (typeof emailjs !== "undefined") {
 
             e.preventDefault();
 
+            const currentLang =
+            localStorage.getItem("language") || "en";
+
+            const submitBtn =
+            newsletterForm.querySelector("button[type='submit']");
+
+            submitBtn.disabled = true;
+
+            submitBtn.textContent =
+            currentLang === "fr"
+            ? "Inscription..."
+            : "Subscribing...";
+
             emailjs.sendForm(
                 "service_fnchujr",
                 "template_ipivbnt",
@@ -218,6 +244,35 @@ if (typeof emailjs !== "undefined") {
 
             .then(() => {
 
+                const notification =
+                document.getElementById("newsletter-notification");
+
+                const message =
+                document.getElementById("notification-message");
+
+                const currentLang =
+                localStorage.getItem("language") || "en";
+
+                message.textContent =
+                currentLang === "fr"
+                ? "Votre inscription a été enregistrée. Vous recevrez les prochaines mises à jour dès leur publication."
+                : "Your subscription has been recorded. You'll receive updates whenever new content becomes available.";
+
+                notification.classList.add("show");
+
+                setTimeout(() => {
+
+                    notification.classList.remove("show");
+
+                }, 5000);
+
+                submitBtn.disabled = false;
+
+                submitBtn.textContent =
+                currentLang === "fr"
+                ? "S'abonner"
+                : "Subscribe";
+
                 newsletterForm.reset();
 
             })
@@ -225,6 +280,13 @@ if (typeof emailjs !== "undefined") {
             .catch((error) => {
 
                 console.error(error);
+
+                submitBtn.disabled = false;
+
+                submitBtn.textContent =
+                currentLang === "fr"
+                ? "S'abonner"
+                : "Subscribe";
 
             });
 
@@ -252,17 +314,30 @@ document
 
 });
 
-const icon =
-button.querySelector(".accordion-icon");
+document
+.querySelectorAll(".accordion-header")
+.forEach(button => {
 
-if(content.style.display === "block") {
+    button.addEventListener("click", () => {
 
-    content.style.display = "none";
-    icon.textContent = "+";
+        const content =
+        button.nextElementSibling;
 
-} else {
+        const icon =
+        button.querySelector(".accordion-icon");
 
-    content.style.display = "block";
-    icon.textContent = "−";
+        if(content.style.display === "block") {
 
-}
+            content.style.display = "none";
+            icon.textContent = "+";
+
+        } else {
+
+            content.style.display = "block";
+            icon.textContent = "−";
+
+        }
+
+    });
+
+});
