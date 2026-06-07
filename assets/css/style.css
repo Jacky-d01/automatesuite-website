@@ -2531,7 +2531,7 @@ section,
 
 .feature-card:hover {
 
-    transform: translateY 0 -5px;
+    transform: translateY(-5px);
 
     border-color: var(--accent-blue);
 
@@ -3600,7 +3600,7 @@ body.light-mode .selected-plan-box {
 
     border-radius: 12px;
 
-    color: #fff;
+    color: var(--text-color);
 
     text-align: left;
 
@@ -3616,7 +3616,29 @@ body.light-mode .selected-plan-box {
 
 .accordion-content {
 
-    display: none;
+    max-height: 0;
+
+    overflow: hidden;
+
+    transition:
+        max-height 0.4s ease,
+        padding 0.4s ease;
+
+}
+
+.accordion-icon {
+
+    color: var(--primary-color);
+
+    font-size: 1rem;
+
+    transition: transform .3s ease;
+
+}
+
+.service-accordion.active .accordion-icon {
+
+    transform: rotate(180deg);
 
 }
 
@@ -3699,5 +3721,125 @@ body.light-mode .selected-plan-box {
     visibility: visible;
 
     transform: translateY(0);
+
+}
+
+.compare-content {
+    display: none;
+}
+
+.compare-content.active {
+    display: block;
+    animation: fadeCompare .35s ease;
+}
+
+@keyframes fadeCompare {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.compare-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+.compare-grid {
+
+    display: grid;
+
+    grid-template-columns:
+    repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 30px;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+}
+
+.compare-column {
+
+    background: var(--card-color);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 24px;
+
+    padding: 35px;
+
+    text-align: center;
+
+    transition: 0.3s ease;
+
+}
+
+.compare-column:hover {
+
+    transform: translateY(-6px);
+
+    border-color: var(--accent-blue);
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,0.25),
+    0 0 25px var(--blue-glow);
+
+}
+
+.compare-column h3 {
+
+    margin-bottom: 20px;
+
+    color: var(--primary-color);
+
+}
+
+.compare-column p {
+
+    margin-bottom: 12px;
+
+}
+
+.compare-btn {
+
+    opacity: .7;
+
+    transition: .3s ease;
+
+}
+
+.compare-btn.active {
+
+    opacity: 1;
+
+    border: 2px solid white;
+
+    box-shadow:
+    0 0 20px rgba(124,77,255,.35);
+
+}
+
+.compare-btn.active {
+    background: var(--primary-color);
+}
+
+.compare-recommendation {
+
+    margin-top: 20px;
+
+    font-weight: 700;
+
+    color: var(--text-color);
 
 }

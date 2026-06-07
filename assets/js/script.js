@@ -319,29 +319,95 @@ if (typeof emailjs !== "undefined") {
 
 }
 
-document
-.querySelectorAll(".accordion-header")
-.forEach(button => {
+const accordions =
+document.querySelectorAll(".service-accordion");
+
+/* Open first accordion by default */
+
+if (accordions.length > 0) {
+
+    accordions[0].classList.add("active");
+
+    const firstContent =
+    accordions[0].querySelector(".accordion-content");
+
+    firstContent.style.maxHeight =
+    firstContent.scrollHeight + "px";
+}
+
+accordions.forEach((accordion) => {
+
+    const header =
+    accordion.querySelector(".accordion-header");
+
+    const content =
+    accordion.querySelector(".accordion-content");
+
+    header.addEventListener("click", () => {
+
+        const isActive =
+        accordion.classList.contains("active");
+
+        /* Close all */
+
+        accordions.forEach((item) => {
+
+            item.classList.remove("active");
+
+            item.querySelector(
+                ".accordion-content"
+            ).style.maxHeight = null;
+
+        });
+
+        /* Reopen clicked one */
+
+        if (!isActive) {
+
+            accordion.classList.add("active");
+
+            content.style.maxHeight =
+            content.scrollHeight + "px";
+        }
+
+    });
+
+});
+
+const compareButtons =
+document.querySelectorAll(".compare-btn");
+
+console.log("Buttons found:", compareButtons.length);
+
+compareButtons.forEach(button => {
 
     button.addEventListener("click", () => {
 
-        const content =
-        button.nextElementSibling;
+        console.log(
+            "Clicked:",
+            button.dataset.target
+        );
 
-        const icon =
-        button.querySelector(".accordion-icon");
+        compareButtons.forEach(btn =>
+            btn.classList.remove("active")
+        );
 
-        if(content.style.display === "block") {
+        button.classList.add("active");
 
-            content.style.display = "none";
-            icon.textContent = "+";
+        document
+        .querySelectorAll(".compare-content")
+        .forEach(content =>
+            content.classList.remove("active")
+        );
 
-        } else {
+        const target =
+        document.getElementById(
+            button.dataset.target + "-view"
+        );
 
-            content.style.display = "block";
-            icon.textContent = "−";
+        console.log(target);
 
-        }
+        target.classList.add("active");
 
     });
 
