@@ -3,8 +3,8 @@
  <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title data-lang-en="Contact Success" data-lang-fr="Contact Réussi" id="dynamic-title">
-   Contact Réussi
+  <title data-lang-en="Thank You for Your Interest" data-lang-fr="Merci pour votre intérêt" id="dynamic-title">
+    Merci pour votre intérêt
   </title>
     
   <style>
@@ -16,6 +16,33 @@
       margin: 0;
       display: flex;
       justify-content: center;
+    }
+
+    body.light-mode {
+
+    background: #f5f7fb;
+    color: #111827;
+
+    }
+
+    body.light-mode .thank-you-container {
+
+    background: #ffffff;
+    color: #111827;
+    border: 1px solid #e5e7eb;
+
+    }
+
+    body.light-mode .setup-badge {
+
+    background: #f5f3ff;
+
+    border: 1px solid #c4b5fd;
+
+    color: #6d28d9;
+
+    font-weight: 600;
+
     }
 
     .thank-you-container {
@@ -148,12 +175,12 @@
     <div class="success-icon">
     ✓
     </div>
-   <h1 data-lang-en="Thank You!" data-lang-fr="Merci pour votre contact !">
-    Merci pour votre contact !
+   <h1 data-lang-en="Thank You For Your Interest!" data-lang-fr="Merci pour votre intérêt !">
+    Merci pour votre intérêt !
    </h1>
-   <p data-lang-en="Your contact request has been successfully received."
-    data-lang-fr="Votre demande de contact a été reçue avec succès.">
-    Your contact request has been successfully received.
+   <p data-lang-en="Your request has been successfully received."
+    data-lang-fr="Votre demande a été reçue avec succès.">
+    Your request has been successfully received.
     </p>
 
     <p data-lang-en="We'll get back to you shortly."
@@ -168,9 +195,9 @@
 
     </p>
 
-    <p data-lang-en="Reference: Contact Request"
-    data-lang-fr="Référence : Demande de contact">
-    Reference: Contact Request
+    <p data-lang-en="Reference: Product Consultation"
+    data-lang-fr="Référence : Consultation produit">
+    Reference: Product Consultation
     </p>
 
     <p id="redirect-message"
@@ -238,5 +265,17 @@ const interval = setInterval(() => {
 
 }, 1000);
   </script>
+  <script>
+const savedTheme =
+localStorage.getItem("theme");
+
+if(savedTheme === "light") {
+
+    document.body.classList.add(
+        "light-mode"
+    );
+
+}
+</script>
  </body>
 </html>

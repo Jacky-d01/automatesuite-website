@@ -136,6 +136,38 @@
 
     }
 
+    body {
+    background:#050505;
+    color:#fff;
+    }
+
+    body.light-mode {
+
+    background: #f5f7fb;
+    color: #111827;
+
+    }
+
+    body.light-mode .thank-you-container {
+
+    background: #ffffff;
+    color: #111827;
+    border: 1px solid #e5e7eb;
+
+    }
+
+    body.light-mode .setup-badge {
+
+    background: #f5f3ff;
+
+    border: 1px solid #c4b5fd;
+
+    color: #6d28d9;
+
+    font-weight: 600;
+
+    }
+
   </style></head>
  </head>
  <body class="lang-fr">
@@ -239,5 +271,17 @@ const interval = setInterval(() => {
 
 }, 1000);
   </script>
+  <script>
+  const savedTheme =
+  localStorage.getItem("theme");
+
+  if(savedTheme === "light") {
+
+      document.body.classList.add(
+          "light-mode"
+      );
+
+}
+</script>
  </body>
 </html>

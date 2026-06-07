@@ -961,27 +961,6 @@ button {
 
 }
 
-/* Dot */
-
-.product-meta span::before {
-
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    top: 50%;
-
-    width: 6px;
-    height: 6px;
-
-    border-radius: 50%;
-
-    background: #7c4dff;
-
-    transform: translateY(-50%);
-}
-
 .product-card {
 
     position: relative;
@@ -998,6 +977,47 @@ button {
 
     width: 100%;
     margin-top: auto;
+}
+
+.tool-interest-btn {
+
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 12px 20px;
+
+    background: linear-gradient(
+        135deg,
+        #8b5cf6,
+        #6d28d9
+    );
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    border-radius: 10px;
+
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+
+}
+
+.tool-interest-btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+    0 8px 20px rgba(139,92,246,.3);
+
+}
+
+.tool-interest-btn:active {
+
+    transform: scale(.98);
+
 }
 
 /* =========================
@@ -3376,6 +3396,26 @@ body.light-mode .pricing-service-label {
 
 }
 
+body {
+    background:#050505;
+    color:#fff;
+}
+
+body.light-mode {
+
+    background: #f5f7fb;
+    color: #111827;
+
+}
+
+body.light-mode .thank-you-container {
+
+    background: #ffffff;
+    color: #111827;
+    border: 1px solid #e5e7eb;
+
+}
+
 .request-header {
 
     text-align: center;
@@ -3513,6 +3553,38 @@ body.light-mode .pricing-service-label {
     background: #111;
 
     color: #fff;
+
+}
+
+body.light-mode .request-form-container,
+body.light-mode .thank-you-container {
+
+    background: #ffffff;
+
+    border: 1px solid #d1d5db;
+
+    box-shadow:
+        0 8px 24px rgba(0,0,0,.08);
+
+}
+
+body.light-mode input,
+body.light-mode select,
+body.light-mode textarea {
+
+    background: #ffffff;
+
+    border: 1px solid #d1d5db;
+
+    color: #111827;
+
+}
+
+body.light-mode .selected-plan-box {
+
+    background: #ffffff;
+
+    border: 1px solid #d1d5db;
 
 }
 

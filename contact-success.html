@@ -199,6 +199,16 @@
   }
 
   const lang = detectLanguage();
+  const savedTheme =
+  localStorage.getItem("theme");
+
+  if(savedTheme === "light") {
+
+      document.body.classList.add(
+          "light-mode"
+      );
+
+}
   document.body.classList.remove("lang-fr", "lang-en");
   document.body.classList.add("lang-" + lang);
 

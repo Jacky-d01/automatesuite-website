@@ -59,6 +59,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setLanguage(savedLanguage);
 
+    const savedTheme =
+        localStorage.getItem("theme");
+
+    if(savedTheme === "light") {
+
+        document.body.classList.add("light-mode");
+
+    }
+
 });
 
 const themeToggle = document.getElementById("theme-toggle");
@@ -68,9 +77,23 @@ themeToggle.addEventListener("click", () => {
     document.body.classList.toggle("light-mode");
 
     if(document.body.classList.contains("light-mode")) {
+
         themeToggle.textContent = "🌙";
+
+        localStorage.setItem(
+            "theme",
+            "light"
+        );
+
     } else {
+
         themeToggle.textContent = "☀️";
+
+        localStorage.setItem(
+            "theme",
+            "dark"
+        );
+
     }
 
 });
@@ -295,24 +318,6 @@ if (typeof emailjs !== "undefined") {
     }
 
 }
-
-document
-.querySelectorAll(".accordion-header")
-.forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        const content =
-        button.nextElementSibling;
-
-        content.style.display =
-        content.style.display === "block"
-        ? "none"
-        : "block";
-
-    });
-
-});
 
 document
 .querySelectorAll(".accordion-header")

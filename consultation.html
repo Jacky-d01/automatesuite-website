@@ -235,17 +235,51 @@ class="back-home-btn">
 
                 </option>
 
-                <div class="form-group">
+                <option
+                data-lang-en="Solo Entrepreneur"
+                data-lang-fr="Entrepreneur solo">
 
-                <label
+                Solo Entrepreneur
+
+                </option>
+
+                <option
+                data-lang-en="2-10 Employees"
+                data-lang-fr="2-10 Employés">
+
+                2-10 Employees
+
+                </option>
+                <option
+                data-lang-en="11-50 Employees"
+                data-lang-fr="11-50 Employés">
+
+                11-50 Employees
+
+                </option>
+                <option
+                data-lang-en="51+ Employees"
+                data-lang-fr="51+ Employés">
+
+                51+ Employees
+
+                </option>
+
+            </select>
+
+        </div>
+
+        <div class="form-group">
+
+            <label
                 data-lang-en="Tool of Interest"
                 data-lang-fr="Outil d'intérêt">
 
                 Tool of Interest
 
-                </label>
+            </label>
 
-                <select name="toolInterest" required>
+            <select name="toolInterest" required>
 
                 <option value=""
                 data-lang-en="Select a Tool"
@@ -295,11 +329,11 @@ class="back-home-btn">
 
                 </option>
 
-                </select>
+            </select>
 
-                </div>
+        </div>
 
-                <div class="form-group">
+            <div class="form-group">
 
                 <label
                 data-lang-en="Reason for Contact"
@@ -361,137 +395,8 @@ class="back-home-btn">
 
                 </select>
 
-                </div>
-                <option
-                data-lang-en="Solo Entrepreneur"
-                data-lang-fr="Entrepreneur solo">
-
-                Solo Entrepreneur
-
-                </option>
-
-                <option
-                data-lang-en="2-10 Employees"
-                data-lang-fr="2-10 Employés">
-
-                2-10 Employees
-
-                </option>
-                <option
-                data-lang-en="11-50 Employees"
-                data-lang-fr="11-50 Employés">
-
-                11-50 Employees
-
-                </option>
-                <option
-                data-lang-en="51+ Employees"
-                data-lang-fr="51+ Employés">
-
-                51+ Employees
-
-                </option>
-
-            </select>
-
-        </div>
-
-        <div class="form-group">
-
-        <select name="budget" required>
-
-            <option value=""
-            data-lang-en="Select Budget"
-            data-lang-fr="Sélectionnez le budget">
-
-            Select Budget
-
-            </option>
-
-            <option
-            data-lang-en="$500 - $1,000"
-            data-lang-fr="$500 - $1,000">
-
-            $500 - $1,000
-
-            </option>
-
-            <option
-            data-lang-en="$1,000 - $3,000"
-            data-lang-fr="$1,000 - $3,000">
-
-            $1,000 - $3,000
-
-            </option>
-
-            <option
-            data-lang-en="$3,000 - $5,000"
-            data-lang-fr="$3,000 - $5,000">
-
-            $3,000 - $5,000
-
-            </option>
-
-            <option
-            data-lang-en="$5,000+"
-            data-lang-fr="$5,000+">
-
-            $5,000+
-
-            </option>
-
-        </select>
-
-        </div>
-
-        <div class="form-group">
-
-        <select name="timeline" required>
-
-        <option value=""
-        data-lang-en="Select Timeline"
-        data-lang-fr="Sélectionnez le délai">
-
-        Select Timeline
-
-        </option>
-
-        <option
-        data-lang-en="ASAP"
-        data-lang-fr="Dès que possible">
-
-        ASAP
-
-        </option>
-
-        <option
-        data-lang-en="Within 30 Days"
-        data-lang-fr="Dans les 30 jours">
-
-        Within 30 Days
-
-        </option>
-
-        <option
-        data-lang-en="Within 3 Months"
-        data-lang-fr="Dans les 3 mois">
-
-        Within 3 Months
-
-        </option>
-
-        <option
-        data-lang-en="Flexible"
-        data-lang-fr="Flexible">
-
-        Flexible
-
-        </option>
-
-        </select>
-
-        </div>    
-            
+            </div>
+           
 
         <!-- REQUIREMENTS -->
 
@@ -507,12 +412,12 @@ class="back-home-btn">
             </label>
 
             <textarea
-                name="automationGoal"
+                name="consultationNeeds"
                 rows="5"
                 required
-                placeholder="Describe your project, current workflow, challenges, and the outcome you want to achieve."
-                data-placeholder-en="Describe your project, current workflow, challenges, and the outcome you want to achieve."
-                data-placeholder-fr="Décrivez votre projet, votre flux de travail actuel, les défis rencontrés et le résultat que vous souhaitez obtenir."></textarea>
+                placeholder="Tell us what interests you about this product, your business needs, or any questions you have."
+                data-placeholder-en="Tell us what interests you about this product, your business needs, or any questions you have."
+                data-placeholder-fr="Expliquez ce qui vous intéresse dans ce produit, vos besoins ou les questions que vous souhaitez nous poser."></textarea>
 
         </div>
 
@@ -542,10 +447,10 @@ class="back-home-btn">
             type="submit"
             class="submit-btn"
 
-            data-lang-en="Request My Custom Solution"
-            data-lang-fr="Demander ma solution sur mesure">
+            data-lang-en="Request Consultation"
+            data-lang-fr="Demander une consultation">
 
-            Request My Custom Solution
+            Request Consultation
 
         </button>
 
@@ -676,7 +581,7 @@ document
     .then(function() {
 
         window.location.href =
-        "custom-request-success.html";
+        "consultation-success.html";
 
     })
 
@@ -692,6 +597,18 @@ document
 
 });
 
+</script>
+<script>
+const savedTheme =
+localStorage.getItem("theme");
+
+if(savedTheme === "light") {
+
+    document.body.classList.add(
+        "light-mode"
+    );
+
+}
 </script>
 </body>
 
