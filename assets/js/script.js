@@ -70,33 +70,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-const themeToggle = document.getElementById("theme-toggle");
+const themeToggle =
+document.getElementById("theme-toggle");
 
-themeToggle.addEventListener("click", () => {
+if(themeToggle) {
 
-    document.body.classList.toggle("light-mode");
+    themeToggle.addEventListener("click", () => {
 
-    if(document.body.classList.contains("light-mode")) {
-
-        themeToggle.textContent = "🌙";
-
-        localStorage.setItem(
-            "theme",
-            "light"
+        document.body.classList.toggle(
+            "light-mode"
         );
 
-    } else {
+        if(document.body.classList.contains(
+            "light-mode"
+        )) {
 
-        themeToggle.textContent = "☀️";
+            themeToggle.textContent = "🌙";
 
-        localStorage.setItem(
-            "theme",
-            "dark"
-        );
+            localStorage.setItem(
+                "theme",
+                "light"
+            );
 
-    }
+        } else {
 
-});
+            themeToggle.textContent = "☀️";
+
+            localStorage.setItem(
+                "theme",
+                "dark"
+            );
+
+        }
+
+    });
+
+}
 
 document.addEventListener("DOMContentLoaded", () => {
 
