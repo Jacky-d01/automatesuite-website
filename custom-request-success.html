@@ -77,7 +77,7 @@
     }
 
     a:hover {
-      background-color: #0056b3;
+      background-color: #6d28d9;
     }
   </style>
   <style>
@@ -96,7 +96,7 @@
         font-size: 1rem;
       }
       .home-button a:hover {
-        background-color: #125bb5;
+        background-color: #6d28d9;
       }
 
       .setup-badge {
@@ -163,13 +163,76 @@
 
     }
 
+    .next-steps {
+
+    list-style: none;
+
+    padding: 0;
+
+    margin: 20px 0;
+
+    }
+
+    .next-steps li {
+
+        margin-bottom: 10px;
+
+    }
+
+    .secondary-btn {
+
+    display: inline-block;
+
+    margin-top: 20px;
+
+    margin-left: 10px;
+
+    padding: 14px 28px;
+
+    border-radius: 10px;
+
+    border: 1px solid rgba(124,77,255,.3);
+
+    background: linear-gradient(
+            135deg,
+            #8b5cf6,
+            #6d28d9
+        );
+
+        color: #ffffff;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+
+    }
+
+    .secondary-btn:hover {
+
+        transform: translateY(-2px);
+
+        background: rgba(124,77,255,.08);
+
+    }
+
+    .back-pricing-btn,
+    .secondary-btn {
+
+        width: 180px;
+
+        text-align: center;
+
+    }
+
   </style>
  </head>
  <body class="lang-fr">
   <div class="thank-you-container">
     <div class="setup-badge">
 
-    AutomateSuite
+    ⚡ AutomateSuite
 
     </div>
     <div class="success-icon">
@@ -195,16 +258,46 @@
 
     </p>
 
-    <p data-lang-en="Reference: Custom Automation Request"
-    data-lang-fr="Référence : Demande d'automatisation sur mesure">
-   Reference: Custom Automation Request
+    <p data-lang-en="Your request has been added to our review queue."
+    data-lang-fr="Votre demande a été ajoutée à notre file d'attente de révision.">
+    Your request has been added to our review queue.
     </p>
 
-    <p id="redirect-message"
-   data-lang-en="Returning to Pricing in 10 seconds..."
-   data-lang-fr="Retour aux tarifs dans 10 secondes...">
+    <h3
+    data-lang-en="What Happens Next?"
+    data-lang-fr="Et maintenant ?">
 
-   Returning to Pricing in 10 seconds...
+    What Happens Next?
+
+    </h3>
+
+    <ul class="next-steps">
+
+        <li
+        data-lang-en="✓ We review your requirements"
+        data-lang-fr="✓ Nous analysons vos besoins">
+        ✓ We review your requirements
+        </li>
+
+        <li
+        data-lang-en="✓ We identify the best automation approach"
+        data-lang-fr="✓ Nous identifions la meilleure approche d'automatisation">
+        ✓ We identify the best automation approach
+        </li>
+
+        <li
+        data-lang-en="✓ We contact you within 1 business day"
+        data-lang-fr="✓ Nous vous contactons sous 1 jour ouvré">
+        ✓ We contact you within 1 business day
+        </li>
+
+    </ul>
+
+    <p id="redirect-message"
+   data-lang-en="You will be automatically redirected to Pricing Plans in 15 seconds..."
+   data-lang-fr="Vous serez automatiquement redirigé vers les plans tarifaires dans 15 secondes...">
+
+   Returning to Pricing in 15 seconds...
 
     </p>
    
@@ -216,6 +309,15 @@
     data-lang-fr="← Retour aux tarifs">
 
     ← Back to Pricing
+
+    </a>
+
+    <a href="services.html"
+    class="secondary-btn"
+    data-lang-en="← Explore Services"
+    data-lang-fr="← Explorer les services">
+
+    ← Explore Services
 
     </a>
   </div>
@@ -241,7 +343,7 @@ if (titleEl) {
   if (newTitle) titleEl.textContent = newTitle;
 }
 
-let countdown = 10;
+let countdown = 15;
 
 const countdownElement =
 document.getElementById("redirect-message");
@@ -252,8 +354,8 @@ const interval = setInterval(() => {
 
     countdownElement.textContent =
     lang === "fr"
-    ? `Retour aux tarifs dans ${countdown} secondes...`
-    : `Returning to Pricing in ${countdown} seconds...`;
+    ? `Vous serez redirigé vers les tarifs dans ${countdown} secondes...`
+    : `You will be automatically redirected to Pricing Plans in ${countdown} seconds...`;
 
     if (countdown <= 0) {
 
