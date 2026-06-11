@@ -383,6 +383,88 @@ accordions.forEach((accordion) => {
 
 });
 
+const faqAccordions =
+document.querySelectorAll(".faq-accordion");
+
+/* Open first FAQ by default */
+
+if (faqAccordions.length > 0) {
+
+    faqAccordions[0].classList.add("active");
+
+    const firstContent =
+    faqAccordions[0].querySelector(
+        ".accordion-content"
+    );
+
+    firstContent.style.maxHeight =
+    firstContent.scrollHeight + "px";
+
+}
+
+faqAccordions.forEach((accordion) => {
+
+    const header =
+    accordion.querySelector(
+        ".accordion-header"
+    );
+
+    const content =
+    accordion.querySelector(
+        ".accordion-content"
+    );
+
+    header.addEventListener("click", () => {
+
+        const isActive =
+        accordion.classList.contains(
+            "active"
+        );
+
+        faqAccordions.forEach((item) => {
+
+            item.classList.remove(
+                "active"
+            );
+
+            item.querySelector(
+                ".accordion-content"
+            ).style.maxHeight = null;
+
+        });
+
+        if (!isActive) {
+
+            accordion.classList.add(
+                "active"
+            );
+
+            content.style.maxHeight =
+            content.scrollHeight + "px";
+
+        }
+
+    });
+
+});
+
+/* Recalculate FAQ heights after page is fully rendered */
+
+window.addEventListener("load", () => {
+
+    document
+    .querySelectorAll(
+        ".faq-accordion.active .accordion-content"
+    )
+    .forEach((content) => {
+
+        content.style.maxHeight =
+        content.scrollHeight + "px";
+
+    });
+
+});
+
 const compareButtons =
 document.querySelectorAll(".compare-btn");
 
