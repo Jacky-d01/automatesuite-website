@@ -3559,19 +3559,15 @@ body.light-mode .pricing-service-label {
 
     .pricing-toggle-nav {
 
-        top: 113px;
+        position: fixed;
 
-        right: 18px;
+        top: 102px;
 
-        padding: 10px 14px;
+        right: 10px;
 
-        gap: 10px;
+        bottom: auto;
 
-    }
-
-    .pricing-toggle-btn {
-
-        font-size: 0.82rem;
+        z-index: 1000;
 
     }
 
@@ -3686,6 +3682,16 @@ body.light-mode .pricing-service-label {
 
     box-shadow:
         0 10px 25px rgba(255,179,71,0.30);
+
+    /* hidden by default */
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(20px);
+
+    transition: all 0.3s ease;
 
 }
 
@@ -4201,5 +4207,25 @@ body.light-mode .selected-plan-box {
 .back-pricing-link:hover {
 
     transform: translateX(-4px);
+
+}
+
+.home-seo-section {
+
+    padding: 20px 0 40px;
+
+}
+
+.seo-text {
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    text-align: center;
+
+    line-height: 1.8;
+
+    color: var(--text-secondary);
 
 }

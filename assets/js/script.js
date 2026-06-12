@@ -465,6 +465,21 @@ window.addEventListener("load", () => {
 
 });
 
+window.addEventListener("load", () => {
+
+    document
+    .querySelectorAll(
+        ".service-accordion.active .accordion-content"
+    )
+    .forEach((content) => {
+
+        content.style.maxHeight =
+        content.scrollHeight + "px";
+
+    });
+
+});
+
 const compareButtons =
 document.querySelectorAll(".compare-btn");
 
@@ -499,6 +514,29 @@ compareButtons.forEach(button => {
         console.log(target);
 
         target.classList.add("active");
+
+    });
+
+});
+
+window.addEventListener("load", () => {
+
+    const backToTopBtn =
+    document.querySelector(".back-to-top-btn");
+
+    if (!backToTopBtn) return;
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 300) {
+
+            backToTopBtn.classList.add("show");
+
+        } else {
+
+            backToTopBtn.classList.remove("show");
+
+        }
 
     });
 
