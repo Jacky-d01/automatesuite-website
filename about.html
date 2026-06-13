@@ -7,6 +7,7 @@
     <meta
     name="description"
     content="Learn about AutomateSuite, a provider of AI-powered automation services, workflow optimization and scalable business solutions designed to help companies save time and grow efficiently.">
+    <link rel="canonical" href="https://automatesuite.io/about.html">
     <meta
     name="keywords"
     content="business automation, AI automation, workflow automation, CRM automation, AI workflows, process automation, AutomateSuite">
@@ -639,7 +640,7 @@
         data-lang-en="Our vision is to create a complete ecosystem where businesses can automate, optimize and scale with confidence."
         data-lang-fr="Notre vision est de créer un écosystème complet permettant aux entreprises d'automatiser, d'optimiser et de développer leurs activités en toute confiance.">
 
-        Our vision is to create a complete ecosystem where businesses can automate, optimize and se développer en toute confiance.
+        Our vision is to create a complete ecosystem where businesses can automate, optimize and scale with confidence.
 
         </p>
 
@@ -1122,50 +1123,80 @@
     <script type="application/ld+json">
     {
     "@context":"https://schema.org",
-    "@graph":[
-
-        {
-        "@type":"AboutPage",
-        "@id":"https://automatesuite.io/about.html",
-        "url":"https://automatesuite.io/about.html",
-        "name":"About AutomateSuite",
-        "description":"Learn about AutomateSuite, its mission, automation services and future software ecosystem.",
-        "inLanguage":"en"
-        },
-
-        {
-        "@type":"Organization",
-        "@id":"https://automatesuite.io/#organization",
-        "name":"AutomateSuite",
-        "url":"https://automatesuite.io",
-        "logo":"https://automatesuite.io/assets/images/logo.png",
-        "email":"hello@automatesuite.io",
-        "description":"AutomateSuite provides AI automation services, workflow optimization and business process solutions for modern businesses."
-        }
-    ]
+    "@type":"Organization",
+    "@id":"https://automatesuite.io/#organization",
+    "name":"AutomateSuite",
+    "url":"https://automatesuite.io",
+    "logo":"https://automatesuite.io/assets/images/logo.png",
+    "email":"hello@automatesuite.io",
+    "description":"AutomateSuite provides AI automation services, workflow optimization and business process solutions for modern businesses."
     }
     </script>
+
     <script type="application/ld+json">
     {
     "@context":"https://schema.org",
-    "@graph":[
+    "@type":"WebSite",
+    "@id":"https://automatesuite.io/#website",
+    "url":"https://automatesuite.io/",
+    "name":"AutomateSuite",
+    "publisher":{
+        "@id":"https://automatesuite.io/#organization"
+    },
+    "inLanguage":[
+        "en",
+        "fr"
+    ]
+    }
+    </script>
 
+    <script type="application/ld+json">
+    {
+    "@context":"https://schema.org",
+    "@type":"AboutPage",
+    "@id":"https://automatesuite.io/about.html#webpage",
+    "url":"https://automatesuite.io/about.html",
+    "name":"About AutomateSuite | AI Automation, Workflow Solutions & Business Growth",
+    "description":"Learn about AutomateSuite, its mission, automation services and future software ecosystem.",
+    "inLanguage":[
+        "en",
+        "fr"
+    ],
+    "isPartOf":{
+        "@id":"https://automatesuite.io/#website"
+    },
+    "about":{
+        "@id":"https://automatesuite.io/#organization"
+    },
+    "mainEntity":{
+    "@id":"https://automatesuite.io/#organization"
+    },
+    "publisher":{
+        "@id":"https://automatesuite.io/#organization"
+    },
+    "breadcrumb":{
+    "@id":"https://automatesuite.io/about.html#breadcrumb"
+    }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "@id":"https://automatesuite.io/about.html#breadcrumb",
+    "itemListElement":[
         {
-        "@type":"AboutPage",
-        "@id":"https://automatesuite.io/about.html#fr",
-        "url":"https://automatesuite.io/about.html",
-        "name":"À propos d'AutomateSuite",
-        "description":"Découvrez AutomateSuite, sa mission, ses services d'automatisation et son futur écosystème logiciel.",
-        "inLanguage":"fr"
+        "@type":"ListItem",
+        "position":1,
+        "name":"Home",
+        "item":"https://automatesuite.io/"
         },
-
         {
-        "@type":"Organization",
-        "@id":"https://automatesuite.io/#organization-fr",
-        "name":"AutomateSuite",
-        "url":"https://automatesuite.io",
-        "email":"hello@automatesuite.io",
-        "description":"AutomateSuite propose des services d'automatisation, des workflows alimentés par l'IA et des solutions d'optimisation pour les entreprises modernes."
+        "@type":"ListItem",
+        "position":2,
+        "name":"About",
+        "item":"https://automatesuite.io/about.html"
         }
     ]
     }
@@ -1175,6 +1206,11 @@
     {
     "@context":"https://schema.org",
     "@type":"FAQPage",
+    "@id":"https://automatesuite.io/about.html#faq-en",
+    "isPartOf":{
+        "@id":"https://automatesuite.io/about.html#webpage"
+    },
+    "inLanguage":"en",
     "mainEntity":[
 
         {
@@ -1233,12 +1269,17 @@
 
     ]
     }
-</script>
+    </script>
 
-<script type="application/ld+json">
-    {
+    <script type="application/ld+json">
+        {
     "@context":"https://schema.org",
     "@type":"FAQPage",
+    "@id":"https://automatesuite.io/about.html#faq-fr",
+    "isPartOf":{
+        "@id":"https://automatesuite.io/about.html#webpage"
+    },
+    "inLanguage":"fr",
     "mainEntity":[
 
         {
@@ -1297,6 +1338,6 @@
 
     ]
     }
-</script>
+    </script>
 </body>
 </html>

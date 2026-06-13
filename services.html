@@ -8,6 +8,8 @@
     name="description"
     content="Discover AI-powered automation services from AutomateSuite including WhatsApp automation workflows, AI lead enrichment, support email triage and custom business automation solutions.">
 
+    <link rel="canonical" href="https://automatesuite.io/services.html">
+
     <meta
     name="keywords"
     content="AI Automation Services, Business Automation, WhatsApp Automation, Lead Enrichment, Email Triage, CRM Automation, Workflow Automation, AI Customer Support">
@@ -1036,13 +1038,155 @@
 
     <script type="application/ld+json">
     {
-    "@context": "https://schema.org",
-    "@graph": [
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "@id":"https://automatesuite.io/#organization",
+    "name":"AutomateSuite",
+    "url":"https://automatesuite.io",
+    "logo":"https://automatesuite.io/assets/images/logo.png",
+    "email":"hello@automatesuite.io",
+    "description":"AutomateSuite provides AI automation services, workflow optimization and business process solutions for modern businesses."
+    }
+    </script>
 
+    <script type="application/ld+json">
+    {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "@id":"https://automatesuite.io/#website",
+    "url":"https://automatesuite.io/",
+    "name":"AutomateSuite",
+    "publisher":{
+        "@id":"https://automatesuite.io/#organization"
+    },
+    "inLanguage":[
+        "en",
+        "fr"
+    ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "@id":"https://automatesuite.io/services.html#webpage",
+    "url":"https://automatesuite.io/services.html",
+    "name":"AI Automation Services | WhatsApp Workflows, Lead Enrichment & Email Triage | AutomateSuite",
+    "description":"Discover AI-powered automation services from AutomateSuite including WhatsApp automation workflows, AI lead enrichment, support email triage and custom business automation solutions.",
+    "inLanguage":[
+        "en",
+        "fr"
+    ],
+    "isPartOf":{
+        "@id":"https://automatesuite.io/#website"
+    },
+    "publisher":{
+        "@id":"https://automatesuite.io/#organization"
+    },
+    "breadcrumb":{
+        "@id":"https://automatesuite.io/services.html#breadcrumb"
+    },
+    "mainEntity":[
+    {
+        "@id":"https://automatesuite.io/services.html#whatsapp-automation"
+    },
+    {
+        "@id":"https://automatesuite.io/services.html#ai-lead-enrichment"
+    },
+    {
+        "@id":"https://automatesuite.io/services.html#support-email-triage"
+    }
+    ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "@id":"https://automatesuite.io/services.html#breadcrumb",
+    "itemListElement":[
         {
-        "@type": "FAQPage",
-        "inLanguage": "en",
-        "mainEntity": [
+        "@type":"ListItem",
+        "position":1,
+        "name":"Home",
+        "item":"https://automatesuite.io/"
+        },
+        {
+        "@type":"ListItem",
+        "position":2,
+        "name":"Services",
+        "item":"https://automatesuite.io/services.html"
+        }
+    ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context":"https://schema.org",
+    "@type":"Service",
+    "@id":"https://automatesuite.io/services.html#whatsapp-automation",
+    "name":"WhatsApp Automation Workflows",
+    "description":"Automate WhatsApp reminders, customer notifications and subscription workflows.",
+    "provider":{
+        "@id":"https://automatesuite.io/#organization"
+    },
+    "isPartOf":{
+    "@id":"https://automatesuite.io/services.html#webpage"
+    },
+    "serviceType":"WhatsApp Automation",
+    "url":"https://automatesuite.io/whatsapp-trigger.html"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context":"https://schema.org",
+    "@type":"Service",
+    "@id":"https://automatesuite.io/services.html#ai-lead-enrichment",
+    "name":"AI Lead Enrichment",
+    "description":"AI-powered enrichment workflows for lead qualification and CRM intelligence.",
+    "provider":{
+        "@id":"https://automatesuite.io/#organization"
+    },
+    "isPartOf":{
+    "@id":"https://automatesuite.io/services.html#webpage"
+    },
+    "serviceType":"Lead Enrichment",
+    "url":"https://automatesuite.io/ai-lead-enrichment.html"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context":"https://schema.org",
+    "@type":"Service",
+    "@id":"https://automatesuite.io/services.html#support-email-triage",
+    "name":"AI Support Email Triage",
+    "description":"Automatically classify, prioritize and organize support emails using AI.",
+    "provider":{
+        "@id":"https://automatesuite.io/#organization"
+    },
+    "isPartOf":{
+    "@id":"https://automatesuite.io/services.html#webpage"
+    },
+    "serviceType":"Email Automation",
+    "url":"https://automatesuite.io/support-email-triage.html"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@type":"FAQPage",
+        "@id":"https://automatesuite.io/services.html#faq-en",
+        "isPartOf":{
+            "@id":"https://automatesuite.io/services.html#webpage"
+        },
+        "inLanguage":"en",
+        "mainEntity":[
 
             {
             "@type": "Question",
@@ -1099,12 +1243,19 @@
             }
 
         ]
-        },
+        }
+    </script>
+    <script type="application/ld+json">
 
         {
-        "@type": "FAQPage",
-        "inLanguage": "fr",
-        "mainEntity": [
+        "@context":"https://schema.org",
+        "@type":"FAQPage",
+        "@id":"https://automatesuite.io/services.html#faq-fr",
+        "isPartOf":{
+            "@id":"https://automatesuite.io/services.html#webpage"
+        },
+        "inLanguage":"fr",
+        "mainEntity":[
 
             {
             "@type": "Question",
@@ -1163,8 +1314,6 @@
         ]
         }
 
-    ]
-    }
     </script>
 
 </body>
