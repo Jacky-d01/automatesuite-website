@@ -899,21 +899,19 @@ button {
     font-size: 3rem;
 
     margin-bottom: 20px;
+
+    text-align: center;
 }
 
 /* Paragraphs */
 
 .page-section p {
-
     max-width: 800px;
-
+    margin: 0 auto 30px;
     font-size: 1.1rem;
-
     color: var(--text-secondary);
-
-    margin-bottom: 30px;
-
     line-height: 1.8;
+    text-align: center;
 }
 
 .service-description-box{
