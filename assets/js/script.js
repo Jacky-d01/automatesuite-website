@@ -119,6 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         navMenu.classList.toggle("active");
         menuOverlay.classList.toggle("active");
+        document.body.classList.toggle("menu-open");
 
     });
 
@@ -128,6 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         navMenu.classList.remove("active");
         menuOverlay.classList.remove("active");
+        document.body.classList.toggle("menu-open");
 
     });
 

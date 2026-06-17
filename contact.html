@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact AutomateSuite | AI Automation & Business Solutions</title>
+    <title>Contact AutomateSuite | AI Automation, CRM & Workflow Solutions</title>
     <meta name="description"
-    content="Contact AutomateSuite to discuss AI automation, workflow optimization, CRM integrations and custom business solutions.">
+    content="Contact AutomateSuite for AI automation, CRM integrations, workflow optimization and custom business solutions. Request a free consultation today.">
     <link rel="canonical"
     href="https://automatesuite.io/contact.html">
     <meta property="og:title"
@@ -25,6 +25,10 @@
 
     <meta property="og:site_name"
     content="AutomateSuite">
+
+    <meta property="og:locale" content="en_US">
+
+    <meta property="og:locale:alternate" content="fr_FR">
     
     <meta name="twitter:card"
     content="summary_large_image">
@@ -56,8 +60,8 @@
     <div class="nav-container">
 
         <!-- Logo -->
-        <a href="index.html" class="logo">
-            AutomateSuite
+        <a href="index.html" class="logo"
+        aria-label= "AutomateSuite Home">
         </a>
 
         <!-- Navigation Links -->
@@ -65,40 +69,40 @@
 
             <div class="nav-links">
 
-                <a href="index.html"
-                   data-lang-en="Home"
-                   data-lang-fr="Accueil">
-                   Home
+                <a href="index.html">
+                    <i class="fa-solid fa-house"></i>
+                   <span data-lang-en="Home"
+                   data-lang-fr="Accueil">Home</span>
                 </a>
 
-                <a href="about.html"
-                   data-lang-en="About"
-                   data-lang-fr="À propos">
-                   About
+                <a href="about.html">
+                    <i class="fa-solid fa-circle-info"></i>
+                   <span data-lang-en="About"
+                   data-lang-fr="À propos">About</span>
                 </a>
 
-                <a href="services.html"
-                   data-lang-en="Services"
-                   data-lang-fr="Services">
-                   Services
+                <a href="services.html">
+                    <i class="fa-solid fa-gears"></i>
+                   <span data-lang-en="Services"
+                   data-lang-fr="Services">Services</span>
                 </a>
 
-                <a href="products.html"
-                   data-lang-en="Tools"
-                   data-lang-fr="Outils">
-                   Tools
+                <a href="products.html">
+                    <i class="fa-solid fa-toolbox"></i>
+                   <span data-lang-en="Tools"
+                   data-lang-fr="Outils">Tools</span>
                 </a>
 
-                <a href="pricing.html"
-                   data-lang-en="Pricing"
-                   data-lang-fr="Tarification">
-                   Pricing
+                <a href="pricing.html">
+                    <i class="fa-solid fa-tags"></i>
+                   <span data-lang-en="Pricing"
+                   data-lang-fr="Tarification">Pricing</span>
                 </a>
 
-                <a href="contact.html"
-                   data-lang-en="Contact"
-                   data-lang-fr="Contact">
-                   Contact
+                <a href="contact.html" class="active">
+                    <i class="fa-solid fa-envelope"></i>
+                   <span data-lang-en="Contact"
+                   data-lang-fr="Contact">Contact</span>
                 </a>
 
             </div>
@@ -140,37 +144,45 @@
 
         <!-- Contact Title -->
         <h1
-            data-lang-en="Contact Us"
-            data-lang-fr="Contactez-nous">
-            Contact Us
+            data-lang-en="Let's Discuss Your Automation Project"
+            data-lang-fr="Discutons de votre projet d'automatisation">
+            Let's Discuss Your Automation Project
         </h1>
 
         <!-- Contact Description -->
         <p
-            data-lang-en="Have a project, automation idea or business solution in mind? Get in touch with AutomateSuite."
-            data-lang-fr="Vous avez un projet, une idée d'automatisation ou une solution business en tête ? Contactez AutomateSuite.">
+            data-lang-en="Have a project, AI automation idea, CRM workflow or business solution in mind? Contact AutomateSuite today."
+            data-lang-fr="Vous avez un projet, une idée d'automatisation IA, un flux de travail CRM ou une solution d'entreprise en tête ? Contactez AutomateSuite dès aujourd'hui.">
             
-            Have a project, automation idea or business solution in mind? Get in touch with AutomateSuite.
+            Have a project, AI automation idea, CRM workflow or business solution in mind? Contact AutomateSuite today.
         </p>
 
         <!-- Contact Form -->
         <form id="contact-form">
 
             <!-- Name -->
+            <label for="user_name"
+            data-lang-en="Name"
+            data-lang-fr="Nom">Name</label>
             <input
+            id="user_name"
             type="text"
             name="user_name"
             placeholder="Max Well"
-            data-placeholder-en="Max Well"
-            data-placeholder-fr="Jean Dupont">
+            autocomplete="name"
+            required>
 
             <!-- Email -->
+            <label for="user_email"
+            data-lang-en="Email"
+            data-lang-fr="Adresse e-mail">Email</label>
             <input
+            id="user_email"
             type="email"
             name="user_email"
             placeholder="example@email.com"
-            data-placeholder-en="example@email.com"
-            data-placeholder-fr="exemple@email.com">
+            autocomplete="email"
+            required>
 
             <input 
             type="hidden"
@@ -182,21 +194,22 @@
             name="SelectedSolution"
             value="Contact Page">
 
-            <!-- Message -->
             <textarea
-            rows="5"
+            id="message"
             name="message"
-            placeholder="Write your message..."
-            data-placeholder-en="Write your message..."
-            data-placeholder-fr="Écrivez votre message..."></textarea>
+            rows="5"
+            required
+            placeholder="Leave your message..."
+            data-placeholder-en="Describe your project..."
+            data-placeholder-fr="Décrivez votre projet..."></textarea>
 
             <!-- Submit Button -->
             <button
             type="submit"
             class="submit-btn"
-            data-lang-en="Send Message"
-            data-lang-fr="Envoyer le message">
-            Send Message
+            data-lang-en="Discuss My Project"
+            data-lang-fr="Discuter de mon projet">
+            Discuss My Project
             </button>
 
         </form>
@@ -411,7 +424,7 @@
     "@type":"ContactPage",
     "@id":"https://automatesuite.io/contact.html#webpage",
     "url":"https://automatesuite.io/contact.html",
-    "name":"Contact AutomateSuite",
+    "name":"Let's Discuss Your Automation Project",
     "description":"Contact AutomateSuite to discuss automation projects, AI workflows and business solutions.",
     "inLanguage":[
         "en",

@@ -483,6 +483,15 @@ textarea:focus {
     color: var(--text-color);
 }
 
+.nav-links a.active {
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+}
+
+ .nav-links i {
+    display: none;
+    }
+
 /* =========================
    MENU CONTROLS
 ========================= */
@@ -768,6 +777,18 @@ button {
 
     .nav-links a {
         font-size: 1.2rem;
+    }
+
+    .nav-links a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    }
+
+    .nav-links i {
+        display: inline-block;
+        width: 20px;
     }
 
     /* Controls inside drawer */
@@ -3465,6 +3486,12 @@ body.light-mode .pricing-service-label {
 
     }
 
+}
+
+body.menu-open .sticky-services-btn,
+body.menu-open .back-to-top-btn,
+body.menu-open .pricing-toggle-nav {
+    display: none;
 }
 
 /* =========================
