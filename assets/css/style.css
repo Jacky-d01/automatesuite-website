@@ -3580,20 +3580,14 @@ body.menu-open .pricing-toggle-nav {
 
 /* Mobile */
 
-@media (max-width: 768px) {
+@media (max-width:768px){
 
-    .pricing-toggle-nav {
+    .pricing-toggle-nav{
 
-        position: fixed;
+        top: 99px;
+        right: -7px;
 
-        top: 102px;
-
-        right: 10px;
-
-        bottom: auto;
-
-        z-index: 1000;
-
+        transform: scale(0.85);
     }
 
 }
@@ -4253,4 +4247,21 @@ body.light-mode .selected-plan-box {
 
     color: var(--text-secondary);
 
+}
+
+.solution-icon {
+
+    font-size: 2rem;
+
+    margin-bottom: 10px;
+
+    color: var(--primary);
+
+}
+
+.form-security-note{
+    font-size:0.85rem;
+    opacity:0.8;
+    margin-top:15px;
+    text-align:center;
 }

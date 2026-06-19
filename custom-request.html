@@ -9,6 +9,18 @@
 <meta name="viewport"
       content="width=device-width, initial-scale=1.0">
 
+<meta
+name="description"
+content="Request a custom automation solution tailored to your business. Tell AutomateSuite about your goals, budget and timeline.">
+
+<link
+rel="canonical"
+href="https://automatesuite.io/custom-request.html">
+
+<meta
+name="robots"
+content="noindex, follow">      
+
 <title>Custom Automation Setup | AutomateSuite</title>
 
 <link rel="stylesheet"
@@ -72,6 +84,14 @@
             data-lang-fr="Parlez-nous de votre activité et de vos objectifs d'automatisation. Nous étudierons votre demande et reviendrons vers vous rapidement.">
 
             Tell us about your business and automation goals.
+
+        </p>
+
+        <p class="form-reassurance"
+            data-lang-en="No commitment required. We'll review your project and recommend the most suitable solution."
+            data-lang-fr="Aucun engagement requis. Nous analyserons votre projet et vous recommanderons la solution la plus adaptée.">
+
+            No commitment required. We'll review your project and recommend the most suitable solution.
 
         </p>
 
@@ -211,6 +231,25 @@
                 Education
 
                 </option>
+
+                <option
+                data-lang-en="SaaS"
+                data-lang-fr="SaaS">
+                SaaS
+                </option>
+
+                <option
+                data-lang-en="Professional Services"
+                data-lang-fr="Services professionnels">
+                Professional Services
+                </option>
+
+                <option
+                data-lang-en="Financial Services"
+                data-lang-fr="Services financiers">
+                Financial Services
+                </option>
+
                 <option
                 data-lang-en="Other"
                 data-lang-fr="Autre">
@@ -514,6 +553,7 @@
         </option>
 
         </select>
+        </div>
             
 
         <!-- REQUIREMENTS -->
@@ -571,6 +611,12 @@
             Request My Custom Solution
 
         </button>
+
+        <p class="form-security-note"
+            data-lang-en="Your information is used only to respond to your request and is handled in accordance with our Privacy Policy."
+            data-lang-fr="Vos informations sont utilisées uniquement pour traiter votre demande et sont gérées conformément à notre Politique de confidentialité.">
+            Your information is used only to respond to your request and is handled in accordance with our Privacy Policy.
+        </p>
 
     </form>
 
@@ -705,11 +751,20 @@ document
 
     .catch(function(error) {
 
-        console.error(error);
+    console.error(error);
 
-        alert(
-            "An error occurred while sending your request."
-        );
+    submitBtn.disabled = false;
+
+    submitBtn.textContent =
+    currentLanguage === "fr"
+    ? "Demander ma solution sur mesure"
+    : "Request My Custom Solution";
+
+    alert(
+        currentLanguage === "fr"
+        ? "Une erreur est survenue lors de l'envoi."
+        : "An error occurred while sending your request."
+    );
 
     });
 
@@ -726,6 +781,18 @@ if(savedTheme === "light") {
         "light-mode"
     );
 
+}
+</script>
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"WebPage",
+"@id":"https://automatesuite.io/custom-request.html#webpage",
+"url":"https://automatesuite.io/custom-request.html",
+"name":"Custom Automation Setup | AutomateSuite",
+"isPartOf":{
+"@id":"https://automatesuite.io/#website"
+}
 }
 </script>
 </body>
