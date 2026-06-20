@@ -2054,7 +2054,7 @@ section,
 
     display: grid;
 
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
 
     gap: 40px;
 
@@ -4264,4 +4264,85 @@ body.light-mode .selected-plan-box {
     opacity:0.8;
     margin-top:15px;
     text-align:center;
+}
+
+.legal-hero{
+
+
+padding:120px 0 80px;
+text-align:center;
+
+
+}
+
+.legal-content{
+
+
+padding:80px 0;
+
+
+}
+
+.legal-section{
+
+
+margin-bottom:50px;
+
+
+}
+
+.legal-section h2{
+
+
+margin-bottom:15px;
+
+
+}
+
+.legal-section p{
+
+
+margin-bottom:15px;
+line-height:1.8;
+
+
+}
+
+.legal-section ul{
+
+
+padding-left:20px;
+line-height:1.8;
+
+
+}
+
+.legal-section li{
+
+
+margin-bottom:10px;
+
+
+}
+
+.form-disclaimer a {
+
+    color: #7c4dff;
+
+    font-weight: 600;
+
+    text-decoration: underline;
+
+    text-underline-offset: 3px;
+
+    transition: all 0.3s ease;
+
+}
+
+.form-disclaimer a:hover {
+
+    color: #9b6dff;
+
+    text-decoration-thickness: 2px;
+
 }
