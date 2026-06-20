@@ -1,5 +1,3 @@
-console.log("SCRIPT START");
-
 function setLanguage(language) {
 
     localStorage.setItem("language", language);
@@ -485,16 +483,9 @@ window.addEventListener("load", () => {
 const compareButtons =
 document.querySelectorAll(".compare-btn");
 
-console.log("Buttons found:", compareButtons.length);
-
 compareButtons.forEach(button => {
 
     button.addEventListener("click", () => {
-
-        console.log(
-            "Clicked:",
-            button.dataset.target
-        );
 
         compareButtons.forEach(btn =>
             btn.classList.remove("active")
@@ -512,8 +503,6 @@ compareButtons.forEach(button => {
         document.getElementById(
             button.dataset.target + "-view"
         );
-
-        console.log(target);
 
         target.classList.add("active");
 
