@@ -4346,3 +4346,15 @@ margin-bottom:10px;
     text-decoration-thickness: 2px;
 
 }
+
+.inline-link {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: all 0.3s ease;
+}
+
+.inline-link:hover {
+    opacity: 0.8;
+}
