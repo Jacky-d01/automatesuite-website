@@ -2945,6 +2945,12 @@ section,
 
 }
 
+.services-pricing-cta{
+    display:flex;
+    justify-content:center;
+    margin-top:2rem;
+}
+
 /* =========================
    PRICING SECTION
 ========================= */
