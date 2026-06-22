@@ -443,6 +443,35 @@ textarea:focus {
     opacity: 0.8;
 }
 
+.logo{
+    display:flex;
+    align-items:center;
+    gap:0.1rem;
+}
+
+.logo-icon{
+    width:64px;
+    height:64px;
+    object-fit:contain;
+}
+
+.footer-brand-header{
+    display:flex;
+    align-items:center;
+    gap:0.75rem;
+    margin-bottom:1rem;
+}
+
+.footer-logo-icon{
+    width:32px;
+    height:32px;
+    flex-shrink:0;
+}
+
+.footer-logo{
+    margin:0;
+}
+
 /* =========================
    NAV MENU
 ========================= */
@@ -933,6 +962,12 @@ button {
     color: var(--text-secondary);
     line-height: 1.8;
     text-align: center;
+}
+
+.faq-container .accordion-content p{
+    max-width:none;
+    margin:0;
+    text-align:left;
 }
 
 .service-description-box{
