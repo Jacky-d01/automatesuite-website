@@ -632,6 +632,58 @@ textarea:focus {
     margin-bottom: 30px;
 }
 
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
+
+.hero-visual{
+    margin-top:40px;
+    display:flex;
+    justify-content:center;
+}
+
+.hero-image{
+    width:100%;
+    max-width:700px;
+    height:auto;
+}
+
+@media (max-width: 768px) {
+
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-image {
+        max-width: 450px;
+    }
+
+}
+
 /* =========================
    GLOBAL SECTION SPACING
 ========================= */
