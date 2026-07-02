@@ -546,18 +546,24 @@ textarea:focus {
    LANGUAGE SELECTOR
 ========================= */
 
-.language-selector {
+.language-selector{
 
-    display: flex;
-    align-items: center;
+    display:flex;
 
-    gap: 8px;
+    align-items:center;
 
-    font-size: 0.95rem;
-    font-weight: 500;
+    gap:6px;
 
-    color: var(--text-secondary);
-    white-space: nowrap;
+    white-space:nowrap;
+
+    color:var(--text-secondary);
+
+}
+
+.language-selector span{
+
+    opacity:.5;
+
 }
 
 .language-selector span {
@@ -569,6 +575,36 @@ textarea:focus {
 
 .language-selector span:hover {
     color: var(--text-color);
+}
+
+.language-btn{
+
+    background:none;
+
+    border:none;
+
+    padding:0;
+
+    margin:0;
+
+    font:inherit;
+
+    font-size:.85rem;
+
+    line-height:1;
+
+    color:inherit;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.language-btn:hover{
+
+    color:var(--primary-color);
+
 }
 
 /* =========================
@@ -613,7 +649,7 @@ textarea:focus {
 }
 
 .hero-main-image{
-    width:min(85vw, 1000px);
+    width:min(85vw, 1400px);
     height:auto;
 
     display:block;
@@ -768,8 +804,16 @@ button {
 
     /* Navbar */
 
-    .nav-container {
-        position: relative;
+    .nav-container{
+
+    position:relative;
+
+    display:grid;
+
+    grid-template-columns:auto 1fr auto;
+
+    align-items:center;
+
     }
 
     /* Hamburger */
@@ -886,11 +930,18 @@ button {
 
     /* Controls inside drawer */
 
-    .menu-controls {
+    .menu-controls{
 
-        width: 100%;
+    width:auto;
 
-        justify-content: flex-start;
+    justify-self:end;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
     }
 
     /* Hero */
@@ -925,8 +976,12 @@ button {
     gap: 8px;
     }
 
-    .language-selector {
-    font-size: 0.8rem;
+    .language-selector{
+
+    font-size:.75rem;
+
+    gap:4px;
+
     }
 }
 
@@ -2164,13 +2219,27 @@ section,
 
 /* Logo */
 
-.footer-logo {
+/* Footer Logo */
 
-    font-size: 1.8rem;
+.footer-logo{
 
-    color: var(--primary-color);
+    display:inline-block;
 
-    margin-bottom: 20px;
+    color:var(--text-color);
+
+    text-decoration:none;
+
+    font-size:1.9rem;
+    font-weight:700;
+
+    transition:color .25s ease;
+
+}
+
+.footer-logo:hover{
+
+    color:var(--primary-color);
+
 }
 
 /* Titles */
@@ -3045,9 +3114,29 @@ section,
 }
 
 .services-pricing-cta{
+
     display:flex;
+
     justify-content:center;
-    margin-top:2rem;
+
+    align-items:center;
+
+    gap:20px;
+
+    margin-top:40px;
+
+    flex-wrap:wrap;
+
+}
+
+.secondary-button{
+
+    background:transparent !important;
+
+    border:2px solid var(--primary-color);
+
+    color:var(--primary-color) !important;
+
 }
 
 /* =========================
@@ -4608,5 +4697,43 @@ margin-bottom:10px;
         width:100%;
         max-width:100%;
     }
+
+}
+
+.newsletter-note{
+
+    margin-top:15px;
+
+    text-align:center;
+
+    font-size:.9rem;
+
+    color:var(--text-secondary);
+
+    opacity:.8;
+
+}
+
+.workflow-icon{
+
+    font-size:2rem;
+
+    color:var(--primary-color);
+
+    margin:18px 0;
+
+    text-align:center;
+
+}
+
+.workflow-icon i{
+
+    transition:.3s;
+
+}
+
+.feature-card:hover .workflow-icon i{
+
+    transform:scale(1.1);
 
 }

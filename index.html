@@ -128,9 +128,27 @@
 
             <div class="language-selector">
 
-                <span onclick="setLanguage('en')">EN</span>
+                <button
+                type="button"
+                class="language-btn"
+                onclick="setLanguage('en')"
+                aria-label="Switch language to English">
+
+                EN
+
+                </button>
+
                 <span>|</span>
-                <span onclick="setLanguage('fr')">FR</span>
+
+                <button
+                type="button"
+                class="language-btn"
+                onclick="setLanguage('fr')"
+                aria-label="Passer le site en français">
+
+                FR
+
+                </button>
 
             </div>
 
@@ -179,10 +197,10 @@
             </h1>
 
             <p
-                data-lang-en="We design AI-powered automation systems that help businesses automate communication, optimize CRM workflows and improve operational efficiency."
+                data-lang-en="We help businesses automate workflows, optimize CRM processes and scale faster with AI-powered automation solutions."
                 data-lang-fr="Nous concevons des systèmes d'automatisation alimentés par l'IA qui aident les entreprises à automatiser la communication, optimiser les workflows CRM et améliorer leur efficacité opérationnelle.">
 
-                We design AI-powered automation systems that help businesses automate communication, optimize CRM workflows and improve operational efficiency.
+                We help businesses automate workflows, optimize CRM processes and scale faster with AI-powered automation solutions.
 
             </p>
 
@@ -335,6 +353,10 @@
 
                 <div class="workflow-number">01</div>
 
+                <div class="workflow-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+
                 <h3
                 data-lang-en="Analyze"
                 data-lang-fr="Analyser">
@@ -354,6 +376,10 @@
             <div class="workflow-card reveal delay-2">
 
                 <div class="workflow-number">02</div>
+
+                <div class="workflow-icon">
+                    <i class="fa-solid fa-gears"></i>
+                </div>
 
                 <h3
                 data-lang-en="Automate"
@@ -375,6 +401,10 @@
 
                 <div class="workflow-number">03</div>
 
+                <div class="workflow-icon">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+
                 <h3
                 data-lang-en="Optimize"
                 data-lang-fr="Optimiser">
@@ -394,6 +424,10 @@
             <div class="workflow-card reveal delay-4">
 
                 <div class="workflow-number">04</div>
+
+                <div class="workflow-icon">
+                    <i class="fa-solid fa-rocket"></i>
+                </div>
 
                 <h3
                 data-lang-en="Scale"
@@ -431,9 +465,9 @@
             </span>
 
             <h2
-            data-lang-en="Ready To Automate Your Business?"
-            data-lang-fr="Prêt à automatiser votre entreprise ?">
-            Ready To Automate Your Business?
+            data-lang-en="Ready to Build Smarter Business Workflows?"
+            data-lang-fr="Prêt à créer des flux de travail plus intelligents ?">
+            Ready to Build Smarter Business Workflows?
             </h2>
 
             <p
@@ -456,7 +490,7 @@
 
                 <a
                 href="services.html"
-                class="hero-button"
+                class="hero-button secondary-button"
                 data-lang-en="Explore Services"
                 data-lang-fr="Découvrir les services">
                 Explore Services
@@ -638,6 +672,12 @@
 
             </form>
 
+            <p class="newsletter-note"
+            data-lang-en="No spam. Unsubscribe anytime."
+            data-lang-fr="Pas de spam. Désinscrivez-vous à tout moment.">
+                No spam. Unsubscribe anytime.
+            </p>
+
         </div>
 
     </div>
@@ -652,7 +692,7 @@
 
 <section class="home-seo-section">
 
-    <div class="container">
+    <div class="container reveal">
 
         <p data-lang-en="AutomateSuite helps businesses automate repetitive tasks, improve operational efficiency and scale through AI-powered workflows, CRM automation, customer communication systems and custom business automation solutions."
         data-lang-fr="AutomateSuite aide les entreprises à automatiser les tâches répétitives, améliorer leur efficacité opérationnelle et se développer grâce aux workflows alimentés par l'IA, à l'automatisation CRM, aux systèmes de communication client et aux solutions d'automatisation sur mesure.">
@@ -852,9 +892,12 @@
             <!-- Brand -->
             <div class="footer-column">
 
-                <h3 class="footer-logo">
-                    AutomateSuite
-                </h3>
+                <a href="index.html"
+                class="footer-logo">
+
+                AutomateSuite
+
+                </a>
 
                 <p
                 data-lang-en="Automation systems, AI integrations and scalable SaaS solutions for modern businesses."
@@ -920,26 +963,29 @@
                 Services
                 </h4>
 
-                <p
+                <a href="whatsapp-trigger.html"
                 data-lang-en="WhatsApp Automation"
-                data-lang-fr="Automatisation de WhatsApp">
+                data-lang-fr="Automatisation WhatsApp">
                 WhatsApp Automation
-                </p>
-                <p
-                data-lang-en="AI Workflows"
-                data-lang-fr="Flux de travail IA">
-                AI Workflows
-                </p>
-                <p
-                data-lang-en="CRM Automation"
-                data-lang-fr="Automatisation des CRM">
-                CRM Automation
-                </p>
-                <p
-                data-lang-en="Business Automation"
-                data-lang-fr="Automatisation des opérations">
-                Business Automation
-                </p>
+                </a>
+
+                <a href="ai-lead-enrichment.html"
+                data-lang-en="AI Lead Enrichment"
+                data-lang-fr="Enrichissement des Leads par l'IA">
+                AI Lead Enrichment
+                </a>
+
+                <a href="support-email-triage.html"
+                data-lang-en="AI Support Email Triage"
+                data-lang-fr="Tri des Emails Support par l'IA">
+                AI Support Email Triage
+                </a>
+
+                <a href="services.html"
+                data-lang-en="View All Services"
+                data-lang-fr="Voir Tous Les Services">
+                View All Services
+                </a>
 
             </div>
 
@@ -952,21 +998,29 @@
                 Tools In Development
                 </h4>
 
-                <p
+                <a href="tools.html#whatsapp-expiration-trigger"
                 data-lang-en="WhatsApp Expiration Trigger"
-                data-lang-fr="Déclencheur d'expiration WhatsApp">
+                data-lang-fr="Déclencheur d'Expiration WhatsApp">
                 WhatsApp Expiration Trigger
-                </p>
-                <p
-                data-lang-en="AI Lead Enrichment"
-                data-lang-fr="Enrichissement des prospects par l'IA">
-                AI Lead Enrichment
-                </p>
-                <p
-                data-lang-en="Support Email Triage"
-                data-lang-fr="Tri Email Support">
-                Support Email Triage
-                </p>
+                </a>
+
+                <a href="tools.html#ai-lead-enrichment-pipeline"
+                data-lang-en="AI Lead Enrichment Pipeline"
+                data-lang-fr="Pipeline d'Enrichissement IA">
+                AI Lead Enrichment Pipeline
+                </a>
+
+                <a href="tools.html#support-email-triage-system"
+                data-lang-en="Support Email Triage System"
+                data-lang-fr="Système de Tri des Emails Support">
+                Support Email Triage System
+                </a>
+
+                <a href="tools.html"
+                data-lang-en="View All Tools"
+                data-lang-fr="Voir Tous Les Outils">
+                View All Tools
+                </a>
             </div>
 
             <!-- Contact -->
@@ -978,9 +1032,9 @@
                 Contact
                 </h4>
 
-                <p>
-                    hello@automatesuite.io
-                </p>
+                <a href="mailto:hello@automatesuite.io">
+                hello@automatesuite.io
+                </a>
 
                 <p
                 data-lang-en="Remote Services Worldwide"
