@@ -126,9 +126,27 @@
 
             <div class="language-selector">
 
-                <span onclick="setLanguage('en')">EN</span>
+                <button
+                type="button"
+                class="language-btn"
+                onclick="setLanguage('en')"
+                aria-label="Switch language to English">
+
+                EN
+
+                </button>
+
                 <span>|</span>
-                <span onclick="setLanguage('fr')">FR</span>
+
+                <button
+                type="button"
+                class="language-btn"
+                onclick="setLanguage('fr')"
+                aria-label="Passer le site en français">
+
+                FR
+
+                </button>
 
             </div>
 
@@ -163,9 +181,9 @@
 
         <!-- Contact Title -->
         <h1
-            data-lang-en="Let's Discuss Your Automation Project"
-            data-lang-fr="Discutons de votre projet d'automatisation">
-            Let's Discuss Your Automation Project
+            data-lang-en="Let's Discuss Your Business Automation Project"
+            data-lang-fr="Discutons de votre projet d'automatisation d'entreprise">
+            Let's Discuss Your Business Automation Project
         </h1>
 
         <!-- Contact Description -->
@@ -176,9 +194,9 @@
             Have a project, AI automation idea, CRM workflow or business solution in mind? Contact AutomateSuite today.
         </p>
         <p class="contact-reassurance"
-            data-lang-en="No commitment required. Tell us about your project and we'll recommend the most suitable solution."
-            data-lang-fr="Sans engagement. Décrivez-nous votre projet et nous vous recommanderons la solution la plus adaptée.">
-            No commitment required. Tell us about your project and we'll recommend the most suitable solution.
+            data-lang-en="No commitment. No hidden fees. Tell us about your project and we'll recommend the solution that best fits your business."
+            data-lang-fr="Sans engagement. Aucun frais caché. Décrivez-nous votre projet et nous vous recommanderons la solution la plus adaptée à votre entreprise.">
+            No commitment. No hidden fees. Tell us about your project and we'll recommend the solution that best fits your business.
         </p>
 
         <div class="contact-highlights">
@@ -246,14 +264,19 @@
             name="SelectedSolution"
             value="Contact Page">
 
+            <input
+            type="hidden"
+            name="sourcePage"
+            value="Contact">
+
             <textarea
             id="message"
             name="message"
             rows="5"
             required
             placeholder="Leave your message..."
-            data-placeholder-en="Describe your project..."
-            data-placeholder-fr="Décrivez votre projet..."></textarea>
+            data-placeholder-en="Tell us about your goals, current challenges or the automation you'd like to build..."
+            data-placeholder-fr="Décrivez vos objectifs, vos défis actuels ou l'automatisation que vous souhaitez mettre en place..."></textarea>
 
             <!-- Submit Button -->
             <button
