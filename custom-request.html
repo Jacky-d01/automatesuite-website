@@ -29,6 +29,9 @@ content="noindex, follow">
 <link rel="stylesheet"
       href="assets/css/style.css">
 
+<!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">      
+
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>      
 
 </head>
@@ -124,52 +127,67 @@ content="noindex, follow">
 
         <div class="form-group">
 
-            <label
-
+            <label>
+                <i class="fa-solid fa-user"></i>
+                <span
                 data-lang-en="Full Name"
                 data-lang-fr="Nom complet">
-
                 Full Name
-
+                </span>
             </label>
 
-            <input type="text"
-                   name="user_name"
-                   required>
+            <input
+            type="text"
+            name="user_name"
+            placeholder="John Smith"
+            data-placeholder-en="John Smith"
+            data-placeholder-fr="Jean Dupont"
+            autocomplete="name"
+            required>
 
         </div>
 
         <div class="form-group">
 
-            <label
-
+            <label>
+                <i class="fa-solid fa-envelope"></i>
+                <span
                 data-lang-en="Business Email"
                 data-lang-fr="Email professionnel">
-
                 Business Email
-
+                </span>
             </label>
 
-            <input type="email"
-                   name="user_email"
-                   required>
+            <input
+            type="email"
+            name="user_email"
+            placeholder="john@company.com"
+            data-placeholder-en="john@company.com"
+            data-placeholder-fr="jean@entreprise.fr"
+            autocomplete="email"
+            required>
 
         </div>
 
         <div class="form-group">
 
-            <label
-
+            <label>
+                <i class="fa-solid fa-building"></i>
+                <span
                 data-lang-en="Company Name"
                 data-lang-fr="Nom de l'entreprise">
-
                 Company Name
-
+                </span>
             </label>
 
-            <input type="text"
-                   name="company"
-                    required>
+            <input
+            type="text"
+            name="company"
+            placeholder="Acme Corporation"
+            data-placeholder-en="Acme Corporation"
+            data-placeholder-fr="Entreprise ABC"
+            autocomplete="organization"
+            required>
 
         </div>
 
@@ -177,13 +195,13 @@ content="noindex, follow">
 
         <div class="form-group">
 
-            <label
-
+            <label>
+                <i class="fa-solid fa-briefcase"></i>
+                <span
                 data-lang-en="Industry"
                 data-lang-fr="Secteur d'activité">
-
                 Industry
-
+                </span>
             </label>
 
             <select name="industry" required>
@@ -272,13 +290,13 @@ content="noindex, follow">
 
         <div class="form-group">
 
-            <label
-
+            <label>
+                <i class="fa-solid fa-users"></i>
+                <span
                 data-lang-en="Team Size"
                 data-lang-fr="Taille de l'équipe">
-
                 Team Size
-
+                </span>
             </label>
 
             <select name="teamSize" required>
@@ -328,12 +346,13 @@ content="noindex, follow">
 
         <div class="form-group">
 
-            <label
-            data-lang-en="Estimated Budget"
-            data-lang-fr="Budget estimé">
-
-            Estimated Budget
-
+            <label>
+                <i class="fa-solid fa-dollar-sign"></i>
+                <span
+                data-lang-en="Estimated Budget"
+                data-lang-fr="Budget estimé">
+                Estimated Budget
+                </span>
             </label>
 
         <select name="budget" required>
@@ -384,12 +403,13 @@ content="noindex, follow">
 
         <div class="form-group">
 
-        <label
-        data-lang-en="Desired Timeline"
-        data-lang-fr="Délai souhaité">
-
-        Desired Timeline
-
+        <label>
+            <i class="fa-solid fa-calendar-days"></i>
+            <span
+            data-lang-en="Desired Timeline"
+            data-lang-fr="Délai souhaité">
+            Desired Timeline
+            </span>
         </label>
 
         <select name="timeline" required>
@@ -440,12 +460,13 @@ content="noindex, follow">
         
         <div class="form-group">
 
-        <label
-        data-lang-en="Current Challenge"
-        data-lang-fr="Défi Principal">
-
-        Current Challenge
-
+        <label>
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span
+            data-lang-en="Current Challenge"
+            data-lang-fr="Défi principal">
+            Current Challenge
+            </span>
         </label>
 
         <select name="challenge">
@@ -507,11 +528,13 @@ content="noindex, follow">
         </div>
 
         <div class="form-group">
-        <label
-        data-lang-en="Expected Outcome"
-        data-lang-fr="Résultat Attendu">
-
-        Expected Outcome
+        <label>
+            <i class="fa-solid fa-bullseye"></i>
+            <span
+            data-lang-en="Expected Outcome"
+            data-lang-fr="Résultat attendu">
+            Expected Outcome
+            </span>
         </label>
 
         <select name="expectedOutcome">
@@ -568,13 +591,13 @@ content="noindex, follow">
 
         <div class="form-group">
 
-            <label
-
+            <label>
+                <i class="fa-solid fa-robot"></i>
+                <span
                 data-lang-en="Describe Your Automation Project"
-                data-lang-fr="Décrivez votre Projet d'Automatisation">
-
+                data-lang-fr="Décrivez votre projet d'automatisation">
                 Describe Your Automation Project
-
+                </span>
             </label>
 
             <textarea
@@ -589,13 +612,13 @@ content="noindex, follow">
 
         <div class="form-group">
 
-            <label
-
+            <label>
+                <i class="fa-solid fa-toolbox"></i>
+                <span
                 data-lang-en="Current Tools & Software (Optional)"
                 data-lang-fr="Outils et logiciels actuels (Optionnel)">
-
                 Current Tools & Software (Optional)
-
+                </span>
             </label>
 
             <textarea
