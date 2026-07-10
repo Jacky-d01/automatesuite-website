@@ -23,6 +23,8 @@
 
 <body>
 
+<main>
+
 <!-- FORM SECTION -->
 
 <section class="request-setup-section">
@@ -81,7 +83,7 @@
 
     <!-- FORM -->
 
-    <form id="setupForm">
+    <form id="setupForm" aria-label="Product consultation request form">
 
         <!-- Hidden field -->
 
@@ -498,6 +500,8 @@
 
 </section>
 
+</main>
+
 <footer>
 
 <p>
@@ -600,11 +604,22 @@ document
 
     .catch(function(error) {
 
-        console.error(error);
+    console.error(error);
 
-        alert(
-            "An error occurred while sending your request."
-        );
+    // Re-enable the button
+    submitBtn.disabled = false;
+
+    // Restore the original button text
+    submitBtn.textContent =
+        currentLanguage === "fr"
+        ? "Demander une consultation"
+        : "Request Consultation";
+
+    alert(
+        currentLanguage === "fr"
+        ? "Une erreur est survenue lors de l'envoi de votre demande."
+        : "An error occurred while sending your request."
+    );
 
     });
 

@@ -47,6 +47,8 @@ content="website">
 
 <body>
 
+<main>
+
 <!-- FORM SECTION -->
 
 <section class="request-setup-section">
@@ -135,7 +137,7 @@ content="website">
 
     <!-- FORM -->
 
-    <form id="setupForm">
+    <form id="setupForm"  aria-label="Automation setup request form">
 
         <!-- Hidden field -->
 
@@ -460,6 +462,8 @@ content="website">
 
 </section>
 
+</main>
+
 <footer>
 
 <p>
@@ -479,10 +483,6 @@ params.get("plan");
 
 const service =
 params.get("service");
-
-console.log("PLAN =", plan);
-console.log("SERVICE =", service);
-console.log("URL =", window.location.href);
 
 const tier =
 params.get("tier");
@@ -755,11 +755,20 @@ document
 
     .catch(function(error) {
 
-        console.error(error);
+    console.error(error);
 
-        alert(
-            "An error occurred while sending your request."
-        );
+    submitBtn.disabled = false;
+
+    submitBtn.textContent =
+        currentLanguage === "fr"
+        ? "Demander la configuration"
+        : "Request Setup";
+
+    alert(
+        currentLanguage === "fr"
+        ? "Une erreur est survenue lors de l'envoi de votre demande."
+        : "An error occurred while sending your request."
+    );
 
     });
 
