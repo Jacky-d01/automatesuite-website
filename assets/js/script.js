@@ -50,10 +50,101 @@ function setLanguage(language) {
 
 }
 
+function getCurrentLanguage() {
+
+    return localStorage.getItem("language") || "en";
+
+}
+
+function setSubmitState(button, disabled, text) {
+
+    if(!button) return;
+
+    button.disabled = disabled;
+    button.textContent = text;
+
+}
+
+function updateActiveAccordionHeights(selector) {
+
+    document
+    .querySelectorAll(selector)
+    .forEach((content) => {
+
+        content.style.maxHeight =
+        content.scrollHeight + "px";
+
+    });
+
+}
+
+function initializeAccordionGroup(selector) {
+
+    const accordions =
+    document.querySelectorAll(selector);
+
+    if (accordions.length === 0) return;
+
+    accordions[0].classList.add("active");
+
+    const firstContent =
+    accordions[0].querySelector(".accordion-content");
+
+    if(firstContent) {
+
+        firstContent.style.maxHeight =
+        firstContent.scrollHeight + "px";
+
+    }
+
+    accordions.forEach((accordion) => {
+
+        const header =
+        accordion.querySelector(".accordion-header");
+
+        const content =
+        accordion.querySelector(".accordion-content");
+
+        if(!header || !content) return;
+
+        header.addEventListener("click", () => {
+
+            const isActive =
+            accordion.classList.contains("active");
+
+            accordions.forEach((item) => {
+
+                item.classList.remove("active");
+
+                const itemContent =
+                item.querySelector(".accordion-content");
+
+                if(itemContent) {
+
+                    itemContent.style.maxHeight = null;
+
+                }
+
+            });
+
+            if (!isActive) {
+
+                accordion.classList.add("active");
+
+                content.style.maxHeight =
+                content.scrollHeight + "px";
+            }
+
+        });
+
+    });
+
+}
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const savedLanguage =
-        localStorage.getItem("language") || "en";
+        getCurrentLanguage();
 
     setLanguage(savedLanguage);
 
@@ -66,50 +157,48 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-});
+    const themeToggle =
+    document.getElementById("theme-toggle");
 
-const themeToggle =
-document.getElementById("theme-toggle");
+    if(themeToggle) {
 
-if(themeToggle) {
+        themeToggle.addEventListener("click", () => {
 
-    themeToggle.addEventListener("click", () => {
-
-        document.body.classList.toggle(
-            "light-mode"
-        );
-
-        if(document.body.classList.contains(
-            "light-mode"
-        )) {
-
-            themeToggle.textContent = "🌙";
-
-            localStorage.setItem(
-                "theme",
-                "light"
+            document.body.classList.toggle(
+                "light-mode"
             );
 
-        } else {
+            if(document.body.classList.contains(
+                "light-mode"
+            )) {
 
-            themeToggle.textContent = "☀️";
+                themeToggle.textContent = "🌙";
 
-            localStorage.setItem(
-                "theme",
-                "dark"
-            );
+                localStorage.setItem(
+                    "theme",
+                    "light"
+                );
 
-        }
+            } else {
 
-    });
+                themeToggle.textContent = "☀️";
 
-}
+                localStorage.setItem(
+                    "theme",
+                    "dark"
+                );
 
-document.addEventListener("DOMContentLoaded", () => {
+            }
+
+        });
+
+    }
 
     const hamburger = document.getElementById("hamburger");
     const navMenu = document.getElementById("nav-menu");
     const menuOverlay = document.getElementById("menu-overlay");
+
+    if(!hamburger || !navMenu || !menuOverlay) return;
 
     /* Open / Close Menu */
 
@@ -127,7 +216,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         navMenu.classList.remove("active");
         menuOverlay.classList.remove("active");
-        document.body.classList.toggle("menu-open");
+        document.body.classList.remove("menu-open");
 
     });
 
@@ -141,6 +230,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             navMenu.classList.remove("active");
             menuOverlay.classList.remove("active");
+            document.body.classList.remove("menu-open");
 
         });
 
@@ -156,9 +246,9 @@ const reveals = document.querySelectorAll(".reveal");
 
 function revealSections() {
 
-    reveals.forEach((section) => {
+    const windowHeight = window.innerHeight;
 
-        const windowHeight = window.innerHeight;
+    reveals.forEach((section) => {
 
         const revealTop = section.getBoundingClientRect().top;
 
@@ -174,7 +264,7 @@ function revealSections() {
 
 }
 
-window.addEventListener("scroll", revealSections);
+window.addEventListener("scroll", revealSections, { passive: true });
 
 /* Initial Check */
 
@@ -198,17 +288,18 @@ if (typeof emailjs !== "undefined") {
             e.preventDefault();
 
             const currentLang =
-            localStorage.getItem("language") || "en";
+            getCurrentLanguage();
 
             const submitBtn =
             contactForm.querySelector("button[type='submit']");
 
-            submitBtn.disabled = true;
-
-            submitBtn.textContent =
-            currentLang === "fr"
-            ? "Envoi en cours..."
-            : "Sending...";
+            setSubmitState(
+                submitBtn,
+                true,
+                currentLang === "fr"
+                ? "Envoi en cours..."
+                : "Sending..."
+            );
 
             emailjs.sendForm(
                 "service_fnchujr",
@@ -219,7 +310,7 @@ if (typeof emailjs !== "undefined") {
             .then(() => {
 
                 const currentLang =
-                localStorage.getItem("language") || "en";
+                getCurrentLanguage();
 
                 window.location.href =
                 `contact-success.html?lang=${currentLang}`;
@@ -231,6 +322,14 @@ if (typeof emailjs !== "undefined") {
             .catch((error) => {
 
                 console.error(error);
+
+                setSubmitState(
+                    submitBtn,
+                    false,
+                    currentLang === "fr"
+                    ? "Discuter de mon projet"
+                    : "Discuss My Project"
+                );
 
             });
 
@@ -256,17 +355,18 @@ if (typeof emailjs !== "undefined") {
             e.preventDefault();
 
             const currentLang =
-            localStorage.getItem("language") || "en";
+            getCurrentLanguage();
 
             const submitBtn =
             newsletterForm.querySelector("button[type='submit']");
 
-            submitBtn.disabled = true;
-
-            submitBtn.textContent =
-            currentLang === "fr"
-            ? "Inscription..."
-            : "Subscribing...";
+            setSubmitState(
+                submitBtn,
+                true,
+                currentLang === "fr"
+                ? "Inscription..."
+                : "Subscribing..."
+            );
 
             emailjs.sendForm(
                 "service_fnchujr",
@@ -283,27 +383,32 @@ if (typeof emailjs !== "undefined") {
                 document.getElementById("notification-message");
 
                 const currentLang =
-                localStorage.getItem("language") || "en";
+                getCurrentLanguage();
 
-                message.textContent =
-                currentLang === "fr"
-                ? "Votre inscription a été enregistrée. Vous recevrez les prochaines mises à jour dès leur publication."
-                : "Your subscription has been recorded. You'll receive updates whenever new content becomes available.";
+                if(notification && message) {
 
-                notification.classList.add("show");
+                    message.textContent =
+                    currentLang === "fr"
+                    ? "Votre inscription a été enregistrée. Vous recevrez les prochaines mises à jour dès leur publication."
+                    : "Your subscription has been recorded. You'll receive updates whenever new content becomes available.";
 
-                setTimeout(() => {
+                    notification.classList.add("show");
 
-                    notification.classList.remove("show");
+                    setTimeout(() => {
 
-                }, 5000);
+                        notification.classList.remove("show");
 
-                submitBtn.disabled = false;
+                    }, 5000);
 
-                submitBtn.textContent =
-                currentLang === "fr"
-                ? "S'abonner"
-                : "Subscribe";
+                }
+
+                setSubmitState(
+                    submitBtn,
+                    false,
+                    currentLang === "fr"
+                    ? "S'abonner"
+                    : "Subscribe"
+                );
 
                 newsletterForm.reset();
 
@@ -313,12 +418,13 @@ if (typeof emailjs !== "undefined") {
 
                 console.error(error);
 
-                submitBtn.disabled = false;
-
-                submitBtn.textContent =
-                currentLang === "fr"
-                ? "S'abonner"
-                : "Subscribe";
+                setSubmitState(
+                    submitBtn,
+                    false,
+                    currentLang === "fr"
+                    ? "S'abonner"
+                    : "Subscribe"
+                );
 
             });
 
@@ -328,155 +434,25 @@ if (typeof emailjs !== "undefined") {
 
 }
 
-const accordions =
-document.querySelectorAll(".service-accordion");
+initializeAccordionGroup(".service-accordion");
 
-/* Open first accordion by default */
-
-if (accordions.length > 0) {
-
-    accordions[0].classList.add("active");
-
-    const firstContent =
-    accordions[0].querySelector(".accordion-content");
-
-    firstContent.style.maxHeight =
-    firstContent.scrollHeight + "px";
-}
-
-accordions.forEach((accordion) => {
-
-    const header =
-    accordion.querySelector(".accordion-header");
-
-    const content =
-    accordion.querySelector(".accordion-content");
-
-    header.addEventListener("click", () => {
-
-        const isActive =
-        accordion.classList.contains("active");
-
-        /* Close all */
-
-        accordions.forEach((item) => {
-
-            item.classList.remove("active");
-
-            item.querySelector(
-                ".accordion-content"
-            ).style.maxHeight = null;
-
-        });
-
-        /* Reopen clicked one */
-
-        if (!isActive) {
-
-            accordion.classList.add("active");
-
-            content.style.maxHeight =
-            content.scrollHeight + "px";
-        }
-
-    });
-
-});
-
-const faqAccordions =
-document.querySelectorAll(".faq-accordion");
-
-/* Open first FAQ by default */
-
-if (faqAccordions.length > 0) {
-
-    faqAccordions[0].classList.add("active");
-
-    const firstContent =
-    faqAccordions[0].querySelector(
-        ".accordion-content"
-    );
-
-    firstContent.style.maxHeight =
-    firstContent.scrollHeight + "px";
-
-}
-
-faqAccordions.forEach((accordion) => {
-
-    const header =
-    accordion.querySelector(
-        ".accordion-header"
-    );
-
-    const content =
-    accordion.querySelector(
-        ".accordion-content"
-    );
-
-    header.addEventListener("click", () => {
-
-        const isActive =
-        accordion.classList.contains(
-            "active"
-        );
-
-        faqAccordions.forEach((item) => {
-
-            item.classList.remove(
-                "active"
-            );
-
-            item.querySelector(
-                ".accordion-content"
-            ).style.maxHeight = null;
-
-        });
-
-        if (!isActive) {
-
-            accordion.classList.add(
-                "active"
-            );
-
-            content.style.maxHeight =
-            content.scrollHeight + "px";
-
-        }
-
-    });
-
-});
+initializeAccordionGroup(".faq-accordion");
 
 /* Recalculate FAQ heights after page is fully rendered */
 
 window.addEventListener("load", () => {
 
-    document
-    .querySelectorAll(
+    updateActiveAccordionHeights(
         ".faq-accordion.active .accordion-content"
-    )
-    .forEach((content) => {
-
-        content.style.maxHeight =
-        content.scrollHeight + "px";
-
-    });
+    );
 
 });
 
 window.addEventListener("load", () => {
 
-    document
-    .querySelectorAll(
+    updateActiveAccordionHeights(
         ".service-accordion.active .accordion-content"
-    )
-    .forEach((content) => {
-
-        content.style.maxHeight =
-        content.scrollHeight + "px";
-
-    });
+    );
 
 });
 
@@ -504,6 +480,8 @@ compareButtons.forEach(button => {
             button.dataset.target + "-view"
         );
 
+        if(!target) return;
+
         target.classList.add("active");
 
     });
@@ -529,6 +507,6 @@ window.addEventListener("load", () => {
 
         }
 
-    });
+    }, { passive: true });
 
 });
