@@ -1,9 +1,4 @@
 User-agent: *
 Allow: /
 
-Disallow: /consultation-success.html
-Disallow: /contact-success.html
-Disallow: /custom-request-success.html
-Disallow: /setup-success.html
-
 Sitemap: https://automatesuite.io/sitemap.xml

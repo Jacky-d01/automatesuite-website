@@ -1,6 +1,7 @@
 function setLanguage(language) {
 
     localStorage.setItem("language", language);
+    document.documentElement.lang = language;
 
     /* translations here */
 
@@ -45,6 +46,18 @@ function setLanguage(language) {
             element.placeholder =
                 element.getAttribute("data-placeholder-en");
         }
+
+    });
+
+    window.requestAnimationFrame(() => {
+
+    updateActiveAccordionHeights(
+        ".faq-accordion.active .accordion-content"
+    );
+
+    updateActiveAccordionHeights(
+        ".service-accordion.active .accordion-content"
+    );
 
     });
 
@@ -362,14 +375,20 @@ if (typeof emailjs !== "undefined") {
 
             .catch((error) => {
 
-                console.error(error);
+                console.error("EmailJS contact error:", error);
 
                 setSubmitState(
                     submitBtn,
                     false,
                     currentLang === "fr"
-                    ? "Discuter de mon projet"
-                    : "Discuss My Project"
+                        ? "Discuter de mon projet"
+                        : "Discuss My Project"
+                );
+
+                alert(
+                    currentLang === "fr"
+                        ? "Une erreur est survenue lors de l'envoi. Veuillez réessayer ou nous contacter à hello@automatesuite.io."
+                        : "An error occurred while sending your message. Please try again or contact us at hello@automatesuite.io."
                 );
 
             });
@@ -457,15 +476,35 @@ if (typeof emailjs !== "undefined") {
 
             .catch((error) => {
 
-                console.error(error);
+                console.error("EmailJS newsletter error:", error);
 
                 setSubmitState(
                     submitBtn,
                     false,
                     currentLang === "fr"
-                    ? "S'abonner"
-                    : "Subscribe"
+                        ? "S'abonner"
+                        : "Subscribe"
                 );
+
+                const notification =
+                    document.getElementById("newsletter-notification");
+
+                const message =
+                    document.getElementById("notification-message");
+
+                if (notification && message) {
+
+                    message.textContent =
+                        currentLang === "fr"
+                            ? "L'inscription n'a pas pu être envoyée. Veuillez réessayer."
+                            : "Your subscription could not be submitted. Please try again.";
+
+                    notification.classList.add("show");
+
+                    setTimeout(() => {
+                        notification.classList.remove("show");
+                    }, 5000);
+                }
 
             });
 
