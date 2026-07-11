@@ -66,7 +66,7 @@
     <div class="nav-container">
 
         <!-- Logo -->
-        <a href="index.html" class="logo" area-label="AutomateSuite Home">
+        <a href="index.html" class="logo" aria-label="AutomateSuite Home">
             <img src="assets/images/logo-icon.svg"
                 alt="AutomateSuite AI Automation Platform"
                 class="logo-icon">
@@ -155,9 +155,15 @@
         </div>
 
         <!-- Hamburger -->
-        <div class="hamburger" id="hamburger">
-            ☰
-        </div>
+        <button
+            type="button" 
+            class="hamburger"
+            id="hamburger"
+            aria-label="Open navigation menu"
+            aria-controls="nav-menu"
+            aria-expanded="false">
+                ☰
+        </button>
 
         <!-- Overlay -->
         <div class="menu-overlay" id="menu-overlay"></div>
@@ -656,11 +662,24 @@
             about AI automations, SaaS tools and future product launches.
             </p>
 
-            <form class="newsletter-form">
+            <form
+                id="newsletter-form"
+                class="newsletter-form"
+                aria-label="Newsletter subscription form">
+
+                <label
+                    for="newsletter-email"
+                    class="visually-hidden"
+                    data-lang-en="Email address"
+                    data-lang-fr="Adresse e-mail">
+                    Email address
+                </label>
 
                 <input
+                id="newsletter-email"
                 type="email"
                 name="user_email"
+                autocomplete="email"
                 required
                 placeholder="Enter your email"
                 data-placeholder-en="Enter your email"

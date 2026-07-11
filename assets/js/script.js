@@ -204,9 +204,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
     hamburger.addEventListener("click", () => {
 
+    const isOpen =
         navMenu.classList.toggle("active");
-        menuOverlay.classList.toggle("active");
-        document.body.classList.toggle("menu-open");
+
+    menuOverlay.classList.toggle(
+        "active",
+        isOpen
+    );
+
+    document.body.classList.toggle(
+        "menu-open",
+        isOpen
+    );
+
+    hamburger.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+    );
+
+    hamburger.setAttribute(
+        "aria-label",
+        isOpen
+            ? "Close navigation menu"
+            : "Open navigation menu"
+    );
 
     });
 
@@ -214,9 +235,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     menuOverlay.addEventListener("click", () => {
 
-        navMenu.classList.remove("active");
-        menuOverlay.classList.remove("active");
-        document.body.classList.remove("menu-open");
+    navMenu.classList.remove("active");
+    menuOverlay.classList.remove("active");
+    document.body.classList.remove("menu-open");
+
+    hamburger.setAttribute(
+        "aria-expanded",
+        "false"
+    );
+
+    hamburger.setAttribute(
+        "aria-label",
+        "Open navigation menu"
+    );
 
     });
 
@@ -226,15 +257,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     navItems.forEach(item => {
 
-        item.addEventListener("click", () => {
+    item.addEventListener("click", () => {
 
-            navMenu.classList.remove("active");
-            menuOverlay.classList.remove("active");
-            document.body.classList.remove("menu-open");
+        navMenu.classList.remove("active");
+        menuOverlay.classList.remove("active");
+        document.body.classList.remove("menu-open");
 
-        });
+        hamburger.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+        hamburger.setAttribute(
+            "aria-label",
+            "Open navigation menu"
+        );
 
     });
+
+});
 
 });
 

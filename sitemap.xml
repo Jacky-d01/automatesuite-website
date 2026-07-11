@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
         <loc>https://automatesuite.io/</loc>
@@ -23,18 +24,6 @@
 
     <url>
         <loc>https://automatesuite.io/contact.html</loc>
-    </url>
-
-    <url>
-        <loc>https://automatesuite.io/consultation.html</loc>
-    </url>
-
-    <url>
-        <loc>https://automatesuite.io/custom-request.html</loc>
-    </url>
-
-    <url>
-        <loc>https://automatesuite.io/request-setup.html</loc>
     </url>
 
     <url>

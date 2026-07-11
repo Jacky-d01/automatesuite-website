@@ -111,6 +111,7 @@ content="noindex, follow">
         <!-- Hidden field -->
 
         <input type="hidden"
+                id="customSelectedSolution"
                name="selectedSolution"
                value="Custom Automation Request">
 
@@ -128,7 +129,7 @@ content="noindex, follow">
 
         <div class="form-group">
 
-            <label>
+            <label for="custom-name">
                 <i class="fa-solid fa-user"></i>
                 <span
                 data-lang-en="Full Name"
@@ -138,6 +139,7 @@ content="noindex, follow">
             </label>
 
             <input
+            id="custom-name"
             type="text"
             name="user_name"
             placeholder="John Smith"
@@ -150,7 +152,7 @@ content="noindex, follow">
 
         <div class="form-group">
 
-            <label>
+            <label for="custom-email">
                 <i class="fa-solid fa-envelope"></i>
                 <span
                 data-lang-en="Business Email"
@@ -160,6 +162,7 @@ content="noindex, follow">
             </label>
 
             <input
+            id="custom-email"
             type="email"
             name="user_email"
             placeholder="john@company.com"
@@ -172,7 +175,7 @@ content="noindex, follow">
 
         <div class="form-group">
 
-            <label>
+            <label for="custom-company">
                 <i class="fa-solid fa-building"></i>
                 <span
                 data-lang-en="Company Name"
@@ -182,6 +185,7 @@ content="noindex, follow">
             </label>
 
             <input
+            id="custom-company"
             type="text"
             name="company"
             placeholder="Acme Corporation"
@@ -196,7 +200,7 @@ content="noindex, follow">
 
         <div class="form-group">
 
-            <label>
+            <label for="custom-industry">
                 <i class="fa-solid fa-briefcase"></i>
                 <span
                 data-lang-en="Industry"
@@ -205,7 +209,7 @@ content="noindex, follow">
                 </span>
             </label>
 
-            <select name="industry" required>
+            <select id="custom-industry" name="industry" required>
 
                 <option value=""
                 disabled
@@ -291,7 +295,7 @@ content="noindex, follow">
 
         <div class="form-group">
 
-            <label>
+            <label for="custom-team-size">
                 <i class="fa-solid fa-users"></i>
                 <span
                 data-lang-en="Team Size"
@@ -300,7 +304,7 @@ content="noindex, follow">
                 </span>
             </label>
 
-            <select name="teamSize" required>
+            <select id="custom-team-size" name="teamSize" required>
 
                 <option value=""
                 disabled
@@ -347,7 +351,7 @@ content="noindex, follow">
 
         <div class="form-group">
 
-            <label>
+            <label for="custom-budget">
                 <i class="fa-solid fa-dollar-sign"></i>
                 <span
                 data-lang-en="Estimated Budget"
@@ -356,9 +360,11 @@ content="noindex, follow">
                 </span>
             </label>
 
-        <select name="budget" required>
+        <select id="custom-budget" name="budget" required>
 
             <option value=""
+            disabled
+            selected
             data-lang-en="Select Budget"
             data-lang-fr="Sélectionnez le budget">
 
@@ -404,7 +410,7 @@ content="noindex, follow">
 
         <div class="form-group">
 
-        <label>
+        <label for="custom-timeline">
             <i class="fa-solid fa-calendar-days"></i>
             <span
             data-lang-en="Desired Timeline"
@@ -413,9 +419,11 @@ content="noindex, follow">
             </span>
         </label>
 
-        <select name="timeline" required>
+        <select id="custom-timeline" name="timeline" required>
 
         <option value=""
+        disabled
+        selected
         data-lang-en="Select Timeline"
         data-lang-fr="Sélectionnez le délai">
 
@@ -461,7 +469,7 @@ content="noindex, follow">
         
         <div class="form-group">
 
-        <label>
+        <label for="custom-challenge">
             <i class="fa-solid fa-triangle-exclamation"></i>
             <span
             data-lang-en="Current Challenge"
@@ -470,7 +478,7 @@ content="noindex, follow">
             </span>
         </label>
 
-        <select name="challenge">
+        <select id="custom-challenge" name="challenge">
 
         <option value=""
         disabled
@@ -529,7 +537,7 @@ content="noindex, follow">
         </div>
 
         <div class="form-group">
-        <label>
+        <label for="custom-outcome">
             <i class="fa-solid fa-bullseye"></i>
             <span
             data-lang-en="Expected Outcome"
@@ -538,7 +546,7 @@ content="noindex, follow">
             </span>
         </label>
 
-        <select name="expectedOutcome">
+        <select id="custom-outcome" name="expectedOutcome">
 
         <option value=""
         data-lang-en="Select Outcome"
@@ -592,7 +600,7 @@ content="noindex, follow">
 
         <div class="form-group">
 
-            <label>
+            <label for="custom-automation-goal">
                 <i class="fa-solid fa-robot"></i>
                 <span
                 data-lang-en="Describe Your Automation Project"
@@ -602,6 +610,7 @@ content="noindex, follow">
             </label>
 
             <textarea
+                id="custom-automation-goal"
                 name="automationGoal"
                 rows="5"
                 required
@@ -613,7 +622,7 @@ content="noindex, follow">
 
         <div class="form-group">
 
-            <label>
+            <label for="custom-current-tools">
                 <i class="fa-solid fa-toolbox"></i>
                 <span
                 data-lang-en="Current Tools & Software (Optional)"
@@ -623,6 +632,7 @@ content="noindex, follow">
             </label>
 
             <textarea
+                id="custom-current-tools"
                 name="currentTools"
                 rows="4"
                 placeholder="List any current tools or software you are using (optional)"
@@ -701,6 +711,82 @@ content="noindex, follow">
 
 const currentLanguage =
 localStorage.getItem("language") || "en";
+
+/* =========================
+   SELECTED CUSTOM SOLUTION
+========================= */
+
+const params =
+new URLSearchParams(window.location.search);
+
+const plan =
+params.get("plan");
+
+const service =
+params.get("service");
+
+const tier =
+params.get("tier");
+
+const selectedSolutionField =
+document.getElementById("customSelectedSolution");
+
+let selectedSolutionText =
+currentLanguage === "fr"
+? "Demande d'automatisation personnalisée"
+: "Custom Automation Request";
+
+/* ELITE BUNDLE */
+
+if (plan === "elite-bundle") {
+
+    selectedSolutionText =
+    currentLanguage === "fr"
+    ? "Écosystème d'automatisation IA Elite"
+    : "Elite AI Automation Ecosystem";
+
+}
+
+/* ELITE INDIVIDUAL SERVICES */
+
+else if (
+    service === "whatsapp" &&
+    tier === "elite"
+) {
+
+    selectedSolutionText =
+    currentLanguage === "fr"
+    ? "Automatisation WhatsApp — Elite"
+    : "WhatsApp Automation — Elite";
+
+}
+
+else if (
+    service === "lead-enrichment" &&
+    tier === "elite"
+) {
+
+    selectedSolutionText =
+    currentLanguage === "fr"
+    ? "Enrichissement de prospects par IA — Elite"
+    : "AI Lead Enrichment — Elite";
+
+}
+
+else if (
+    service === "email-triage" &&
+    tier === "elite"
+) {
+
+    selectedSolutionText =
+    currentLanguage === "fr"
+    ? "Tri des emails support par IA — Elite"
+    : "AI Support Email Triage — Elite";
+
+}
+
+selectedSolutionField.value =
+selectedSolutionText;
 
 document
 .querySelectorAll("[data-lang-en]")

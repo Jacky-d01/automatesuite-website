@@ -159,37 +159,39 @@ content="website">
 
         <div class="form-group">
 
-            <label>
-            <i class="fa-solid fa-user"></i>
+            <label for="setup-name">
+                    <i class="fa-solid fa-user"></i>
                 <span
-                data-lang-en="Full Name"
-                data-lang-fr="Nom complet">
-                Full Name
+                    data-lang-en="Full Name"
+                    data-lang-fr="Nom complet">
+                    Full Name
                 </span>
             </label>
             <input
-            type="text"
-            name="user_name"
-            placeholder="John Smith"
-            data-placeholder-en="John Smith"
-            data-placeholder-fr="Jean Dupont"
-            autocomplete="name"
-            required>
+                id="setup-name"
+                type="text"
+                name="user_name"
+                placeholder="John Smith"
+                data-placeholder-en="John Smith"
+                data-placeholder-fr="Jean Dupont"
+                autocomplete="name"
+                required>
 
         </div>
 
         <div class="form-group">
 
-            <label>
-                <i class="fa-solid fa-envelope"></i>
+            <label for="setup-email">
+                    <i class="fa-solid fa-envelope"></i>
                 <span
-                data-lang-en="Business Email"
-                data-lang-fr="Email professionnel">
-                Business Email
+                    data-lang-en="Business Email"
+                    data-lang-fr="Email professionnel">
+                    Business Email
                 </span>
             </label>
 
             <input
+            id="setup-email"
             type="email"
             name="user_email"
             placeholder="john@company.com"
@@ -202,16 +204,17 @@ content="website">
 
         <div class="form-group">
 
-            <label>
-                <i class="fa-solid fa-building"></i>
+            <label for="setup-company">
+                    <i class="fa-solid fa-building"></i>
                 <span
-                data-lang-en="Company Name"
-                data-lang-fr="Nom de l'entreprise">
-                Company Name
+                    data-lang-en="Company Name"
+                    data-lang-fr="Nom de l'entreprise">
+                    Company Name
                 </span>
             </label>
 
             <input
+            id="setup-company"
             type="text"
             name="company"
             placeholder="Acme Corporation"
@@ -226,16 +229,17 @@ content="website">
 
         <div class="form-group">
 
-            <label>
-                <i class="fa-solid fa-briefcase"></i>
+            <label for="setup-industry">
+                    <i class="fa-solid fa-briefcase"></i>
                 <span
-                data-lang-en="Industry"
-                data-lang-fr="Secteur d'activité">
-                Industry
+                    data-lang-en="Industry"
+                    data-lang-fr="Secteur d'activité">
+                    Industry
                 </span>
             </label>
 
-            <select name="industry" required>
+            <select id="setup-industry"
+            name="industry" required>
 
                 <option value=""
                 disabled
@@ -315,16 +319,17 @@ content="website">
 
         <div class="form-group">
 
-            <label>
-                <i class="fa-solid fa-users"></i>
+            <label for="setup-team-size">
+                    <i class="fa-solid fa-users"></i>
                 <span
-                data-lang-en="Team Size"
-                data-lang-fr="Taille de l'équipe">
-                Team Size
+                    data-lang-en="Team Size"
+                    data-lang-fr="Taille de l'équipe">
+                    Team Size
                 </span>
             </label>
 
-            <select name="teamSize" required>
+            <select id="setup-team-size"
+                    name="teamSize" required>
 
                 <option value=""
                 disabled
@@ -373,16 +378,17 @@ content="website">
 
         <div class="form-group">
 
-            <label>
-                <i class="fa-solid fa-robot"></i>
+            <label for="setup-automation-goal">
+                    <i class="fa-solid fa-robot"></i>
                 <span
-                data-lang-en="What would you like to automate?"
-                data-lang-fr="Que souhaitez-vous automatiser ?">
-                What would you like to automate?
+                    data-lang-en="What would you like to automate?"
+                    data-lang-fr="Que souhaitez-vous automatiser ?">
+                    What would you like to automate?
                 </span>
             </label>
 
             <textarea
+                id="setup-automation-goal"
                 name="automationGoal"
                 rows="5"
                 required
@@ -394,16 +400,17 @@ content="website">
 
         <div class="form-group">
 
-            <label>
-                <i class="fa-solid fa-toolbox"></i>
+            <label for="setup-current-tools">
+                    <i class="fa-solid fa-toolbox"></i>
                 <span
-                data-lang-en="Current Tools & Software (Optional)"
-                data-lang-fr="Outils et logiciels actuels (Optionnel)">
-                Current Tools & Software (Optional)
+                    data-lang-en="Current Tools & Software (Optional)"
+                    data-lang-fr="Outils et logiciels actuels (Optionnel)">
+                    Current Tools & Software (Optional)
                 </span>
             </label>
 
             <textarea
+                id="setup-current-tools"
                 name="currentTools"
                 rows="4"
                 placeholder="List any current tools or software you are using (optional)"
@@ -760,9 +767,9 @@ document
     submitBtn.disabled = false;
 
     submitBtn.textContent =
-        currentLanguage === "fr"
-        ? "Demander la configuration"
-        : "Request Setup";
+    currentLanguage === "fr"
+    ? "Demander mon automatisation"
+    : "Request My Automation Setup";
 
     alert(
         currentLanguage === "fr"

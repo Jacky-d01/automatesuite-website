@@ -22,7 +22,7 @@
     content="https://automatesuite.io/contact.html">
 
     <meta property="og:image"
-    content="https://automatesuite.io/assets/images/og-image.jpg">
+    content="https://automatesuite.io/assets/images/automatesuite-og.png">
 
     <meta property="og:site_name"
     content="AutomateSuite">
@@ -44,7 +44,7 @@
     content="Contact AutomateSuite to discuss AI automation, workflow optimization, CRM integrations and custom business solutions.">
 
     <meta name="twitter:image"
-    content="https://automatesuite.io/assets/images/og-image.jpg">
+    content="https://automatesuite.io/assets/images/automatesuite-og.png">
 
     <meta name="robots" content="index, follow">
 
@@ -153,9 +153,15 @@
         </div>
         
         <!-- Hamburger -->
-        <div class="hamburger" id="hamburger">
-            ☰
-        </div>
+        <button
+            type="button" 
+            class="hamburger"
+            id="hamburger"
+            aria-label="Open navigation menu"
+            aria-controls="nav-menu"
+            aria-expanded="false">
+                ☰
+        </button>
 
         <!-- Overlay -->
         <div class="menu-overlay" id="menu-overlay"></div>
@@ -233,15 +239,18 @@
         </div>
 
         <!-- Contact Form -->
-        <form id="contact-form">
+        <form
+            id="contact-form"
+            aria-label="Contact AutomateSuite form">
 
             <!-- Name -->
             <label for="user_name">
-            <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-user"></i>
                 <span
                 data-lang-en="Name"
-                data-lang-fr="Nom">Name</label>
+                data-lang-fr="Nom">Name
                 </span>
+            </label>    
             <input
             id="user_name"
             type="text"
@@ -253,10 +262,11 @@
             <!-- Email -->
             <label for="user_email">
                 <i class="fa-solid fa-envelope"></i>
-            <span
-                data-lang-en="Email"
-                data-lang-fr="Adresse e-mail">Email</label>
-            </span>
+                <span
+                    data-lang-en="Email"
+                    data-lang-fr="Adresse e-mail">Email
+                </span>
+            </label>
             <input
             id="user_email"
             type="email"
@@ -272,13 +282,23 @@
 
             <input 
             type="hidden"
-            name="SelectedSolution"
+            name="electedSolution"
             value="Contact Page">
 
             <input
             type="hidden"
             name="sourcePage"
             value="Contact">
+
+            <label for="message">
+                <i class="fa-solid fa-message"></i>
+
+                <span
+                    data-lang-en="Message"
+                    data-lang-fr="Message">
+                    Message
+                </span>
+            </label>
 
             <textarea
             id="message"
