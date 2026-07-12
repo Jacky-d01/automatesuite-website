@@ -162,48 +162,70 @@ document.addEventListener("DOMContentLoaded", () => {
     setLanguage(savedLanguage);
 
     const savedTheme =
-        localStorage.getItem("theme");
+    localStorage.getItem("theme");
+
+    const themeToggle =
+        document.getElementById("theme-toggle");
 
     if(savedTheme === "light") {
 
         document.body.classList.add("light-mode");
 
-    }
+        if(themeToggle) {
 
-    const themeToggle =
-    document.getElementById("theme-toggle");
+            themeToggle.textContent = "🌙";
+
+            themeToggle.setAttribute(
+                "aria-label",
+                "Switch to dark mode"
+            );
+
+        }
+
+    } else {
+
+        if(themeToggle) {
+
+            themeToggle.textContent = "☀️";
+
+            themeToggle.setAttribute(
+                "aria-label",
+                "Switch to light mode"
+            );
+
+        }
+
+    }
 
     if(themeToggle) {
 
-        themeToggle.addEventListener("click", () => {
+    themeToggle.addEventListener("click", () => {
 
-            document.body.classList.toggle(
+        document.body.classList.toggle(
+            "light-mode"
+        );
+
+        const isLight =
+            document.body.classList.contains(
                 "light-mode"
             );
 
-            if(document.body.classList.contains(
-                "light-mode"
-            )) {
+        themeToggle.textContent =
+            isLight ? "🌙" : "☀️";
 
-                themeToggle.textContent = "🌙";
+        themeToggle.setAttribute(
+            "aria-label",
+            isLight
+                ? "Switch to dark mode"
+                : "Switch to light mode"
+        );
 
-                localStorage.setItem(
-                    "theme",
-                    "light"
-                );
+        localStorage.setItem(
+            "theme",
+            isLight ? "light" : "dark"
+        );
 
-            } else {
-
-                themeToggle.textContent = "☀️";
-
-                localStorage.setItem(
-                    "theme",
-                    "dark"
-                );
-
-            }
-
-        });
+    });
 
     }
 
