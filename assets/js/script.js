@@ -428,51 +428,75 @@ if (typeof emailjs !== "undefined") {
 if (typeof emailjs !== "undefined") {
 
     const newsletterForm =
-    document.querySelector(".newsletter-form");
+        document.getElementById("newsletter-form");
 
-    if(newsletterForm) {
+    if (newsletterForm) {
 
-        newsletterForm.addEventListener("submit", function(e) {
+        newsletterForm.addEventListener("submit", async function (e) {
 
             e.preventDefault();
 
             const currentLang =
-            getCurrentLanguage();
+                getCurrentLanguage();
 
             const submitBtn =
-            newsletterForm.querySelector("button[type='submit']");
+                newsletterForm.querySelector(
+                    "button[type='submit']"
+                );
+
+            const notification =
+                document.getElementById(
+                    "newsletter-notification"
+                );
+
+            const message =
+                document.getElementById(
+                    "notification-message"
+                );
 
             setSubmitState(
                 submitBtn,
                 true,
                 currentLang === "fr"
-                ? "Inscription..."
-                : "Subscribing..."
+                    ? "Inscription..."
+                    : "Subscribing..."
             );
 
-            emailjs.sendForm(
-                "service_fnchujr",
-                "template_ipivbnt",
-                this
-            )
+            try {
 
-            .then(() => {
+                const emailRequest =
+                    emailjs.sendForm(
+                        "service_fnchujr",
+                        "template_ipivbnt",
+                        newsletterForm
+                    );
 
-                const notification =
-                document.getElementById("newsletter-notification");
+                const timeout =
+                    new Promise((_, reject) => {
 
-                const message =
-                document.getElementById("notification-message");
+                        setTimeout(() => {
 
-                const currentLang =
-                getCurrentLanguage();
+                            reject(
+                                new Error(
+                                    "Newsletter request timed out"
+                                )
+                            );
 
-                if(notification && message) {
+                        }, 15000);
+
+                    });
+
+                await Promise.race([
+                    emailRequest,
+                    timeout
+                ]);
+
+                if (notification && message) {
 
                     message.textContent =
-                    currentLang === "fr"
-                    ? "Votre inscription a été enregistrée. Vous recevrez les prochaines mises à jour dès leur publication."
-                    : "Your subscription has been recorded. You'll receive updates whenever new content becomes available.";
+                        currentLang === "fr"
+                            ? "Votre inscription a bien été enregistrée."
+                            : "Your subscription has been successfully recorded.";
 
                     notification.classList.add("show");
 
@@ -484,35 +508,14 @@ if (typeof emailjs !== "undefined") {
 
                 }
 
-                setSubmitState(
-                    submitBtn,
-                    false,
-                    currentLang === "fr"
-                    ? "S'abonner"
-                    : "Subscribe"
-                );
-
                 newsletterForm.reset();
 
-            })
+            } catch (error) {
 
-            .catch((error) => {
-
-                console.error("EmailJS newsletter error:", error);
-
-                setSubmitState(
-                    submitBtn,
-                    false,
-                    currentLang === "fr"
-                        ? "S'abonner"
-                        : "Subscribe"
+                console.error(
+                    "EmailJS newsletter error:",
+                    error
                 );
-
-                const notification =
-                    document.getElementById("newsletter-notification");
-
-                const message =
-                    document.getElementById("notification-message");
 
                 if (notification && message) {
 
@@ -524,11 +527,24 @@ if (typeof emailjs !== "undefined") {
                     notification.classList.add("show");
 
                     setTimeout(() => {
+
                         notification.classList.remove("show");
+
                     }, 5000);
+
                 }
 
-            });
+            } finally {
+
+                setSubmitState(
+                    submitBtn,
+                    false,
+                    currentLang === "fr"
+                        ? "S'abonner"
+                        : "Subscribe"
+                );
+
+            }
 
         });
 
