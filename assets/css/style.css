@@ -3627,3 +3627,23 @@ img {
     }
 
 }
+
+/* Selected solution displayed above setup forms */
+.selected-solution #selected-plan,
+.selected-solution #custom-selected-plan {
+    margin-top: 0.35rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+}
+
+@media (max-width: 640px) {
+
+    .selected-solution #selected-plan,
+    .selected-solution #custom-selected-plan {
+        font-size: 0.95rem;
+        overflow-wrap: anywhere;
+    }
+
+}

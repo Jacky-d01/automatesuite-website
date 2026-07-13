@@ -511,8 +511,8 @@ if (plan === "core-bundle") {
 
     selectedText =
     currentLanguage === "fr"
-    ? "Pack d'automatisation de base"
-    : "Core Automation Bundle";
+    ? "Forfait Essentiel — Forfait d'Automatisation Essentiel"
+    : "Core Bundle — Core Automation Bundle";
 
 }
 
@@ -520,17 +520,8 @@ else if (plan === "growth-bundle") {
 
     selectedText =
     currentLanguage === "fr"
-    ? "Suite d'automatisation pour entreprises en croissance"
-    : "Growth Automation Suite";
-
-}
-
-else if (plan === "elite-bundle") {
-
-    selectedText =
-    currentLanguage === "fr"
-    ? "Écosystème d'automatisation IA d'élite"
-    : "Elite AI Automation Ecosystem";
+    ? "Forfait Croissance — Suite d'Automatisation pour la Croissance"
+    : "Growth Bundle — Growth Automation Suite";
 
 }
 
@@ -571,8 +562,8 @@ if(service === "whatsapp") {
 
         selectedText =
         currentLanguage === "fr"
-        ? "Déclencheur d'expiration WhatsApp - Automatisation de base"
-        : "WhatsApp Expiration Trigger - Starter Automation";
+        ? "Déclencheur d'Expiration WhatsApp — Essentiel — Automatisation de Base"
+        : "WhatsApp Expiration Trigger — Core — Starter Automation";
 
     }
 
@@ -580,17 +571,8 @@ if(service === "whatsapp") {
 
         selectedText =
         currentLanguage === "fr"
-        ? "Déclencheur d'expiration WhatsApp - Automatisation des flux de travail d'entreprise"
-        : "WhatsApp Expiration Trigger - Business Workflow Automation";
-
-    }
-
-    else if(tier === "elite") {
-
-        selectedText =
-        currentLanguage === "fr"
-        ? "Déclencheur d'expiration WhatsApp - Automatisation IA Avancée"
-        : "WhatsApp Expiration Trigger - Advanced AI Automation";
+        ? "Déclencheur d'Expiration WhatsApp — Croissance — Automatisation des Flux Métier"
+        : "WhatsApp Expiration Trigger — Growth — Business Workflow Automation";
 
     }
 
@@ -602,8 +584,8 @@ if(service === "lead-enrichment") {
 
         selectedText =
         currentLanguage === "fr"
-        ? "Enrichissement de prospects par IA - Automatisation de base"
-        : "AI Lead Enrichment - Starter Automation";
+        ? "Enrichissement des Prospects par l'IA — Essentiel — Automatisation de Base"
+        : "AI Lead Enrichment — Core — Starter Automation";
 
     }
 
@@ -611,17 +593,8 @@ if(service === "lead-enrichment") {
 
         selectedText =
         currentLanguage === "fr"
-        ? "Enrichissement de prospects par IA - Automatisation des flux de travail d'entreprise"
-        : "AI Lead Enrichment - Business Workflow Automation";
-
-    }
-
-    else if(tier === "elite") {
-
-        selectedText =
-        currentLanguage === "fr"
-        ? "Enrichissement de prospects par IA - Automatisation IA Avancée"
-        : "AI Lead Enrichment - Advanced AI Automation";
+        ? "Enrichissement des Prospects par l'IA — Croissance — Automatisation des Flux Métier"
+        : "AI Lead Enrichment — Growth — Business Workflow Automation";
 
     }
 
@@ -633,8 +606,8 @@ if(service === "email-triage") {
 
         selectedText =
         currentLanguage === "fr"
-        ? "Tri intelligent des emails de support - Automatisation de base"
-        : "Support Email Triage - Starter Automation";
+        ? "Tri des Emails Support par l'IA — Essentiel — Automatisation de Base"
+        : "Support Email Triage — Core — Starter Automation";
 
     }
 
@@ -642,19 +615,40 @@ if(service === "email-triage") {
 
         selectedText =
         currentLanguage === "fr"
-        ? "Tri intelligent des emails de support - Automatisation des flux de travail d'entreprise"
-        : "Support Email Triage - Business Workflow Automation";
+        ? "Tri des Emails Support par l'IA — Croissance — Automatisation des Flux Métier"
+        : "Support Email Triage — Growth — Business Workflow Automation";
 
     }
 
-    else if(tier === "elite") {
+}
 
-        selectedText =
-        currentLanguage === "fr"
-        ? "Tri intelligent des emails de support - Automatisation IA Avancée"
-        : "Support Email Triage - Advanced AI Automation";
+/* =========================
+   ELITE SAFETY REDIRECT
+========================= */
 
+if (
+    plan === "elite-bundle" ||
+    tier === "elite"
+) {
+
+    const redirectParams =
+        new URLSearchParams();
+
+    if (plan) {
+        redirectParams.set("plan", plan);
     }
+
+    if (service) {
+        redirectParams.set("service", service);
+    }
+
+    if (tier) {
+        redirectParams.set("tier", tier);
+    }
+
+    window.location.replace(
+        `custom-request.html?${redirectParams.toString()}`
+    );
 
 }
 

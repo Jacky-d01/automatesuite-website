@@ -104,6 +104,26 @@ content="noindex, follow">
 
     </div>
 
+    <!-- SELECTED ELITE SOLUTION -->
+
+    <div class="selected-solution">
+
+        <div class="solution-icon">
+            🚀
+        </div>
+
+        <h3
+            data-lang-en="Selected Solution"
+            data-lang-fr="Solution Sélectionnée">
+            Selected Solution
+        </h3>
+
+        <p id="custom-selected-plan">
+            Custom Automation Request
+        </p>
+
+    </div>
+
     <!-- FORM -->
 
     <form id="setupForm" aria-label="Custom automation request form">
@@ -736,18 +756,22 @@ currentLanguage === "fr"
 ? "Demande d'automatisation personnalisée"
 : "Custom Automation Request";
 
-/* ELITE BUNDLE */
+/* =========================
+   ELITE BUNDLE
+========================= */
 
 if (plan === "elite-bundle") {
 
     selectedSolutionText =
-    currentLanguage === "fr"
-    ? "Écosystème d'automatisation IA Elite"
-    : "Elite AI Automation Ecosystem";
+        currentLanguage === "fr"
+            ? "Forfait Élite — Écosystème d'Automatisation IA d'Élite"
+            : "Elite Bundle — Elite AI Automation Ecosystem";
 
 }
 
-/* ELITE INDIVIDUAL SERVICES */
+/* =========================
+   ELITE INDIVIDUAL SERVICES
+========================= */
 
 else if (
     service === "whatsapp" &&
@@ -755,9 +779,9 @@ else if (
 ) {
 
     selectedSolutionText =
-    currentLanguage === "fr"
-    ? "Automatisation WhatsApp — Elite"
-    : "WhatsApp Automation — Elite";
+        currentLanguage === "fr"
+            ? "Automatisation WhatsApp — Élite — Automatisation IA Avancée"
+            : "WhatsApp Automation — Elite — Advanced AI Automation";
 
 }
 
@@ -767,9 +791,9 @@ else if (
 ) {
 
     selectedSolutionText =
-    currentLanguage === "fr"
-    ? "Enrichissement de prospects par IA — Elite"
-    : "AI Lead Enrichment — Elite";
+        currentLanguage === "fr"
+            ? "Enrichissement des Prospects par l'IA — Élite — Automatisation IA Avancée"
+            : "AI Lead Enrichment — Elite — Advanced AI Automation";
 
 }
 
@@ -779,14 +803,24 @@ else if (
 ) {
 
     selectedSolutionText =
-    currentLanguage === "fr"
-    ? "Tri des emails support par IA — Elite"
-    : "AI Support Email Triage — Elite";
+        currentLanguage === "fr"
+            ? "Tri des Emails Support par l'IA — Élite — Automatisation IA Avancée"
+            : "AI Support Email Triage — Elite — Advanced AI Automation";
 
 }
 
+const selectedSolutionDisplay =
+document.getElementById("custom-selected-plan");
+
 selectedSolutionField.value =
 selectedSolutionText;
+
+if (selectedSolutionDisplay) {
+
+    selectedSolutionDisplay.textContent =
+        selectedSolutionText;
+
+}
 
 document
 .querySelectorAll("[data-lang-en]")
