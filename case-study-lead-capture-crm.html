@@ -1,0 +1,2584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lead Capture and HubSpot CRM Enrichment | AutomateSuite</title>
+
+<meta
+    name="description"
+    content="Explore a validated AutomateSuite workflow that checks incoming lead data, sends complete records to HubSpot and flags incomplete leads for manual review.">
+
+<link
+    rel="canonical"
+    href="https://automatesuite.io/case-study-lead-capture-crm.html">
+
+
+<!-- Open Graph -->
+
+<meta
+    property="og:type"
+    content="article">
+
+<meta
+    property="og:site_name"
+    content="AutomateSuite">
+
+<meta
+    property="og:title"
+    content="Lead Capture and HubSpot CRM Enrichment | AutomateSuite">
+
+<meta
+    property="og:description"
+    content="See how AutomateSuite validated a lead-processing workflow using Airtable, Make and HubSpot.">
+
+<meta
+    property="og:url"
+    content="https://automatesuite.io/case-study-lead-capture-crm.html">
+
+<meta
+    property="og:image"
+    content="https://automatesuite.io/assets/images/case-studies/sim01/sim01-lead-capture-crm-workflow-overview.png">
+
+<meta
+    property="og:image:alt"
+    content="AutomateSuite lead capture and HubSpot CRM enrichment workflow">
+
+
+<!-- Twitter / X -->
+
+<meta
+    name="twitter:card"
+    content="summary_large_image">
+
+<meta
+    name="twitter:title"
+    content="Lead Capture and HubSpot CRM Enrichment | AutomateSuite">
+
+<meta
+    name="twitter:description"
+    content="Explore a validated workflow for lead validation, CRM synchronization and incomplete-record review.">
+
+<meta
+    name="twitter:image"
+    content="https://automatesuite.io/assets/images/case-studies/sim01/sim01-lead-capture-crm-workflow-overview.png">
+
+<link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+<link rel="apple-touch-icon" href="assets/images/favicon.png">    
+
+    <!-- FONT AWESOME -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- MAIN CSS -->
+<link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body id="top">
+
+<nav class="navbar">
+
+    <div class="nav-container">
+
+        <!-- Logo -->
+        <a href="index.html" class="logo" aria-label="AutomateSuite Home">
+            <img src="assets/images/logo-icon.svg"
+                alt="AutomateSuite logo"
+                class="logo-icon">
+            <span>AutomateSuite</span>
+        </a>
+
+        <!-- Navigation Links -->
+        <div class="nav-menu" id="nav-menu">
+
+            <div class="nav-links">
+
+                <a href="index.html">
+                    <i class="fa-solid fa-house"></i>
+                   <span data-lang-en="Home"
+                   data-lang-fr="Accueil">Home</span>
+                </a>
+
+                <a href="about.html">
+                    <i class="fa-solid fa-circle-info"></i>
+                   <span data-lang-en="About"
+                   data-lang-fr="À propos">About</span>
+                </a>
+
+                <a href="services.html">
+                    <i class="fa-solid fa-gears"></i>
+                   <span data-lang-en="Services"
+                   data-lang-fr="Services">Services</span>
+                </a>
+
+                <a href="case-studies.html">
+                    <i class="fa-solid fa-folder-open"></i>
+                    <span data-lang-en="Case Studies"
+                    data-lang-fr="Études de cas">Case Studies</span>
+                </a>
+
+                <a href="tools.html">
+                    <i class="fa-solid fa-toolbox"></i>
+                   <span data-lang-en="Tools"
+                   data-lang-fr="Outils">Tools</span>
+                </a>
+
+                <a href="pricing.html">
+                    <i class="fa-solid fa-tags"></i>
+                   <span data-lang-en="Pricing"
+                   data-lang-fr="Tarification">Pricing</span>
+                </a>
+
+                <a href="contact.html">
+                    <i class="fa-solid fa-envelope"></i>
+                   <span data-lang-en="Contact"
+                   data-lang-fr="Contact">Contact</span>
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Right Controls -->
+        <div class="menu-controls">
+
+            <button id="theme-toggle" aria-label="Toggle dark mode">
+                ☀️
+            </button>
+
+            <div class="language-selector">
+
+                <button
+                type="button"
+                class="language-btn"
+                onclick="setLanguage('en')"
+                aria-label="Switch language to English">
+
+                EN
+
+                </button>
+
+                <span>|</span>
+
+                <button
+                type="button"
+                class="language-btn"
+                onclick="setLanguage('fr')"
+                aria-label="Passer le site en français">
+
+                FR
+
+                </button>
+
+            </div>
+
+        </div>
+        
+        <!-- Hamburger -->
+        <button
+            type="button" 
+            class="hamburger"
+            id="hamburger"
+            aria-label="Open navigation menu"
+            aria-controls="nav-menu"
+            aria-expanded="false">
+                ☰
+        </button>
+
+        <!-- Overlay -->
+        <div class="menu-overlay" id="menu-overlay"></div>
+      
+    </div>
+
+</nav>    
+
+<main>
+
+    <!-- ========================================
+         BREADCRUMB
+    ========================================= -->
+
+    <section class="case-study-breadcrumb-section">
+
+        <div class="container">
+
+            <nav
+                class="case-study-breadcrumb"
+                aria-label="Breadcrumb">
+
+                <a
+                    href="index.html"
+                    data-lang-en="Home"
+                    data-lang-fr="Accueil">
+                    Home
+                </a>
+
+                <span aria-hidden="true">/</span>
+
+                <a
+                    href="case-studies.html"
+                    data-lang-en="Case Studies"
+                    data-lang-fr="Études de cas">
+                    Case Studies
+                </a>
+
+                <span aria-hidden="true">/</span>
+
+                <span
+                    aria-current="page"
+                    data-lang-en="Lead Capture and CRM Enrichment"
+                    data-lang-fr="Capture des leads et enrichissement CRM">
+                    Lead Capture and CRM Enrichment
+                </span>
+
+            </nav>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         CASE STUDY HERO
+    ========================================= -->
+
+    <section class="case-study-detail-hero reveal">
+
+        <div class="container">
+
+            <span
+                class="section-label"
+                data-lang-en="SIM-01 · Validated Automation Simulation"
+                data-lang-fr="SIM-01 · Simulation d'automatisation validée">
+                SIM-01 · Validated Automation Simulation
+            </span>
+
+            <h1
+                data-lang-en="Automated Lead Capture and HubSpot CRM Enrichment"
+                data-lang-fr="Capture automatisée des leads et enrichissement du CRM HubSpot">
+                Automated Lead Capture and HubSpot CRM Enrichment
+            </h1>
+
+            <p
+                class="case-study-hero-description"
+                data-lang-en="See how AutomateSuite validated a workflow that checks incoming lead information, sends complete records to HubSpot and routes incomplete submissions for manual review."
+                data-lang-fr="Découvrez comment AutomateSuite a validé un workflow qui vérifie les informations des leads entrants, transmet les enregistrements complets vers HubSpot et oriente les demandes incomplètes vers une révision manuelle.">
+
+                See how AutomateSuite validated a workflow that checks
+                incoming lead information, sends complete records to HubSpot
+                and routes incomplete submissions for manual review.
+
+            </p>
+
+            <div class="case-study-hero-meta">
+
+                <div class="case-study-meta-item">
+
+                    <span
+                        data-lang-en="Workflow type"
+                        data-lang-fr="Type de workflow">
+                        Workflow type
+                    </span>
+
+                    <strong
+                        data-lang-en="Lead processing and CRM synchronization"
+                        data-lang-fr="Traitement des leads et synchronisation CRM">
+                        Lead processing and CRM synchronization
+                    </strong>
+
+                </div>
+
+                <div class="case-study-meta-item">
+
+                    <span
+                        data-lang-en="Validated stack"
+                        data-lang-fr="Stack validée">
+                        Validated stack
+                    </span>
+
+                    <strong>
+                        Airtable · Make · HubSpot
+                    </strong>
+
+                </div>
+
+                <div class="case-study-meta-item">
+
+                    <span
+                        data-lang-en="Validation scope"
+                        data-lang-fr="Périmètre de validation">
+                        Validation scope
+                    </span>
+
+                    <strong
+                        data-lang-en="Complete and incomplete lead paths"
+                        data-lang-fr="Parcours des leads complets et incomplets">
+                        Complete and incomplete lead paths
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="hero-actions">
+
+                <a
+                    href="#workflow"
+                    class="btn btn-primary"
+                    data-lang-en="Explore the Workflow"
+                    data-lang-fr="Découvrir le workflow">
+                    Explore the Workflow
+                </a>
+
+                <a
+                    href="ai-lead-enrichment.html"
+                    class="btn btn-secondary"
+                    data-lang-en="View Related Service"
+                    data-lang-fr="Voir le service associé">
+                    View Related Service
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         TRANSPARENCY NOTICE
+    ========================================= -->
+
+    <section class="case-study-notice-section reveal delay-1">
+
+        <div class="container">
+
+            <div class="case-study-notice">
+
+                <div
+                    class="case-study-notice-icon"
+                    aria-hidden="true">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+
+                <div>
+
+                    <h2
+                        data-lang-en="Validated Simulation, Not a Customer Performance Claim"
+                        data-lang-fr="Simulation validée, sans revendication de performance client">
+                        Validated Simulation, Not a Customer Performance Claim
+                    </h2>
+
+                    <p
+                        data-lang-en="This case study documents a controlled AutomateSuite test. It demonstrates validated workflow behaviour and connected-system actions, but it is not presented as a customer deployment, production-scale benchmark or guaranteed business result."
+                        data-lang-fr="Cette étude de cas documente un test contrôlé d'AutomateSuite. Elle démontre le comportement validé du workflow et les actions réalisées dans les systèmes connectés, sans être présentée comme un déploiement client, un test à l'échelle de la production ou un résultat commercial garanti.">
+
+                        This case study documents a controlled AutomateSuite
+                        test. It demonstrates validated workflow behaviour and
+                        connected-system actions, but it is not presented as
+                        a customer deployment, production-scale benchmark or
+                        guaranteed business result.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         BUSINESS CHALLENGE
+    ========================================= -->
+
+    <section class="page-section case-study-challenge-section reveal">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span
+                    class="section-label"
+                    data-lang-en="Business Challenge"
+                    data-lang-fr="Enjeu opérationnel">
+                    Business Challenge
+                </span>
+
+                <h2
+                    data-lang-en="Lead Information Can Become Fragmented Before It Reaches the CRM"
+                    data-lang-fr="Les informations des leads peuvent être fragmentées avant d'atteindre le CRM">
+                    Lead Information Can Become Fragmented Before It Reaches the CRM
+                </h2>
+
+                <p
+                    data-lang-en="When lead records are reviewed and copied manually, incomplete information may reach the CRM, processing results may remain unclear and follow-up teams may lose visibility into which submissions require correction."
+                    data-lang-fr="Lorsque les leads sont vérifiés et copiés manuellement, des informations incomplètes peuvent atteindre le CRM, les résultats du traitement peuvent rester peu clairs et les équipes de suivi peuvent perdre en visibilité sur les demandes nécessitant une correction.">
+
+                    When lead records are reviewed and copied manually,
+                    incomplete information may reach the CRM, processing
+                    results may remain unclear and follow-up teams may lose
+                    visibility into which submissions require correction.
+
+                </p>
+
+            </div>
+
+
+            <div class="before-after-grid">
+
+                <article class="before-after-card">
+
+                    <span
+                        class="before-after-label before-label"
+                        data-lang-en="Before Automation"
+                        data-lang-fr="Avant l'automatisation">
+                        Before Automation
+                    </span>
+
+                    <h3
+                        data-lang-en="Manual Lead Processing"
+                        data-lang-fr="Traitement manuel des leads">
+                        Manual Lead Processing
+                    </h3>
+
+                    <ul>
+
+                        <li
+                            data-lang-en="Lead information checked individually"
+                            data-lang-fr="Informations des leads vérifiées individuellement">
+                            Lead information checked individually
+                        </li>
+
+                        <li
+                            data-lang-en="Contact data copied into the CRM"
+                            data-lang-fr="Données de contact copiées dans le CRM">
+                            Contact data copied into the CRM
+                        </li>
+
+                        <li
+                            data-lang-en="Missing fields discovered during follow-up"
+                            data-lang-fr="Champs manquants découverts pendant le suivi">
+                            Missing fields discovered during follow-up
+                        </li>
+
+                        <li
+                            data-lang-en="Processing status updated manually"
+                            data-lang-fr="Statut de traitement mis à jour manuellement">
+                            Processing status updated manually
+                        </li>
+
+                    </ul>
+
+                </article>
+
+
+                <article class="before-after-card after-card">
+
+                    <span
+                        class="before-after-label after-label"
+                        data-lang-en="After Automation"
+                        data-lang-fr="Après l'automatisation">
+                        After Automation
+                    </span>
+
+                    <h3
+                        data-lang-en="Structured Validation and Routing"
+                        data-lang-fr="Validation et routage structurés">
+                        Structured Validation and Routing
+                    </h3>
+
+                    <ul>
+
+                        <li
+                            data-lang-en="Required fields evaluated consistently"
+                            data-lang-fr="Champs obligatoires évalués de manière cohérente">
+                            Required fields evaluated consistently
+                        </li>
+
+                        <li
+                            data-lang-en="Complete leads synchronized with HubSpot"
+                            data-lang-fr="Leads complets synchronisés avec HubSpot">
+                            Complete leads synchronized with HubSpot
+                        </li>
+
+                        <li
+                            data-lang-en="Incomplete records flagged with a precise reason"
+                            data-lang-fr="Enregistrements incomplets signalés avec une raison précise">
+                            Incomplete records flagged with a precise reason
+                        </li>
+
+                        <li
+                            data-lang-en="Processing outcomes recorded in Airtable"
+                            data-lang-fr="Résultats du traitement enregistrés dans Airtable">
+                            Processing outcomes recorded in Airtable
+                        </li>
+
+                    </ul>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         AUTOMATION OBJECTIVE
+    ========================================= -->
+
+    <section class="page-section case-study-objective-section reveal">
+
+        <div class="container">
+
+            <div class="case-study-objective-card">
+
+                <span
+                    class="section-label"
+                    data-lang-en="Automation Objective"
+                    data-lang-fr="Objectif de l'automatisation">
+                    Automation Objective
+                </span>
+
+                <h2
+                    data-lang-en="Validate Every Lead Before CRM Synchronization"
+                    data-lang-fr="Valider chaque lead avant la synchronisation avec le CRM">
+                    Validate Every Lead Before CRM Synchronization
+                </h2>
+
+                <p
+                    data-lang-en="The simulation was designed to monitor new Airtable records, mark them as processing, check the required fields, route valid leads to HubSpot and preserve a specific validation result when information was missing."
+                    data-lang-fr="La simulation a été conçue pour surveiller les nouveaux enregistrements Airtable, les marquer comme en cours de traitement, vérifier les champs obligatoires, orienter les leads valides vers HubSpot et conserver un résultat de validation précis lorsque des informations étaient manquantes.">
+
+                    The simulation was designed to monitor new Airtable
+                    records, mark them as processing, check the required
+                    fields, route valid leads to HubSpot and preserve a
+                    specific validation result when information was missing.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         WORKFLOW OVERVIEW
+    ========================================= -->
+
+    <section
+        class="page-section case-study-workflow-section reveal"
+        id="workflow">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span
+                    class="section-label"
+                    data-lang-en="Workflow Overview"
+                    data-lang-fr="Vue d'ensemble du workflow">
+                    Workflow Overview
+                </span>
+
+                <h2
+                    data-lang-en="How the Lead Validation Workflow Operates"
+                    data-lang-fr="Fonctionnement du workflow de validation des leads">
+                    How the Lead Validation Workflow Operates
+                </h2>
+
+                <p
+                    data-lang-en="The scenario detects incoming records, updates the processing status and uses separate routes for complete leads and specific missing-field conditions."
+                    data-lang-fr="Le scénario détecte les enregistrements entrants, met à jour leur statut de traitement et utilise des routes distinctes pour les leads complets et les différents champs manquants.">
+
+                    The scenario detects incoming records, updates the
+                    processing status and uses separate routes for complete
+                    leads and specific missing-field conditions.
+
+                </p>
+
+            </div>
+
+
+            <figure class="case-study-figure">
+
+                <div class="annotated-screenshot workflow-overview-screenshot">
+
+                    <button
+                        class="case-study-image-open"
+                        type="button"
+                        data-image-src="assets/images/case-studies/sim01/sim01-lead-capture-crm-workflow-overview.png"
+                        data-image-alt="Make workflow monitoring Airtable leads, validating required fields, creating HubSpot contacts and flagging incomplete records"
+                        aria-label="Open workflow image in a larger view">
+
+                        <img
+                            src="assets/images/case-studies/sim01/sim01-lead-capture-crm-workflow-overview.png"
+                            alt="Make workflow monitoring Airtable leads, validating required fields, creating HubSpot contacts and flagging incomplete records"
+                            loading="lazy">
+
+                    </button>
+
+                </div>
+
+
+                <ol class="annotation-legend">
+
+                    <li>
+
+                        <span class="annotation-number">1</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="New lead trigger"
+                                data-lang-fr="Déclencheur de nouveau lead">
+                                New lead trigger
+                            </strong>
+
+                            <p
+                                data-lang-en="New Airtable records are monitored and introduced into the scenario."
+                                data-lang-fr="Les nouveaux enregistrements Airtable sont surveillés et introduits dans le scénario.">
+
+                                New Airtable records are monitored and
+                                introduced into the scenario.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">2</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Processing status"
+                                data-lang-fr="Statut de traitement">
+                                Processing status
+                            </strong>
+
+                            <p
+                                data-lang-en="The lead is marked as processing before validation continues."
+                                data-lang-fr="Le lead est marqué comme en cours de traitement avant la suite de la validation.">
+
+                                The lead is marked as processing before
+                                validation continues.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">3</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Validation router"
+                                data-lang-fr="Routeur de validation">
+                                Validation router
+                            </strong>
+
+                            <p
+                                data-lang-en="Required fields are evaluated to determine which route should run."
+                                data-lang-fr="Les champs obligatoires sont évalués afin de déterminer la route à exécuter.">
+
+                                Required fields are evaluated to determine
+                                which route should run.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">4</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Valid lead route"
+                                data-lang-fr="Route des leads valides">
+                                Valid lead route
+                            </strong>
+
+                            <p
+                                data-lang-en="Complete records create or update a HubSpot contact."
+                                data-lang-fr="Les enregistrements complets créent ou mettent à jour un contact HubSpot.">
+
+                                Complete records create or update a HubSpot
+                                contact.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">5</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Incomplete lead routes"
+                                data-lang-fr="Routes des leads incomplets">
+                                Incomplete lead routes
+                            </strong>
+
+                            <p
+                                data-lang-en="Missing email, first name or last name conditions produce a specific validation result."
+                                data-lang-fr="L'absence de l'e-mail, du prénom ou du nom produit un résultat de validation spécifique.">
+
+                                Missing email, first name or last name
+                                conditions produce a specific validation result.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+                </ol>
+
+
+                <figcaption
+                    data-lang-en="The validated Make scenario separates complete and incomplete lead records before updating the final processing status."
+                    data-lang-fr="Le scénario Make validé sépare les leads complets et incomplets avant de mettre à jour leur statut final de traitement.">
+
+                    The validated Make scenario separates complete and
+                    incomplete lead records before updating the final
+                    processing status.
+
+                </figcaption>
+
+            </figure>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         STEP 1 — INPUT
+    ========================================= -->
+
+    <section class="page-section case-study-step-section reveal">
+
+        <div class="container">
+
+            <div class="case-study-step-header">
+
+                <span class="case-study-step-number">01</span>
+
+                <div>
+
+                    <span
+                        class="section-label"
+                        data-lang-en="Incoming Record"
+                        data-lang-fr="Enregistrement entrant">
+                        Incoming Record
+                    </span>
+
+                    <h2
+                        data-lang-en="A New Lead Enters Airtable"
+                        data-lang-fr="Un nouveau lead entre dans Airtable">
+                        A New Lead Enters Airtable
+                    </h2>
+
+                    <p
+                        data-lang-en="Before processing begins, the record contains the submitted lead information while CRM references and validation results remain empty."
+                        data-lang-fr="Avant le début du traitement, l'enregistrement contient les informations soumises par le lead, tandis que les références CRM et les résultats de validation restent vides.">
+
+                        Before processing begins, the record contains the
+                        submitted lead information while CRM references and
+                        validation results remain empty.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <figure class="case-study-figure">
+
+                <div class="annotated-screenshot">
+
+                    <button
+                        class="case-study-image-open"
+                        type="button"
+                        data-image-src="assets/images/case-studies/sim01/sim01-airtable-new-lead-before-processing.png"
+                        data-image-alt="Airtable record showing a new lead before CRM processing"
+                        aria-label="Open new lead image in a larger view">
+
+                        <img
+                            src="assets/images/case-studies/sim01/sim01-airtable-new-lead-before-processing.png"
+                            alt="Airtable record showing a new lead before CRM processing"
+                            loading="lazy">
+
+                    </button>
+
+                </div>
+
+
+                <ol class="annotation-legend">
+
+                    <li>
+
+                        <span class="annotation-number">1</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Initial status"
+                                data-lang-fr="Statut initial">
+                                Initial status
+                            </strong>
+
+                            <p
+                                data-lang-en="The lead starts with the New status before validation."
+                                data-lang-fr="Le lead commence avec le statut Nouveau avant la validation.">
+
+                                The lead starts with the New status before
+                                validation.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">2</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Required lead information"
+                                data-lang-fr="Informations obligatoires du lead">
+                                Required lead information
+                            </strong>
+
+                            <p
+                                data-lang-en="The record contains the first name, last name and email required by the tested workflow."
+                                data-lang-fr="L'enregistrement contient le prénom, le nom et l'e-mail requis par le workflow testé.">
+
+                                The record contains the first name, last name
+                                and email required by the tested workflow.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">3</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Empty processing fields"
+                                data-lang-fr="Champs de traitement vides">
+                                Empty processing fields
+                            </strong>
+
+                            <p
+                                data-lang-en="The HubSpot reference, result and validation details have not yet been generated."
+                                data-lang-fr="La référence HubSpot, le résultat et les détails de validation n'ont pas encore été générés.">
+
+                                The HubSpot reference, result and validation
+                                details have not yet been generated.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+                </ol>
+
+
+                <figcaption
+                    data-lang-en="The test record is ready for validation, with no CRM result recorded yet."
+                    data-lang-fr="L'enregistrement de test est prêt pour la validation, sans résultat CRM encore enregistré.">
+
+                    The test record is ready for validation, with no CRM
+                    result recorded yet.
+
+                </figcaption>
+
+            </figure>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         STEP 2 — SUCCESSFUL RESULT
+    ========================================= -->
+
+    <section class="page-section case-study-step-section alternate-section reveal">
+
+        <div class="container">
+
+            <div class="case-study-step-header">
+
+                <span class="case-study-step-number">02</span>
+
+                <div>
+
+                    <span
+                        class="section-label"
+                        data-lang-en="Successful Route"
+                        data-lang-fr="Route réussie">
+                        Successful Route
+                    </span>
+
+                    <h2
+                        data-lang-en="A Complete Lead Is Sent to HubSpot"
+                        data-lang-fr="Un lead complet est envoyé vers HubSpot">
+                        A Complete Lead Is Sent to HubSpot
+                    </h2>
+
+                    <p
+                        data-lang-en="When the required fields are present, the scenario creates or updates the HubSpot contact and writes the resulting CRM reference back into Airtable."
+                        data-lang-fr="Lorsque les champs obligatoires sont présents, le scénario crée ou met à jour le contact HubSpot et renvoie la référence CRM obtenue dans Airtable.">
+
+                        When the required fields are present, the scenario
+                        creates or updates the HubSpot contact and writes the
+                        resulting CRM reference back into Airtable.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <figure class="case-study-figure">
+
+                <div class="annotated-screenshot">
+
+                    <button
+                        class="case-study-image-open"
+                        type="button"
+                        data-image-src="assets/images/case-studies/sim01/sim01-airtable-lead-sent-to-crm-result.png"
+                        data-image-alt="Airtable record showing a lead sent successfully to HubSpot CRM"
+                        aria-label="Open successful CRM result image in a larger view">
+
+                        <img
+                            src="assets/images/case-studies/sim01/sim01-airtable-lead-sent-to-crm-result.png"
+                            alt="Airtable record showing a lead sent successfully to HubSpot CRM"
+                            loading="lazy">
+
+                    </button>
+
+                </div>
+
+
+                <ol class="annotation-legend">
+
+                    <li>
+
+                        <span class="annotation-number">1</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Sent to CRM status"
+                                data-lang-fr="Statut envoyé au CRM">
+                                Sent to CRM status
+                            </strong>
+
+                            <p
+                                data-lang-en="The final status confirms that the lead completed the valid route."
+                                data-lang-fr="Le statut final confirme que le lead a terminé la route valide.">
+
+                                The final status confirms that the lead
+                                completed the valid route.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">2</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="HubSpot contact reference"
+                                data-lang-fr="Référence du contact HubSpot">
+                                HubSpot contact reference
+                            </strong>
+
+                            <p
+                                data-lang-en="Airtable stores the associated HubSpot contact ID."
+                                data-lang-fr="Airtable enregistre l'identifiant du contact HubSpot associé.">
+
+                                Airtable stores the associated HubSpot contact
+                                ID.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">3</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Processing result"
+                                data-lang-fr="Résultat du traitement">
+                                Processing result
+                            </strong>
+
+                            <p
+                                data-lang-en="The result confirms that the HubSpot contact was created or updated successfully."
+                                data-lang-fr="Le résultat confirme que le contact HubSpot a été créé ou mis à jour avec succès.">
+
+                                The result confirms that the HubSpot contact
+                                was created or updated successfully.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">4</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="No manual review required"
+                                data-lang-fr="Aucune révision manuelle requise">
+                                No manual review required
+                            </strong>
+
+                            <p
+                                data-lang-en="The manual-review field remains disabled for the complete lead."
+                                data-lang-fr="Le champ de révision manuelle reste désactivé pour le lead complet.">
+
+                                The manual-review field remains disabled for
+                                the complete lead.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+                </ol>
+
+
+                <figcaption
+                    data-lang-en="The successful path records both the CRM reference and the completed processing result in Airtable."
+                    data-lang-fr="La route réussie enregistre dans Airtable la référence CRM et le résultat final du traitement.">
+
+                    The successful path records both the CRM reference and the
+                    completed processing result in Airtable.
+
+                </figcaption>
+
+            </figure>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         HUBSPOT CONFIRMATION
+    ========================================= -->
+
+    <section class="page-section case-study-confirmation-section reveal">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span
+                    class="section-label"
+                    data-lang-en="Connected-System Confirmation"
+                    data-lang-fr="Confirmation dans le système connecté">
+                    Connected-System Confirmation
+                </span>
+
+                <h2
+                    data-lang-en="The Validated Contact Is Available in HubSpot"
+                    data-lang-fr="Le contact validé est disponible dans HubSpot">
+                    The Validated Contact Is Available in HubSpot
+                </h2>
+
+                <p
+                    data-lang-en="The HubSpot contact list confirms that the validated lead information reached the CRM and became available for follow-up."
+                    data-lang-fr="La liste des contacts HubSpot confirme que les informations du lead validé ont atteint le CRM et sont devenues disponibles pour le suivi.">
+
+                    The HubSpot contact list confirms that the validated lead
+                    information reached the CRM and became available for
+                    follow-up.
+
+                </p>
+
+            </div>
+
+
+            <figure class="case-study-figure compact-figure">
+
+                <div class="annotated-screenshot">
+
+                    <button
+                        class="case-study-image-open"
+                        type="button"
+                        data-image-src="assets/images/case-studies/sim01/sim01-hubspot-contact-created.png"
+                        data-image-alt="HubSpot contact list showing the contact created from the validated Airtable lead"
+                        aria-label="Open HubSpot contact image in a larger view">
+
+                        <img
+                            src="assets/images/case-studies/sim01/sim01-hubspot-contact-created.png"
+                            alt="HubSpot contact list showing the contact created from the validated Airtable lead"
+                            loading="lazy">
+
+                    </button>
+
+                </div>
+
+                <figcaption
+                    data-lang-en="HubSpot displays the transferred contact information after the successful workflow execution."
+                    data-lang-fr="HubSpot affiche les informations du contact transférées après l'exécution réussie du workflow.">
+
+                    HubSpot displays the transferred contact information after
+                    the successful workflow execution.
+
+                </figcaption>
+
+            </figure>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         STEP 3 — INCOMPLETE RECORD
+    ========================================= -->
+
+    <section class="page-section case-study-step-section alternate-section reveal">
+
+        <div class="container">
+
+            <div class="case-study-step-header">
+
+                <span class="case-study-step-number">03</span>
+
+                <div>
+
+                    <span
+                        class="section-label"
+                        data-lang-en="Exception Handling"
+                        data-lang-fr="Gestion des exceptions">
+                        Exception Handling
+                    </span>
+
+                    <h2
+                        data-lang-en="Incomplete Leads Are Routed for Manual Review"
+                        data-lang-fr="Les leads incomplets sont orientés vers une révision manuelle">
+                        Incomplete Leads Are Routed for Manual Review
+                    </h2>
+
+                    <p
+                        data-lang-en="When a required field is missing, the workflow does not send the record to HubSpot. It stores the failure reason and enables manual review instead."
+                        data-lang-fr="Lorsqu'un champ obligatoire est manquant, le workflow n'envoie pas l'enregistrement vers HubSpot. Il conserve la raison de l'échec et active plutôt la révision manuelle.">
+
+                        When a required field is missing, the workflow does
+                        not send the record to HubSpot. It stores the failure
+                        reason and enables manual review instead.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <figure class="case-study-figure">
+
+                <div class="annotated-screenshot">
+
+                    <button
+                        class="case-study-image-open"
+                        type="button"
+                        data-image-src="assets/images/case-studies/sim01/sim01-airtable-missing-email-manual-review.png"
+                        data-image-alt="Airtable record showing failed lead validation because the email field is missing"
+                        aria-label="Open validation failure image in a larger view">
+
+                        <img
+                            src="assets/images/case-studies/sim01/sim01-airtable-missing-email-manual-review.png"
+                            alt="Airtable record showing failed lead validation because the email field is missing"
+                            loading="lazy">
+
+                    </button>
+
+                </div>
+
+
+                <ol class="annotation-legend">
+
+                    <li>
+
+                        <span class="annotation-number">1</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Validation failed"
+                                data-lang-fr="Échec de la validation">
+                                Validation failed
+                            </strong>
+
+                            <p
+                                data-lang-en="The processing result confirms that the record did not pass validation."
+                                data-lang-fr="Le résultat du traitement confirme que l'enregistrement n'a pas réussi la validation.">
+
+                                The processing result confirms that the record
+                                did not pass validation.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">2</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Precise validation reason"
+                                data-lang-fr="Raison précise de la validation">
+                                Precise validation reason
+                            </strong>
+
+                            <p
+                                data-lang-en="The workflow identifies the missing required field as the email address."
+                                data-lang-fr="Le workflow identifie le champ obligatoire manquant comme étant l'adresse e-mail.">
+
+                                The workflow identifies the missing required
+                                field as the email address.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">3</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Manual review enabled"
+                                data-lang-fr="Révision manuelle activée">
+                                Manual review enabled
+                            </strong>
+
+                            <p
+                                data-lang-en="The record is marked for correction instead of CRM synchronization."
+                                data-lang-fr="L'enregistrement est marqué pour correction au lieu d'être synchronisé avec le CRM.">
+
+                                The record is marked for correction instead of
+                                CRM synchronization.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+                </ol>
+
+
+                <figcaption
+                    data-lang-en="The incomplete record remains outside HubSpot while Airtable preserves the exact validation issue for follow-up."
+                    data-lang-fr="L'enregistrement incomplet reste en dehors de HubSpot tandis qu'Airtable conserve le problème exact de validation pour le suivi.">
+
+                    The incomplete record remains outside HubSpot while
+                    Airtable preserves the exact validation issue for
+                    follow-up.
+
+                </figcaption>
+
+            </figure>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         VALIDATED RESULTS
+    ========================================= -->
+
+    <section class="page-section validated-results-section reveal">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span
+                    class="section-label"
+                    data-lang-en="Validated Test Results"
+                    data-lang-fr="Résultats validés du test">
+                    Validated Test Results
+                </span>
+
+                <h2
+                    data-lang-en="What the Simulation Demonstrated"
+                    data-lang-fr="Ce que la simulation a démontré">
+                    What the Simulation Demonstrated
+                </h2>
+
+                <p
+                    data-lang-en="The following behaviours were observed during the controlled AutomateSuite test."
+                    data-lang-fr="Les comportements suivants ont été observés pendant le test contrôlé d'AutomateSuite.">
+
+                    The following behaviours were observed during the
+                    controlled AutomateSuite test.
+
+                </p>
+
+            </div>
+
+
+            <div class="validated-results-grid">
+
+                <article class="validated-result-card">
+
+                    <i
+                        class="fa-solid fa-eye"
+                        aria-hidden="true"></i>
+
+                    <h3
+                        data-lang-en="New Records Detected"
+                        data-lang-fr="Nouveaux enregistrements détectés">
+                        New Records Detected
+                    </h3>
+
+                    <p
+                        data-lang-en="The scenario received the prepared Airtable test records."
+                        data-lang-fr="Le scénario a reçu les enregistrements de test préparés dans Airtable.">
+
+                        The scenario received the prepared Airtable test
+                        records.
+
+                    </p>
+
+                </article>
+
+
+                <article class="validated-result-card">
+
+                    <i
+                        class="fa-solid fa-code-branch"
+                        aria-hidden="true"></i>
+
+                    <h3
+                        data-lang-en="Routes Selected Correctly"
+                        data-lang-fr="Routes sélectionnées correctement">
+                        Routes Selected Correctly
+                    </h3>
+
+                    <p
+                        data-lang-en="Complete and incomplete records followed the intended validation paths."
+                        data-lang-fr="Les enregistrements complets et incomplets ont suivi les parcours de validation prévus.">
+
+                        Complete and incomplete records followed the intended
+                        validation paths.
+
+                    </p>
+
+                </article>
+
+
+                <article class="validated-result-card">
+
+                    <i
+                        class="fa-brands fa-hubspot"
+                        aria-hidden="true"></i>
+
+                    <h3
+                        data-lang-en="CRM Contact Processed"
+                        data-lang-fr="Contact traité dans le CRM">
+                        CRM Contact Processed
+                    </h3>
+
+                    <p
+                        data-lang-en="The valid lead created or updated a HubSpot contact."
+                        data-lang-fr="Le lead valide a créé ou mis à jour un contact HubSpot.">
+
+                        The valid lead created or updated a HubSpot contact.
+
+                    </p>
+
+                </article>
+
+
+                <article class="validated-result-card">
+
+                    <i
+                        class="fa-solid fa-clipboard-check"
+                        aria-hidden="true"></i>
+
+                    <h3
+                        data-lang-en="Results Written Back"
+                        data-lang-fr="Résultats renvoyés">
+                        Results Written Back
+                    </h3>
+
+                    <p
+                        data-lang-en="Airtable stored the final status, processing result and validation details."
+                        data-lang-fr="Airtable a enregistré le statut final, le résultat du traitement et les détails de validation.">
+
+                        Airtable stored the final status, processing result and
+                        validation details.
+
+                    </p>
+
+                </article>
+
+            </div>
+
+
+            <div class="result-boundary-note">
+
+                <h3
+                    data-lang-en="What This Case Study Does Not Claim"
+                    data-lang-fr="Ce que cette étude de cas ne revendique pas">
+                    What This Case Study Does Not Claim
+                </h3>
+
+                <p
+                    data-lang-en="The simulation does not claim a production-scale processing volume, a guaranteed percentage improvement, a customer return on investment or identical results for every implementation."
+                    data-lang-fr="La simulation ne revendique pas un volume de traitement à l'échelle de la production, un pourcentage garanti d'amélioration, un retour sur investissement client ni des résultats identiques pour chaque implémentation.">
+
+                    The simulation does not claim a production-scale
+                    processing volume, a guaranteed percentage improvement,
+                    a customer return on investment or identical results for
+                    every implementation.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         BENEFITS
+    ========================================= -->
+
+    <section class="page-section case-study-benefits-section reveal">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span
+                    class="section-label"
+                    data-lang-en="Operational Benefits"
+                    data-lang-fr="Bénéfices opérationnels">
+                    Operational Benefits
+                </span>
+
+                <h2
+                    data-lang-en="A More Consistent Lead-Processing Structure"
+                    data-lang-fr="Une structure plus cohérente pour le traitement des leads">
+                    A More Consistent Lead-Processing Structure
+                </h2>
+
+            </div>
+
+
+            <div class="case-study-benefits-grid">
+
+                <article class="case-study-benefit-card">
+
+                    <i
+                        class="fa-solid fa-check-double"
+                        aria-hidden="true"></i>
+
+                    <h3
+                        data-lang-en="Consistent Validation"
+                        data-lang-fr="Validation cohérente">
+                        Consistent Validation
+                    </h3>
+
+                    <p
+                        data-lang-en="Every record is evaluated according to the same required-field conditions."
+                        data-lang-fr="Chaque enregistrement est évalué selon les mêmes conditions de champs obligatoires.">
+
+                        Every record is evaluated according to the same
+                        required-field conditions.
+
+                    </p>
+
+                </article>
+
+
+                <article class="case-study-benefit-card">
+
+                    <i
+                        class="fa-solid fa-repeat"
+                        aria-hidden="true"></i>
+
+                    <h3
+                        data-lang-en="Reduced Repetitive Entry"
+                        data-lang-fr="Réduction des saisies répétitives">
+                        Reduced Repetitive Entry
+                    </h3>
+
+                    <p
+                        data-lang-en="Valid lead information moves from Airtable to HubSpot without manual re-entry."
+                        data-lang-fr="Les informations des leads valides passent d'Airtable à HubSpot sans nouvelle saisie manuelle.">
+
+                        Valid lead information moves from Airtable to HubSpot
+                        without manual re-entry.
+
+                    </p>
+
+                </article>
+
+
+                <article class="case-study-benefit-card">
+
+                    <i
+                        class="fa-solid fa-triangle-exclamation"
+                        aria-hidden="true"></i>
+
+                    <h3
+                        data-lang-en="Clear Exception Handling"
+                        data-lang-fr="Gestion claire des exceptions">
+                        Clear Exception Handling
+                    </h3>
+
+                    <p
+                        data-lang-en="Incomplete records preserve a specific correction reason and remain outside the CRM."
+                        data-lang-fr="Les enregistrements incomplets conservent une raison précise de correction et restent en dehors du CRM.">
+
+                        Incomplete records preserve a specific correction
+                        reason and remain outside the CRM.
+
+                    </p>
+
+                </article>
+
+
+                <article class="case-study-benefit-card">
+
+                    <i
+                        class="fa-solid fa-chart-line"
+                        aria-hidden="true"></i>
+
+                    <h3
+                        data-lang-en="Improved Status Visibility"
+                        data-lang-fr="Meilleure visibilité sur les statuts">
+                        Improved Status Visibility
+                    </h3>
+
+                    <p
+                        data-lang-en="Processing outcomes remain visible in the original Airtable record."
+                        data-lang-fr="Les résultats du traitement restent visibles dans l'enregistrement Airtable d'origine.">
+
+                        Processing outcomes remain visible in the original
+                        Airtable record.
+
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         PRODUCTION ADAPTATION
+    ========================================= -->
+
+    <section class="page-section case-study-production-section reveal">
+
+        <div class="container">
+
+            <div class="production-adaptation-card">
+
+                <div class="production-adaptation-content">
+
+                    <span
+                        class="section-label"
+                        data-lang-en="Possible Production Configuration"
+                        data-lang-fr="Configuration de production possible">
+                        Possible Production Configuration
+                    </span>
+
+                    <h2
+                        data-lang-en="Adapt the Workflow to Your Lead Sources and CRM"
+                        data-lang-fr="Adaptez le workflow à vos sources de leads et à votre CRM">
+                        Adapt the Workflow to Your Lead Sources and CRM
+                    </h2>
+
+                    <p
+                        data-lang-en="A production implementation can be adjusted according to the client's forms, CRM fields, qualification rules, approval requirements and existing technology environment."
+                        data-lang-fr="Une implémentation en production peut être ajustée selon les formulaires du client, les champs du CRM, les règles de qualification, les exigences d'approbation et l'environnement technologique existant.">
+
+                        A production implementation can be adjusted according
+                        to the client's forms, CRM fields, qualification rules,
+                        approval requirements and existing technology
+                        environment.
+
+                    </p>
+
+
+                    <ul class="production-adaptation-list">
+
+                        <li
+                            data-lang-en="Additional lead sources and web forms"
+                            data-lang-fr="Sources de leads et formulaires web supplémentaires">
+                            Additional lead sources and web forms
+                        </li>
+
+                        <li
+                            data-lang-en="Alternative CRM and database integrations"
+                            data-lang-fr="Intégrations avec d'autres CRM et bases de données">
+                            Alternative CRM and database integrations
+                        </li>
+
+                        <li
+                            data-lang-en="Custom lead-scoring and qualification rules"
+                            data-lang-fr="Règles personnalisées de scoring et de qualification">
+                            Custom lead-scoring and qualification rules
+                        </li>
+
+                        <li
+                            data-lang-en="Duplicate detection and approval stages"
+                            data-lang-fr="Détection des doublons et étapes d'approbation">
+                            Duplicate detection and approval stages
+                        </li>
+
+                        <li
+                            data-lang-en="Sales notifications and assignment rules"
+                            data-lang-fr="Notifications commerciales et règles d'attribution">
+                            Sales notifications and assignment rules
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="production-adaptation-action">
+
+                    <a
+                        href="custom-request.html?service=ai-lead-enrichment"
+                        class="btn btn-primary"
+                        data-lang-en="Request a Similar Automation"
+                        data-lang-fr="Demander une automatisation similaire">
+
+                        Request a Similar Automation
+
+                    </a>
+
+                    <a
+                        href="ai-lead-enrichment.html"
+                        class="btn btn-secondary"
+                        data-lang-en="Explore Lead Enrichment"
+                        data-lang-fr="Découvrir l'enrichissement des leads">
+
+                        Explore Lead Enrichment
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         TOOLS USED
+    ========================================= -->
+
+    <section class="page-section case-study-tools-section reveal">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span
+                    class="section-label"
+                    data-lang-en="Validated Technology Stack"
+                    data-lang-fr="Stack technologique validée">
+                    Validated Technology Stack
+                </span>
+
+                <h2
+                    data-lang-en="Tools Used in This Simulation"
+                    data-lang-fr="Outils utilisés dans cette simulation">
+                    Tools Used in This Simulation
+                </h2>
+
+                <p
+                    data-lang-en="The demonstrated workflow was built and tested with the following connected platforms."
+                    data-lang-fr="Le workflow présenté a été construit et testé avec les plateformes connectées suivantes.">
+
+                    The demonstrated workflow was built and tested with the
+                    following connected platforms.
+
+                </p>
+
+            </div>
+
+
+            <div class="case-study-stack-grid">
+
+                <article class="case-study-stack-card">
+
+                    <i
+                        class="fa-solid fa-table-cells-large"
+                        aria-hidden="true"></i>
+
+                    <h3>Airtable</h3>
+
+                    <p
+                        data-lang-en="Stores incoming lead records, validation details and processing results."
+                        data-lang-fr="Stocke les leads entrants, les détails de validation et les résultats du traitement.">
+
+                        Stores incoming lead records, validation details and
+                        processing results.
+
+                    </p>
+
+                </article>
+
+
+                <article class="case-study-stack-card">
+
+                    <i
+                        class="fa-solid fa-diagram-project"
+                        aria-hidden="true"></i>
+
+                    <h3>Make</h3>
+
+                    <p
+                        data-lang-en="Orchestrates record monitoring, validation routes and connected actions."
+                        data-lang-fr="Orchestre la surveillance des enregistrements, les routes de validation et les actions connectées.">
+
+                        Orchestrates record monitoring, validation routes and
+                        connected actions.
+
+                    </p>
+
+                </article>
+
+
+                <article class="case-study-stack-card">
+
+                    <i
+                        class="fa-brands fa-hubspot"
+                        aria-hidden="true"></i>
+
+                    <h3>HubSpot</h3>
+
+                    <p
+                        data-lang-en="Receives the validated lead information and creates or updates the CRM contact."
+                        data-lang-fr="Reçoit les informations du lead validé et crée ou met à jour le contact dans le CRM.">
+
+                        Receives the validated lead information and creates or
+                        updates the CRM contact.
+
+                    </p>
+
+                </article>
+
+            </div>
+
+
+            <p
+                class="case-study-stack-note"
+                data-lang-en="The production stack can be adapted according to the client's existing systems and technical requirements."
+                data-lang-fr="La stack de production peut être adaptée selon les systèmes existants et les exigences techniques du client.">
+
+                The production stack can be adapted according to the client's
+                existing systems and technical requirements.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         FAQ
+    ========================================= -->
+
+    <section class="page-section case-study-faq-section reveal">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span
+                    class="section-label"
+                    data-lang-en="Frequently Asked Questions"
+                    data-lang-fr="Questions fréquentes">
+                    Frequently Asked Questions
+                </span>
+
+                <h2
+                    data-lang-en="Lead Capture Automation FAQ"
+                    data-lang-fr="FAQ sur l'automatisation de la capture des leads">
+                    Lead Capture Automation FAQ
+                </h2>
+
+            </div>
+
+
+            <div class="faq-container">
+
+                <div class="faq-accordion">
+
+                    <button class="accordion-header" type="button">
+
+                        <h3
+                            data-lang-en="Can this workflow connect to another CRM?"
+                            data-lang-fr="Ce workflow peut-il se connecter à un autre CRM ?">
+                            Can this workflow connect to another CRM?
+                        </h3>
+
+                        <i
+                            class="fa-solid fa-chevron-down accordion-icon"
+                            aria-hidden="true"></i>
+
+                    </button>
+
+                    <div class="accordion-content">
+
+                        <p
+                            data-lang-en="Yes. The demonstrated workflow uses HubSpot, but a production configuration may connect to another compatible CRM or database depending on the available integrations and API access."
+                            data-lang-fr="Oui. Le workflow présenté utilise HubSpot, mais une configuration en production peut se connecter à un autre CRM ou à une autre base de données compatible selon les intégrations disponibles et l'accès à l'API.">
+
+                            Yes. The demonstrated workflow uses HubSpot, but a
+                            production configuration may connect to another
+                            compatible CRM or database depending on the
+                            available integrations and API access.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-accordion">
+
+                    <button class="accordion-header" type="button">
+
+                        <h3
+                            data-lang-en="What happens when required information is missing?"
+                            data-lang-fr="Que se passe-t-il lorsqu'une information obligatoire est manquante ?">
+                            What happens when required information is missing?
+                        </h3>
+
+                        <i
+                            class="fa-solid fa-chevron-down accordion-icon"
+                            aria-hidden="true"></i>
+
+                    </button>
+
+                    <div class="accordion-content">
+
+                        <p
+                            data-lang-en="The tested workflow prevents the incomplete record from being synchronized with HubSpot, stores the missing-field reason in Airtable and enables manual review."
+                            data-lang-fr="Le workflow testé empêche la synchronisation de l'enregistrement incomplet avec HubSpot, conserve dans Airtable la raison liée au champ manquant et active la révision manuelle.">
+
+                            The tested workflow prevents the incomplete record
+                            from being synchronized with HubSpot, stores the
+                            missing-field reason in Airtable and enables manual
+                            review.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-accordion">
+
+                    <button class="accordion-header" type="button">
+
+                        <h3
+                            data-lang-en="Can the required-field rules be customized?"
+                            data-lang-fr="Les règles relatives aux champs obligatoires peuvent-elles être personnalisées ?">
+                            Can the required-field rules be customized?
+                        </h3>
+
+                        <i
+                            class="fa-solid fa-chevron-down accordion-icon"
+                            aria-hidden="true"></i>
+
+                    </button>
+
+                    <div class="accordion-content">
+
+                        <p
+                            data-lang-en="Yes. Required fields, qualification conditions, duplicate checks and routing rules can be adapted to the client's sales process."
+                            data-lang-fr="Oui. Les champs obligatoires, les conditions de qualification, les vérifications de doublons et les règles de routage peuvent être adaptés au processus commercial du client.">
+
+                            Yes. Required fields, qualification conditions,
+                            duplicate checks and routing rules can be adapted
+                            to the client's sales process.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-accordion">
+
+                    <button class="accordion-header" type="button">
+
+                        <h3
+                            data-lang-en="Does the automation replace human review?"
+                            data-lang-fr="L'automatisation remplace-t-elle la révision humaine ?">
+                            Does the automation replace human review?
+                        </h3>
+
+                        <i
+                            class="fa-solid fa-chevron-down accordion-icon"
+                            aria-hidden="true"></i>
+
+                    </button>
+
+                    <div class="accordion-content">
+
+                        <p
+                            data-lang-en="No. Human review can remain part of the workflow for incomplete, unusual or high-value records. The purpose is to route attention more consistently, not to remove every human decision."
+                            data-lang-fr="Non. La révision humaine peut rester intégrée au workflow pour les enregistrements incomplets, inhabituels ou à forte valeur. L'objectif est d'orienter l'attention de manière plus cohérente, et non de supprimer chaque décision humaine.">
+
+                            No. Human review can remain part of the workflow
+                            for incomplete, unusual or high-value records. The
+                            purpose is to route attention more consistently,
+                            not to remove every human decision.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-accordion">
+
+                    <button class="accordion-header" type="button">
+
+                        <h3
+                            data-lang-en="Is this workflow already a customer production deployment?"
+                            data-lang-fr="Ce workflow est-il déjà un déploiement client en production ?">
+                            Is this workflow already a customer production deployment?
+                        </h3>
+
+                        <i
+                            class="fa-solid fa-chevron-down accordion-icon"
+                            aria-hidden="true"></i>
+
+                    </button>
+
+                    <div class="accordion-content">
+
+                        <p
+                            data-lang-en="No. This page documents a controlled AutomateSuite simulation. A production implementation would require discovery, configuration, security review and testing within the customer's actual environment."
+                            data-lang-fr="Non. Cette page documente une simulation contrôlée d'AutomateSuite. Une implémentation en production nécessiterait une phase de découverte, une configuration, une vérification de la sécurité et des tests dans l'environnement réel du client.">
+
+                            No. This page documents a controlled AutomateSuite
+                            simulation. A production implementation would
+                            require discovery, configuration, security review
+                            and testing within the customer's actual
+                            environment.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         RELATED CASE STUDIES
+    ========================================= -->
+
+    <section class="page-section related-case-studies-section reveal">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span
+                    class="section-label"
+                    data-lang-en="Continue Exploring"
+                    data-lang-fr="Poursuivre la découverte">
+                    Continue Exploring
+                </span>
+
+                <h2
+                    data-lang-en="Related Automation Case Studies"
+                    data-lang-fr="Études de cas d'automatisation associées">
+                    Related Automation Case Studies
+                </h2>
+
+            </div>
+
+
+            <div class="related-case-studies-grid">
+
+                <article class="related-case-study-card">
+
+                    <div class="related-case-study-number">
+                        SIM-02
+                    </div>
+
+                    <h3
+                        data-lang-en="AI Support Email Triage and Urgent Ticket Automation"
+                        data-lang-fr="Tri des e-mails de support par IA et automatisation des tickets urgents">
+                        AI Support Email Triage and Urgent Ticket Automation
+                    </h3>
+
+                    <p
+                        data-lang-en="Classify support emails, prepare review drafts and escalate urgent cases to HubSpot."
+                        data-lang-fr="Classer les e-mails de support, préparer des brouillons de révision et transmettre les cas urgents vers HubSpot.">
+
+                        Classify support emails, prepare review drafts and
+                        escalate urgent cases to HubSpot.
+
+                    </p>
+
+                    <a
+                        href="case-study-ai-support-triage.html"
+                        class="case-study-link"
+                        data-lang-en="View Case Study"
+                        data-lang-fr="Voir l'étude de cas">
+
+                        View Case Study
+
+                        <span aria-hidden="true">→</span>
+
+                    </a>
+
+                </article>
+
+
+                <article class="related-case-study-card">
+
+                    <div class="related-case-study-number">
+                        SIM-03
+                    </div>
+
+                    <h3
+                        data-lang-en="WhatsApp Renewal Reminders with SMS Fallback"
+                        data-lang-fr="Rappels de renouvellement WhatsApp avec relais SMS">
+                        WhatsApp Renewal Reminders with SMS Fallback
+                    </h3>
+
+                    <p
+                        data-lang-en="Evaluate expiration dates, send staged reminders and escalate delivery incidents."
+                        data-lang-fr="Évaluer les dates d'expiration, envoyer des rappels progressifs et escalader les incidents de livraison.">
+
+                        Evaluate expiration dates, send staged reminders and
+                        escalate delivery incidents.
+
+                    </p>
+
+                    <a
+                        href="case-study-renewal-reminders.html"
+                        class="case-study-link"
+                        data-lang-en="View Case Study"
+                        data-lang-fr="Voir l'étude de cas">
+
+                        View Case Study
+
+                        <span aria-hidden="true">→</span>
+
+                    </a>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         FINAL CTA
+    ========================================= -->
+
+    <section class="page-section case-study-final-cta reveal">
+
+        <div class="container">
+
+            <div class="cta-box">
+
+                <span
+                    class="section-label"
+                    data-lang-en="Build a Workflow Around Your Process"
+                    data-lang-fr="Construisez un workflow autour de votre processus">
+                    Build a Workflow Around Your Process
+                </span>
+
+                <h2
+                    data-lang-en="Need a Better Way to Process Incoming Leads?"
+                    data-lang-fr="Vous recherchez une meilleure manière de traiter vos leads entrants ?">
+                    Need a Better Way to Process Incoming Leads?
+                </h2>
+
+                <p
+                    data-lang-en="Tell AutomateSuite how your leads currently enter your systems, which information must be validated and how your CRM should be updated."
+                    data-lang-fr="Expliquez à AutomateSuite comment vos leads entrent actuellement dans vos systèmes, quelles informations doivent être validées et comment votre CRM doit être mis à jour.">
+
+                    Tell AutomateSuite how your leads currently enter your
+                    systems, which information must be validated and how your
+                    CRM should be updated.
+
+                </p>
+
+                <div class="cta-actions">
+
+                    <a
+                        href="custom-request.html?service=ai-lead-enrichment"
+                        class="btn btn-primary"
+                        data-lang-en="Discuss a Similar Automation"
+                        data-lang-fr="Discuter d'une automatisation similaire">
+                        Discuss a Similar Automation
+                    </a>
+
+                    <a
+                        href="case-studies.html"
+                        class="btn btn-secondary"
+                        data-lang-en="View All Case Studies"
+                        data-lang-fr="Voir toutes les études de cas">
+                        View All Case Studies
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<div
+    class="case-study-lightbox"
+    id="case-study-lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-hidden="true"
+    aria-label="Expanded case study image">
+
+    <div class="case-study-lightbox-backdrop"></div>
+
+    <div class="case-study-lightbox-content">
+
+        <button
+            class="case-study-lightbox-close"
+            type="button"
+            aria-label="Close enlarged image">
+
+            <i
+                class="fa-solid fa-xmark"
+                aria-hidden="true"></i>
+
+        </button>
+
+        <img
+            id="case-study-lightbox-image"
+            src=""
+            alt="">
+
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <!-- Brand -->
+            <div class="footer-column">
+
+                <a href="index.html"
+                class="footer-logo">
+
+                AutomateSuite
+
+                </a>
+
+                <p
+                data-lang-en="Automation systems, AI integrations and scalable SaaS solutions for modern businesses."
+                data-lang-fr="Systèmes d'automatisation, intégrations IA et solutions SaaS évolutives pour les entreprises modernes.">
+                Automation systems, AI integrations and scalable SaaS solutions for modern businesses.
+                </p>
+
+            </div>
+
+            <!-- Navigation -->
+            <div class="footer-column">
+
+                <h4
+                data-lang-en="Navigation"
+                data-lang-fr="Navigation">
+                Navigation
+                </h4>
+
+                <a href="index.html"
+                   data-lang-en="Home"
+                   data-lang-fr="Accueil">
+                   Home
+                </a>
+
+                <a href="about.html"
+                   data-lang-en="About"
+                   data-lang-fr="À propos">
+                   About
+                </a>
+                
+                <a href="services.html"
+                   data-lang-en="Services"
+                   data-lang-fr="Services">
+                   Services
+                </a>
+
+                <a href="case-studies.html"
+                    data-lang-en="Case Studies"
+                    data-lang-fr="Études de cas">
+                    Case Studies
+                </a>
+                
+                <a href="tools.html"
+                   data-lang-en="Tools"
+                   data-lang-fr="Outils">
+                   Tools
+                </a>
+
+                <a href="pricing.html"
+                   data-lang-en="Pricing"
+                   data-lang-fr="Tarification">
+                   Pricing
+                </a>
+                
+                <a href="contact.html"
+                   data-lang-en="Contact"
+                   data-lang-fr="Contact">
+                   Contact
+                </a>
+
+            </div>
+
+            <!-- Services -->
+            <div class="footer-column">
+
+                <h4
+                data-lang-en="Services"
+                data-lang-fr="Services">
+                Services
+                </h4>
+
+                <a href="whatsapp-trigger.html"
+                data-lang-en="WhatsApp Automation"
+                data-lang-fr="Automatisation WhatsApp">
+                WhatsApp Automation
+                </a>
+
+                <a href="ai-lead-enrichment.html"
+                data-lang-en="AI Lead Enrichment"
+                data-lang-fr="Enrichissement des Leads par l'IA">
+                AI Lead Enrichment
+                </a>
+
+                <a href="support-email-triage.html"
+                data-lang-en="AI Support Email Triage"
+                data-lang-fr="Tri des Emails Support par l'IA">
+                AI Support Email Triage
+                </a>
+
+                <a href="services.html"
+                data-lang-en="View All Services"
+                data-lang-fr="Voir Tous Les Services">
+                View All Services
+                </a>
+
+            </div>
+
+            <!-- Tools In Development -->
+            <div class="footer-column">
+                
+                <h4
+                data-lang-en="Tools In Development"
+                data-lang-fr="Outils en développement">
+                Tools In Development
+                </h4>
+
+                <a href="tools.html#whatsapp-expiration-trigger"
+                data-lang-en="WhatsApp Expiration Trigger"
+                data-lang-fr="Déclencheur d'Expiration WhatsApp">
+                WhatsApp Expiration Trigger
+                </a>
+
+                <a href="tools.html#ai-lead-enrichment-pipeline"
+                data-lang-en="AI Lead Enrichment Pipeline"
+                data-lang-fr="Pipeline d'Enrichissement IA">
+                AI Lead Enrichment Pipeline
+                </a>
+
+                <a href="tools.html#support-email-triage-system"
+                data-lang-en="Support Email Triage System"
+                data-lang-fr="Système de Tri des Emails Support">
+                Support Email Triage System
+                </a>
+
+                <a href="tools.html"
+                data-lang-en="View All Tools"
+                data-lang-fr="Voir Tous Les Outils">
+                View All Tools
+                </a>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-column">
+
+                <h4
+                data-lang-en="Contact"
+                data-lang-fr="Contact">
+                Contact
+                </h4>
+
+                <a href="mailto:hello@automatesuite.io">
+                hello@automatesuite.io
+                </a>
+
+                <p
+                data-lang-en="Remote Services Worldwide"
+                data-lang-fr="Services à distance dans le monde entier">
+                Remote Services Worldwide
+                </p>
+
+            </div>
+
+            <div class="footer-column">
+                <h4
+                data-lang-en="Legal"
+                data-lang-fr="Mentions Légales">
+                Legal
+                </h4>
+
+                <a href="privacy-policy.html"
+                data-lang-en="Privacy Policy"
+                data-lang-fr="Politique de Confidentialité">
+                Privacy Policy
+                </a>
+
+                <a href="terms-of-service.html"
+                data-lang-en="Terms of Service"
+                data-lang-fr="Conditions d'Utilisation">
+                Terms of Service
+                </a>
+
+                <a href="cookies-policy.html"
+                data-lang-en="Cookie Policy"
+                data-lang-fr="Politique des Cookies">
+                Cookie Policy
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+
+            <p
+                data-lang-en="© 2026 AutomateSuite. All rights reserved."
+                data-lang-fr="© 2026 AutomateSuite. Tous droits réservés.">
+                © 2026 AutomateSuite. All rights reserved.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- BACK TO TOP -->
+
+<a href="#top"
+   class="back-to-top-btn"
+   aria-label="Back to Top">
+
+   ↑
+
+</a>
+
+<script src="assets/js/script.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const lightbox = document.getElementById("case-study-lightbox");
+    const lightboxImage = document.getElementById("case-study-lightbox-image");
+    const closeButton = lightbox?.querySelector(".case-study-lightbox-close");
+    const backdrop = lightbox?.querySelector(".case-study-lightbox-backdrop");
+    const imageButtons = document.querySelectorAll(".case-study-image-open");
+
+    if (!lightbox || !lightboxImage || !closeButton || !backdrop) {
+        return;
+    }
+
+    let lastFocusedElement = null;
+
+    const openLightbox = (button) => {
+
+        const imageSource = button.dataset.imageSrc;
+        const imageAlt = button.dataset.imageAlt || "";
+
+        if (!imageSource) {
+            return;
+        }
+
+        lastFocusedElement = document.activeElement;
+
+        lightboxImage.src = imageSource;
+        lightboxImage.alt = imageAlt;
+
+        lightbox.classList.add("active");
+        lightbox.setAttribute("aria-hidden", "false");
+
+        document.body.classList.add("lightbox-open");
+
+        closeButton.focus();
+
+    };
+
+    const closeLightbox = () => {
+
+        lightbox.classList.remove("active");
+        lightbox.setAttribute("aria-hidden", "true");
+
+        document.body.classList.remove("lightbox-open");
+
+        lightboxImage.src = "";
+        lightboxImage.alt = "";
+
+        if (lastFocusedElement) {
+            lastFocusedElement.focus();
+        }
+
+    };
+
+    imageButtons.forEach((button) => {
+
+        button.addEventListener("click", () => {
+            openLightbox(button);
+        });
+
+    });
+
+    closeButton.addEventListener("click", closeLightbox);
+    backdrop.addEventListener("click", closeLightbox);
+
+    document.addEventListener("keydown", (event) => {
+
+        if (
+            event.key === "Escape" &&
+            lightbox.classList.contains("active")
+        ) {
+            closeLightbox();
+        }
+
+    });
+
+});
+</script>
+
+</body>
+
+</html>
