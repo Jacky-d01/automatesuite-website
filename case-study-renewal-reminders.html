@@ -1,0 +1,2926 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WhatsApp Renewal Reminders with SMS Fallback | AutomateSuite</title>
+
+<meta
+    name="description"
+    content="Explore a validated AutomateSuite workflow that monitors renewal dates, sends WhatsApp reminders, uses SMS fallback and escalates delivery incidents.">
+
+<link
+    rel="canonical"
+    href="https://automatesuite.io/case-study-renewal-reminders.html">
+
+
+<!-- Open Graph -->
+
+<meta
+    property="og:type"
+    content="article">
+
+<meta
+    property="og:site_name"
+    content="AutomateSuite">
+
+<meta
+    property="og:title"
+    content="WhatsApp Renewal Reminders with SMS Fallback | AutomateSuite">
+
+<meta
+    property="og:description"
+    content="See how AutomateSuite validated staged renewal reminders, WhatsApp delivery, SMS fallback and HubSpot escalation.">
+
+<meta
+    property="og:url"
+    content="https://automatesuite.io/case-study-renewal-reminders.html">
+
+<meta
+    property="og:image"
+    content="https://automatesuite.io/assets/images/case-studies/sim03/sim03-renewal-reminder-workflow-overview.png">
+
+<meta
+    property="og:image:alt"
+    content="AutomateSuite WhatsApp renewal reminder workflow with SMS fallback and HubSpot escalation">
+
+
+<!-- Twitter / X -->
+
+<meta
+    name="twitter:card"
+    content="summary_large_image">
+
+<meta
+    name="twitter:title"
+    content="WhatsApp Renewal Reminders with SMS Fallback | AutomateSuite">
+
+<meta
+    name="twitter:description"
+    content="Explore a validated workflow for renewal-date monitoring, staged reminders, fallback delivery and incident escalation.">
+
+<meta
+    name="twitter:image"
+    content="https://automatesuite.io/assets/images/case-studies/sim03/sim03-renewal-reminder-workflow-overview.png">
+
+<link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+<link rel="apple-touch-icon" href="assets/images/favicon.png">    
+
+    <!-- FONT AWESOME -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- MAIN CSS -->
+<link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body id="top">
+
+<nav class="navbar">
+
+    <div class="nav-container">
+
+        <!-- Logo -->
+        <a href="index.html" class="logo" aria-label="AutomateSuite Home">
+            <img src="assets/images/logo-icon.svg"
+                alt="AutomateSuite logo"
+                class="logo-icon">
+            <span>AutomateSuite</span>
+        </a>
+
+        <!-- Navigation Links -->
+        <div class="nav-menu" id="nav-menu">
+
+            <div class="nav-links">
+
+                <a href="index.html">
+                    <i class="fa-solid fa-house"></i>
+                   <span data-lang-en="Home"
+                   data-lang-fr="Accueil">Home</span>
+                </a>
+
+                <a href="about.html">
+                    <i class="fa-solid fa-circle-info"></i>
+                   <span data-lang-en="About"
+                   data-lang-fr="À propos">About</span>
+                </a>
+
+                <a href="services.html">
+                    <i class="fa-solid fa-gears"></i>
+                   <span data-lang-en="Services"
+                   data-lang-fr="Services">Services</span>
+                </a>
+
+                <a href="case-studies.html">
+                    <i class="fa-solid fa-folder-open"></i>
+                    <span data-lang-en="Case Studies"
+                    data-lang-fr="Études de cas">Case Studies</span>
+                </a>
+
+                <a href="tools.html">
+                    <i class="fa-solid fa-toolbox"></i>
+                   <span data-lang-en="Tools"
+                   data-lang-fr="Outils">Tools</span>
+                </a>
+
+                <a href="pricing.html">
+                    <i class="fa-solid fa-tags"></i>
+                   <span data-lang-en="Pricing"
+                   data-lang-fr="Tarification">Pricing</span>
+                </a>
+
+                <a href="contact.html">
+                    <i class="fa-solid fa-envelope"></i>
+                   <span data-lang-en="Contact"
+                   data-lang-fr="Contact">Contact</span>
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Right Controls -->
+        <div class="menu-controls">
+
+            <button id="theme-toggle" aria-label="Toggle dark mode">
+                ☀️
+            </button>
+
+            <div class="language-selector">
+
+                <button
+                type="button"
+                class="language-btn"
+                onclick="setLanguage('en')"
+                aria-label="Switch language to English">
+
+                EN
+
+                </button>
+
+                <span>|</span>
+
+                <button
+                type="button"
+                class="language-btn"
+                onclick="setLanguage('fr')"
+                aria-label="Passer le site en français">
+
+                FR
+
+                </button>
+
+            </div>
+
+        </div>
+        
+        <!-- Hamburger -->
+        <button
+            type="button" 
+            class="hamburger"
+            id="hamburger"
+            aria-label="Open navigation menu"
+            aria-controls="nav-menu"
+            aria-expanded="false">
+                ☰
+        </button>
+
+        <!-- Overlay -->
+        <div class="menu-overlay" id="menu-overlay"></div>
+      
+    </div>
+
+</nav>
+
+<main>
+
+    <!-- ========================================
+         BREADCRUMB
+    ========================================= -->
+
+    <section class="case-study-breadcrumb-section">
+
+        <div class="container">
+
+            <nav
+                class="case-study-breadcrumb"
+                aria-label="Breadcrumb">
+
+                <a
+                    href="index.html"
+                    data-lang-en="Home"
+                    data-lang-fr="Accueil">
+                    Home
+                </a>
+
+                <span aria-hidden="true">/</span>
+
+                <a
+                    href="case-studies.html"
+                    data-lang-en="Case Studies"
+                    data-lang-fr="Études de cas">
+                    Case Studies
+                </a>
+
+                <span aria-hidden="true">/</span>
+
+                <span
+                    aria-current="page"
+                    data-lang-en="Renewal Reminder Automation"
+                    data-lang-fr="Automatisation des rappels de renouvellement">
+                    Renewal Reminder Automation
+                </span>
+
+            </nav>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         HERO
+    ========================================= -->
+
+    <section class="case-study-detail-hero reveal">
+
+        <div class="container">
+
+            <span
+                class="section-label"
+                data-lang-en="SIM-03 · Validated Automation Simulation"
+                data-lang-fr="SIM-03 · Simulation d’automatisation validée">
+                SIM-03 · Validated Automation Simulation
+            </span>
+
+            <h1
+                data-lang-en="WhatsApp Renewal Reminders with SMS Fallback and HubSpot Escalation"
+                data-lang-fr="Rappels de renouvellement WhatsApp avec relais SMS et escalade HubSpot">
+                WhatsApp Renewal Reminders with SMS Fallback and HubSpot Escalation
+            </h1>
+
+            <p
+                class="case-study-hero-description"
+                data-lang-en="See how AutomateSuite validated a workflow that evaluates renewal dates, sends staged WhatsApp reminders, uses SMS when fallback delivery is required and records escalation results."
+                data-lang-fr="Découvrez comment AutomateSuite a validé un workflow qui évalue les dates de renouvellement, envoie des rappels WhatsApp progressifs, utilise le SMS lorsqu’un relais est nécessaire et enregistre les résultats d’escalade.">
+
+                See how AutomateSuite validated a workflow that evaluates
+                renewal dates, sends staged WhatsApp reminders, uses SMS when
+                fallback delivery is required and records escalation results.
+
+            </p>
+
+
+            <div class="case-study-hero-meta">
+
+                <div class="case-study-meta-item">
+
+                    <span
+                        data-lang-en="Workflow type"
+                        data-lang-fr="Type de workflow">
+                        Workflow type
+                    </span>
+
+                    <strong
+                        data-lang-en="Renewal monitoring and customer reminders"
+                        data-lang-fr="Suivi des renouvellements et rappels clients">
+                        Renewal monitoring and customer reminders
+                    </strong>
+
+                </div>
+
+
+                <div class="case-study-meta-item">
+
+                    <span
+                        data-lang-en="Validated stack"
+                        data-lang-fr="Stack validée">
+                        Validated stack
+                    </span>
+
+                    <strong>
+                        Airtable · Make · Twilio · WhatsApp · HubSpot
+                    </strong>
+
+                </div>
+
+
+                <div class="case-study-meta-item">
+
+                    <span
+                        data-lang-en="Validation scope"
+                        data-lang-fr="Périmètre de validation">
+                        Validation scope
+                    </span>
+
+                    <strong
+                        data-lang-en="Staged reminders, fallback and escalation"
+                        data-lang-fr="Rappels progressifs, relais et escalade">
+                        Staged reminders, fallback and escalation
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-actions">
+
+                <a
+                    href="#workflow"
+                    class="btn btn-primary"
+                    data-lang-en="Explore the Workflow"
+                    data-lang-fr="Découvrir le workflow">
+                    Explore the Workflow
+                </a>
+
+                <a
+                    href="whatsapp-trigger.html"
+                    class="btn btn-secondary"
+                    data-lang-en="View Related Service"
+                    data-lang-fr="Voir le service associé">
+                    View Related Service
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         TRANSPARENCY NOTICE
+    ========================================= -->
+
+    <section class="case-study-notice-section reveal delay-1">
+
+        <div class="container">
+
+            <div class="case-study-notice">
+
+                <div
+                    class="case-study-notice-icon"
+                    aria-hidden="true">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                </div>
+
+                <div>
+
+                    <h2
+                        data-lang-en="Validated Simulation, Not a Customer Performance Claim"
+                        data-lang-fr="Simulation validée, sans revendication de performance client">
+                        Validated Simulation, Not a Customer Performance Claim
+                    </h2>
+
+                    <p
+                        data-lang-en="This case study documents a controlled AutomateSuite test. It demonstrates validated reminder, fallback and escalation behaviour, but it is not presented as a customer deployment, guaranteed delivery rate or production-scale result."
+                        data-lang-fr="Cette étude de cas documente un test contrôlé d’AutomateSuite. Elle démontre le comportement validé des rappels, du relais et de l’escalade, sans être présentée comme un déploiement client, un taux de livraison garanti ni un résultat à l’échelle de la production.">
+
+                        This case study documents a controlled AutomateSuite
+                        test. It demonstrates validated reminder, fallback and
+                        escalation behaviour, but it is not presented as a
+                        customer deployment, guaranteed delivery rate or
+                        production-scale result.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         BUSINESS CHALLENGE
+    ========================================= -->
+
+    <section class="page-section case-study-challenge-section reveal">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span
+                    class="section-label"
+                    data-lang-en="Business Challenge"
+                    data-lang-fr="Enjeu opérationnel">
+                    Business Challenge
+                </span>
+
+                <h2
+                    data-lang-en="Renewal Dates Can Be Missed Without Structured Follow-Up"
+                    data-lang-fr="Les dates de renouvellement peuvent être manquées sans suivi structuré">
+                    Renewal Dates Can Be Missed Without Structured Follow-Up
+                </h2>
+
+                <p
+                    data-lang-en="When expiration dates and reminders are managed manually, customers may receive messages too late, delivery failures may remain unnoticed and unresolved cases may lack a clear escalation record."
+                    data-lang-fr="Lorsque les dates d’expiration et les rappels sont gérés manuellement, les clients peuvent recevoir les messages trop tard, les échecs de livraison peuvent rester inaperçus et les cas non résolus peuvent manquer d’un suivi d’escalade clair.">
+
+                    When expiration dates and reminders are managed manually,
+                    customers may receive messages too late, delivery failures
+                    may remain unnoticed and unresolved cases may lack a clear
+                    escalation record.
+
+                </p>
+
+            </div>
+
+
+            <div class="before-after-grid">
+
+                <article class="before-after-card">
+
+                    <span
+                        class="before-after-label before-label"
+                        data-lang-en="Before Automation"
+                        data-lang-fr="Avant l’automatisation">
+                        Before Automation
+                    </span>
+
+                    <h3
+                        data-lang-en="Manual Renewal Monitoring"
+                        data-lang-fr="Suivi manuel des renouvellements">
+                        Manual Renewal Monitoring
+                    </h3>
+
+                    <ul>
+
+                        <li
+                            data-lang-en="Expiration dates checked individually"
+                            data-lang-fr="Dates d’expiration vérifiées individuellement">
+                            Expiration dates checked individually
+                        </li>
+
+                        <li
+                            data-lang-en="Reminder timing depends on manual follow-up"
+                            data-lang-fr="Le calendrier des rappels dépend d’un suivi manuel">
+                            Reminder timing depends on manual follow-up
+                        </li>
+
+                        <li
+                            data-lang-en="Failed messages may require separate investigation"
+                            data-lang-fr="Les messages échoués peuvent nécessiter une recherche séparée">
+                            Failed messages may require separate investigation
+                        </li>
+
+                        <li
+                            data-lang-en="Escalation status updated manually"
+                            data-lang-fr="Statut d’escalade mis à jour manuellement">
+                            Escalation status updated manually
+                        </li>
+
+                    </ul>
+
+                </article>
+
+
+                <article class="before-after-card after-card">
+
+                    <span
+                        class="before-after-label after-label"
+                        data-lang-en="After Automation"
+                        data-lang-fr="Après l’automatisation">
+                        After Automation
+                    </span>
+
+                    <h3
+                        data-lang-en="Staged Reminder and Escalation Logic"
+                        data-lang-fr="Logique progressive de rappel et d’escalade">
+                        Staged Reminder and Escalation Logic
+                    </h3>
+
+                    <ul>
+
+                        <li
+                            data-lang-en="Renewal dates evaluated automatically"
+                            data-lang-fr="Dates de renouvellement évaluées automatiquement">
+                            Renewal dates evaluated automatically
+                        </li>
+
+                        <li
+                            data-lang-en="One-day and expiration-day routes separated"
+                            data-lang-fr="Routes à un jour et au jour d’expiration séparées">
+                            One-day and expiration-day routes separated
+                        </li>
+
+                        <li
+                            data-lang-en="Fallback delivery available when required"
+                            data-lang-fr="Relais de livraison disponible lorsque nécessaire">
+                            Fallback delivery available when required
+                        </li>
+
+                        <li
+                            data-lang-en="Processing and escalation outcomes recorded"
+                            data-lang-fr="Résultats de traitement et d’escalade enregistrés">
+                            Processing and escalation outcomes recorded
+                        </li>
+
+                    </ul>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         OBJECTIVE
+    ========================================= -->
+
+    <section class="page-section case-study-objective-section reveal">
+
+        <div class="container">
+
+            <div class="case-study-objective-card">
+
+                <span
+                    class="section-label"
+                    data-lang-en="Automation Objective"
+                    data-lang-fr="Objectif de l’automatisation">
+                    Automation Objective
+                </span>
+
+                <h2
+                    data-lang-en="Send the Right Reminder at the Right Renewal Stage"
+                    data-lang-fr="Envoyer le bon rappel à la bonne étape du renouvellement">
+                    Send the Right Reminder at the Right Renewal Stage
+                </h2>
+
+                <p
+                    data-lang-en="The simulation was designed to identify eligible renewal records, mark them as processing, evaluate the remaining number of days, send the appropriate WhatsApp reminder and preserve delivery or escalation results in Airtable."
+                    data-lang-fr="La simulation a été conçue pour identifier les renouvellements éligibles, les marquer comme en cours de traitement, évaluer le nombre de jours restants, envoyer le rappel WhatsApp approprié et conserver les résultats de livraison ou d’escalade dans Airtable.">
+
+                    The simulation was designed to identify eligible renewal
+                    records, mark them as processing, evaluate the remaining
+                    number of days, send the appropriate WhatsApp reminder and
+                    preserve delivery or escalation results in Airtable.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         WORKFLOW OVERVIEW
+    ========================================= -->
+
+    <section
+        class="page-section case-study-workflow-section reveal"
+        id="workflow">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span
+                    class="section-label"
+                    data-lang-en="Workflow Overview"
+                    data-lang-fr="Vue d’ensemble du workflow">
+                    Workflow Overview
+                </span>
+
+                <h2
+                    data-lang-en="How the Renewal Reminder Workflow Operates"
+                    data-lang-fr="Fonctionnement du workflow de rappel de renouvellement">
+                    How the Renewal Reminder Workflow Operates
+                </h2>
+
+                <p
+                    data-lang-en="The scenario evaluates active renewal records, routes them according to the expiration stage and updates Airtable after each reminder, fallback or escalation action."
+                    data-lang-fr="Le scénario évalue les renouvellements actifs, les oriente selon l’étape d’expiration et met à jour Airtable après chaque rappel, relais ou action d’escalade.">
+
+                    The scenario evaluates active renewal records, routes them
+                    according to the expiration stage and updates Airtable
+                    after each reminder, fallback or escalation action.
+
+                </p>
+
+            </div>
+
+
+            <figure class="case-study-figure">
+
+                <div class="annotated-screenshot">
+
+                    <button
+                        class="case-study-image-open"
+                        type="button"
+                        data-image-src="assets/images/case-studies/sim03/sim03-renewal-reminder-workflow-overview.png"
+                        data-image-alt="Make workflow evaluating renewal dates, sending WhatsApp reminders, using SMS fallback and escalating incidents"
+                        aria-label="Open renewal reminder workflow image in a larger view">
+
+                        <img
+                            src="assets/images/case-studies/sim03/sim03-renewal-reminder-workflow-overview.png"
+                            alt="Make workflow evaluating renewal dates, sending WhatsApp reminders, using SMS fallback and escalating incidents"
+                            loading="lazy">
+
+                    </button>
+
+                </div>
+
+
+                <ol class="annotation-legend">
+
+                    <li>
+
+                        <span class="annotation-number">1</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Renewal record monitoring"
+                                data-lang-fr="Surveillance des renouvellements">
+                                Renewal record monitoring
+                            </strong>
+
+                            <p
+                                data-lang-en="Eligible Airtable records are selected according to the expiration and status conditions."
+                                data-lang-fr="Les enregistrements Airtable éligibles sont sélectionnés selon les conditions d’expiration et de statut.">
+
+                                Eligible Airtable records are selected
+                                according to the expiration and status
+                                conditions.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">2</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Processing status"
+                                data-lang-fr="Statut de traitement">
+                                Processing status
+                            </strong>
+
+                            <p
+                                data-lang-en="The record is marked as processing before reminder evaluation begins."
+                                data-lang-fr="L’enregistrement est marqué comme en cours de traitement avant l’évaluation du rappel.">
+
+                                The record is marked as processing before
+                                reminder evaluation begins.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">3</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Reminder-stage routing"
+                                data-lang-fr="Routage selon l’étape du rappel">
+                                Reminder-stage routing
+                            </strong>
+
+                            <p
+                                data-lang-en="The workflow separates one-day and expiration-day conditions."
+                                data-lang-fr="Le workflow sépare les conditions à un jour et au jour d’expiration.">
+
+                                The workflow separates one-day and
+                                expiration-day conditions.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">4</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Message delivery"
+                                data-lang-fr="Livraison du message">
+                                Message delivery
+                            </strong>
+
+                            <p
+                                data-lang-en="The appropriate WhatsApp reminder is sent through the configured Twilio connection."
+                                data-lang-fr="Le rappel WhatsApp approprié est envoyé via la connexion Twilio configurée.">
+
+                                The appropriate WhatsApp reminder is sent
+                                through the configured Twilio connection.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">5</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Fallback and escalation"
+                                data-lang-fr="Relais et escalade">
+                                Fallback and escalation
+                            </strong>
+
+                            <p
+                                data-lang-en="Failed or unresolved conditions can trigger SMS fallback and HubSpot escalation."
+                                data-lang-fr="Les conditions d’échec ou non résolues peuvent déclencher un relais SMS et une escalade HubSpot.">
+
+                                Failed or unresolved conditions can trigger SMS
+                                fallback and HubSpot escalation.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+                </ol>
+
+
+                <figcaption
+                    data-lang-en="The validated workflow coordinates renewal evaluation, staged reminders, fallback delivery and incident escalation."
+                    data-lang-fr="Le workflow validé coordonne l’évaluation des renouvellements, les rappels progressifs, le relais de livraison et l’escalade des incidents.">
+
+                    The validated workflow coordinates renewal evaluation,
+                    staged reminders, fallback delivery and incident
+                    escalation.
+
+                </figcaption>
+
+            </figure>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         STEP 1 — RENEWAL RECORD
+    ========================================= -->
+
+    <section class="page-section case-study-step-section reveal">
+
+        <div class="container">
+
+            <div class="case-study-step-header">
+
+                <span class="case-study-step-number">01</span>
+
+                <div>
+
+                    <span
+                        class="section-label"
+                        data-lang-en="Renewal Evaluation"
+                        data-lang-fr="Évaluation du renouvellement">
+                        Renewal Evaluation
+                    </span>
+
+                    <h2
+                        data-lang-en="Airtable Calculates the Renewal Stage"
+                        data-lang-fr="Airtable calcule l’étape du renouvellement">
+                        Airtable Calculates the Renewal Stage
+                    </h2>
+
+                    <p
+                        data-lang-en="The record contains the customer, expiration date, calculated remaining days and renewal status required by the routing logic."
+                        data-lang-fr="L’enregistrement contient le client, la date d’expiration, le nombre de jours restants calculé et le statut de renouvellement requis par la logique de routage.">
+
+                        The record contains the customer, expiration date,
+                        calculated remaining days and renewal status required
+                        by the routing logic.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <figure class="case-study-figure">
+
+                <div class="annotated-screenshot">
+
+                    <button
+                        class="case-study-image-open"
+                        type="button"
+                        data-image-src="assets/images/case-studies/sim03/sim03-airtable-renewal-before-processing.png"
+                        data-image-alt="Airtable renewal record showing the expiration date, calculated remaining days and renewal status"
+                        aria-label="Open renewal record image in a larger view">
+
+                        <img
+                            src="assets/images/case-studies/sim03/sim03-airtable-renewal-before-processing.png"
+                            alt="Airtable renewal record showing the expiration date, calculated remaining days and renewal status"
+                            loading="lazy">
+
+                    </button>
+
+                </div>
+
+
+                <ol class="annotation-legend">
+
+                    <li>
+
+                        <span class="annotation-number">1</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Expiration date"
+                                data-lang-fr="Date d’expiration">
+                                Expiration date
+                            </strong>
+
+                            <p
+                                data-lang-en="The customer’s renewal deadline provides the reference date for the reminder logic."
+                                data-lang-fr="La date limite de renouvellement du client fournit la date de référence pour la logique de rappel.">
+
+                                The customer’s renewal deadline provides the
+                                reference date for the reminder logic.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">2</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Days until expiration"
+                                data-lang-fr="Jours avant expiration">
+                                Days until expiration
+                            </strong>
+
+                            <p
+                                data-lang-en="The calculated value determines whether the one-day or expiration-day route should run."
+                                data-lang-fr="La valeur calculée détermine si la route à un jour ou celle du jour d’expiration doit être exécutée.">
+
+                                The calculated value determines whether the
+                                one-day or expiration-day route should run.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">3</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Renewal status"
+                                data-lang-fr="Statut de renouvellement">
+                                Renewal status
+                            </strong>
+
+                            <p
+                                data-lang-en="The status helps prevent records outside the eligible processing stage from being handled."
+                                data-lang-fr="Le statut permet d’éviter que les enregistrements hors de l’étape de traitement éligible soient pris en charge.">
+
+                                The status helps prevent records outside the
+                                eligible processing stage from being handled.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+                </ol>
+
+
+                <figcaption
+                    data-lang-en="The Airtable record supplies the date and status information used to select the appropriate reminder route."
+                    data-lang-fr="L’enregistrement Airtable fournit les informations de date et de statut utilisées pour sélectionner la route de rappel appropriée.">
+
+                    The Airtable record supplies the date and status
+                    information used to select the appropriate reminder route.
+
+                </figcaption>
+
+            </figure>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         STEP 2 — ONE-DAY REMINDER
+    ========================================= -->
+
+    <section class="page-section case-study-step-section alternate-section reveal">
+
+        <div class="container">
+
+            <div class="case-study-step-header">
+
+                <span class="case-study-step-number">02</span>
+
+                <div>
+
+                    <span
+                        class="section-label"
+                        data-lang-en="One-Day Reminder"
+                        data-lang-fr="Rappel à un jour">
+                        One-Day Reminder
+                    </span>
+
+                    <h2
+                        data-lang-en="A WhatsApp Reminder Is Sent Before Expiration"
+                        data-lang-fr="Un rappel WhatsApp est envoyé avant l’expiration">
+                        A WhatsApp Reminder Is Sent Before Expiration
+                    </h2>
+
+                    <p
+                        data-lang-en="When the calculated remaining time equals one day, the workflow sends the configured advance reminder and updates the processing record."
+                        data-lang-fr="Lorsque le temps restant calculé est égal à un jour, le workflow envoie le rappel anticipé configuré et met à jour l’enregistrement de traitement.">
+
+                        When the calculated remaining time equals one day, the
+                        workflow sends the configured advance reminder and
+                        updates the processing record.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <figure class="case-study-figure">
+
+                <div class="annotated-screenshot">
+
+                    <button
+                        class="case-study-image-open"
+                        type="button"
+                        data-image-src="assets/images/case-studies/sim03/REPLACE-WITH-ONE-DAY-WHATSAPP-FILENAME.png"
+                        data-image-alt="WhatsApp message showing the one-day renewal reminder sent during the AutomateSuite simulation"
+                        aria-label="Open one-day WhatsApp reminder image in a larger view">
+
+                        <img
+                            src="assets/images/case-studies/sim03/REPLACE-WITH-ONE-DAY-WHATSAPP-FILENAME.png"
+                            alt="WhatsApp message showing the one-day renewal reminder sent during the AutomateSuite simulation"
+                            loading="lazy">
+
+                    </button>
+
+                </div>
+
+
+                <ol class="annotation-legend">
+
+                    <li>
+
+                        <span class="annotation-number">1</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Advance reminder"
+                                data-lang-fr="Rappel anticipé">
+                                Advance reminder
+                            </strong>
+
+                            <p
+                                data-lang-en="The customer receives a reminder before the expiration date."
+                                data-lang-fr="Le client reçoit un rappel avant la date d’expiration.">
+
+                                The customer receives a reminder before the
+                                expiration date.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">2</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Customer context"
+                                data-lang-fr="Contexte client">
+                                Customer context
+                            </strong>
+
+                            <p
+                                data-lang-en="The message can include the customer and renewal information mapped by the workflow."
+                                data-lang-fr="Le message peut inclure les informations du client et du renouvellement mappées par le workflow.">
+
+                                The message can include the customer and
+                                renewal information mapped by the workflow.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">3</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Configured channel"
+                                data-lang-fr="Canal configuré">
+                                Configured channel
+                            </strong>
+
+                            <p
+                                data-lang-en="The test uses the Twilio WhatsApp Sandbox connection rather than representing a live approved production sender."
+                                data-lang-fr="Le test utilise la connexion Twilio WhatsApp Sandbox et ne représente pas un expéditeur de production approuvé en direct.">
+
+                                The test uses the Twilio WhatsApp Sandbox
+                                connection rather than representing a live
+                                approved production sender.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+                </ol>
+
+
+                <figcaption
+                    data-lang-en="The one-day route sends an advance WhatsApp reminder through the configured simulation connection."
+                    data-lang-fr="La route à un jour envoie un rappel WhatsApp anticipé via la connexion de simulation configurée.">
+
+                    The one-day route sends an advance WhatsApp reminder
+                    through the configured simulation connection.
+
+                </figcaption>
+
+            </figure>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         STEP 3 — EXPIRATION-DAY REMINDER
+    ========================================= -->
+
+    <section class="page-section case-study-step-section reveal">
+
+        <div class="container">
+
+            <div class="case-study-step-header">
+
+                <span class="case-study-step-number">03</span>
+
+                <div>
+
+                    <span
+                        class="section-label"
+                        data-lang-en="Expiration-Day Reminder"
+                        data-lang-fr="Rappel au jour d’expiration">
+                        Expiration-Day Reminder
+                    </span>
+
+                    <h2
+                        data-lang-en="The Expiration-Day Route Sends a Second Reminder"
+                        data-lang-fr="La route du jour d’expiration envoie un second rappel">
+                        The Expiration-Day Route Sends a Second Reminder
+                    </h2>
+
+                    <p
+                        data-lang-en="When the calculated remaining time reaches zero, the workflow selects the expiration-day message and records the final reminder stage."
+                        data-lang-fr="Lorsque le temps restant calculé atteint zéro, le workflow sélectionne le message du jour d’expiration et enregistre l’étape finale du rappel.">
+
+                        When the calculated remaining time reaches zero, the
+                        workflow selects the expiration-day message and records
+                        the final reminder stage.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <figure class="case-study-figure">
+
+                <div class="annotated-screenshot">
+
+                    <button
+                        class="case-study-image-open"
+                        type="button"
+                        data-image-src="assets/images/case-studies/sim03/sim03-expiration-day-reminder-result.png"
+                        data-image-alt="WhatsApp message showing the expiration-day renewal reminder sent during the AutomateSuite simulation"
+                        aria-label="Open expiration-day reminder image in a larger view">
+
+                        <img
+                            src="assets/images/case-studies/sim03/sim03-expiration-day-reminder-result.png"
+                            alt="WhatsApp message showing the expiration-day renewal reminder sent during the AutomateSuite simulation"
+                            loading="lazy">
+
+                    </button>
+
+                </div>
+
+
+                <ol class="annotation-legend">
+
+                    <li>
+
+                        <span class="annotation-number">1</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Expiration-day message"
+                                data-lang-fr="Message du jour d’expiration">
+                                Expiration-day message
+                            </strong>
+
+                            <p
+                                data-lang-en="The second route uses wording appropriate to the renewal deadline."
+                                data-lang-fr="La seconde route utilise un message adapté à la date limite de renouvellement.">
+
+                                The second route uses wording appropriate to
+                                the renewal deadline.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">2</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Separate workflow condition"
+                                data-lang-fr="Condition de workflow distincte">
+                                Separate workflow condition
+                            </strong>
+
+                            <p
+                                data-lang-en="The message is triggered by the zero-day condition rather than the advance-reminder route."
+                                data-lang-fr="Le message est déclenché par la condition de zéro jour plutôt que par la route du rappel anticipé.">
+
+                                The message is triggered by the zero-day
+                                condition rather than the advance-reminder
+                                route.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">3</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Reminder stage recorded"
+                                data-lang-fr="Étape du rappel enregistrée">
+                                Reminder stage recorded
+                            </strong>
+
+                            <p
+                                data-lang-en="The resulting Airtable update identifies the expiration-day reminder stage."
+                                data-lang-fr="La mise à jour Airtable obtenue identifie l’étape du rappel au jour d’expiration.">
+
+                                The resulting Airtable update identifies the
+                                expiration-day reminder stage.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+                </ol>
+
+
+                <figcaption
+                    data-lang-en="The zero-day route demonstrates that the workflow can apply different messages at separate renewal stages."
+                    data-lang-fr="La route de zéro jour démontre que le workflow peut appliquer différents messages à des étapes distinctes du renouvellement.">
+
+                    The zero-day route demonstrates that the workflow can
+                    apply different messages at separate renewal stages.
+
+                </figcaption>
+
+            </figure>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         STEP 4 — SMS FALLBACK
+    ========================================= -->
+
+    <section class="page-section case-study-step-section alternate-section reveal">
+
+        <div class="container">
+
+            <div class="case-study-step-header">
+
+                <span class="case-study-step-number">04</span>
+
+                <div>
+
+                    <span
+                        class="section-label"
+                        data-lang-en="Fallback Delivery"
+                        data-lang-fr="Livraison de secours">
+                        Fallback Delivery
+                    </span>
+
+                    <h2
+                        data-lang-en="SMS Provides an Alternative Delivery Route"
+                        data-lang-fr="Le SMS fournit une route de livraison alternative">
+                        SMS Provides an Alternative Delivery Route
+                    </h2>
+
+                    <p
+                        data-lang-en="When the configured WhatsApp condition cannot complete successfully, the fallback branch can send the reminder through SMS and preserve the fallback outcome."
+                        data-lang-fr="Lorsque la condition WhatsApp configurée ne peut pas se terminer correctement, la branche de secours peut envoyer le rappel par SMS et conserver le résultat du relais.">
+
+                        When the configured WhatsApp condition cannot complete
+                        successfully, the fallback branch can send the reminder
+                        through SMS and preserve the fallback outcome.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <figure class="case-study-figure">
+
+                <div class="annotated-screenshot">
+
+                    <button
+                        class="case-study-image-open"
+                        type="button"
+                        data-image-src="assets/images/case-studies/sim03/REPLACE-WITH-SMS-FALLBACK-FILENAME.png"
+                        data-image-alt="SMS fallback result from the AutomateSuite renewal reminder simulation"
+                        aria-label="Open SMS fallback image in a larger view">
+
+                        <img
+                            src="assets/images/case-studies/sim03/REPLACE-WITH-SMS-FALLBACK-FILENAME.png"
+                            alt="SMS fallback result from the AutomateSuite renewal reminder simulation"
+                            loading="lazy">
+
+                    </button>
+
+                </div>
+
+
+                <ol class="annotation-legend">
+
+                    <li>
+
+                        <span class="annotation-number">1</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Alternative channel"
+                                data-lang-fr="Canal alternatif">
+                                Alternative channel
+                            </strong>
+
+                            <p
+                                data-lang-en="The renewal reminder is redirected to SMS when the fallback rule is satisfied."
+                                data-lang-fr="Le rappel de renouvellement est redirigé vers le SMS lorsque la règle de secours est satisfaite.">
+
+                                The renewal reminder is redirected to SMS when
+                                the fallback rule is satisfied.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">2</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Fallback result"
+                                data-lang-fr="Résultat du relais">
+                                Fallback result
+                            </strong>
+
+                            <p
+                                data-lang-en="The workflow records that the secondary channel was used."
+                                data-lang-fr="Le workflow enregistre que le canal secondaire a été utilisé.">
+
+                                The workflow records that the secondary channel
+                                was used.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">3</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Customer communication preserved"
+                                data-lang-fr="Communication client préservée">
+                                Customer communication preserved
+                            </strong>
+
+                            <p
+                                data-lang-en="The secondary route provides another opportunity to deliver the renewal notice."
+                                data-lang-fr="La route secondaire offre une autre possibilité de transmettre l’avis de renouvellement.">
+
+                                The secondary route provides another
+                                opportunity to deliver the renewal notice.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+                </ol>
+
+
+                <figcaption
+                    data-lang-en="The fallback branch demonstrates an alternative delivery path when the primary messaging condition does not complete."
+                    data-lang-fr="La branche de secours démontre un parcours de livraison alternatif lorsque la condition principale de messagerie ne se termine pas.">
+
+                    The fallback branch demonstrates an alternative delivery
+                    path when the primary messaging condition does not
+                    complete.
+
+                </figcaption>
+
+            </figure>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         STEP 5 — HUBSPOT ESCALATION
+    ========================================= -->
+
+    <section class="page-section case-study-step-section reveal">
+
+        <div class="container">
+
+            <div class="case-study-step-header">
+
+                <span class="case-study-step-number">05</span>
+
+                <div>
+
+                    <span
+                        class="section-label"
+                        data-lang-en="Incident Escalation"
+                        data-lang-fr="Escalade de l’incident">
+                        Incident Escalation
+                    </span>
+
+                    <h2
+                        data-lang-en="Unresolved Delivery Issues Create a HubSpot Ticket"
+                        data-lang-fr="Les problèmes de livraison non résolus créent un ticket HubSpot">
+                        Unresolved Delivery Issues Create a HubSpot Ticket
+                    </h2>
+
+                    <p
+                        data-lang-en="When the configured incident conditions remain unresolved, the workflow creates a HubSpot ticket so the renewal case can be investigated and followed."
+                        data-lang-fr="Lorsque les conditions d’incident configurées restent non résolues, le workflow crée un ticket HubSpot afin que le cas de renouvellement puisse être analysé et suivi.">
+
+                        When the configured incident conditions remain
+                        unresolved, the workflow creates a HubSpot ticket so
+                        the renewal case can be investigated and followed.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <figure class="case-study-figure">
+
+                <div class="annotated-screenshot">
+
+                    <button
+                        class="case-study-image-open"
+                        type="button"
+                        data-image-src="assets/images/case-studies/sim03/sim03-expired-renewal-escalation-result.png"
+                        data-image-alt="HubSpot ticket created for an unresolved renewal reminder delivery incident"
+                        aria-label="Open HubSpot renewal escalation image in a larger view">
+
+                        <img
+                            src="assets/images/case-studies/sim03/sim03-expired-renewal-escalation-result.png"
+                            alt="HubSpot ticket created for an unresolved renewal reminder delivery incident"
+                            loading="lazy">
+
+                    </button>
+
+                </div>
+
+
+                <ol class="annotation-legend">
+
+                    <li>
+
+                        <span class="annotation-number">1</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Incident ticket"
+                                data-lang-fr="Ticket d’incident">
+                                Incident ticket
+                            </strong>
+
+                            <p
+                                data-lang-en="The unresolved renewal case becomes a trackable HubSpot ticket."
+                                data-lang-fr="Le cas de renouvellement non résolu devient un ticket HubSpot traçable.">
+
+                                The unresolved renewal case becomes a
+                                trackable HubSpot ticket.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">2</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Renewal context preserved"
+                                data-lang-fr="Contexte du renouvellement conservé">
+                                Renewal context preserved
+                            </strong>
+
+                            <p
+                                data-lang-en="The ticket provides the customer and reminder context required for investigation."
+                                data-lang-fr="Le ticket fournit le contexte du client et du rappel nécessaire à l’analyse.">
+
+                                The ticket provides the customer and reminder
+                                context required for investigation.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">3</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Follow-up visibility"
+                                data-lang-fr="Visibilité du suivi">
+                                Follow-up visibility
+                            </strong>
+
+                            <p
+                                data-lang-en="The escalation creates a separate case that can be assigned and monitored."
+                                data-lang-fr="L’escalade crée un cas distinct qui peut être attribué et surveillé.">
+
+                                The escalation creates a separate case that
+                                can be assigned and monitored.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+                </ol>
+
+
+                <figcaption
+                    data-lang-en="The escalation branch converts an unresolved reminder-delivery issue into a trackable CRM ticket."
+                    data-lang-fr="La branche d’escalade transforme un problème non résolu de livraison du rappel en ticket CRM traçable.">
+
+                    The escalation branch converts an unresolved
+                    reminder-delivery issue into a trackable CRM ticket.
+
+                </figcaption>
+
+            </figure>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         FINAL AIRTABLE RESULT
+    ========================================= -->
+
+    <section class="page-section case-study-confirmation-section alternate-section reveal">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span
+                    class="section-label"
+                    data-lang-en="Processing Confirmation"
+                    data-lang-fr="Confirmation du traitement">
+                    Processing Confirmation
+                </span>
+
+                <h2
+                    data-lang-en="Airtable Records the One-Day Reminder Result"
+                    data-lang-fr="Airtable enregistre le résultat du rappel à un jour">
+                    "Airtable Records the One-Day Reminder Result
+                </h2>
+
+                <p
+                    data-lang-en="After the selected route completes, the renewal record stores the reminder stage, channel result, processing message and latest action time."
+                    data-lang-fr="Après l’exécution de la route sélectionnée, l’enregistrement du renouvellement conserve l’étape du rappel, le résultat du canal, le message de traitement et l’heure de la dernière action.">
+
+                    After the selected route completes, the renewal record
+                    stores the reminder stage, channel result, processing
+                    message and latest action time.
+
+                </p>
+
+            </div>
+
+
+            <figure class="case-study-figure compact-figure">
+
+                <div class="annotated-screenshot">
+
+                    <button
+                        class="case-study-image-open"
+                        type="button"
+                        data-image-src="assets/images/case-studies/sim03/sim03-one-day-reminder-airtable-result.png"
+                        data-image-alt="Airtable renewal record showing the final reminder, delivery and processing result"
+                        aria-label="Open final Airtable renewal result in a larger view">
+
+                        <img
+                            src="assets/images/case-studies/sim03/sim03-one-day-reminder-airtable-result.png"
+                            alt="Airtable renewal record showing the final reminder, delivery and processing result"
+                            loading="lazy">
+
+                    </button>
+
+                </div>
+
+
+                <ol class="annotation-legend">
+
+                    <li>
+
+                        <span class="annotation-number">1</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Reminder stage"
+                                data-lang-fr="Étape du rappel">
+                                Reminder stage
+                            </strong>
+
+                            <p
+                                data-lang-en="The record identifies whether the one-day or expiration-day action completed."
+                                data-lang-fr="L’enregistrement identifie si l’action à un jour ou au jour d’expiration a été exécutée.">
+
+                                The record identifies whether the one-day or
+                                expiration-day action completed.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">2</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Channel status"
+                                data-lang-fr="Statut du canal">
+                                Channel status
+                            </strong>
+
+                            <p
+                                data-lang-en="The messaging result remains visible in the source renewal record."
+                                data-lang-fr="Le résultat de la messagerie reste visible dans l’enregistrement source du renouvellement.">
+
+                                The messaging result remains visible in the
+                                source renewal record.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">3</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Processing result"
+                                data-lang-fr="Résultat du traitement">
+                                Processing result
+                            </strong>
+
+                            <p
+                                data-lang-en="A written result explains which reminder or fallback action completed."
+                                data-lang-fr="Un résultat écrit explique quelle action de rappel ou de secours a été exécutée.">
+
+                                A written result explains which reminder or
+                                fallback action completed.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">4</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Latest action time"
+                                data-lang-fr="Heure de la dernière action">
+                                Latest action time
+                            </strong>
+
+                            <p
+                                data-lang-en="The timestamp preserves when the latest reminder action was recorded."
+                                data-lang-fr="L’horodatage conserve le moment où la dernière action de rappel a été enregistrée.">
+
+                                The timestamp preserves when the latest
+                                reminder action was recorded.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+                </ol>
+
+
+                <figcaption
+                    data-lang-en="The final Airtable update centralizes the renewal stage, communication result and processing history."
+                    data-lang-fr="La mise à jour finale d’Airtable centralise l’étape du renouvellement, le résultat de communication et l’historique du traitement.">
+
+                    The final Airtable update centralizes the renewal stage,
+                    communication result and processing history.
+
+                </figcaption>
+
+            </figure>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         VALIDATED RESULTS
+    ========================================= -->
+
+    <section class="page-section validated-results-section reveal">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span
+                    class="section-label"
+                    data-lang-en="Validated Test Results"
+                    data-lang-fr="Résultats validés du test">
+                    Validated Test Results
+                </span>
+
+                <h2
+                    data-lang-en="What the Simulation Demonstrated"
+                    data-lang-fr="Ce que la simulation a démontré">
+                    What the Simulation Demonstrated
+                </h2>
+
+                <p
+                    data-lang-en="The following behaviours were observed during the controlled AutomateSuite test."
+                    data-lang-fr="Les comportements suivants ont été observés pendant le test contrôlé d’AutomateSuite.">
+
+                    The following behaviours were observed during the
+                    controlled AutomateSuite test.
+
+                </p>
+
+            </div>
+
+
+            <div class="validated-results-grid">
+
+                <article class="validated-result-card">
+
+                    <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+
+                    <h3
+                        data-lang-en="Renewal Dates Evaluated"
+                        data-lang-fr="Dates de renouvellement évaluées">
+                        Renewal Dates Evaluated
+                    </h3>
+
+                    <p
+                        data-lang-en="The workflow selected records according to their calculated expiration stage."
+                        data-lang-fr="Le workflow a sélectionné les enregistrements selon leur étape d’expiration calculée.">
+                        The workflow selected records according to their
+                        calculated expiration stage.
+                    </p>
+
+                </article>
+
+
+                <article class="validated-result-card">
+
+                    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+
+                    <h3
+                        data-lang-en="Staged Reminders Sent"
+                        data-lang-fr="Rappels progressifs envoyés">
+                        Staged Reminders Sent
+                    </h3>
+
+                    <p
+                        data-lang-en="The one-day and expiration-day routes used their configured WhatsApp reminders."
+                        data-lang-fr="Les routes à un jour et au jour d’expiration ont utilisé leurs rappels WhatsApp configurés.">
+                        The one-day and expiration-day routes used their
+                        configured WhatsApp reminders.
+                    </p>
+
+                </article>
+
+
+                <article class="validated-result-card">
+
+                    <i class="fa-solid fa-message" aria-hidden="true"></i>
+
+                    <h3
+                        data-lang-en="Fallback Route Tested"
+                        data-lang-fr="Route de secours testée">
+                        Fallback Route Tested
+                    </h3>
+
+                    <p
+                        data-lang-en="The secondary messaging route recorded the SMS fallback outcome."
+                        data-lang-fr="La route de messagerie secondaire a enregistré le résultat du relais SMS.">
+                        The secondary messaging route recorded the SMS
+                        fallback outcome.
+                    </p>
+
+                </article>
+
+
+                <article class="validated-result-card">
+
+                    <i class="fa-solid fa-ticket" aria-hidden="true"></i>
+
+                    <h3
+                        data-lang-en="Incident Escalation Created"
+                        data-lang-fr="Escalade d’incident créée">
+                        Incident Escalation Created
+                    </h3>
+
+                    <p
+                        data-lang-en="The configured unresolved case produced a trackable HubSpot ticket."
+                        data-lang-fr="Le cas non résolu configuré a produit un ticket HubSpot traçable.">
+                        The configured unresolved case produced a trackable
+                        HubSpot ticket.
+                    </p>
+
+                </article>
+
+            </div>
+
+
+            <div class="result-boundary-note">
+
+                <h3
+                    data-lang-en="What This Case Study Does Not Claim"
+                    data-lang-fr="Ce que cette étude de cas ne revendique pas">
+                    What This Case Study Does Not Claim
+                </h3>
+
+                <p
+                    data-lang-en="The simulation does not claim guaranteed message delivery, customer renewal conversion, production-scale volume, customer return on investment or identical results for every implementation."
+                    data-lang-fr="La simulation ne revendique pas une livraison garantie des messages, une conversion garantie des renouvellements, un volume à l’échelle de la production, un retour sur investissement client ni des résultats identiques pour chaque implémentation.">
+
+                    The simulation does not claim guaranteed message delivery,
+                    customer renewal conversion, production-scale volume,
+                    customer return on investment or identical results for
+                    every implementation.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         BENEFITS
+    ========================================= -->
+
+    <section class="page-section case-study-benefits-section reveal">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span
+                    class="section-label"
+                    data-lang-en="Operational Benefits"
+                    data-lang-fr="Bénéfices opérationnels">
+                    Operational Benefits
+                </span>
+
+                <h2
+                    data-lang-en="A More Structured Renewal Communication Process"
+                    data-lang-fr="Un processus plus structuré de communication des renouvellements">
+                    A More Structured Renewal Communication Process
+                </h2>
+
+            </div>
+
+
+            <div class="case-study-benefits-grid">
+
+                <article class="case-study-benefit-card">
+
+                    <i class="fa-solid fa-clock" aria-hidden="true"></i>
+
+                    <h3
+                        data-lang-en="Consistent Reminder Timing"
+                        data-lang-fr="Calendrier de rappel cohérent">
+                        Consistent Reminder Timing
+                    </h3>
+
+                    <p
+                        data-lang-en="Renewal stages are evaluated according to configured date conditions."
+                        data-lang-fr="Les étapes de renouvellement sont évaluées selon les conditions de date configurées.">
+                        Renewal stages are evaluated according to configured
+                        date conditions.
+                    </p>
+
+                </article>
+
+
+                <article class="case-study-benefit-card">
+
+                    <i class="fa-solid fa-route" aria-hidden="true"></i>
+
+                    <h3
+                        data-lang-en="Separate Delivery Routes"
+                        data-lang-fr="Routes de livraison distinctes">
+                        Separate Delivery Routes
+                    </h3>
+
+                    <p
+                        data-lang-en="Advance, expiration-day and fallback actions remain distinct."
+                        data-lang-fr="Les actions anticipées, du jour d’expiration et de secours restent distinctes.">
+                        Advance, expiration-day and fallback actions remain
+                        distinct.
+                    </p>
+
+                </article>
+
+
+                <article class="case-study-benefit-card">
+
+                    <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+
+                    <h3
+                        data-lang-en="Fallback Prepared"
+                        data-lang-fr="Relais préparé">
+                        Fallback Prepared
+                    </h3>
+
+                    <p
+                        data-lang-en="A secondary channel can support the process when the primary condition fails."
+                        data-lang-fr="Un canal secondaire peut soutenir le processus lorsque la condition principale échoue.">
+                        A secondary channel can support the process when the
+                        primary condition fails.
+                    </p>
+
+                </article>
+
+
+                <article class="case-study-benefit-card">
+
+                    <i class="fa-solid fa-clipboard-list" aria-hidden="true"></i>
+
+                    <h3
+                        data-lang-en="Centralized Processing History"
+                        data-lang-fr="Historique de traitement centralisé">
+                        Centralized Processing History
+                    </h3>
+
+                    <p
+                        data-lang-en="Airtable preserves reminder, channel and escalation results."
+                        data-lang-fr="Airtable conserve les résultats de rappel, de canal et d’escalade.">
+                        Airtable preserves reminder, channel and escalation
+                        results.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         PRODUCTION ADAPTATION
+    ========================================= -->
+
+    <section class="page-section case-study-production-section reveal">
+
+        <div class="container">
+
+            <div class="production-adaptation-card">
+
+                <div class="production-adaptation-content">
+
+                    <span
+                        class="section-label"
+                        data-lang-en="Possible Production Configuration"
+                        data-lang-fr="Configuration de production possible">
+                        Possible Production Configuration
+                    </span>
+
+                    <h2
+                        data-lang-en="Adapt the Workflow to Your Renewal Process and Channels"
+                        data-lang-fr="Adaptez le workflow à votre processus et à vos canaux de renouvellement">
+                        Adapt the Workflow to Your Renewal Process and Channels
+                    </h2>
+
+                    <p
+                        data-lang-en="A production implementation can be adjusted according to the client’s renewal stages, customer database, approved messaging providers, fallback policies and escalation requirements."
+                        data-lang-fr="Une implémentation en production peut être ajustée selon les étapes de renouvellement du client, sa base de données, ses fournisseurs de messagerie approuvés, ses politiques de relais et ses exigences d’escalade.">
+
+                        A production implementation can be adjusted according
+                        to the client’s renewal stages, customer database,
+                        approved messaging providers, fallback policies and
+                        escalation requirements.
+
+                    </p>
+
+
+                    <ul class="production-adaptation-list">
+
+                        <li
+                            data-lang-en="Custom reminder intervals and message templates"
+                            data-lang-fr="Intervalles de rappel et modèles de messages personnalisés">
+                            Custom reminder intervals and message templates
+                        </li>
+
+                        <li
+                            data-lang-en="Alternative customer databases and CRM integrations"
+                            data-lang-fr="Autres bases clients et intégrations CRM">
+                            Alternative customer databases and CRM integrations
+                        </li>
+
+                        <li
+                            data-lang-en="Approved WhatsApp Business sender configuration"
+                            data-lang-fr="Configuration d’un expéditeur WhatsApp Business approuvé">
+                            Approved WhatsApp Business sender configuration
+                        </li>
+
+                        <li
+                            data-lang-en="Custom SMS fallback and retry rules"
+                            data-lang-fr="Règles personnalisées de relais SMS et de nouvelle tentative">
+                            Custom SMS fallback and retry rules
+                        </li>
+
+                        <li
+                            data-lang-en="Incident ownership, notification and escalation policies"
+                            data-lang-fr="Politiques de propriété, de notification et d’escalade des incidents">
+                            Incident ownership, notification and escalation policies
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="production-adaptation-action">
+
+                    <a
+                        href="custom-request.html?service=whatsapp"
+                        class="btn btn-primary"
+                        data-lang-en="Request a Similar Automation"
+                        data-lang-fr="Demander une automatisation similaire">
+                        Request a Similar Automation
+                    </a>
+
+                    <a
+                        href="whatsapp-trigger.html"
+                        class="btn btn-secondary"
+                        data-lang-en="Explore WhatsApp Automation"
+                        data-lang-fr="Découvrir l’automatisation WhatsApp">
+                        Explore WhatsApp Automation
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         TOOLS
+    ========================================= -->
+
+    <section class="page-section case-study-tools-section reveal">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span
+                    class="section-label"
+                    data-lang-en="Validated Technology Stack"
+                    data-lang-fr="Stack technologique validée">
+                    Validated Technology Stack
+                </span>
+
+                <h2
+                    data-lang-en="Tools Used in This Simulation"
+                    data-lang-fr="Outils utilisés dans cette simulation">
+                    Tools Used in This Simulation
+                </h2>
+
+                <p
+                    data-lang-en="The demonstrated workflow was built and tested with the following connected platforms."
+                    data-lang-fr="Le workflow présenté a été construit et testé avec les plateformes connectées suivantes.">
+
+                    The demonstrated workflow was built and tested with the
+                    following connected platforms.
+
+                </p>
+
+            </div>
+
+
+            <div class="case-study-stack-grid">
+
+                <article class="case-study-stack-card">
+
+                    <i class="fa-solid fa-table-cells-large" aria-hidden="true"></i>
+
+                    <h3>Airtable</h3>
+
+                    <p
+                        data-lang-en="Stores customer renewal dates, reminder stages, channel status and processing results."
+                        data-lang-fr="Stocke les dates de renouvellement, les étapes de rappel, le statut des canaux et les résultats du traitement.">
+                        Stores customer renewal dates, reminder stages,
+                        channel status and processing results.
+                    </p>
+
+                </article>
+
+
+                <article class="case-study-stack-card">
+
+                    <i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
+
+                    <h3>Make</h3>
+
+                    <p
+                        data-lang-en="Orchestrates date evaluation, routing, messaging, fallback and escalation."
+                        data-lang-fr="Orchestre l’évaluation des dates, le routage, la messagerie, le relais et l’escalade.">
+                        Orchestrates date evaluation, routing, messaging,
+                        fallback and escalation.
+                    </p>
+
+                </article>
+
+
+                <article class="case-study-stack-card">
+
+                    <i class="fa-solid fa-comment-dots" aria-hidden="true"></i>
+
+                    <h3>Twilio</h3>
+
+                    <p
+                        data-lang-en="Provides the tested WhatsApp Sandbox and SMS messaging connections."
+                        data-lang-fr="Fournit les connexions de test WhatsApp Sandbox et SMS.">
+                        Provides the tested WhatsApp Sandbox and SMS messaging
+                        connections.
+                    </p>
+
+                </article>
+
+
+                <article class="case-study-stack-card">
+
+                    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+
+                    <h3>WhatsApp</h3>
+
+                    <p
+                        data-lang-en="Receives the staged renewal reminders during the controlled test."
+                        data-lang-fr="Reçoit les rappels progressifs de renouvellement pendant le test contrôlé.">
+                        Receives the staged renewal reminders during the
+                        controlled test.
+                    </p>
+
+                </article>
+
+
+                <article class="case-study-stack-card">
+
+                    <i class="fa-brands fa-hubspot" aria-hidden="true"></i>
+
+                    <h3>HubSpot</h3>
+
+                    <p
+                        data-lang-en="Receives unresolved reminder incidents as trackable tickets."
+                        data-lang-fr="Reçoit les incidents de rappel non résolus sous forme de tickets traçables.">
+                        Receives unresolved reminder incidents as trackable
+                        tickets.
+                    </p>
+
+                </article>
+
+            </div>
+
+
+            <p
+                class="case-study-stack-note"
+                data-lang-en="The production stack can be adapted according to the client’s approved messaging providers, customer systems and technical requirements."
+                data-lang-fr="La stack de production peut être adaptée selon les fournisseurs de messagerie approuvés, les systèmes clients et les exigences techniques du client.">
+
+                The production stack can be adapted according to the client’s
+                approved messaging providers, customer systems and technical
+                requirements.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         FAQ
+    ========================================= -->
+
+    <section class="page-section case-study-faq-section reveal">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span
+                    class="section-label"
+                    data-lang-en="Frequently Asked Questions"
+                    data-lang-fr="Questions fréquentes">
+                    Frequently Asked Questions
+                </span>
+
+                <h2
+                    data-lang-en="Renewal Reminder Automation FAQ"
+                    data-lang-fr="FAQ sur l’automatisation des rappels de renouvellement">
+                    Renewal Reminder Automation FAQ
+                </h2>
+
+            </div>
+
+
+            <div class="faq-container">
+
+                <div class="faq-accordion">
+
+                    <button class="accordion-header" type="button">
+
+                        <h3
+                            data-lang-en="Can the reminder schedule be customized?"
+                            data-lang-fr="Le calendrier des rappels peut-il être personnalisé ?">
+                            Can the reminder schedule be customized?
+                        </h3>
+
+                        <i class="fa-solid fa-chevron-down accordion-icon" aria-hidden="true"></i>
+
+                    </button>
+
+                    <div class="accordion-content">
+
+                        <p
+                            data-lang-en="Yes. Reminder intervals, eligibility conditions and message templates can be adapted to the client’s renewal policy."
+                            data-lang-fr="Oui. Les intervalles de rappel, les conditions d’éligibilité et les modèles de messages peuvent être adaptés à la politique de renouvellement du client.">
+                            Yes. Reminder intervals, eligibility conditions
+                            and message templates can be adapted to the
+                            client’s renewal policy.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-accordion">
+
+                    <button class="accordion-header" type="button">
+
+                        <h3
+                            data-lang-en="Does the simulation use a live WhatsApp Business sender?"
+                            data-lang-fr="La simulation utilise-t-elle un expéditeur WhatsApp Business en production ?">
+                            Does the simulation use a live WhatsApp Business sender?
+                        </h3>
+
+                        <i class="fa-solid fa-chevron-down accordion-icon" aria-hidden="true"></i>
+
+                    </button>
+
+                    <div class="accordion-content">
+
+                        <p
+                            data-lang-en="No. The controlled test used Twilio’s WhatsApp Sandbox. A production deployment would require an approved sender, templates and provider configuration."
+                            data-lang-fr="Non. Le test contrôlé a utilisé le WhatsApp Sandbox de Twilio. Un déploiement en production nécessiterait un expéditeur approuvé, des modèles et une configuration du fournisseur.">
+                            No. The controlled test used Twilio’s WhatsApp
+                            Sandbox. A production deployment would require an
+                            approved sender, templates and provider
+                            configuration.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-accordion">
+
+                    <button class="accordion-header" type="button">
+
+                        <h3
+                            data-lang-en="When is the SMS fallback used?"
+                            data-lang-fr="Quand le relais SMS est-il utilisé ?">
+                            When is the SMS fallback used?
+                        </h3>
+
+                        <i class="fa-solid fa-chevron-down accordion-icon" aria-hidden="true"></i>
+
+                    </button>
+
+                    <div class="accordion-content">
+
+                        <p
+                            data-lang-en="The fallback branch runs only when its configured delivery or connection condition is satisfied. Production rules can define retries, delays and escalation thresholds."
+                            data-lang-fr="La branche de secours s’exécute uniquement lorsque sa condition de livraison ou de connexion configurée est satisfaite. Les règles de production peuvent définir les nouvelles tentatives, les délais et les seuils d’escalade.">
+                            The fallback branch runs only when its configured
+                            delivery or connection condition is satisfied.
+                            Production rules can define retries, delays and
+                            escalation thresholds.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-accordion">
+
+                    <button class="accordion-header" type="button">
+
+                        <h3
+                            data-lang-en="What creates a HubSpot escalation ticket?"
+                            data-lang-fr="Qu’est-ce qui crée un ticket d’escalade HubSpot ?">
+                            What creates a HubSpot escalation ticket?
+                        </h3>
+
+                        <i class="fa-solid fa-chevron-down accordion-icon" aria-hidden="true"></i>
+
+                    </button>
+
+                    <div class="accordion-content">
+
+                        <p
+                            data-lang-en="A ticket is created when the configured incident conditions remain unresolved after the relevant reminder or fallback actions."
+                            data-lang-fr="Un ticket est créé lorsque les conditions d’incident configurées restent non résolues après les actions de rappel ou de secours concernées.">
+                            A ticket is created when the configured incident
+                            conditions remain unresolved after the relevant
+                            reminder or fallback actions.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-accordion">
+
+                    <button class="accordion-header" type="button">
+
+                        <h3
+                            data-lang-en="Can the workflow connect to another CRM or messaging provider?"
+                            data-lang-fr="Le workflow peut-il se connecter à un autre CRM ou fournisseur de messagerie ?">
+                            Can the workflow connect to another CRM or messaging provider?
+                        </h3>
+
+                        <i class="fa-solid fa-chevron-down accordion-icon" aria-hidden="true"></i>
+
+                    </button>
+
+                    <div class="accordion-content">
+
+                        <p
+                            data-lang-en="Potentially yes. A production configuration may use other compatible databases, CRM systems or messaging providers depending on their integrations, APIs and approval requirements."
+                            data-lang-fr="Potentiellement oui. Une configuration en production peut utiliser d’autres bases de données, CRM ou fournisseurs de messagerie compatibles selon leurs intégrations, leurs API et leurs exigences d’approbation.">
+                            Potentially yes. A production configuration may
+                            use other compatible databases, CRM systems or
+                            messaging providers depending on their
+                            integrations, APIs and approval requirements.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         RELATED CASE STUDIES
+    ========================================= -->
+
+    <section class="page-section related-case-studies-section reveal">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span
+                    class="section-label"
+                    data-lang-en="Continue Exploring"
+                    data-lang-fr="Poursuivre la découverte">
+                    Continue Exploring
+                </span>
+
+                <h2
+                    data-lang-en="Related Automation Case Studies"
+                    data-lang-fr="Études de cas d’automatisation associées">
+                    Related Automation Case Studies
+                </h2>
+
+            </div>
+
+
+            <div class="related-case-studies-grid">
+
+                <article class="related-case-study-card">
+
+                    <div class="related-case-study-number">
+                        SIM-01
+                    </div>
+
+                    <h3
+                        data-lang-en="Lead Capture and HubSpot CRM Enrichment"
+                        data-lang-fr="Capture des leads et enrichissement du CRM HubSpot">
+                        Lead Capture and HubSpot CRM Enrichment
+                    </h3>
+
+                    <p
+                        data-lang-en="Validate incoming lead records, synchronize complete contacts and flag missing information."
+                        data-lang-fr="Valider les leads entrants, synchroniser les contacts complets et signaler les informations manquantes.">
+                        Validate incoming lead records, synchronize complete
+                        contacts and flag missing information.
+                    </p>
+
+                    <a
+                        href="case-study-lead-capture-crm.html"
+                        class="case-study-link"
+                        data-lang-en="View Case Study"
+                        data-lang-fr="Voir l’étude de cas">
+
+                        View Case Study
+
+                        <span aria-hidden="true">→</span>
+
+                    </a>
+
+                </article>
+
+
+                <article class="related-case-study-card">
+
+                    <div class="related-case-study-number">
+                        SIM-02
+                    </div>
+
+                    <h3
+                        data-lang-en="AI Support Email Triage and Urgent Ticket Automation"
+                        data-lang-fr="Triage des e-mails de support par IA et automatisation des tickets urgents">
+                        AI Support Email Triage and Urgent Ticket Automation
+                    </h3>
+
+                    <p
+                        data-lang-en="Classify support emails, prepare review drafts and escalate urgent cases to HubSpot."
+                        data-lang-fr="Classer les e-mails de support, préparer des brouillons de révision et transmettre les cas urgents vers HubSpot.">
+                        Classify support emails, prepare review drafts and
+                        escalate urgent cases to HubSpot.
+                    </p>
+
+                    <a
+                        href="case-study-ai-support-triage.html"
+                        class="case-study-link"
+                        data-lang-en="View Case Study"
+                        data-lang-fr="Voir l’étude de cas">
+
+                        View Case Study
+
+                        <span aria-hidden="true">→</span>
+
+                    </a>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         FINAL CTA
+    ========================================= -->
+
+    <section class="page-section case-study-final-cta reveal">
+
+        <div class="container">
+
+            <div class="cta-box">
+
+                <span
+                    class="section-label"
+                    data-lang-en="Build a Workflow Around Your Renewal Process"
+                    data-lang-fr="Construisez un workflow autour de votre processus de renouvellement">
+                    Build a Workflow Around Your Renewal Process
+                </span>
+
+                <h2
+                    data-lang-en="Need a More Reliable Way to Manage Renewal Reminders?"
+                    data-lang-fr="Vous recherchez une méthode plus fiable pour gérer vos rappels de renouvellement ?">
+                    Need a More Reliable Way to Manage Renewal Reminders?
+                </h2>
+
+                <p
+                    data-lang-en="Tell AutomateSuite where your renewal dates are stored, which reminder stages you need and how failed or unresolved messages should be handled."
+                    data-lang-fr="Expliquez à AutomateSuite où vos dates de renouvellement sont stockées, quelles étapes de rappel vous souhaitez et comment les messages échoués ou non résolus doivent être traités.">
+
+                    Tell AutomateSuite where your renewal dates are stored,
+                    which reminder stages you need and how failed or
+                    unresolved messages should be handled.
+
+                </p>
+
+                <div class="cta-actions">
+
+                    <a
+                        href="custom-request.html?service=whatsapp"
+                        class="btn btn-primary"
+                        data-lang-en="Discuss a Similar Automation"
+                        data-lang-fr="Discuter d’une automatisation similaire">
+                        Discuss a Similar Automation
+                    </a>
+
+                    <a
+                        href="case-studies.html"
+                        class="btn btn-secondary"
+                        data-lang-en="View All Case Studies"
+                        data-lang-fr="Voir toutes les études de cas">
+                        View All Case Studies
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <!-- Brand -->
+            <div class="footer-column">
+
+                <a href="index.html"
+                class="footer-logo">
+
+                AutomateSuite
+
+                </a>
+
+                <p
+                data-lang-en="Automation systems, AI integrations and scalable SaaS solutions for modern businesses."
+                data-lang-fr="Systèmes d'automatisation, intégrations IA et solutions SaaS évolutives pour les entreprises modernes.">
+                Automation systems, AI integrations and scalable SaaS solutions for modern businesses.
+                </p>
+
+            </div>
+
+            <!-- Navigation -->
+            <div class="footer-column">
+
+                <h4
+                data-lang-en="Navigation"
+                data-lang-fr="Navigation">
+                Navigation
+                </h4>
+
+                <a href="index.html"
+                   data-lang-en="Home"
+                   data-lang-fr="Accueil">
+                   Home
+                </a>
+
+                <a href="about.html"
+                   data-lang-en="About"
+                   data-lang-fr="À propos">
+                   About
+                </a>
+                
+                <a href="services.html"
+                   data-lang-en="Services"
+                   data-lang-fr="Services">
+                   Services
+                </a>
+
+                <a href="case-studies.html"
+                    data-lang-en="Case Studies"
+                    data-lang-fr="Études de cas">
+                    Case Studies
+                </a>
+                
+                <a href="tools.html"
+                   data-lang-en="Tools"
+                   data-lang-fr="Outils">
+                   Tools
+                </a>
+
+                <a href="pricing.html"
+                   data-lang-en="Pricing"
+                   data-lang-fr="Tarification">
+                   Pricing
+                </a>
+                
+                <a href="contact.html"
+                   data-lang-en="Contact"
+                   data-lang-fr="Contact">
+                   Contact
+                </a>
+
+            </div>
+
+            <!-- Services -->
+            <div class="footer-column">
+
+                <h4
+                data-lang-en="Services"
+                data-lang-fr="Services">
+                Services
+                </h4>
+
+                <a href="whatsapp-trigger.html"
+                data-lang-en="WhatsApp Automation"
+                data-lang-fr="Automatisation WhatsApp">
+                WhatsApp Automation
+                </a>
+
+                <a href="ai-lead-enrichment.html"
+                data-lang-en="AI Lead Enrichment"
+                data-lang-fr="Enrichissement des Leads par l'IA">
+                AI Lead Enrichment
+                </a>
+
+                <a href="support-email-triage.html"
+                data-lang-en="AI Support Email Triage"
+                data-lang-fr="Tri des Emails Support par l'IA">
+                AI Support Email Triage
+                </a>
+
+                <a href="services.html"
+                data-lang-en="View All Services"
+                data-lang-fr="Voir Tous Les Services">
+                View All Services
+                </a>
+
+            </div>
+
+            <!-- Tools In Development -->
+            <div class="footer-column">
+                
+                <h4
+                data-lang-en="Tools In Development"
+                data-lang-fr="Outils en développement">
+                Tools In Development
+                </h4>
+
+                <a href="tools.html#whatsapp-expiration-trigger"
+                data-lang-en="WhatsApp Expiration Trigger"
+                data-lang-fr="Déclencheur d'Expiration WhatsApp">
+                WhatsApp Expiration Trigger
+                </a>
+
+                <a href="tools.html#ai-lead-enrichment-pipeline"
+                data-lang-en="AI Lead Enrichment Pipeline"
+                data-lang-fr="Pipeline d'Enrichissement IA">
+                AI Lead Enrichment Pipeline
+                </a>
+
+                <a href="tools.html#support-email-triage-system"
+                data-lang-en="Support Email Triage System"
+                data-lang-fr="Système de Tri des Emails Support">
+                Support Email Triage System
+                </a>
+
+                <a href="tools.html"
+                data-lang-en="View All Tools"
+                data-lang-fr="Voir Tous Les Outils">
+                View All Tools
+                </a>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-column">
+
+                <h4
+                data-lang-en="Contact"
+                data-lang-fr="Contact">
+                Contact
+                </h4>
+
+                <a href="mailto:hello@automatesuite.io">
+                hello@automatesuite.io
+                </a>
+
+                <p
+                data-lang-en="Remote Services Worldwide"
+                data-lang-fr="Services à distance dans le monde entier">
+                Remote Services Worldwide
+                </p>
+
+            </div>
+
+            <div class="footer-column">
+                <h4
+                data-lang-en="Legal"
+                data-lang-fr="Mentions Légales">
+                Legal
+                </h4>
+
+                <a href="privacy-policy.html"
+                data-lang-en="Privacy Policy"
+                data-lang-fr="Politique de Confidentialité">
+                Privacy Policy
+                </a>
+
+                <a href="terms-of-service.html"
+                data-lang-en="Terms of Service"
+                data-lang-fr="Conditions d'Utilisation">
+                Terms of Service
+                </a>
+
+                <a href="cookies-policy.html"
+                data-lang-en="Cookie Policy"
+                data-lang-fr="Politique des Cookies">
+                Cookie Policy
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+
+            <p
+                data-lang-en="© 2026 AutomateSuite. All rights reserved."
+                data-lang-fr="© 2026 AutomateSuite. Tous droits réservés.">
+                © 2026 AutomateSuite. All rights reserved.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- BACK TO TOP -->
+
+<a href="#top"
+   class="back-to-top-btn"
+   aria-label="Back to Top">
+
+   ↑
+
+</a>
+
+<script src="assets/js/script.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const lightbox = document.getElementById("case-study-lightbox");
+    const lightboxImage = document.getElementById("case-study-lightbox-image");
+    const closeButton = lightbox?.querySelector(".case-study-lightbox-close");
+    const backdrop = lightbox?.querySelector(".case-study-lightbox-backdrop");
+    const imageButtons = document.querySelectorAll(".case-study-image-open");
+
+    if (!lightbox || !lightboxImage || !closeButton || !backdrop) {
+        return;
+    }
+
+    let lastFocusedElement = null;
+
+    const openLightbox = (button) => {
+
+        const imageSource = button.dataset.imageSrc;
+        const imageAlt = button.dataset.imageAlt || "";
+
+        if (!imageSource) {
+            return;
+        }
+
+        lastFocusedElement = document.activeElement;
+
+        lightboxImage.src = imageSource;
+        lightboxImage.alt = imageAlt;
+
+        lightbox.classList.add("active");
+        lightbox.setAttribute("aria-hidden", "false");
+
+        document.body.classList.add("lightbox-open");
+
+        closeButton.focus();
+
+    };
+
+    const closeLightbox = () => {
+
+        lightbox.classList.remove("active");
+        lightbox.setAttribute("aria-hidden", "true");
+
+        document.body.classList.remove("lightbox-open");
+
+        lightboxImage.src = "";
+        lightboxImage.alt = "";
+
+        if (lastFocusedElement) {
+            lastFocusedElement.focus();
+        }
+
+    };
+
+    imageButtons.forEach((button) => {
+
+        button.addEventListener("click", () => {
+            openLightbox(button);
+        });
+
+    });
+
+    closeButton.addEventListener("click", closeLightbox);
+    backdrop.addEventListener("click", closeLightbox);
+
+    document.addEventListener("keydown", (event) => {
+
+        if (
+            event.key === "Escape" &&
+            lightbox.classList.contains("active")
+        ) {
+            closeLightbox();
+        }
+
+    });
+
+});
+</script>
+
+</body>
+
+</html>

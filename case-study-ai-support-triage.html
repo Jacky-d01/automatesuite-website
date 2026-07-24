@@ -1,0 +1,2992 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Support Email Triage and Urgent Ticket Automation | AutomateSuite</title>
+
+<meta
+    name="description"
+    content="Explore a validated AutomateSuite workflow that classifies support emails with AI, prepares manual-review drafts and escalates urgent cases to HubSpot.">
+
+<link
+    rel="canonical"
+    href="https://automatesuite.io/case-study-ai-support-triage.html">
+
+
+<!-- Open Graph -->
+
+<meta
+    property="og:type"
+    content="article">
+
+<meta
+    property="og:site_name"
+    content="AutomateSuite">
+
+<meta
+    property="og:title"
+    content="AI Support Email Triage and Urgent Ticket Automation | AutomateSuite">
+
+<meta
+    property="og:description"
+    content="See how AutomateSuite validated AI-assisted email classification, Gmail routing, manual review and urgent HubSpot ticket escalation.">
+
+<meta
+    property="og:url"
+    content="https://automatesuite.io/case-study-ai-support-triage.html">
+
+<meta
+    property="og:image"
+    content="https://automatesuite.io/assets/images/case-studies/sim02/sim02-ai-support-triage-workflow-overview.png">
+
+<meta
+    property="og:image:alt"
+    content="AutomateSuite AI support email triage and urgent ticket automation workflow">
+
+
+<!-- Twitter / X -->
+
+<meta
+    name="twitter:card"
+    content="summary_large_image">
+
+<meta
+    name="twitter:title"
+    content="AI Support Email Triage and Urgent Ticket Automation | AutomateSuite">
+
+<meta
+    name="twitter:description"
+    content="Explore a validated AI-assisted workflow for support classification, manual review and urgent ticket escalation.">
+
+<meta
+    name="twitter:image"
+    content="https://automatesuite.io/assets/images/case-studies/sim02/sim02-ai-support-triage-workflow-overview.png">
+
+<link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+<link rel="apple-touch-icon" href="assets/images/favicon.png">    
+
+    <!-- FONT AWESOME -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- MAIN CSS -->
+<link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body id="top">
+
+<nav class="navbar">
+
+    <div class="nav-container">
+
+        <!-- Logo -->
+        <a href="index.html" class="logo" aria-label="AutomateSuite Home">
+            <img src="assets/images/logo-icon.svg"
+                alt="AutomateSuite logo"
+                class="logo-icon">
+            <span>AutomateSuite</span>
+        </a>
+
+        <!-- Navigation Links -->
+        <div class="nav-menu" id="nav-menu">
+
+            <div class="nav-links">
+
+                <a href="index.html">
+                    <i class="fa-solid fa-house"></i>
+                   <span data-lang-en="Home"
+                   data-lang-fr="Accueil">Home</span>
+                </a>
+
+                <a href="about.html">
+                    <i class="fa-solid fa-circle-info"></i>
+                   <span data-lang-en="About"
+                   data-lang-fr="À propos">About</span>
+                </a>
+
+                <a href="services.html">
+                    <i class="fa-solid fa-gears"></i>
+                   <span data-lang-en="Services"
+                   data-lang-fr="Services">Services</span>
+                </a>
+
+                <a href="case-studies.html">
+                    <i class="fa-solid fa-folder-open"></i>
+                    <span data-lang-en="Case Studies"
+                    data-lang-fr="Études de cas">Case Studies</span>
+                </a>
+
+                <a href="tools.html">
+                    <i class="fa-solid fa-toolbox"></i>
+                   <span data-lang-en="Tools"
+                   data-lang-fr="Outils">Tools</span>
+                </a>
+
+                <a href="pricing.html">
+                    <i class="fa-solid fa-tags"></i>
+                   <span data-lang-en="Pricing"
+                   data-lang-fr="Tarification">Pricing</span>
+                </a>
+
+                <a href="contact.html">
+                    <i class="fa-solid fa-envelope"></i>
+                   <span data-lang-en="Contact"
+                   data-lang-fr="Contact">Contact</span>
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Right Controls -->
+        <div class="menu-controls">
+
+            <button id="theme-toggle" aria-label="Toggle dark mode">
+                ☀️
+            </button>
+
+            <div class="language-selector">
+
+                <button
+                type="button"
+                class="language-btn"
+                onclick="setLanguage('en')"
+                aria-label="Switch language to English">
+
+                EN
+
+                </button>
+
+                <span>|</span>
+
+                <button
+                type="button"
+                class="language-btn"
+                onclick="setLanguage('fr')"
+                aria-label="Passer le site en français">
+
+                FR
+
+                </button>
+
+            </div>
+
+        </div>
+        
+        <!-- Hamburger -->
+        <button
+            type="button" 
+            class="hamburger"
+            id="hamburger"
+            aria-label="Open navigation menu"
+            aria-controls="nav-menu"
+            aria-expanded="false">
+                ☰
+        </button>
+
+        <!-- Overlay -->
+        <div class="menu-overlay" id="menu-overlay"></div>
+      
+    </div>
+
+</nav>    
+
+<main>
+
+    <!-- ========================================
+         BREADCRUMB
+    ========================================= -->
+
+    <section class="case-study-breadcrumb-section">
+
+        <div class="container">
+
+            <nav
+                class="case-study-breadcrumb"
+                aria-label="Breadcrumb">
+
+                <a
+                    href="index.html"
+                    data-lang-en="Home"
+                    data-lang-fr="Accueil">
+                    Home
+                </a>
+
+                <span aria-hidden="true">/</span>
+
+                <a
+                    href="case-studies.html"
+                    data-lang-en="Case Studies"
+                    data-lang-fr="Études de cas">
+                    Case Studies
+                </a>
+
+                <span aria-hidden="true">/</span>
+
+                <span
+                    aria-current="page"
+                    data-lang-en="AI Support Email Triage"
+                    data-lang-fr="Triage des e-mails de support par IA">
+                    AI Support Email Triage
+                </span>
+
+            </nav>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         HERO
+    ========================================= -->
+
+    <section class="case-study-detail-hero reveal">
+
+        <div class="container">
+
+            <span
+                class="section-label"
+                data-lang-en="SIM-02 · Validated Automation Simulation"
+                data-lang-fr="SIM-02 · Simulation d’automatisation validée">
+                SIM-02 · Validated Automation Simulation
+            </span>
+
+            <h1
+                data-lang-en="AI Support Email Triage and Urgent Ticket Automation"
+                data-lang-fr="Triage des e-mails de support par IA et automatisation des tickets urgents">
+                AI Support Email Triage and Urgent Ticket Automation
+            </h1>
+
+            <p
+                class="case-study-hero-description"
+                data-lang-en="See how AutomateSuite validated an AI-assisted workflow that classifies incoming support emails, applies category and priority rules, prepares review drafts and escalates urgent cases to HubSpot."
+                data-lang-fr="Découvrez comment AutomateSuite a validé un workflow assisté par IA qui classe les e-mails de support entrants, applique des règles de catégorie et de priorité, prépare des brouillons pour révision et transmet les cas urgents vers HubSpot.">
+
+                See how AutomateSuite validated an AI-assisted workflow that
+                classifies incoming support emails, applies category and
+                priority rules, prepares review drafts and escalates urgent
+                cases to HubSpot.
+
+            </p>
+
+
+            <div class="case-study-hero-meta">
+
+                <div class="case-study-meta-item">
+
+                    <span
+                        data-lang-en="Workflow type"
+                        data-lang-fr="Type de workflow">
+                        Workflow type
+                    </span>
+
+                    <strong
+                        data-lang-en="AI-assisted support email processing"
+                        data-lang-fr="Traitement des e-mails de support assisté par IA">
+                        AI-assisted support email processing
+                    </strong>
+
+                </div>
+
+
+                <div class="case-study-meta-item">
+
+                    <span
+                        data-lang-en="Validated stack"
+                        data-lang-fr="Stack validée">
+                        Validated stack
+                    </span>
+
+                    <strong>
+                        Gmail · OpenAI · Airtable · Make · HubSpot
+                    </strong>
+
+                </div>
+
+
+                <div class="case-study-meta-item">
+
+                    <span
+                        data-lang-en="Validation scope"
+                        data-lang-fr="Périmètre de validation">
+                        Validation scope
+                    </span>
+
+                    <strong
+                        data-lang-en="Classification, review and urgent escalation"
+                        data-lang-fr="Classification, révision et escalade urgente">
+                        Classification, review and urgent escalation
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-actions">
+
+                <a
+                    href="#workflow"
+                    class="btn btn-primary"
+                    data-lang-en="Explore the Workflow"
+                    data-lang-fr="Découvrir le workflow">
+                    Explore the Workflow
+                </a>
+
+                <a
+                    href="support-email-triage.html"
+                    class="btn btn-secondary"
+                    data-lang-en="View Related Service"
+                    data-lang-fr="Voir le service associé">
+                    View Related Service
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         TRANSPARENCY NOTICE
+    ========================================= -->
+
+    <section class="case-study-notice-section reveal delay-1">
+
+        <div class="container">
+
+            <div class="case-study-notice">
+
+                <div
+                    class="case-study-notice-icon"
+                    aria-hidden="true">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                </div>
+
+                <div>
+
+                    <h2
+                        data-lang-en="Validated Simulation, Not a Customer Performance Claim"
+                        data-lang-fr="Simulation validée, sans revendication de performance client">
+                        Validated Simulation, Not a Customer Performance Claim
+                    </h2>
+
+                    <p
+                        data-lang-en="This case study documents a controlled AutomateSuite test. It demonstrates validated workflow behaviour and connected-system actions, but it is not presented as a customer deployment, production-scale benchmark or guaranteed AI-accuracy result."
+                        data-lang-fr="Cette étude de cas documente un test contrôlé d’AutomateSuite. Elle démontre le comportement validé du workflow et les actions réalisées dans les systèmes connectés, sans être présentée comme un déploiement client, un test à l’échelle de la production ni comme un niveau garanti de précision de l’IA.">
+
+                        This case study documents a controlled AutomateSuite
+                        test. It demonstrates validated workflow behaviour and
+                        connected-system actions, but it is not presented as
+                        a customer deployment, production-scale benchmark or
+                        guaranteed AI-accuracy result.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         BUSINESS CHALLENGE
+    ========================================= -->
+
+    <section class="page-section case-study-challenge-section reveal">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span
+                    class="section-label"
+                    data-lang-en="Business Challenge"
+                    data-lang-fr="Enjeu opérationnel">
+                    Business Challenge
+                </span>
+
+                <h2
+                    data-lang-en="Support Teams Need to Identify Priority and Context Quickly"
+                    data-lang-fr="Les équipes support doivent identifier rapidement la priorité et le contexte">
+                    Support Teams Need to Identify Priority and Context Quickly
+                </h2>
+
+                <p
+                    data-lang-en="When every incoming email is reviewed manually, urgent requests may remain mixed with normal enquiries, categories may be applied inconsistently and agents may spend time preparing repetitive first responses."
+                    data-lang-fr="Lorsque chaque e-mail entrant est vérifié manuellement, les demandes urgentes peuvent rester mélangées aux demandes normales, les catégories peuvent être appliquées de manière incohérente et les agents peuvent consacrer du temps à préparer des premières réponses répétitives.">
+
+                    When every incoming email is reviewed manually, urgent
+                    requests may remain mixed with normal enquiries,
+                    categories may be applied inconsistently and agents may
+                    spend time preparing repetitive first responses.
+
+                </p>
+
+            </div>
+
+
+            <div class="before-after-grid">
+
+                <article class="before-after-card">
+
+                    <span
+                        class="before-after-label before-label"
+                        data-lang-en="Before Automation"
+                        data-lang-fr="Avant l’automatisation">
+                        Before Automation
+                    </span>
+
+                    <h3
+                        data-lang-en="Manual Inbox Review"
+                        data-lang-fr="Révision manuelle de la boîte de réception">
+                        Manual Inbox Review
+                    </h3>
+
+                    <ul>
+
+                        <li
+                            data-lang-en="Each email opened and interpreted individually"
+                            data-lang-fr="Chaque e-mail est ouvert et interprété individuellement">
+                            Each email opened and interpreted individually
+                        </li>
+
+                        <li
+                            data-lang-en="Category and priority decided manually"
+                            data-lang-fr="Catégorie et priorité décidées manuellement">
+                            Category and priority decided manually
+                        </li>
+
+                        <li
+                            data-lang-en="Urgent cases may depend on visual recognition"
+                            data-lang-fr="Les cas urgents peuvent dépendre d’une reconnaissance visuelle">
+                            Urgent cases may depend on visual recognition
+                        </li>
+
+                        <li
+                            data-lang-en="Initial reply drafts prepared repeatedly"
+                            data-lang-fr="Les premiers brouillons de réponse sont préparés de manière répétitive">
+                            Initial reply drafts prepared repeatedly
+                        </li>
+
+                    </ul>
+
+                </article>
+
+
+                <article class="before-after-card after-card">
+
+                    <span
+                        class="before-after-label after-label"
+                        data-lang-en="After Automation"
+                        data-lang-fr="Après l’automatisation">
+                        After Automation
+                    </span>
+
+                    <h3
+                        data-lang-en="Structured AI-Assisted Routing"
+                        data-lang-fr="Routage structuré assisté par IA">
+                        Structured AI-Assisted Routing
+                    </h3>
+
+                    <ul>
+
+                        <li
+                            data-lang-en="Category and priority returned in a structured format"
+                            data-lang-fr="Catégorie et priorité renvoyées dans un format structuré">
+                            Category and priority returned in a structured format
+                        </li>
+
+                        <li
+                            data-lang-en="Gmail labels applied according to the result"
+                            data-lang-fr="Libellés Gmail appliqués selon le résultat">
+                            Gmail labels applied according to the result
+                        </li>
+
+                        <li
+                            data-lang-en="Manual-review cases receive a suggested-reply draft"
+                            data-lang-fr="Les cas nécessitant une révision reçoivent un brouillon de réponse suggérée">
+                            Manual-review cases receive a suggested-reply draft
+                        </li>
+
+                        <li
+                            data-lang-en="Configured urgent cases create a HubSpot ticket"
+                            data-lang-fr="Les cas urgents configurés créent un ticket HubSpot">
+                            Configured urgent cases create a HubSpot ticket
+                        </li>
+
+                    </ul>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         OBJECTIVE
+    ========================================= -->
+
+    <section class="page-section case-study-objective-section reveal">
+
+        <div class="container">
+
+            <div class="case-study-objective-card">
+
+                <span
+                    class="section-label"
+                    data-lang-en="Automation Objective"
+                    data-lang-fr="Objectif de l’automatisation">
+                    Automation Objective
+                </span>
+
+                <h2
+                    data-lang-en="Classify, Record and Escalate Support Requests Consistently"
+                    data-lang-fr="Classer, enregistrer et escalader les demandes support de manière cohérente">
+                    Classify, Record and Escalate Support Requests Consistently
+                </h2>
+
+                <p
+                    data-lang-en="The simulation was designed to monitor incoming Gmail messages, send the message content to an AI classification step, store the structured result in Airtable, apply Gmail labels and create review drafts or HubSpot tickets when the configured conditions were met."
+                    data-lang-fr="La simulation a été conçue pour surveiller les messages Gmail entrants, transmettre leur contenu à une étape de classification par IA, enregistrer le résultat structuré dans Airtable, appliquer des libellés Gmail et créer des brouillons de révision ou des tickets HubSpot lorsque les conditions configurées étaient remplies.">
+
+                    The simulation was designed to monitor incoming Gmail
+                    messages, send the message content to an AI classification
+                    step, store the structured result in Airtable, apply Gmail
+                    labels and create review drafts or HubSpot tickets when
+                    the configured conditions were met.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         WORKFLOW OVERVIEW
+    ========================================= -->
+
+    <section
+        class="page-section case-study-workflow-section reveal"
+        id="workflow">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span
+                    class="section-label"
+                    data-lang-en="Workflow Overview"
+                    data-lang-fr="Vue d’ensemble du workflow">
+                    Workflow Overview
+                </span>
+
+                <h2
+                    data-lang-en="How the AI Support Triage Workflow Operates"
+                    data-lang-fr="Fonctionnement du workflow de triage du support par IA">
+                    How the AI Support Triage Workflow Operates
+                </h2>
+
+                <p
+                    data-lang-en="The scenario combines Gmail monitoring, AI classification, category routing, Airtable documentation, manual review and conditional HubSpot escalation."
+                    data-lang-fr="Le scénario combine la surveillance de Gmail, la classification par IA, le routage par catégorie, la documentation dans Airtable, la révision manuelle et l’escalade conditionnelle vers HubSpot.">
+
+                    The scenario combines Gmail monitoring, AI classification,
+                    category routing, Airtable documentation, manual review
+                    and conditional HubSpot escalation.
+
+                </p>
+
+            </div>
+
+
+            <figure class="case-study-figure">
+
+                <div class="annotated-screenshot">
+
+                    <button
+                        class="case-study-image-open"
+                        type="button"
+                        data-image-src="assets/images/case-studies/sim02/sim02-ai-support-triage-workflow-overview.png"
+                        data-image-alt="Make workflow monitoring Gmail support messages, classifying them with AI and routing urgent cases to HubSpot"
+                        aria-label="Open workflow image in a larger view">
+
+                        <img
+                            src="assets/images/case-studies/sim02/sim02-ai-support-triage-workflow-overview.png"
+                            alt="Make workflow monitoring Gmail support messages, classifying them with AI and routing urgent cases to HubSpot"
+                            loading="lazy">
+
+                    </button>
+
+                </div>
+
+
+                <ol class="annotation-legend">
+
+                    <li>
+
+                        <span class="annotation-number">1</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Incoming email trigger"
+                                data-lang-fr="Déclencheur d’e-mail entrant">
+                                Incoming email trigger
+                            </strong>
+
+                            <p
+                                data-lang-en="New support emails are detected in Gmail."
+                                data-lang-fr="Les nouveaux e-mails de support sont détectés dans Gmail.">
+                                New support emails are detected in Gmail.
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">2</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="AI classification"
+                                data-lang-fr="Classification par IA">
+                                AI classification
+                            </strong>
+
+                            <p
+                                data-lang-en="The subject, sender and body are analyzed to return category, priority, confidence and review fields."
+                                data-lang-fr="L’objet, l’expéditeur et le contenu sont analysés afin de renvoyer la catégorie, la priorité, le niveau de confiance et les champs de révision.">
+                                The subject, sender and body are analyzed to
+                                return category, priority, confidence and
+                                review fields.
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">3</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Category routing"
+                                data-lang-fr="Routage par catégorie">
+                                Category routing
+                            </strong>
+
+                            <p
+                                data-lang-en="The structured result selects the relevant Billing, Technical, Sales or Refund route."
+                                data-lang-fr="Le résultat structuré sélectionne la route Facturation, Technique, Ventes ou Remboursement correspondante.">
+                                The structured result selects the relevant
+                                Billing, Technical, Sales or Refund route.
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">4</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Documentation and Gmail actions"
+                                data-lang-fr="Documentation et actions Gmail">
+                                Documentation and Gmail actions
+                            </strong>
+
+                            <p
+                                data-lang-en="Airtable stores the classification while Gmail receives category, priority and review actions."
+                                data-lang-fr="Airtable enregistre la classification tandis que Gmail reçoit les actions liées à la catégorie, à la priorité et à la révision.">
+                                Airtable stores the classification while Gmail
+                                receives category, priority and review actions.
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">5</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Urgent escalation"
+                                data-lang-fr="Escalade urgente">
+                                Urgent escalation
+                            </strong>
+
+                            <p
+                                data-lang-en="Configured urgent manual-review cases create a HubSpot ticket and assign an available owner."
+                                data-lang-fr="Les cas urgents configurés pour révision manuelle créent un ticket HubSpot et attribuent un propriétaire disponible.">
+                                Configured urgent manual-review cases create a
+                                HubSpot ticket and assign an available owner.
+                            </p>
+
+                        </div>
+
+                    </li>
+
+                </ol>
+
+
+                <figcaption
+                    data-lang-en="The validated scenario connects email intake, AI classification, human review and urgent ticket escalation."
+                    data-lang-fr="Le scénario validé relie la réception des e-mails, la classification par IA, la révision humaine et l’escalade des tickets urgents.">
+
+                    The validated scenario connects email intake, AI
+                    classification, human review and urgent ticket escalation.
+
+                </figcaption>
+
+            </figure>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         STEP 1 — INCOMING EMAIL
+    ========================================= -->
+
+    <section class="page-section case-study-step-section reveal">
+
+        <div class="container">
+
+            <div class="case-study-step-header">
+
+                <span class="case-study-step-number">01</span>
+
+                <div>
+
+                    <span
+                        class="section-label"
+                        data-lang-en="Incoming Request"
+                        data-lang-fr="Demande entrante">
+                        Incoming Request
+                    </span>
+
+                    <h2
+                        data-lang-en="A Support Email Enters Gmail"
+                        data-lang-fr="Un e-mail de support entre dans Gmail">
+                        A Support Email Enters Gmail
+                    </h2>
+
+                    <p
+                        data-lang-en="The workflow receives the email subject, sender and message body so the request can be classified using the configured AI prompt."
+                        data-lang-fr="Le workflow reçoit l’objet, l’expéditeur et le contenu du message afin que la demande puisse être classée à l’aide du prompt IA configuré.">
+
+                        The workflow receives the email subject, sender and
+                        message body so the request can be classified using
+                        the configured AI prompt.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <figure class="case-study-figure">
+
+                <div class="annotated-screenshot">
+
+                    <button
+                        class="case-study-image-open"
+                        type="button"
+                        data-image-src="assets/images/case-studies/sim02/sim02-urgent-support-email-before-processing.png"
+                        data-image-alt="Gmail message used as the incoming support request in the AutomateSuite simulation"
+                        aria-label="Open incoming support email image in a larger view">
+
+                        <img
+                            src="assets/images/case-studies/sim02/sim02-urgent-support-email-before-processing.png"
+                            alt="Gmail message used as the incoming support request in the AutomateSuite simulation"
+                            loading="lazy">
+
+                    </button>
+
+                </div>
+
+
+                <ol class="annotation-legend">
+
+                    <li>
+
+                        <span class="annotation-number">1</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Email subject"
+                                data-lang-fr="Objet de l’e-mail">
+                                Email subject
+                            </strong>
+
+                            <p
+                                data-lang-en="The subject provides an initial signal about the customer’s request."
+                                data-lang-fr="L’objet fournit un premier signal sur la demande du client.">
+                                The subject provides an initial signal about
+                                the customer’s request.
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">2</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Sender information"
+                                data-lang-fr="Informations sur l’expéditeur">
+                                Sender information
+                            </strong>
+
+                            <p
+                                data-lang-en="The sender is preserved in the support record for follow-up."
+                                data-lang-fr="L’expéditeur est conservé dans l’enregistrement support pour le suivi.">
+                                The sender is preserved in the support record
+                                for follow-up.
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">3</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Message context"
+                                data-lang-fr="Contexte du message">
+                                Message context
+                            </strong>
+
+                            <p
+                                data-lang-en="The email body supplies the context required for classification and suggested-response generation."
+                                data-lang-fr="Le contenu de l’e-mail fournit le contexte nécessaire à la classification et à la génération d’une réponse suggérée.">
+                                The email body supplies the context required
+                                for classification and suggested-response
+                                generation.
+                            </p>
+
+                        </div>
+
+                    </li>
+
+                </ol>
+
+
+                <figcaption
+                    data-lang-en="The incoming support message provides the source information used by the classification step."
+                    data-lang-fr="Le message de support entrant fournit les informations sources utilisées par l’étape de classification.">
+
+                    The incoming support message provides the source
+                    information used by the classification step.
+
+                </figcaption>
+
+            </figure>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         STEP 2 — AI CLASSIFICATION
+    ========================================= -->
+
+    <section class="page-section case-study-step-section alternate-section reveal">
+
+        <div class="container">
+
+            <div class="case-study-step-header">
+
+                <span class="case-study-step-number">02</span>
+
+                <div>
+
+                    <span
+                        class="section-label"
+                        data-lang-en="Structured Classification"
+                        data-lang-fr="Classification structurée">
+                        Structured Classification
+                    </span>
+
+                    <h2
+                        data-lang-en="The AI Result Is Recorded in Airtable"
+                        data-lang-fr="Le résultat de l’IA est enregistré dans Airtable">
+                        The AI Result Is Recorded in Airtable
+                    </h2>
+
+                    <p
+                        data-lang-en="The workflow records the selected category, priority, confidence, suggested reply and manual-review requirement so the processing outcome remains visible."
+                        data-lang-fr="Le workflow enregistre la catégorie sélectionnée, la priorité, le niveau de confiance, la réponse suggérée et la nécessité d’une révision manuelle afin que le résultat du traitement reste visible.">
+
+                        The workflow records the selected category, priority,
+                        confidence, suggested reply and manual-review
+                        requirement so the processing outcome remains visible.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <figure class="case-study-figure">
+
+                <div class="annotated-screenshot">
+
+                    <button
+                        class="case-study-image-open"
+                        type="button"
+                        data-image-src="assets/images/case-studies/sim02/sim02-ai-classification-and-suggested-reply.png"
+                        data-image-alt="Airtable support record showing AI category, priority, confidence and suggested reply"
+                        aria-label="Open AI classification result image in a larger view">
+
+                        <img
+                            src="assets/images/case-studies/sim02/sim02-ai-classification-and-suggested-reply.png"
+                            alt="Airtable support record showing AI category, priority, confidence and suggested reply"
+                            loading="lazy">
+
+                    </button>
+
+                </div>
+
+
+                <ol class="annotation-legend">
+
+                    <li>
+
+                        <span class="annotation-number">1</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Support category"
+                                data-lang-fr="Catégorie de support">
+                                Support category
+                            </strong>
+
+                            <p
+                                data-lang-en="The message is assigned to the configured support category."
+                                data-lang-fr="Le message est affecté à la catégorie de support configurée.">
+                                The message is assigned to the configured
+                                support category.
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">2</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Priority result"
+                                data-lang-fr="Résultat de priorité">
+                                Priority result
+                            </strong>
+
+                            <p
+                                data-lang-en="The record distinguishes an urgent request from a normal request."
+                                data-lang-fr="L’enregistrement distingue une demande urgente d’une demande normale.">
+                                The record distinguishes an urgent request
+                                from a normal request.
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">3</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Suggested reply"
+                                data-lang-fr="Réponse suggérée">
+                                Suggested reply
+                            </strong>
+
+                            <p
+                                data-lang-en="The generated reply is stored for human review before any response is sent."
+                                data-lang-fr="La réponse générée est conservée pour révision humaine avant tout envoi.">
+                                The generated reply is stored for human review
+                                before any response is sent.
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">4</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Manual-review decision"
+                                data-lang-fr="Décision de révision manuelle">
+                                Manual-review decision
+                            </strong>
+
+                            <p
+                                data-lang-en="The structured result indicates whether a human should verify the proposed action."
+                                data-lang-fr="Le résultat structuré indique si une personne doit vérifier l’action proposée.">
+                                The structured result indicates whether a
+                                human should verify the proposed action.
+                            </p>
+
+                        </div>
+
+                    </li>
+
+                </ol>
+
+
+                <figcaption
+                    data-lang-en="Airtable centralizes the AI classification and the information required for the following workflow actions."
+                    data-lang-fr="Airtable centralise la classification de l’IA et les informations nécessaires aux actions suivantes du workflow.">
+
+                    Airtable centralizes the AI classification and the
+                    information required for the following workflow actions.
+
+                </figcaption>
+
+            </figure>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         STEP 3 — GMAIL REVIEW ACTIONS
+    ========================================= -->
+
+    <section class="page-section case-study-step-section reveal">
+
+        <div class="container">
+
+            <div class="case-study-step-header">
+
+                <span class="case-study-step-number">03</span>
+
+                <div>
+
+                    <span
+                        class="section-label"
+                        data-lang-en="Human Review"
+                        data-lang-fr="Révision humaine">
+                        Human Review
+                    </span>
+
+                    <h2
+                        data-lang-en="Gmail Receives Labels and a Suggested-Reply Draft"
+                        data-lang-fr="Gmail reçoit des libellés et un brouillon de réponse suggérée">
+                        Gmail Receives Labels and a Suggested-Reply Draft
+                    </h2>
+
+                    <p
+                        data-lang-en="The email is organized with category and priority labels. When review is required, the workflow prepares a Gmail draft rather than sending the response automatically."
+                        data-lang-fr="L’e-mail est organisé avec des libellés de catégorie et de priorité. Lorsqu’une révision est nécessaire, le workflow prépare un brouillon Gmail au lieu d’envoyer automatiquement la réponse.">
+
+                        The email is organized with category and priority
+                        labels. When review is required, the workflow prepares
+                        a Gmail draft rather than sending the response
+                        automatically.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <figure class="case-study-figure">
+
+                <div class="annotated-screenshot">
+
+                    <button
+                        class="case-study-image-open"
+                        type="button"
+                        data-image-src="assets/images/case-studies/sim02/sim02-gmail-ai-draft-for-human-review.png"
+                        data-image-alt="Gmail support email showing category, priority and manual-review labels with a suggested reply draft"
+                        aria-label="Open Gmail labels and draft image in a larger view">
+
+                        <img
+                            src="assets/images/case-studies/sim02/sim02-gmail-ai-draft-for-human-review.png"
+                            alt="Gmail support email showing category, priority and manual-review labels with a suggested reply draft"
+                            loading="lazy">
+
+                    </button>
+
+                </div>
+
+
+                <ol class="annotation-legend">
+
+                    <li>
+
+                        <span class="annotation-number">1</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Category label"
+                                data-lang-fr="Libellé de catégorie">
+                                Category label
+                            </strong>
+
+                            <p
+                                data-lang-en="The email is placed under the category returned by the workflow."
+                                data-lang-fr="L’e-mail est placé sous la catégorie renvoyée par le workflow.">
+                                The email is placed under the category returned
+                                by the workflow.
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">2</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Priority label"
+                                data-lang-fr="Libellé de priorité">
+                                Priority label
+                            </strong>
+
+                            <p
+                                data-lang-en="The priority result remains visible directly inside Gmail."
+                                data-lang-fr="Le résultat de priorité reste visible directement dans Gmail.">
+                                The priority result remains visible directly
+                                inside Gmail.
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">3</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Manual-review label"
+                                data-lang-fr="Libellé de révision manuelle">
+                                Manual-review label
+                            </strong>
+
+                            <p
+                                data-lang-en="The label signals that the proposed reply requires human verification."
+                                data-lang-fr="Le libellé indique que la réponse proposée nécessite une vérification humaine.">
+                                The label signals that the proposed reply
+                                requires human verification.
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">4</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Draft, not automatic sending"
+                                data-lang-fr="Brouillon, sans envoi automatique">
+                                Draft, not automatic sending
+                            </strong>
+
+                            <p
+                                data-lang-en="The suggested response remains editable before an agent decides whether to send it."
+                                data-lang-fr="La réponse suggérée reste modifiable avant qu’un agent ne décide de l’envoyer.">
+                                The suggested response remains editable before
+                                an agent decides whether to send it.
+                            </p>
+
+                        </div>
+
+                    </li>
+
+                </ol>
+
+
+                <figcaption
+                    data-lang-en="The tested workflow supports human control by preparing a draft instead of sending the AI-generated reply automatically."
+                    data-lang-fr="Le workflow testé conserve le contrôle humain en préparant un brouillon plutôt qu’en envoyant automatiquement la réponse générée par l’IA.">
+
+                    The tested workflow supports human control by preparing a
+                    draft instead of sending the AI-generated reply
+                    automatically.
+
+                </figcaption>
+
+            </figure>
+
+        </div>
+
+    </section>
+
+        <!-- ========================================
+        STEP 4 — ESCALATION RESULT IN AIRTABLE
+    ========================================= -->
+
+    <section class="page-section case-study-step-section alternate-section reveal">
+
+        <div class="container">
+
+            <div class="case-study-step-header">
+
+                <span class="case-study-step-number">04</span>
+
+                <div>
+
+                    <span
+                        class="section-label"
+                        data-lang-en="Escalation Recorded"
+                        data-lang-fr="Escalade enregistrée">
+                        Escalation Recorded
+                    </span>
+
+                    <h2
+                        data-lang-en="Airtable Records the Urgent Ticket Result"
+                        data-lang-fr="Airtable enregistre le résultat du ticket urgent">
+                        Airtable Records the Urgent Ticket Result
+                    </h2>
+
+                    <p
+                        data-lang-en="After the urgent escalation branch runs, Airtable stores the ticket status, HubSpot reference, processing result and manual-review state."
+                        data-lang-fr="Après l’exécution de la branche d’escalade urgente, Airtable enregistre le statut du ticket, la référence HubSpot, le résultat du traitement et l’état de révision manuelle.">
+
+                        After the urgent escalation branch runs, Airtable stores
+                        the ticket status, HubSpot reference, processing result
+                        and manual-review state.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <figure class="case-study-figure">
+
+                <div class="annotated-screenshot">
+
+                    <button
+                        class="case-study-image-open"
+                        type="button"
+                        data-image-src="assets/images/case-studies/sim02/sim02-airtable-ticket-escalation-result.png"
+                        data-image-alt="Airtable support record showing the urgent HubSpot ticket ID, successful processing result and manual-review status"
+                        aria-label="Open Airtable ticket escalation result in a larger view">
+
+                        <img
+                            src="assets/images/case-studies/sim02/sim02-airtable-ticket-escalation-result.png"
+                            alt="Airtable support record showing the urgent HubSpot ticket ID, successful processing result and manual-review status"
+                            loading="lazy">
+
+                    </button>
+
+                </div>
+
+
+                <ol class="annotation-legend">
+
+                    <li>
+
+                        <span class="annotation-number">1</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Ticket-created status"
+                                data-lang-fr="Statut de ticket créé">
+                                Ticket-created status
+                            </strong>
+
+                            <p
+                                data-lang-en="The processing status confirms that the urgent escalation branch completed."
+                                data-lang-fr="Le statut de traitement confirme que la branche d’escalade urgente a été exécutée.">
+
+                                The processing status confirms that the urgent
+                                escalation branch completed.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">2</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="HubSpot ticket reference"
+                                data-lang-fr="Référence du ticket HubSpot">
+                                HubSpot ticket reference
+                            </strong>
+
+                            <p
+                                data-lang-en="Airtable stores the identifier of the HubSpot ticket created by the workflow."
+                                data-lang-fr="Airtable enregistre l’identifiant du ticket HubSpot créé par le workflow.">
+
+                                Airtable stores the identifier of the HubSpot
+                                ticket created by the workflow.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">3</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Successful processing result"
+                                data-lang-fr="Résultat de traitement réussi">
+                                Successful processing result
+                            </strong>
+
+                            <p
+                                data-lang-en="The result confirms that the urgent HubSpot ticket was created successfully."
+                                data-lang-fr="Le résultat confirme que le ticket urgent HubSpot a été créé avec succès.">
+
+                                The result confirms that the urgent HubSpot ticket
+                                was created successfully.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">4</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Manual review preserved"
+                                data-lang-fr="Révision manuelle conservée">
+                                Manual review preserved
+                            </strong>
+
+                            <p
+                                data-lang-en="The record remains marked for human review despite the automated escalation."
+                                data-lang-fr="L’enregistrement reste marqué pour révision humaine malgré l’escalade automatisée.">
+
+                                The record remains marked for human review despite
+                                the automated escalation.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+                </ol>
+
+
+                <figcaption
+                    data-lang-en="Airtable preserves the complete escalation outcome, including the HubSpot ticket reference and manual-review status."
+                    data-lang-fr="Airtable conserve le résultat complet de l’escalade, notamment la référence du ticket HubSpot et le statut de révision manuelle.">
+
+                    Airtable preserves the complete escalation outcome, including
+                    the HubSpot ticket reference and manual-review status.
+
+                </figcaption>
+
+            </figure>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         HUBSPOT ESCALATION
+    ========================================= -->
+
+    <section class="page-section case-study-confirmation-section alternate-section reveal">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span
+                    class="section-label"
+                    data-lang-en="Urgent Escalation"
+                    data-lang-fr="Escalade urgente">
+                    Urgent Escalation
+                </span>
+
+                <h2
+                    data-lang-en="Configured Urgent Cases Create a HubSpot Ticket"
+                    data-lang-fr="Les cas urgents configurés créent un ticket HubSpot">
+                    Configured Urgent Cases Create a HubSpot Ticket
+                </h2>
+
+                <p
+                    data-lang-en="When the manual-review and urgent-priority conditions match the configured escalation rule, the workflow creates a HubSpot ticket and associates an available ticket owner."
+                    data-lang-fr="Lorsque les conditions de révision manuelle et de priorité urgente correspondent à la règle d’escalade configurée, le workflow crée un ticket HubSpot et lui associe un propriétaire disponible.">
+
+                    When the manual-review and urgent-priority conditions
+                    match the configured escalation rule, the workflow creates
+                    a HubSpot ticket and associates an available ticket owner.
+
+                </p>
+
+            </div>
+
+
+            <figure class="case-study-figure compact-figure">
+
+                <div class="annotated-screenshot">
+
+                    <button
+                        class="case-study-image-open"
+                        type="button"
+                        data-image-src="assets/images/case-studies/sim02/sim02-hubspot-urgent-ticket-details.png"
+                        data-image-alt="HubSpot urgent support ticket created by the AutomateSuite email-triage workflow"
+                        aria-label="Open HubSpot urgent ticket image in a larger view">
+
+                        <img
+                            src="assets/images/case-studies/sim02/sim02-hubspot-urgent-ticket-details.png"
+                            alt="HubSpot urgent support ticket created by the AutomateSuite email-triage workflow"
+                            loading="lazy">
+
+                    </button>
+
+                </div>
+
+
+                <ol class="annotation-legend">
+
+                    <li>
+
+                        <span class="annotation-number">1</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Ticket created"
+                                data-lang-fr="Ticket créé">
+                                Ticket created
+                            </strong>
+
+                            <p
+                                data-lang-en="The urgent support case becomes a trackable HubSpot ticket."
+                                data-lang-fr="Le cas de support urgent devient un ticket HubSpot traçable.">
+                                The urgent support case becomes a trackable
+                                HubSpot ticket.
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">2</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Support context preserved"
+                                data-lang-fr="Contexte du support conservé">
+                                Support context preserved
+                            </strong>
+
+                            <p
+                                data-lang-en="The ticket contains the information needed for investigation and follow-up."
+                                data-lang-fr="Le ticket contient les informations nécessaires à l’analyse et au suivi.">
+                                The ticket contains the information needed for
+                                investigation and follow-up.
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">3</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Owner assignment"
+                                data-lang-fr="Attribution du propriétaire">
+                                Owner assignment
+                            </strong>
+
+                            <p
+                                data-lang-en="The tested branch retrieves an available HubSpot owner and assigns the ticket."
+                                data-lang-fr="La branche testée récupère un propriétaire HubSpot disponible et lui attribue le ticket.">
+                                The tested branch retrieves an available
+                                HubSpot owner and assigns the ticket.
+                            </p>
+
+                        </div>
+
+                    </li>
+
+                </ol>
+
+
+                <figcaption
+                    data-lang-en="The validated escalation branch creates an owned HubSpot ticket when the configured urgent-case conditions are satisfied."
+                    data-lang-fr="La branche d’escalade validée crée un ticket HubSpot attribué lorsque les conditions configurées pour les cas urgents sont remplies.">
+
+                    The validated escalation branch creates an owned HubSpot
+                    ticket when the configured urgent-case conditions are
+                    satisfied.
+
+                </figcaption>
+
+            </figure>
+
+        </div>
+
+    </section>
+
+    <!-- ========================================
+     NORMAL REQUEST COMPARISON
+    ========================================= -->
+
+    <section class="page-section case-study-confirmation-section reveal">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span
+                    class="section-label"
+                    data-lang-en="Alternative Processing Path"
+                    data-lang-fr="Parcours de traitement alternatif">
+                    Alternative Processing Path
+                </span>
+
+                <h2
+                    data-lang-en="Normal Requests Follow a Different Route"
+                    data-lang-fr="Les demandes normales suivent une route différente">
+                    Normal Requests Follow a Different Route
+                </h2>
+
+                <p
+                    data-lang-en="The simulation also tested a non-urgent informational email. The AI result classified it as a general, low-priority and positive request rather than sending it through the urgent-ticket route."
+                    data-lang-fr="La simulation a également testé un e-mail d’information non urgent. Le résultat de l’IA l’a classé comme une demande générale, de faible priorité et positive, au lieu de l’envoyer vers la route des tickets urgents.">
+
+                    The simulation also tested a non-urgent informational email.
+                    The AI result classified it as a general, low-priority and
+                    positive request rather than sending it through the
+                    urgent-ticket route.
+
+                </p>
+
+            </div>
+
+
+            <figure class="case-study-figure compact-figure">
+
+                <div class="annotated-screenshot">
+
+                    <button
+                        class="case-study-image-open"
+                        type="button"
+                        data-image-src="assets/images/case-studies/sim02/sim02-normal-email-ai-classification.png"
+                        data-image-alt="Airtable record showing a normal informational support email classified as General, Low priority and Positive"
+                        aria-label="Open normal email classification image in a larger view">
+
+                        <img
+                            src="assets/images/case-studies/sim02/sim02-normal-email-ai-classification.png"
+                            alt="Airtable record showing a normal informational support email classified as General, Low priority and Positive"
+                            loading="lazy">
+
+                    </button>
+
+                </div>
+
+
+                <ol class="annotation-legend">
+
+                    <li>
+
+                        <span class="annotation-number">1</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="General category"
+                                data-lang-fr="Catégorie générale">
+                                General category
+                            </strong>
+
+                            <p
+                                data-lang-en="The informational message is classified separately from account-access, billing or technical cases."
+                                data-lang-fr="Le message d’information est classé séparément des cas liés à l’accès au compte, à la facturation ou au support technique.">
+
+                                The informational message is classified separately
+                                from account-access, billing or technical cases.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">2</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Low priority"
+                                data-lang-fr="Faible priorité">
+                                Low priority
+                            </strong>
+
+                            <p
+                                data-lang-en="The workflow distinguishes the normal enquiry from the urgent security request."
+                                data-lang-fr="Le workflow distingue la demande normale de la demande urgente liée à la sécurité.">
+
+                                The workflow distinguishes the normal enquiry from
+                                the urgent security request.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">3</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Positive sentiment"
+                                data-lang-fr="Sentiment positif">
+                                Positive sentiment
+                            </strong>
+
+                            <p
+                                data-lang-en="The structured result records the positive tone of the customer’s message."
+                                data-lang-fr="Le résultat structuré enregistre le ton positif du message du client.">
+
+                                The structured result records the positive tone of
+                                the customer’s message.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="annotation-number">4</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="AI-classified status"
+                                data-lang-fr="Statut classé par IA">
+                                AI-classified status
+                            </strong>
+
+                            <p
+                                data-lang-en="The message completes the normal classification path without creating an urgent HubSpot ticket."
+                                data-lang-fr="Le message termine le parcours de classification normale sans créer de ticket HubSpot urgent.">
+
+                                The message completes the normal classification
+                                path without creating an urgent HubSpot ticket.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+                </ol>
+
+
+                <figcaption
+                    data-lang-en="The normal-path test demonstrates that routing decisions vary according to the classified context and priority."
+                    data-lang-fr="Le test du parcours normal démontre que les décisions de routage varient selon le contexte et la priorité classifiés.">
+
+                    The normal-path test demonstrates that routing decisions vary
+                    according to the classified context and priority.
+
+                </figcaption>
+
+            </figure>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         VALIDATED RESULTS
+    ========================================= -->
+
+    <section class="page-section validated-results-section reveal">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span
+                    class="section-label"
+                    data-lang-en="Validated Test Results"
+                    data-lang-fr="Résultats validés du test">
+                    Validated Test Results
+                </span>
+
+                <h2
+                    data-lang-en="What the Simulation Demonstrated"
+                    data-lang-fr="Ce que la simulation a démontré">
+                    What the Simulation Demonstrated
+                </h2>
+
+                <p
+                    data-lang-en="The following behaviours were observed during the controlled AutomateSuite test."
+                    data-lang-fr="Les comportements suivants ont été observés pendant le test contrôlé d’AutomateSuite.">
+
+                    The following behaviours were observed during the
+                    controlled AutomateSuite test.
+
+                </p>
+
+            </div>
+
+
+            <div class="validated-results-grid">
+
+                <article class="validated-result-card">
+
+                    <i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i>
+
+                    <h3
+                        data-lang-en="Emails Detected"
+                        data-lang-fr="E-mails détectés">
+                        Emails Detected
+                    </h3>
+
+                    <p
+                        data-lang-en="The scenario received the prepared Gmail support messages."
+                        data-lang-fr="Le scénario a reçu les messages de support préparés dans Gmail.">
+                        The scenario received the prepared Gmail support
+                        messages.
+                    </p>
+
+                </article>
+
+
+                <article class="validated-result-card">
+
+                    <i class="fa-solid fa-brain" aria-hidden="true"></i>
+
+                    <h3
+                        data-lang-en="Structured AI Output"
+                        data-lang-fr="Résultat IA structuré">
+                        Structured AI Output
+                    </h3>
+
+                    <p
+                        data-lang-en="The classification step returned the mapped category, priority and review fields."
+                        data-lang-fr="L’étape de classification a renvoyé les champs de catégorie, de priorité et de révision prévus.">
+                        The classification step returned the mapped category,
+                        priority and review fields.
+                    </p>
+
+                </article>
+
+
+                <article class="validated-result-card">
+
+                    <i class="fa-solid fa-tags" aria-hidden="true"></i>
+
+                    <h3
+                        data-lang-en="Gmail Actions Applied"
+                        data-lang-fr="Actions Gmail appliquées">
+                        Gmail Actions Applied
+                    </h3>
+
+                    <p
+                        data-lang-en="Category, priority and review actions were applied to the tested emails."
+                        data-lang-fr="Les actions de catégorie, de priorité et de révision ont été appliquées aux e-mails testés.">
+                        Category, priority and review actions were applied to
+                        the tested emails.
+                    </p>
+
+                </article>
+
+
+                <article class="validated-result-card">
+
+                    <i class="fa-solid fa-ticket" aria-hidden="true"></i>
+
+                    <h3
+                        data-lang-en="Urgent Ticket Created"
+                        data-lang-fr="Ticket urgent créé">
+                        Urgent Ticket Created
+                    </h3>
+
+                    <p
+                        data-lang-en="The configured urgent case created a HubSpot ticket with an owner."
+                        data-lang-fr="Le cas urgent configuré a créé un ticket HubSpot avec un propriétaire.">
+                        The configured urgent case created a HubSpot ticket
+                        with an owner.
+                    </p>
+
+                </article>
+
+            </div>
+
+
+            <div class="result-boundary-note">
+
+                <h3
+                    data-lang-en="What This Case Study Does Not Claim"
+                    data-lang-fr="Ce que cette étude de cas ne revendique pas">
+                    What This Case Study Does Not Claim
+                </h3>
+
+                <p
+                    data-lang-en="The simulation does not claim guaranteed AI accuracy, fully autonomous customer communication, production-scale processing volume, customer return on investment or identical results for every implementation."
+                    data-lang-fr="La simulation ne revendique pas une précision garantie de l’IA, une communication client entièrement autonome, un volume de traitement à l’échelle de la production, un retour sur investissement client ni des résultats identiques pour chaque implémentation.">
+
+                    The simulation does not claim guaranteed AI accuracy,
+                    fully autonomous customer communication, production-scale
+                    processing volume, customer return on investment or
+                    identical results for every implementation.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         BENEFITS
+    ========================================= -->
+
+    <section class="page-section case-study-benefits-section reveal">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span
+                    class="section-label"
+                    data-lang-en="Operational Benefits"
+                    data-lang-fr="Bénéfices opérationnels">
+                    Operational Benefits
+                </span>
+
+                <h2
+                    data-lang-en="A More Structured Support-Request Workflow"
+                    data-lang-fr="Un workflow plus structuré pour les demandes support">
+                    A More Structured Support-Request Workflow
+                </h2>
+
+            </div>
+
+
+            <div class="case-study-benefits-grid">
+
+                <article class="case-study-benefit-card">
+
+                    <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+
+                    <h3
+                        data-lang-en="Consistent Classification"
+                        data-lang-fr="Classification cohérente">
+                        Consistent Classification
+                    </h3>
+
+                    <p
+                        data-lang-en="Messages are evaluated according to a common category and priority structure."
+                        data-lang-fr="Les messages sont évalués selon une structure commune de catégories et de priorités.">
+                        Messages are evaluated according to a common category
+                        and priority structure.
+                    </p>
+
+                </article>
+
+
+                <article class="case-study-benefit-card">
+
+                    <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+
+                    <h3
+                        data-lang-en="Clearer Urgent Routing"
+                        data-lang-fr="Routage urgent plus clair">
+                        Clearer Urgent Routing
+                    </h3>
+
+                    <p
+                        data-lang-en="Configured urgent cases can be separated from normal enquiries and escalated."
+                        data-lang-fr="Les cas urgents configurés peuvent être séparés des demandes normales et escaladés.">
+                        Configured urgent cases can be separated from normal
+                        enquiries and escalated.
+                    </p>
+
+                </article>
+
+
+                <article class="case-study-benefit-card">
+
+                    <i class="fa-solid fa-user-check" aria-hidden="true"></i>
+
+                    <h3
+                        data-lang-en="Human Review Preserved"
+                        data-lang-fr="Révision humaine conservée">
+                        Human Review Preserved
+                    </h3>
+
+                    <p
+                        data-lang-en="Suggested replies remain editable drafts when human validation is required."
+                        data-lang-fr="Les réponses suggérées restent des brouillons modifiables lorsqu’une validation humaine est nécessaire.">
+                        Suggested replies remain editable drafts when human
+                        validation is required.
+                    </p>
+
+                </article>
+
+
+                <article class="case-study-benefit-card">
+
+                    <i class="fa-solid fa-list-check" aria-hidden="true"></i>
+
+                    <h3
+                        data-lang-en="Centralized Processing Records"
+                        data-lang-fr="Enregistrements de traitement centralisés">
+                        Centralized Processing Records
+                    </h3>
+
+                    <p
+                        data-lang-en="Airtable preserves the classification, suggested reply and review status."
+                        data-lang-fr="Airtable conserve la classification, la réponse suggérée et le statut de révision.">
+                        Airtable preserves the classification, suggested reply
+                        and review status.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         PRODUCTION ADAPTATION
+    ========================================= -->
+
+    <section class="page-section case-study-production-section reveal">
+
+        <div class="container">
+
+            <div class="production-adaptation-card">
+
+                <div class="production-adaptation-content">
+
+                    <span
+                        class="section-label"
+                        data-lang-en="Possible Production Configuration"
+                        data-lang-fr="Configuration de production possible">
+                        Possible Production Configuration
+                    </span>
+
+                    <h2
+                        data-lang-en="Adapt the Workflow to Your Support Rules and Channels"
+                        data-lang-fr="Adaptez le workflow à vos règles et canaux de support">
+                        Adapt the Workflow to Your Support Rules and Channels
+                    </h2>
+
+                    <p
+                        data-lang-en="A production implementation can be adjusted according to the client’s support categories, approval requirements, escalation policies, response templates and connected service platforms."
+                        data-lang-fr="Une implémentation en production peut être ajustée selon les catégories de support du client, ses exigences d’approbation, ses politiques d’escalade, ses modèles de réponse et les plateformes de service connectées.">
+
+                        A production implementation can be adjusted according
+                        to the client’s support categories, approval
+                        requirements, escalation policies, response templates
+                        and connected service platforms.
+
+                    </p>
+
+
+                    <ul class="production-adaptation-list">
+
+                        <li
+                            data-lang-en="Custom categories, priorities and escalation thresholds"
+                            data-lang-fr="Catégories, priorités et seuils d’escalade personnalisés">
+                            Custom categories, priorities and escalation thresholds
+                        </li>
+
+                        <li
+                            data-lang-en="Additional email inboxes and support channels"
+                            data-lang-fr="Boîtes e-mail et canaux de support supplémentaires">
+                            Additional email inboxes and support channels
+                        </li>
+
+                        <li
+                            data-lang-en="Alternative ticketing and CRM platforms"
+                            data-lang-fr="Autres plateformes de ticketing et CRM">
+                            Alternative ticketing and CRM platforms
+                        </li>
+
+                        <li
+                            data-lang-en="Approval rules for AI-generated drafts"
+                            data-lang-fr="Règles d’approbation des brouillons générés par IA">
+                            Approval rules for AI-generated drafts
+                        </li>
+
+                        <li
+                            data-lang-en="Custom assignment, notification and audit requirements"
+                            data-lang-fr="Exigences personnalisées d’attribution, de notification et d’audit">
+                            Custom assignment, notification and audit requirements
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="production-adaptation-action">
+
+                    <a
+                        href="custom-request.html?service=email-triage"
+                        class="btn btn-primary"
+                        data-lang-en="Request a Similar Automation"
+                        data-lang-fr="Demander une automatisation similaire">
+                        Request a Similar Automation
+                    </a>
+
+                    <a
+                        href="support-email-triage.html"
+                        class="btn btn-secondary"
+                        data-lang-en="Explore Support Triage"
+                        data-lang-fr="Découvrir le triage du support">
+                        Explore Support Triage
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         TOOLS
+    ========================================= -->
+
+    <section class="page-section case-study-tools-section reveal">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span
+                    class="section-label"
+                    data-lang-en="Validated Technology Stack"
+                    data-lang-fr="Stack technologique validée">
+                    Validated Technology Stack
+                </span>
+
+                <h2
+                    data-lang-en="Tools Used in This Simulation"
+                    data-lang-fr="Outils utilisés dans cette simulation">
+                    Tools Used in This Simulation
+                </h2>
+
+                <p
+                    data-lang-en="The demonstrated workflow was built and tested with the following connected platforms."
+                    data-lang-fr="Le workflow présenté a été construit et testé avec les plateformes connectées suivantes.">
+
+                    The demonstrated workflow was built and tested with the
+                    following connected platforms.
+
+                </p>
+
+            </div>
+
+
+            <div class="case-study-stack-grid">
+
+                <article class="case-study-stack-card">
+
+                    <i class="fa-brands fa-google" aria-hidden="true"></i>
+
+                    <h3>Gmail</h3>
+
+                    <p
+                        data-lang-en="Receives support messages and stores labels and manual-review drafts."
+                        data-lang-fr="Reçoit les messages de support et conserve les libellés et les brouillons de révision manuelle.">
+                        Receives support messages and stores labels and
+                        manual-review drafts.
+                    </p>
+
+                </article>
+
+
+                <article class="case-study-stack-card">
+
+                    <i class="fa-solid fa-brain" aria-hidden="true"></i>
+
+                    <h3>OpenAI</h3>
+
+                    <p
+                        data-lang-en="Returns the structured category, priority, confidence, review and suggested-reply fields."
+                        data-lang-fr="Renvoie les champs structurés de catégorie, priorité, confiance, révision et réponse suggérée.">
+                        Returns the structured category, priority, confidence,
+                        review and suggested-reply fields.
+                    </p>
+
+                </article>
+
+
+                <article class="case-study-stack-card">
+
+                    <i class="fa-solid fa-table-cells-large" aria-hidden="true"></i>
+
+                    <h3>Airtable</h3>
+
+                    <p
+                        data-lang-en="Stores the original support message and the resulting classification data."
+                        data-lang-fr="Stocke le message de support initial et les données de classification obtenues.">
+                        Stores the original support message and the resulting
+                        classification data.
+                    </p>
+
+                </article>
+
+
+                <article class="case-study-stack-card">
+
+                    <i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
+
+                    <h3>Make</h3>
+
+                    <p
+                        data-lang-en="Orchestrates email monitoring, AI processing, routing and connected actions."
+                        data-lang-fr="Orchestre la surveillance des e-mails, le traitement par IA, le routage et les actions connectées.">
+                        Orchestrates email monitoring, AI processing, routing
+                        and connected actions.
+                    </p>
+
+                </article>
+
+
+                <article class="case-study-stack-card">
+
+                    <i class="fa-brands fa-hubspot" aria-hidden="true"></i>
+
+                    <h3>HubSpot</h3>
+
+                    <p
+                        data-lang-en="Receives urgent cases as trackable support tickets with ownership."
+                        data-lang-fr="Reçoit les cas urgents sous forme de tickets support traçables et attribués.">
+                        Receives urgent cases as trackable support tickets
+                        with ownership.
+                    </p>
+
+                </article>
+
+            </div>
+
+
+            <p
+                class="case-study-stack-note"
+                data-lang-en="The production stack can be adapted according to the client’s existing support systems and technical requirements."
+                data-lang-fr="La stack de production peut être adaptée selon les systèmes de support existants et les exigences techniques du client.">
+
+                The production stack can be adapted according to the client’s
+                existing support systems and technical requirements.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         FAQ
+    ========================================= -->
+
+    <section class="page-section case-study-faq-section reveal">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span
+                    class="section-label"
+                    data-lang-en="Frequently Asked Questions"
+                    data-lang-fr="Questions fréquentes">
+                    Frequently Asked Questions
+                </span>
+
+                <h2
+                    data-lang-en="AI Support Email Triage FAQ"
+                    data-lang-fr="FAQ sur le triage des e-mails de support par IA">
+                    AI Support Email Triage FAQ
+                </h2>
+
+            </div>
+
+
+            <div class="faq-container">
+
+                <div class="faq-accordion">
+
+                    <button class="accordion-header" type="button">
+
+                        <h3
+                            data-lang-en="Can the workflow use different support categories?"
+                            data-lang-fr="Le workflow peut-il utiliser d’autres catégories de support ?">
+                            Can the workflow use different support categories?
+                        </h3>
+
+                        <i class="fa-solid fa-chevron-down accordion-icon" aria-hidden="true"></i>
+
+                    </button>
+
+                    <div class="accordion-content">
+
+                        <p
+                            data-lang-en="Yes. Categories, priorities and escalation rules can be adapted to the client’s support structure and terminology."
+                            data-lang-fr="Oui. Les catégories, les priorités et les règles d’escalade peuvent être adaptées à la structure et à la terminologie du support client.">
+                            Yes. Categories, priorities and escalation rules
+                            can be adapted to the client’s support structure
+                            and terminology.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-accordion">
+
+                    <button class="accordion-header" type="button">
+
+                        <h3
+                            data-lang-en="Are AI-generated replies sent automatically?"
+                            data-lang-fr="Les réponses générées par l’IA sont-elles envoyées automatiquement ?">
+                            Are AI-generated replies sent automatically?
+                        </h3>
+
+                        <i class="fa-solid fa-chevron-down accordion-icon" aria-hidden="true"></i>
+
+                    </button>
+
+                    <div class="accordion-content">
+
+                        <p
+                            data-lang-en="Not in the demonstrated manual-review route. The workflow creates an editable Gmail draft so a human can verify and decide whether to send the response."
+                            data-lang-fr="Pas dans la route de révision manuelle présentée. Le workflow crée un brouillon Gmail modifiable afin qu’une personne puisse le vérifier et décider de son envoi.">
+                            Not in the demonstrated manual-review route. The
+                            workflow creates an editable Gmail draft so a
+                            human can verify and decide whether to send the
+                            response.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-accordion">
+
+                    <button class="accordion-header" type="button">
+
+                        <h3
+                            data-lang-en="What triggers a HubSpot ticket?"
+                            data-lang-fr="Qu’est-ce qui déclenche un ticket HubSpot ?">
+                            What triggers a HubSpot ticket?
+                        </h3>
+
+                        <i class="fa-solid fa-chevron-down accordion-icon" aria-hidden="true"></i>
+
+                    </button>
+
+                    <div class="accordion-content">
+
+                        <p
+                            data-lang-en="In the controlled test, the escalation branch required manual review, urgent priority and the configured account-access subject condition. Production rules can be adapted."
+                            data-lang-fr="Dans le test contrôlé, la branche d’escalade exigeait une révision manuelle, une priorité urgente et la condition configurée liée à l’accès au compte. Les règles de production peuvent être adaptées.">
+                            In the controlled test, the escalation branch
+                            required manual review, urgent priority and the
+                            configured account-access subject condition.
+                            Production rules can be adapted.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-accordion">
+
+                    <button class="accordion-header" type="button">
+
+                        <h3
+                            data-lang-en="Can the workflow connect to another ticketing platform?"
+                            data-lang-fr="Le workflow peut-il se connecter à une autre plateforme de ticketing ?">
+                            Can the workflow connect to another ticketing platform?
+                        </h3>
+
+                        <i class="fa-solid fa-chevron-down accordion-icon" aria-hidden="true"></i>
+
+                    </button>
+
+                    <div class="accordion-content">
+
+                        <p
+                            data-lang-en="Potentially yes. A production configuration may connect to another compatible help-desk, CRM or database depending on its available integrations and API access."
+                            data-lang-fr="Potentiellement oui. Une configuration en production peut se connecter à un autre outil de support, CRM ou base de données compatible selon ses intégrations disponibles et son accès à l’API.">
+                            Potentially yes. A production configuration may
+                            connect to another compatible help-desk, CRM or
+                            database depending on its available integrations
+                            and API access.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-accordion">
+
+                    <button class="accordion-header" type="button">
+
+                        <h3
+                            data-lang-en="Is the AI classification guaranteed to be correct?"
+                            data-lang-fr="La classification de l’IA est-elle garantie comme étant correcte ?">
+                            Is the AI classification guaranteed to be correct?
+                        </h3>
+
+                        <i class="fa-solid fa-chevron-down accordion-icon" aria-hidden="true"></i>
+
+                    </button>
+
+                    <div class="accordion-content">
+
+                        <p
+                            data-lang-en="No. AI output can require review, especially for ambiguous, sensitive or high-impact cases. Confidence fields, manual-review rules and fallback routes can help preserve human oversight."
+                            data-lang-fr="Non. Le résultat de l’IA peut nécessiter une révision, notamment pour les cas ambigus, sensibles ou à fort impact. Les champs de confiance, les règles de révision manuelle et les routes de secours peuvent contribuer à conserver le contrôle humain.">
+                            No. AI output can require review, especially for
+                            ambiguous, sensitive or high-impact cases.
+                            Confidence fields, manual-review rules and fallback
+                            routes can help preserve human oversight.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         RELATED CASE STUDIES
+    ========================================= -->
+
+    <section class="page-section related-case-studies-section reveal">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span
+                    class="section-label"
+                    data-lang-en="Continue Exploring"
+                    data-lang-fr="Poursuivre la découverte">
+                    Continue Exploring
+                </span>
+
+                <h2
+                    data-lang-en="Related Automation Case Studies"
+                    data-lang-fr="Études de cas d’automatisation associées">
+                    Related Automation Case Studies
+                </h2>
+
+            </div>
+
+
+            <div class="related-case-studies-grid">
+
+                <article class="related-case-study-card">
+
+                    <div class="related-case-study-number">
+                        SIM-01
+                    </div>
+
+                    <h3
+                        data-lang-en="Lead Capture and HubSpot CRM Enrichment"
+                        data-lang-fr="Capture des leads et enrichissement du CRM HubSpot">
+                        Lead Capture and HubSpot CRM Enrichment
+                    </h3>
+
+                    <p
+                        data-lang-en="Validate incoming lead records, synchronize complete contacts and flag missing information."
+                        data-lang-fr="Valider les leads entrants, synchroniser les contacts complets et signaler les informations manquantes.">
+                        Validate incoming lead records, synchronize complete
+                        contacts and flag missing information.
+                    </p>
+
+                    <a
+                        href="case-study-lead-capture-crm.html"
+                        class="case-study-link"
+                        data-lang-en="View Case Study"
+                        data-lang-fr="Voir l’étude de cas">
+
+                        View Case Study
+
+                        <span aria-hidden="true">→</span>
+
+                    </a>
+
+                </article>
+
+
+                <article class="related-case-study-card">
+
+                    <div class="related-case-study-number">
+                        SIM-03
+                    </div>
+
+                    <h3
+                        data-lang-en="WhatsApp Renewal Reminders with SMS Fallback"
+                        data-lang-fr="Rappels de renouvellement WhatsApp avec relais SMS">
+                        WhatsApp Renewal Reminders with SMS Fallback
+                    </h3>
+
+                    <p
+                        data-lang-en="Evaluate expiration dates, send staged reminders and escalate delivery incidents."
+                        data-lang-fr="Évaluer les dates d’expiration, envoyer des rappels progressifs et escalader les incidents de livraison.">
+                        Evaluate expiration dates, send staged reminders and
+                        escalate delivery incidents.
+                    </p>
+
+                    <a
+                        href="case-study-renewal-reminders.html"
+                        class="case-study-link"
+                        data-lang-en="View Case Study"
+                        data-lang-fr="Voir l’étude de cas">
+
+                        View Case Study
+
+                        <span aria-hidden="true">→</span>
+
+                    </a>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         FINAL CTA
+    ========================================= -->
+
+    <section class="page-section case-study-final-cta reveal">
+
+        <div class="container">
+
+            <div class="cta-box">
+
+                <span
+                    class="section-label"
+                    data-lang-en="Build a Workflow Around Your Support Process"
+                    data-lang-fr="Construisez un workflow autour de votre processus support">
+                    Build a Workflow Around Your Support Process
+                </span>
+
+                <h2
+                    data-lang-en="Need a More Structured Way to Handle Support Emails?"
+                    data-lang-fr="Vous recherchez une méthode plus structurée pour gérer vos e-mails de support ?">
+                    Need a More Structured Way to Handle Support Emails?
+                </h2>
+
+                <p
+                    data-lang-en="Tell AutomateSuite how your support messages arrive, which categories and priorities matter and when your team requires manual review or escalation."
+                    data-lang-fr="Expliquez à AutomateSuite comment vos messages de support arrivent, quelles catégories et priorités sont importantes et dans quels cas votre équipe nécessite une révision manuelle ou une escalade.">
+
+                    Tell AutomateSuite how your support messages arrive, which
+                    categories and priorities matter and when your team
+                    requires manual review or escalation.
+
+                </p>
+
+                <div class="cta-actions">
+
+                    <a
+                        href="custom-request.html?service=email-triage"
+                        class="btn btn-primary"
+                        data-lang-en="Discuss a Similar Automation"
+                        data-lang-fr="Discuter d’une automatisation similaire">
+                        Discuss a Similar Automation
+                    </a>
+
+                    <a
+                        href="case-studies.html"
+                        class="btn btn-secondary"
+                        data-lang-en="View All Case Studies"
+                        data-lang-fr="Voir toutes les études de cas">
+                        View All Case Studies
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<div
+    class="case-study-lightbox"
+    id="case-study-lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-hidden="true"
+    aria-label="Expanded case study image">
+
+    <div class="case-study-lightbox-backdrop"></div>
+
+    <div class="case-study-lightbox-content">
+
+        <button
+            class="case-study-lightbox-close"
+            type="button"
+            aria-label="Close enlarged image">
+
+            <i
+                class="fa-solid fa-xmark"
+                aria-hidden="true"></i>
+
+        </button>
+
+        <img
+            id="case-study-lightbox-image"
+            src=""
+            alt="">
+
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <!-- Brand -->
+            <div class="footer-column">
+
+                <a href="index.html"
+                class="footer-logo">
+
+                AutomateSuite
+
+                </a>
+
+                <p
+                data-lang-en="Automation systems, AI integrations and scalable SaaS solutions for modern businesses."
+                data-lang-fr="Systèmes d'automatisation, intégrations IA et solutions SaaS évolutives pour les entreprises modernes.">
+                Automation systems, AI integrations and scalable SaaS solutions for modern businesses.
+                </p>
+
+            </div>
+
+            <!-- Navigation -->
+            <div class="footer-column">
+
+                <h4
+                data-lang-en="Navigation"
+                data-lang-fr="Navigation">
+                Navigation
+                </h4>
+
+                <a href="index.html"
+                   data-lang-en="Home"
+                   data-lang-fr="Accueil">
+                   Home
+                </a>
+
+                <a href="about.html"
+                   data-lang-en="About"
+                   data-lang-fr="À propos">
+                   About
+                </a>
+                
+                <a href="services.html"
+                   data-lang-en="Services"
+                   data-lang-fr="Services">
+                   Services
+                </a>
+
+                <a href="case-studies.html"
+                    data-lang-en="Case Studies"
+                    data-lang-fr="Études de cas">
+                    Case Studies
+                </a>
+                
+                <a href="tools.html"
+                   data-lang-en="Tools"
+                   data-lang-fr="Outils">
+                   Tools
+                </a>
+
+                <a href="pricing.html"
+                   data-lang-en="Pricing"
+                   data-lang-fr="Tarification">
+                   Pricing
+                </a>
+                
+                <a href="contact.html"
+                   data-lang-en="Contact"
+                   data-lang-fr="Contact">
+                   Contact
+                </a>
+
+            </div>
+
+            <!-- Services -->
+            <div class="footer-column">
+
+                <h4
+                data-lang-en="Services"
+                data-lang-fr="Services">
+                Services
+                </h4>
+
+                <a href="whatsapp-trigger.html"
+                data-lang-en="WhatsApp Automation"
+                data-lang-fr="Automatisation WhatsApp">
+                WhatsApp Automation
+                </a>
+
+                <a href="ai-lead-enrichment.html"
+                data-lang-en="AI Lead Enrichment"
+                data-lang-fr="Enrichissement des Leads par l'IA">
+                AI Lead Enrichment
+                </a>
+
+                <a href="support-email-triage.html"
+                data-lang-en="AI Support Email Triage"
+                data-lang-fr="Tri des Emails Support par l'IA">
+                AI Support Email Triage
+                </a>
+
+                <a href="services.html"
+                data-lang-en="View All Services"
+                data-lang-fr="Voir Tous Les Services">
+                View All Services
+                </a>
+
+            </div>
+
+            <!-- Tools In Development -->
+            <div class="footer-column">
+                
+                <h4
+                data-lang-en="Tools In Development"
+                data-lang-fr="Outils en développement">
+                Tools In Development
+                </h4>
+
+                <a href="tools.html#whatsapp-expiration-trigger"
+                data-lang-en="WhatsApp Expiration Trigger"
+                data-lang-fr="Déclencheur d'Expiration WhatsApp">
+                WhatsApp Expiration Trigger
+                </a>
+
+                <a href="tools.html#ai-lead-enrichment-pipeline"
+                data-lang-en="AI Lead Enrichment Pipeline"
+                data-lang-fr="Pipeline d'Enrichissement IA">
+                AI Lead Enrichment Pipeline
+                </a>
+
+                <a href="tools.html#support-email-triage-system"
+                data-lang-en="Support Email Triage System"
+                data-lang-fr="Système de Tri des Emails Support">
+                Support Email Triage System
+                </a>
+
+                <a href="tools.html"
+                data-lang-en="View All Tools"
+                data-lang-fr="Voir Tous Les Outils">
+                View All Tools
+                </a>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-column">
+
+                <h4
+                data-lang-en="Contact"
+                data-lang-fr="Contact">
+                Contact
+                </h4>
+
+                <a href="mailto:hello@automatesuite.io">
+                hello@automatesuite.io
+                </a>
+
+                <p
+                data-lang-en="Remote Services Worldwide"
+                data-lang-fr="Services à distance dans le monde entier">
+                Remote Services Worldwide
+                </p>
+
+            </div>
+
+            <div class="footer-column">
+                <h4
+                data-lang-en="Legal"
+                data-lang-fr="Mentions Légales">
+                Legal
+                </h4>
+
+                <a href="privacy-policy.html"
+                data-lang-en="Privacy Policy"
+                data-lang-fr="Politique de Confidentialité">
+                Privacy Policy
+                </a>
+
+                <a href="terms-of-service.html"
+                data-lang-en="Terms of Service"
+                data-lang-fr="Conditions d'Utilisation">
+                Terms of Service
+                </a>
+
+                <a href="cookies-policy.html"
+                data-lang-en="Cookie Policy"
+                data-lang-fr="Politique des Cookies">
+                Cookie Policy
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+
+            <p
+                data-lang-en="© 2026 AutomateSuite. All rights reserved."
+                data-lang-fr="© 2026 AutomateSuite. Tous droits réservés.">
+                © 2026 AutomateSuite. All rights reserved.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- BACK TO TOP -->
+
+<a href="#top"
+   class="back-to-top-btn"
+   aria-label="Back to Top">
+
+   ↑
+
+</a>
+
+<script src="assets/js/script.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const lightbox = document.getElementById("case-study-lightbox");
+    const lightboxImage = document.getElementById("case-study-lightbox-image");
+    const closeButton = lightbox?.querySelector(".case-study-lightbox-close");
+    const backdrop = lightbox?.querySelector(".case-study-lightbox-backdrop");
+    const imageButtons = document.querySelectorAll(".case-study-image-open");
+
+    if (!lightbox || !lightboxImage || !closeButton || !backdrop) {
+        return;
+    }
+
+    let lastFocusedElement = null;
+
+    const openLightbox = (button) => {
+
+        const imageSource = button.dataset.imageSrc;
+        const imageAlt = button.dataset.imageAlt || "";
+
+        if (!imageSource) {
+            return;
+        }
+
+        lastFocusedElement = document.activeElement;
+
+        lightboxImage.src = imageSource;
+        lightboxImage.alt = imageAlt;
+
+        lightbox.classList.add("active");
+        lightbox.setAttribute("aria-hidden", "false");
+
+        document.body.classList.add("lightbox-open");
+
+        closeButton.focus();
+
+    };
+
+    const closeLightbox = () => {
+
+        lightbox.classList.remove("active");
+        lightbox.setAttribute("aria-hidden", "true");
+
+        document.body.classList.remove("lightbox-open");
+
+        lightboxImage.src = "";
+        lightboxImage.alt = "";
+
+        if (lastFocusedElement) {
+            lastFocusedElement.focus();
+        }
+
+    };
+
+    imageButtons.forEach((button) => {
+
+        button.addEventListener("click", () => {
+            openLightbox(button);
+        });
+
+    });
+
+    closeButton.addEventListener("click", closeLightbox);
+    backdrop.addEventListener("click", closeLightbox);
+
+    document.addEventListener("keydown", (event) => {
+
+        if (
+            event.key === "Escape" &&
+            lightbox.classList.contains("active")
+        ) {
+            closeLightbox();
+        }
+
+    });
+
+});
+</script>
+
+</body>
+
+</html>

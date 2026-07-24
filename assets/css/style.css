@@ -4846,7 +4846,7 @@ body.lightbox-open {
 .case-study-faq-section,
 .related-case-studies-section,
 .case-study-final-cta {
-    min-height: auto;
+    min-height: 0;
     display: block;
     padding: 90px 20px;
 }
