@@ -49,6 +49,8 @@ function setLanguage(language) {
 
     });
 
+    updateBilingualAriaLabels(language);
+
     window.requestAnimationFrame(() => {
 
     updateActiveAccordionHeights(
@@ -66,6 +68,33 @@ function setLanguage(language) {
 function getCurrentLanguage() {
 
     return localStorage.getItem("language") || "en";
+
+}
+
+function updateBilingualAriaLabels(language) {
+
+    const elements =
+        document.querySelectorAll(
+            "[data-aria-en][data-aria-fr]"
+        );
+
+    elements.forEach((element) => {
+
+        const ariaLabel =
+            language === "fr"
+                ? element.getAttribute("data-aria-fr")
+                : element.getAttribute("data-aria-en");
+
+        if(ariaLabel) {
+
+            element.setAttribute(
+                "aria-label",
+                ariaLabel
+            );
+
+        }
+
+    });
 
 }
 

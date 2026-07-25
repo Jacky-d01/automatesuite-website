@@ -5459,3 +5459,23 @@ body.light-mode .case-study-step-header {
     }
 
 }
+
+.case-study-image-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 18px 0 28px;
+    padding: 14px 18px;
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    background: rgba(124, 77, 255, 0.08);
+    color: var(--text-secondary);
+    font-size: 0.98rem;
+    line-height: 1.6;
+}
+
+.case-study-image-note i {
+    color: var(--primary-color);
+    margin-top: 3px;
+    flex-shrink: 0;
+}

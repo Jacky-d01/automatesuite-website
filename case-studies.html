@@ -24,7 +24,7 @@
 
 <meta property="og:url" content="https://automatesuite.io/case-studies.html">
 
-<meta property="og:image" content="https://automatesuite.io/assets/images/case-studies/sim01-lead-capture-crm-workflow-overview.png">
+<meta property="og:image" content="https://automatesuite.io/assets/images/case-studies/sim01/sim01-lead-capture-crm-workflow-overview.png">
 
 <meta property="og:image:alt" content="AutomateSuite automation case studies and validated workflow simulations">
 
@@ -37,7 +37,7 @@
 
 <meta name="twitter:description" content="Explore validated AutomateSuite workflows for CRM, AI support triage and renewal reminder automation.">
 
-<meta name="twitter:image" content="https://automatesuite.io/assets/images/case-studies/sim01-lead-capture-crm-workflow-overview.png">
+<meta name="twitter:image" content="https://automatesuite.io/assets/images/case-studies/sim01/sim01-lead-capture-crm-workflow-overview.png">
 
 <link rel="icon" type="image/png" href="assets/images/favicon.png">
 
@@ -48,6 +48,88 @@
 
     <!-- MAIN CSS -->
 <link rel="stylesheet" href="assets/css/style.css">
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "CollectionPage",
+            "@id": "https://automatesuite.io/case-studies.html#webpage",
+            "url": "https://automatesuite.io/case-studies.html",
+            "name": "Automation Case Studies | AutomateSuite",
+            "description": "Explore validated AutomateSuite automation case studies covering CRM lead enrichment, AI support email triage and WhatsApp renewal reminders.",
+            "inLanguage": [
+                "en",
+                "fr"
+            ],
+            "isPartOf": {
+                "@id": "https://automatesuite.io/#website"
+            },
+            "about": {
+                "@id": "https://automatesuite.io/#organization"
+            },
+            "mainEntity": {
+                "@id": "https://automatesuite.io/case-studies.html#case-study-list"
+            },
+            "breadcrumb": {
+                "@id": "https://automatesuite.io/case-studies.html#breadcrumb"
+            }
+        },
+        {
+            "@type": "ItemList",
+            "@id": "https://automatesuite.io/case-studies.html#case-study-list",
+            "name": "AutomateSuite Validated Automation Simulations",
+            "numberOfItems": 3,
+            "itemListOrder": "https://schema.org/ItemListOrderAscending",
+            "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Lead Capture and HubSpot CRM Enrichment",
+                "item": {
+                    "@id": "https://automatesuite.io/case-study-lead-capture-crm.html#article"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "AI Support Email Triage and Urgent Ticket Automation",
+                "item": {
+                    "@id": "https://automatesuite.io/case-study-ai-support-triage.html#article"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "WhatsApp Renewal Reminders with SMS Fallback and HubSpot Escalation",
+                "item": {
+                    "@id": "https://automatesuite.io/case-study-renewal-reminders.html#article"
+                }
+            }
+        ]
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id": "https://automatesuite.io/case-studies.html#breadcrumb",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://automatesuite.io/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Case Studies",
+                    "item": "https://automatesuite.io/case-studies.html"
+                }
+            ]
+        }
+    ]
+}
+</script>
 
 </head>
 
@@ -88,7 +170,7 @@
                    data-lang-fr="Services">Services</span>
                 </a>
 
-                <a href="case-studies.html" class="active">
+                <a href="case-studies.html" class="active" aria-current="page">
                     <i class="fa-solid fa-folder-open"></i>
                     <span data-lang-en="Case Studies"
                     data-lang-fr="Études de cas">Case Studies</span>
@@ -458,7 +540,7 @@
                             <a
                                 href="case-study-ai-support-triage.html"
                                 data-lang-en="AI Support Email Triage and Urgent Ticket Automation"
-                                data-lang-fr="Triage des e-mails de support par IA et automatisation des tickets urgents">
+                                data-lang-fr="Tri des e-mails de support par IA et automatisation des tickets urgents">
 
                                 AI Support Email Triage and Urgent Ticket Automation
 
@@ -577,13 +659,12 @@
                         </h3>
 
                         <p
-                            data-lang-en="A renewal-monitoring workflow that evaluates expiration dates, sends staged WhatsApp reminders, uses SMS as a fallback and creates a HubSpot ticket when escalation is required."
-                            data-lang-fr="Un workflow de suivi des renouvellements qui évalue les dates d’expiration, envoie des rappels WhatsApp progressifs, utilise le SMS comme solution de secours et crée un ticket HubSpot lorsqu’une escalade est nécessaire.">
+                            data-lang-en="A renewal-monitoring workflow that evaluates expiration dates, sends staged WhatsApp reminders, includes configured SMS fallback branches and creates a HubSpot ticket when escalation is required."
+                            data-lang-fr="Un workflow de suivi des renouvellements qui évalue les dates d’expiration, envoie des rappels WhatsApp progressifs, comprend des branches de relais SMS configurées et crée un ticket HubSpot lorsqu’une escalade est nécessaire.">
 
-                            A renewal-monitoring workflow that evaluates
-                            expiration dates, sends staged WhatsApp reminders,
-                            uses SMS as a fallback and creates a HubSpot ticket
-                            when escalation is required.
+                            A renewal-monitoring workflow that evaluates expiration dates,
+                            sends staged WhatsApp reminders, includes configured SMS fallback
+                            branches and creates a HubSpot ticket when escalation is required.
 
                         </p>
 
@@ -591,15 +672,15 @@
                         <ul class="case-study-highlights">
 
                             <li
-                                data-lang-en="One-day and expiration-day reminders"
-                                data-lang-fr="Rappels à un jour et le jour de l’expiration">
-                                One-day and expiration-day reminders
+                                data-lang-en="Seven-day, three-day, one-day and expiration-day reminders"
+                                data-lang-fr="Rappels à sept jours, trois jours, un jour et au jour de l’expiration">
+                                Seven-day, three-day, one-day and expiration-day reminders
                             </li>
 
                             <li
-                                data-lang-en="WhatsApp delivery with SMS fallback"
-                                data-lang-fr="Envoi WhatsApp avec relais SMS">
-                                WhatsApp delivery with SMS fallback
+                                data-lang-en="WhatsApp delivery with configured SMS fallback branches"
+                                data-lang-fr="Envoi WhatsApp avec branches de relais SMS configurées">
+                                WhatsApp delivery with configured SMS fallback branches
                             </li>
 
                             <li
