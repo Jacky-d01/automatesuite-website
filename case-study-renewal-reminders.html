@@ -269,7 +269,7 @@
                    data-lang-fr="Services">Services</span>
                 </a>
 
-                <a href="case-studies.html" aria-current="location">
+                <a href="case-studies.html" class="active" aria-current="location">
                     <i class="fa-solid fa-folder-open"></i>
                     <span data-lang-en="Case Studies"
                     data-lang-fr="Études de cas">Case Studies</span>
@@ -794,7 +794,8 @@
                         class="case-study-image-open"
                         type="button"
                         data-image-src="assets/images/case-studies/sim03/sim03-renewal-reminder-workflow-overview.png"
-                        data-image-alt="Make workflow evaluating renewal dates, sending WhatsApp reminders, including configured SMS fallback branches and escalating incidents"
+                        data-image-alt-en="Make workflow evaluating renewal dates, sending WhatsApp reminders, including configured SMS fallback branches and escalating incidents"
+                        data-image-alt-fr="Workflow Make évaluant les dates de renouvellement, envoyant des rappels WhatsApp, intégrant des branches de relais SMS configurées et transmettant les incidents"
                         aria-label="Open renewal reminder workflow image in a larger view"
                         data-aria-en="Open renewal reminder workflow image in a larger view"
                         data-aria-fr="Ouvrir l’image du workflow de rappel de renouvellement en grand">
@@ -802,6 +803,8 @@
                         <img
                             src="assets/images/case-studies/sim03/sim03-renewal-reminder-workflow-overview.png"
                             alt="Make workflow evaluating renewal dates, sending WhatsApp reminders, including configured SMS fallback branches and escalating incidents"
+                            data-alt-en="Make workflow evaluating renewal dates, sending WhatsApp reminders, including configured SMS fallback branches and escalating incidents"
+                            data-alt-fr="Workflow Make évaluant les dates de renouvellement, envoyant des rappels WhatsApp, intégrant des branches de relais SMS configurées et transmettant les incidents"
                             loading="lazy">
 
                     </button>
@@ -845,17 +848,16 @@
                         <div>
 
                             <strong
-                                data-lang-en="Processing status"
-                                data-lang-fr="Statut de traitement">
-                                Processing status
+                                data-lang-en="Reminder-stage routing"
+                                data-lang-fr="Routage selon l’étape du rappel">
+                                Reminder-stage routing
                             </strong>
 
                             <p
-                                data-lang-en="The record is marked as processing before reminder evaluation begins."
-                                data-lang-fr="L’enregistrement est marqué comme en cours de traitement avant l’évaluation du rappel.">
+                                data-lang-en="The workflow separates seven-day, three-day, one-day and expiration-day conditions."
+                                data-lang-fr="Le workflow sépare les conditions à sept jours, trois jours, un jour et au jour d’expiration.">
 
-                                The record is marked as processing before
-                                reminder evaluation begins.
+                                The workflow separates seven-day, three-day, one-day and expiration-day conditions.
 
                             </p>
 
@@ -871,17 +873,16 @@
                         <div>
 
                             <strong
-                                data-lang-en="Reminder-stage routing"
-                                data-lang-fr="Routage selon l’étape du rappel">
-                                Reminder-stage routing
+                                data-lang-en="WhatsApp reminder delivery"
+                                data-lang-fr="Envoi du rappel WhatsApp">
+                                WhatsApp reminder delivery
                             </strong>
 
                             <p
-                                data-lang-en="The workflow separates seven-day, three-day, one-day and expiration-day conditions."
-                                data-lang-fr="Le workflow sépare les conditions à sept jours, trois jours, un jour et au jour d’expiration.">
+                                data-lang-en="The appropriate WhatsApp reminder is sent through the configured Twilio connection."
+                                data-lang-fr="Le rappel WhatsApp approprié est envoyé via la connexion Twilio configurée.">
 
-                                The workflow separates seven-day, three-day, one-day and
-                                expiration-day conditions.
+                                The appropriate WhatsApp reminder is sent through the configured Twilio connection.
 
                             </p>
 
@@ -897,17 +898,16 @@
                         <div>
 
                             <strong
-                                data-lang-en="Message delivery"
-                                data-lang-fr="Livraison du message">
-                                Message delivery
+                                data-lang-en="Airtable result recording"
+                                data-lang-fr="Enregistrement du résultat dans Airtable">
+                                Airtable result recording
                             </strong>
 
                             <p
-                                data-lang-en="The appropriate WhatsApp reminder is sent through the configured Twilio connection."
-                                data-lang-fr="Le rappel WhatsApp approprié est envoyé via la connexion Twilio configurée.">
+                                data-lang-en="Airtable records the reminder stage, delivery channel and processing result."
+                                data-lang-fr="Airtable enregistre l’étape du rappel, le canal de livraison et le résultat du traitement.">
 
-                                The appropriate WhatsApp reminder is sent
-                                through the configured Twilio connection.
+                                Airtable records the reminder stage, delivery channel and processing result.
 
                             </p>
 
@@ -923,17 +923,40 @@
                         <div>
 
                             <strong
-                                data-lang-en="Fallback and escalation"
-                                data-lang-fr="Relais et escalade">
-                                Fallback and escalation
+                                data-lang-en="SMS fallback delivery"
+                                data-lang-fr="Envoi de secours par SMS">
+                                SMS fallback delivery
                             </strong>
 
                             <p
-                                data-lang-en="Failed or unresolved conditions can trigger SMS fallback and HubSpot escalation."
-                                data-lang-fr="Les conditions d’échec ou non résolues peuvent déclencher un relais SMS et une escalade HubSpot.">
+                                data-lang-en="Configured fallback branches send an SMS when the relevant delivery condition is met."
+                                data-lang-fr="Les branches de secours configurées envoient un SMS lorsque la condition de livraison correspondante est remplie.">
 
-                                Failed or unresolved conditions can trigger SMS
-                                fallback and HubSpot escalation.
+                                Configured fallback branches send an SMS when the relevant delivery condition is met.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+                    <li>
+
+                        <span class="annotation-number">6</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Expired-renewal escalation"
+                                data-lang-fr="Escalade du renouvellement expiré">
+                                Expired-renewal escalation
+                            </strong>
+
+                            <p
+                                data-lang-en="An unresolved expired renewal creates a HubSpot ticket, and Airtable records the escalation result."
+                                data-lang-fr="Un renouvellement expiré non résolu crée un ticket HubSpot, puis Airtable enregistre le résultat de l’escalade.">
+
+                                An unresolved expired renewal creates a HubSpot ticket, and Airtable records the escalation result.
 
                             </p>
 
@@ -1009,7 +1032,8 @@
                         class="case-study-image-open"
                         type="button"
                         data-image-src="assets/images/case-studies/sim03/sim03-airtable-renewal-before-processing.png"
-                        data-image-alt="Airtable renewal record showing the expiration date, calculated remaining days and renewal status"
+                        data-image-alt-en="Airtable renewal record showing the expiration date, calculated remaining days and renewal status"
+                        data-image-alt-fr="Enregistrement de renouvellement Airtable présentant la date d’expiration, le nombre calculé de jours restants et le statut du renouvellement"
                         aria-label="Open renewal record image in a larger view"
                         data-aria-en="Open renewal record image in a larger view"
                         data-aria-fr="Ouvrir l’enregistrement du renouvellement en grand">
@@ -1017,6 +1041,8 @@
                         <img
                             src="assets/images/case-studies/sim03/sim03-airtable-renewal-before-processing.png"
                             alt="Airtable renewal record showing the expiration date, calculated remaining days and renewal status"
+                            data-alt-en="Airtable renewal record showing the expiration date, calculated remaining days and renewal status"
+                            data-alt-fr="Enregistrement de renouvellement Airtable présentant la date d’expiration, le nombre calculé de jours restants et le statut du renouvellement"
                             loading="lazy">
 
                     </button>
@@ -1171,7 +1197,8 @@
                         class="case-study-image-open"
                         type="button"
                         data-image-src="assets/images/case-studies/sim03/sim03-whatsapp-renewal-reminders-delivered.png"
-                        data-image-alt="WhatsApp messages delivered through Twilio for different AutomateSuite renewal reminder stages"
+                        data-image-alt-en="WhatsApp messages delivered through Twilio for different AutomateSuite renewal reminder stages"
+                        data-image-alt-fr="Messages WhatsApp livrés via Twilio à différentes étapes de rappel de renouvellement AutomateSuite"
                         aria-label="Open delivered WhatsApp renewal reminders in a larger view"
                         data-aria-en="Open delivered WhatsApp renewal reminders in a larger view"
                         data-aria-fr="Ouvrir les rappels WhatsApp de renouvellement livrés en grand">
@@ -1179,6 +1206,8 @@
                         <img
                             src="assets/images/case-studies/sim03/sim03-whatsapp-renewal-reminders-delivered.png"
                             alt="WhatsApp messages delivered through Twilio for different AutomateSuite renewal reminder stages"
+                            data-alt-en="WhatsApp messages delivered through Twilio for different AutomateSuite renewal reminder stages"
+                            data-alt-fr="Messages WhatsApp livrés via Twilio à différentes étapes de rappel de renouvellement AutomateSuite"
                             loading="lazy">
 
                     </button>
@@ -1360,7 +1389,8 @@
                         class="case-study-image-open"
                         type="button"
                         data-image-src="assets/images/case-studies/sim03/sim03-three-day-whatsapp-reminder-success.png"
-                        data-image-alt="Make execution output showing a successful three-day WhatsApp renewal reminder and Airtable update"
+                        data-image-alt-en="Make execution output showing a successful three-day WhatsApp renewal reminder and Airtable update"
+                        data-image-alt-fr="Résultat d’exécution Make présentant un rappel WhatsApp de renouvellement à trois jours réussi et la mise à jour Airtable"
                         aria-label="Open three-day WhatsApp reminder result in a larger view"
                         data-aria-en="Open three-day WhatsApp reminder result in a larger view"
                         data-aria-fr="Ouvrir le résultat du rappel WhatsApp à trois jours en grand">
@@ -1368,6 +1398,8 @@
                         <img
                             src="assets/images/case-studies/sim03/sim03-three-day-whatsapp-reminder-success.png"
                             alt="Make execution output showing a successful three-day WhatsApp renewal reminder and Airtable update"
+                            data-alt-en="Make execution output showing a successful three-day WhatsApp renewal reminder and Airtable update"
+                            data-alt-fr="Résultat d’exécution Make présentant un rappel WhatsApp de renouvellement à trois jours réussi et la mise à jour Airtable"
                             loading="lazy">
 
                     </button>
@@ -1442,10 +1474,10 @@
                             </strong>
 
                             <p
-                                data-lang-en="Airtable stores the reminder stage as three days."
-                                data-lang-fr="Airtable enregistre l’étape du rappel comme étant de trois jours.">
+                                data-lang-en="The Airtable update output records the reminder stage as three days."
+                                data-lang-fr="Le résultat de la mise à jour Airtable enregistre l’étape du rappel à trois jours.">
 
-                                Airtable stores the reminder stage as three days.
+                                The Airtable update output records the reminder stage as three days.
 
                             </p>
 
@@ -1467,11 +1499,10 @@
                             </strong>
 
                             <p
-                                data-lang-en="The result confirms that the three-day WhatsApp renewal reminder completed successfully."
-                                data-lang-fr="Le résultat confirme que le rappel WhatsApp de renouvellement à trois jours a été exécuté avec succès.">
+                                data-lang-en="The output confirms that the three-day WhatsApp renewal reminder was sent successfully."
+                                data-lang-fr="Le résultat confirme que le rappel WhatsApp de renouvellement à trois jours a été envoyé avec succès.">
 
-                                The result confirms that the three-day WhatsApp
-                                renewal reminder completed successfully.
+                                The output confirms that the three-day WhatsApp renewal reminder was sent successfully.
 
                             </p>
 
@@ -1501,34 +1532,40 @@
          FINAL AIRTABLE RESULT
     ========================================= -->
 
-    <section class="page-section case-study-confirmation-section alternate-section reveal">
+    <section class="page-section case-study-step-section alternate-section reveal">
 
         <div class="container">
 
-            <div class="section-heading">
+            <div class="case-study-step-header">
 
-                <span
-                    class="section-label"
-                    data-lang-en="Processing Confirmation"
-                    data-lang-fr="Confirmation du traitement">
-                    Processing Confirmation
-                </span>
+                <span class="case-study-step-number">04</span>
 
-                <h2
-                    data-lang-en="Airtable Records the One-Day Reminder Result"
-                    data-lang-fr="Airtable enregistre le résultat du rappel à un jour">
-                    Airtable Records the One-Day Reminder Result
-                </h2>
+                <div>
 
-                <p
-                    data-lang-en="After the selected route completes, the renewal record stores the reminder stage, channel result, processing message and latest action time."
-                    data-lang-fr="Après l’exécution de la route sélectionnée, l’enregistrement du renouvellement conserve l’étape du rappel, le résultat du canal, le message de traitement et l’heure de la dernière action.">
+                    <span
+                        class="section-label"
+                        data-lang-en="One-Day Processing Result"
+                        data-lang-fr="Résultat du traitement à un jour">
+                        One-Day Processing Result
+                    </span>
 
-                    After the selected route completes, the renewal record
-                    stores the reminder stage, channel result, processing
-                    message and latest action time.
+                    <h2
+                        data-lang-en="Airtable Records the One-Day Reminder Result"
+                        data-lang-fr="Airtable enregistre le résultat du rappel à un jour">
+                        Airtable Records the One-Day Reminder Result
+                    </h2>
 
-                </p>
+                    <p
+                        data-lang-en="After the one-day route completes, the renewal record stores the reminder stage, channel result, processing message and latest action time."
+                        data-lang-fr="Après l’exécution de la route à un jour, l’enregistrement du renouvellement conserve l’étape du rappel, le résultat du canal, le message de traitement et l’heure de la dernière action.">
+
+                        After the one-day route completes, the renewal record
+                        stores the reminder stage, channel result, processing
+                        message and latest action time.
+
+                    </p>
+
+                </div>
 
             </div>
 
@@ -1541,14 +1578,17 @@
                         class="case-study-image-open"
                         type="button"
                         data-image-src="assets/images/case-studies/sim03/sim03-one-day-reminder-airtable-result.png"
-                        data-image-alt="Airtable renewal record showing the final reminder, delivery and processing result"
+                        data-image-alt-en="Airtable renewal record showing the one-day reminder, delivery status and processing result"
+                        data-image-alt-fr="Enregistrement de renouvellement Airtable présentant le rappel à un jour, le statut de livraison et le résultat du traitement"
                         aria-label="Open one-day Airtable reminder result in a larger view"
                         data-aria-en="Open one-day Airtable reminder result in a larger view"
                         data-aria-fr="Ouvrir le résultat Airtable du rappel à un jour en grand">
 
                         <img
                             src="assets/images/case-studies/sim03/sim03-one-day-reminder-airtable-result.png"
-                            alt="Airtable renewal record showing the final reminder, delivery and processing result"
+                            alt="Airtable renewal record showing the one-day reminder, delivery status and processing result"
+                            data-alt-en="Airtable renewal record showing the one-day reminder, delivery status and processing result"
+                            data-alt-fr="Enregistrement de renouvellement Airtable présentant le rappel à un jour, le statut de livraison et le résultat du traitement"
                             loading="lazy">
 
                     </button>
@@ -1571,11 +1611,10 @@
                             </strong>
 
                             <p
-                                data-lang-en="The record identifies whether the one-day or expiration-day action completed."
-                                data-lang-fr="L’enregistrement identifie si l’action à un jour ou au jour d’expiration a été exécutée.">
+                                data-lang-en="The output records that the one-day reminder route completed."
+                                data-lang-fr="Le résultat enregistre que la route de rappel à un jour a été exécutée.">
 
-                                The record identifies whether the one-day or
-                                expiration-day action completed.
+                                The output records that the one-day reminder route completed.
 
                             </p>
 
@@ -1597,11 +1636,10 @@
                             </strong>
 
                             <p
-                                data-lang-en="The messaging result remains visible in the source renewal record."
+                                data-lang-en="The WhatsApp status and delivered message confirm that the reminder was sent."
                                 data-lang-fr="Le résultat de la messagerie reste visible dans l’enregistrement source du renouvellement.">
 
-                                The messaging result remains visible in the
-                                source renewal record.
+                                The WhatsApp status and delivered message confirm that the reminder was sent.
 
                             </p>
 
@@ -1623,11 +1661,10 @@
                             </strong>
 
                             <p
-                                data-lang-en="A written result explains which reminder or fallback action completed."
-                                data-lang-fr="Un résultat écrit explique quelle action de rappel ou de secours a été exécutée.">
+                                data-lang-en="The processing result confirms successful completion of the one-day WhatsApp reminder."
+                                data-lang-fr="Le résultat du traitement confirme l’exécution réussie du rappel WhatsApp à un jour.">
 
-                                A written result explains which reminder or
-                                fallback action completed.
+                                The processing result confirms successful completion of the one-day WhatsApp reminder.
 
                             </p>
 
@@ -1649,11 +1686,10 @@
                             </strong>
 
                             <p
-                                data-lang-en="The timestamp preserves when the latest reminder action was recorded."
-                                data-lang-fr="L’horodatage conserve le moment où la dernière action de rappel a été enregistrée.">
+                                data-lang-en="The timestamp records when the latest reminder action completed."
+                                data-lang-fr="L’horodatage indique quand la dernière action de rappel a été exécutée.">
 
-                                The timestamp preserves when the latest
-                                reminder action was recorded.
+                                The timestamp records when the latest reminder action completed.
 
                             </p>
 
@@ -1681,7 +1717,7 @@
 
 
     <!-- ========================================
-         STEP 4 — EXPIRATION-DAY REMINDER
+         STEP 5 — EXPIRATION-DAY REMINDER
     ========================================= -->
 
     <section class="page-section case-study-step-section reveal">
@@ -1690,7 +1726,7 @@
 
             <div class="case-study-step-header">
 
-                <span class="case-study-step-number">04</span>
+                <span class="case-study-step-number">05</span>
 
                 <div>
 
@@ -1702,9 +1738,9 @@
                     </span>
 
                     <h2
-                        data-lang-en="The Expiration-Day Route Sends a Second Reminder"
-                        data-lang-fr="La route du jour d’expiration envoie un second rappel">
-                        The Expiration-Day Route Sends a Second Reminder
+                        data-lang-en="The Expiration-Day Route Sends the Final Reminder"
+                        data-lang-fr="La route du jour d’expiration envoie le rappel final">
+                        The Expiration-Day Route Sends the Final Reminder
                     </h2>
 
                     <p
@@ -1730,7 +1766,8 @@
                         class="case-study-image-open"
                         type="button"
                         data-image-src="assets/images/case-studies/sim03/sim03-expiration-day-reminder-result.png"
-                        data-image-alt="WhatsApp message showing the expiration-day renewal reminder sent during the AutomateSuite simulation"
+                        data-image-alt-en="WhatsApp message showing the expiration-day renewal reminder sent during the AutomateSuite simulation"
+                        data-image-alt-fr="Message WhatsApp présentant le rappel de renouvellement envoyé le jour de l’expiration pendant la simulation AutomateSuite"
                         aria-label="Open expiration-day reminder image in a larger view"
                         data-aria-en="Open expiration-day reminder result in a larger view"
                         data-aria-fr="Ouvrir le résultat du rappel au jour d’expiration en grand">
@@ -1738,6 +1775,8 @@
                         <img
                             src="assets/images/case-studies/sim03/sim03-expiration-day-reminder-result.png"
                             alt="WhatsApp message showing the expiration-day renewal reminder sent during the AutomateSuite simulation"
+                            data-alt-en="WhatsApp message showing the expiration-day renewal reminder sent during the AutomateSuite simulation"
+                            data-alt-fr="Message WhatsApp présentant le rappel de renouvellement envoyé le jour de l’expiration pendant la simulation AutomateSuite"
                             loading="lazy">
 
                     </button>
@@ -1754,17 +1793,16 @@
                         <div>
 
                             <strong
-                                data-lang-en="Expiration-day message"
-                                data-lang-fr="Message du jour d’expiration">
-                                Expiration-day message
+                                data-lang-en="Expiration-day message delivered"
+                                data-lang-fr="Message du jour d’expiration envoyé">
+                                Expiration-day message delivered
                             </strong>
 
                             <p
-                                data-lang-en="The second route uses wording appropriate to the renewal deadline."
-                                data-lang-fr="La seconde route utilise un message adapté à la date limite de renouvellement.">
+                                data-lang-en="The customer receives the final renewal reminder through the configured WhatsApp channel."
+                                data-lang-fr="Le client reçoit le rappel final de renouvellement via le canal WhatsApp configuré.">
 
-                                The second route uses wording appropriate to
-                                the renewal deadline.
+                                The customer receives the final renewal reminder through the configured WhatsApp channel.
 
                             </p>
 
@@ -1780,18 +1818,16 @@
                         <div>
 
                             <strong
-                                data-lang-en="Separate workflow condition"
-                                data-lang-fr="Condition de workflow distincte">
-                                Separate workflow condition
+                                data-lang-en="Expiration date reached"
+                                data-lang-fr="Date d’expiration atteinte">
+                                Expiration date reached
                             </strong>
 
                             <p
-                                data-lang-en="The message is triggered by the zero-day condition rather than the advance-reminder route."
-                                data-lang-fr="Le message est déclenché par la condition de zéro jour plutôt que par la route du rappel anticipé.">
+                                data-lang-en="The Airtable record shows the renewal has reached its expiration date, which triggers the final reminder route."
+                                data-lang-fr="L’enregistrement Airtable montre que le renouvellement a atteint sa date d’expiration, ce qui déclenche la route du rappel final.">
 
-                                The message is triggered by the zero-day
-                                condition rather than the advance-reminder
-                                route.
+                                The Airtable record shows the renewal has reached its expiration date, which triggers the final reminder route.
 
                             </p>
 
@@ -1807,17 +1843,64 @@
                         <div>
 
                             <strong
-                                data-lang-en="Reminder stage recorded"
-                                data-lang-fr="Étape du rappel enregistrée">
-                                Reminder stage recorded
+                                data-lang-en="Reminder stage set to Expiration Day"
+                                data-lang-fr="Étape du rappel définie sur Jour d’expiration">
+                                Reminder stage set to Expiration Day
                             </strong>
 
                             <p
-                                data-lang-en="The resulting Airtable update identifies the expiration-day reminder stage."
-                                data-lang-fr="La mise à jour Airtable obtenue identifie l’étape du rappel au jour d’expiration.">
+                                data-lang-en="The renewal record is updated to the “Expiration Day” stage after the final reminder is processed."
+                                data-lang-fr="L’enregistrement du renouvellement est mis à jour avec l’étape « Jour d’expiration » après le traitement du rappel final.">
 
-                                The resulting Airtable update identifies the
-                                expiration-day reminder stage.
+                                The renewal record is updated to the “Expiration Day” stage after the final reminder is processed.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+                    <li>
+
+                        <span class="annotation-number">4</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Delivery and record status updated"
+                                data-lang-fr="Livraison et statut de l’enregistrement mis à jour">
+                                Delivery and record status updated
+                            </strong>
+
+                            <p
+                                data-lang-en="Airtable confirms the WhatsApp action was sent and stores the successful processing result."
+                                data-lang-fr="Airtable confirme que l’action WhatsApp a été envoyée et enregistre le résultat de traitement réussi.">
+
+                                Airtable confirms the WhatsApp action was sent and stores the successful processing result.
+
+                            </p>
+
+                        </div>
+
+                    </li>
+
+                    <li>
+
+                        <span class="annotation-number">5</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Scenario output confirms the expiration-day route"
+                                data-lang-fr="La sortie du scénario confirme la route Jour d’expiration">
+                                Scenario output confirms the expiration-day route
+                            </strong>
+
+                            <p
+                                data-lang-en="The Make execution output confirms the workflow selected the expiration-day route and completed the related record update."
+                                data-lang-fr="La sortie d’exécution Make confirme que le workflow a sélectionné la route du jour d’expiration et a terminé la mise à jour associée de l’enregistrement.">
+
+                                The Make execution output confirms the workflow selected the expiration-day route and completed the related record update.
 
                             </p>
 
@@ -1844,16 +1927,16 @@
     </section>
 
     <!-- ========================================
-         STEP 5 — HUBSPOT ESCALATION
+         STEP 6 — HUBSPOT ESCALATION
     ========================================= -->
 
-    <section class="page-section case-study-step-section reveal">
+    <section class="page-section case-study-step-section alternate-section reveal">
 
         <div class="container">
 
             <div class="case-study-step-header">
 
-                <span class="case-study-step-number">05</span>
+                <span class="case-study-step-number">06</span>
 
                 <div>
 
@@ -1893,7 +1976,8 @@
                         class="case-study-image-open"
                         type="button"
                         data-image-src="assets/images/case-studies/sim03/sim03-expired-renewal-escalation-result.png"
-                        data-image-alt="Airtable record showing an expired renewal escalated to HubSpot with a ticket reference and follow-up status"
+                        data-image-alt-en="Airtable record showing an expired renewal escalated to HubSpot with a ticket reference and follow-up status"
+                        data-image-alt-fr="Enregistrement Airtable présentant un renouvellement expiré transmis vers HubSpot avec une référence de ticket et un statut de suivi"
                         aria-label="Open expired-renewal escalation result in a larger view"
                         data-aria-en="Open expired-renewal escalation result in a larger view"
                         data-aria-fr="Ouvrir le résultat d’escalade du renouvellement expiré en grand">
@@ -1901,6 +1985,8 @@
                         <img
                             src="assets/images/case-studies/sim03/sim03-expired-renewal-escalation-result.png"
                             alt="Airtable record showing an expired renewal escalated to HubSpot with a ticket reference and follow-up status"
+                            data-alt-en="Airtable record showing an expired renewal escalated to HubSpot with a ticket reference and follow-up status"
+                            data-alt-fr="Enregistrement Airtable présentant un renouvellement expiré transmis vers HubSpot avec une référence de ticket et un statut de suivi"
                             loading="lazy">
 
                     </button>
@@ -1917,15 +2003,15 @@
                         <div>
 
                             <strong
-                                data-lang-en="Escalation result"
-                                data-lang-fr="Résultat de l’escalade">
-                                Escalation result
+                                data-lang-en="Expired renewal state"
+                                data-lang-fr="État de renouvellement expiré">
+                                Expired renewal state
                             </strong>
 
                             <p
-                                data-lang-en="Airtable confirms that the expired renewal was escalated to HubSpot."
-                                data-lang-fr="Airtable confirme que le renouvellement expiré a été transmis vers HubSpot.">
-                                Airtable confirms that the expired renewal was escalated to HubSpot.
+                                data-lang-en="The source record confirms that the renewal has passed its deadline and entered the expired stage."
+                                data-lang-fr="L’enregistrement source confirme que le renouvellement a dépassé son échéance et est passé au statut expiré.">
+                                The source record confirms that the renewal has passed its deadline and entered the expired stage.
                             </p>
 
                         </div>
@@ -1940,15 +2026,15 @@
                         <div>
 
                             <strong
-                                data-lang-en="HubSpot ticket reference"
-                                data-lang-fr="Référence du ticket HubSpot">
-                                HubSpot ticket reference
+                                data-lang-en="Escalation result"
+                                data-lang-fr="Résultat de l’escalade">
+                                Escalation result
                             </strong>
 
                             <p
-                                data-lang-en="The processing record stores the identifier of the ticket created for follow-up."
-                                data-lang-fr="L’enregistrement de traitement conserve l’identifiant du ticket créé pour le suivi.">
-                                The processing record stores the identifier of the ticket created for follow-up.
+                                data-lang-en="The processing result confirms that the expired renewal was escalated successfully to HubSpot."
+                                data-lang-fr="Le résultat du traitement confirme que le renouvellement expiré a bien été escaladé vers HubSpot.">
+                                The processing result confirms that the expired renewal was escalated successfully to HubSpot.
                             </p>
 
                         </div>
@@ -1963,15 +2049,37 @@
                         <div>
 
                             <strong
-                                data-lang-en="Follow-up required"
-                                data-lang-fr="Suivi requis">
-                                Follow-up required
+                                data-lang-en="HubSpot ticket reference"
+                                data-lang-fr="Référence du ticket HubSpot">
+                                HubSpot ticket reference
                             </strong>
 
                             <p
-                                data-lang-en="The renewal remains visible as an unresolved case requiring attention."
-                                data-lang-fr="Le renouvellement reste visible comme un cas non résolu nécessitant une intervention.">
-                                The renewal remains visible as an unresolved case requiring attention.
+                                data-lang-en="A HubSpot ticket ID is stored so the escalated case can be tracked in the CRM."
+                                data-lang-fr="Un identifiant de ticket HubSpot est enregistré afin que le cas escaladé soit traçable dans le CRM.">
+                                A HubSpot ticket ID is stored so the escalated case can be tracked in the CRM.
+                            </p>
+
+                        </div>
+
+                    </li>
+
+                    <li>
+
+                        <span class="annotation-number">4</span>
+
+                        <div>
+
+                            <strong
+                                data-lang-en="Ticket created in HubSpot"
+                                data-lang-fr="Ticket créé dans HubSpot">
+                                Ticket created in HubSpot
+                            </strong>
+
+                            <p
+                                data-lang-en="HubSpot shows the renewal issue as a newly created ticket ready for follow-up."
+                                data-lang-fr="HubSpot affiche le problème de renouvellement comme un nouveau ticket prêt pour le suivi.">
+                                HubSpot shows the renewal issue as a newly created ticket ready for follow-up.
                             </p>
 
                         </div>
@@ -1982,11 +2090,10 @@
 
 
                 <figcaption
-                    data-lang-en="The escalation branch converts an unresolved reminder-delivery issue into a trackable CRM ticket."
-                    data-lang-fr="La branche d’escalade transforme un problème non résolu de livraison du rappel en ticket CRM traçable.">
+                    data-lang-en="The workflow detects the expired renewal, escalates it through Make and creates a traceable HubSpot ticket for follow-up."
+                    data-lang-fr="Le workflow détecte le renouvellement expiré, l’escalade via Make et crée un ticket HubSpot traçable pour le suivi.">
 
-                    The escalation branch converts an unresolved
-                    reminder-delivery issue into a trackable CRM ticket.
+                    The workflow detects the expired renewal, escalates it through Make and creates a traceable HubSpot ticket for follow-up.
 
                 </figcaption>
 
@@ -2040,14 +2147,17 @@
                         class="case-study-image-open"
                         type="button"
                         data-image-src="assets/images/case-studies/sim03/sim03-hubspot-expired-renewal-ticket.png"
-                        data-image-alt="HubSpot ticket created for an expired AutomateSuite renewal requiring automated follow-up"
+                        data-image-alt-en="HubSpot ticket created for an expired AutomateSuite renewal requiring follow-up"
+                        data-image-alt-fr="Ticket HubSpot créé pour un renouvellement AutomateSuite expiré nécessitant un suivi"
                         aria-label="Open expired renewal HubSpot ticket in a larger view"
                         data-aria-en="Open expired-renewal HubSpot ticket in a larger view"
                         data-aria-fr="Ouvrir le ticket HubSpot du renouvellement expiré en grand">
 
                         <img
                             src="assets/images/case-studies/sim03/sim03-hubspot-expired-renewal-ticket.png"
-                            alt="HubSpot ticket created for an expired AutomateSuite renewal requiring automated follow-up"
+                            alt="HubSpot ticket created for an expired AutomateSuite renewal requiring follow-up"
+                            data-alt-en="HubSpot ticket created for an expired AutomateSuite renewal requiring follow-up"
+                            data-alt-fr="Ticket HubSpot créé pour un renouvellement AutomateSuite expiré nécessitant un suivi"
                             loading="lazy">
 
                     </button>
@@ -3268,7 +3378,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const openLightbox = (button) => {
 
         const imageSource = button.dataset.imageSrc;
-        const imageAlt = button.dataset.imageAlt || "";
+        const currentLanguage = getCurrentLanguage();
+
+        const imageAlt =
+            currentLanguage === "fr"
+                ? button.dataset.imageAltFr || ""
+                : button.dataset.imageAltEn || "";
 
         if (!imageSource) {
             return;

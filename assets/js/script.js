@@ -50,6 +50,7 @@ function setLanguage(language) {
     });
 
     updateBilingualAriaLabels(language);
+    updateBilingualImageAlts(language);
 
     window.requestAnimationFrame(() => {
 
@@ -92,6 +93,27 @@ function updateBilingualAriaLabels(language) {
                 ariaLabel
             );
 
+        }
+
+    });
+
+}
+
+function updateBilingualImageAlts(language) {
+
+    const images = document.querySelectorAll(
+            "img[data-alt-en][data-alt-fr]"
+    );
+
+    images.forEach((image) => {
+
+        const imageAlt =
+            language === "fr"
+                ? image.getAttribute("data-alt-fr")
+                : image.getAttribute("data-alt-en");
+
+        if (imageAlt) {
+            image.setAttribute("alt", imageAlt);
         }
 
     });
