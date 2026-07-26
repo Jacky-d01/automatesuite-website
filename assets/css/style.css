@@ -1994,20 +1994,32 @@ section,
 /* Hidden State */
 
 .reveal {
+    opacity: 1;
+    transform: none;
+}
+
+.js .reveal {
     opacity: 0;
     transform: translateY(40px);
     transition:
-    opacity 0.8s ease,
-    transform 0.8s ease;
+        opacity 0.8s ease,
+        transform 0.8s ease;
 }
 
-/* Visible State */
-
-.reveal.active {
+.js .reveal.active {
     opacity: 1;
-    transform:
-    translateY(0)
-    scale(1);
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .js .reveal,
+    .js .reveal.active {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
 }
 
 .delay-1 {
@@ -2804,10 +2816,31 @@ body.menu-open .pricing-toggle-nav {
     padding-top: 20px;
 }
 
+.pricing-hero {
+    padding-bottom: 35px;
+}
+
+.pricing-highlights {
+    margin-top: 0;
+    padding-top: 20px;
+}
+
 @media (max-width: 768px) {
     .pricing-hero {
         padding-top: 10px;
     }
+}
+
+@media (max-width: 768px) {
+
+    .pricing-hero {
+        padding-bottom: 20px;
+    }
+
+    .pricing-highlights {
+        padding-top: 10px;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -5478,4 +5511,23 @@ body.light-mode .case-study-step-header {
     color: var(--primary-color);
     margin-top: 3px;
     flex-shrink: 0;
+}
+
+.pricing-scope-note {
+    max-width: 850px;
+    margin: 28px auto 0;
+    padding: 18px 22px;
+    border: 1px solid rgba(124, 77, 255, 0.22);
+    border-radius: 16px;
+    background: rgba(124, 77, 255, 0.06);
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.75;
+    text-align: center;
+}
+
+.pricing-starting-reference {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    line-height: 1.5;
 }

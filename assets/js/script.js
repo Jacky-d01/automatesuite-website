@@ -1,3 +1,5 @@
+document.documentElement.classList.add("js");
+
 function setLanguage(language) {
 
     localStorage.setItem("language", language);
@@ -69,6 +71,36 @@ function setLanguage(language) {
 function getCurrentLanguage() {
 
     return localStorage.getItem("language") || "en";
+
+}
+
+function applySavedTheme() {
+
+    const savedTheme =
+        localStorage.getItem("theme");
+
+    const themeToggle =
+        document.getElementById("theme-toggle");
+
+    const isLight =
+        savedTheme === "light";
+
+    document.body.classList.toggle(
+        "light-mode",
+        isLight
+    );
+
+    if (!themeToggle) return;
+
+    themeToggle.textContent =
+        isLight ? "🌙" : "☀️";
+
+    themeToggle.setAttribute(
+        "aria-label",
+        isLight
+            ? "Switch to dark mode"
+            : "Switch to light mode"
+    );
 
 }
 
@@ -212,71 +244,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setLanguage(savedLanguage);
 
-    const savedTheme =
-    localStorage.getItem("theme");
+    applySavedTheme();
 
     const themeToggle =
         document.getElementById("theme-toggle");
 
-    if(savedTheme === "light") {
+        if (themeToggle) {
 
-        document.body.classList.add("light-mode");
+        themeToggle.addEventListener("click", () => {
 
-        if(themeToggle) {
+            const isCurrentlyLight =
+                document.body.classList.contains(
+                    "light-mode"
+                );
 
-            themeToggle.textContent = "🌙";
-
-            themeToggle.setAttribute(
-                "aria-label",
-                "Switch to dark mode"
+            localStorage.setItem(
+                "theme",
+                isCurrentlyLight ? "dark" : "light"
             );
 
-        }
+            applySavedTheme();
 
-    } else {
-
-        if(themeToggle) {
-
-            themeToggle.textContent = "☀️";
-
-            themeToggle.setAttribute(
-                "aria-label",
-                "Switch to light mode"
-            );
-
-        }
-
-    }
-
-    if(themeToggle) {
-
-    themeToggle.addEventListener("click", () => {
-
-        document.body.classList.toggle(
-            "light-mode"
-        );
-
-        const isLight =
-            document.body.classList.contains(
-                "light-mode"
-            );
-
-        themeToggle.textContent =
-            isLight ? "🌙" : "☀️";
-
-        themeToggle.setAttribute(
-            "aria-label",
-            isLight
-                ? "Switch to dark mode"
-                : "Switch to light mode"
-        );
-
-        localStorage.setItem(
-            "theme",
-            isLight ? "light" : "dark"
-        );
-
-    });
+        });
 
     }
 
@@ -343,25 +332,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
     navItems.forEach(item => {
 
-    item.addEventListener("click", () => {
+        item.addEventListener("click", () => {
 
-        navMenu.classList.remove("active");
-        menuOverlay.classList.remove("active");
-        document.body.classList.remove("menu-open");
+            navMenu.classList.remove("active");
+            menuOverlay.classList.remove("active");
+            document.body.classList.remove("menu-open");
 
-        hamburger.setAttribute(
-            "aria-expanded",
-            "false"
-        );
+            hamburger.setAttribute(
+                "aria-expanded",
+                "false"
+            );
 
-        hamburger.setAttribute(
-            "aria-label",
-            "Open navigation menu"
-        );
+            hamburger.setAttribute(
+                "aria-label",
+                "Open navigation menu"
+            );
+
+        });
 
     });
 
 });
+
+window.addEventListener("pageshow", () => {
+
+    applySavedTheme();
 
 });
 
@@ -369,33 +364,54 @@ document.addEventListener("DOMContentLoaded", () => {
    SCROLL REVEAL
 ========================= */
 
-const reveals = document.querySelectorAll(".reveal");
+const revealElements = document.querySelectorAll(".reveal");
 
-function revealSections() {
+if ("IntersectionObserver" in window) {
 
-    const windowHeight = window.innerHeight;
+    const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
 
-    reveals.forEach((section) => {
+            entries.forEach((entry) => {
 
-        const revealTop = section.getBoundingClientRect().top;
+                if (!entry.isIntersecting) return;
 
-        const revealPoint = 100;
+                entry.target.classList.add("active");
 
-        if(revealTop < windowHeight - revealPoint) {
+                /*
+                 * Reveal each element only once.
+                 * It stays visible after resizing
+                 * or changing viewport dimensions.
+                 */
+                observer.unobserve(entry.target);
 
-            section.classList.add("active");
+            });
 
+        },
+        {
+            threshold: 0.08,
+            rootMargin: "0px 0px -40px 0px"
         }
+    );
+
+    revealElements.forEach((element) => {
+
+        revealObserver.observe(element);
+
+    });
+
+} else {
+
+    /*
+     * Safe fallback for browsers
+     * without IntersectionObserver.
+     */
+    revealElements.forEach((element) => {
+
+        element.classList.add("active");
 
     });
 
 }
-
-window.addEventListener("scroll", revealSections, { passive: true });
-
-/* Initial Check */
-
-revealSections();
 
 /* =========================
    EMAILJS CONTACT FORM
