@@ -2947,8 +2947,16 @@ body.menu-open .pricing-toggle-nav {
 ========================= */
 
 .request-setup-section {
-    padding: 140px 0 100px;
+    padding: 10px 0 100px;
     min-height: 100vh;
+}
+
+.success-message {
+    display: none;
+}
+
+.success-message.is-visible {
+    display: block;
 }
 
 body {
@@ -3387,11 +3395,31 @@ body.light-mode .selected-plan-box {
     gap:1.5rem;
 }
 
+#bundle-plans {
+    padding-bottom: 45px;
+}
+
+.results-strip {
+    padding: 30px 0 70px;
+}
+
 @media(max-width:768px) {
     .results-strip .container {
         grid-template-columns:repeat(2, minmax(140px,1fr));
         gap:1rem;
     }
+}
+
+@media (max-width: 768px) {
+
+    #bundle-plans {
+        padding-bottom: 30px;
+    }
+
+    .results-strip {
+        padding: 20px 0 55px;
+    }
+
 }
 
 /* CONTACT HIGHLIGHTS */
