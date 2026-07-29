@@ -177,63 +177,177 @@ function updateActiveAccordionHeights(selector) {
 function initializeAccordionGroup(selector) {
 
     const accordions =
-    document.querySelectorAll(selector);
+        document.querySelectorAll(selector);
 
     if (accordions.length === 0) return;
 
-    accordions[0].classList.add("active");
+    const groupName =
+        selector
+            .replace(".", "")
+            .replace(/[^a-zA-Z0-9-]/g, "-");
 
-    const firstContent =
-    accordions[0].querySelector(".accordion-content");
+    function closeAccordion(accordion) {
 
-    if(firstContent) {
+        accordion.classList.remove("active");
 
-        firstContent.style.maxHeight =
-        firstContent.scrollHeight + "px";
+        const header =
+            accordion.querySelector(".accordion-header");
+
+        const content =
+            accordion.querySelector(".accordion-content");
+
+        if (header) {
+
+            header.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        }
+
+        if (content) {
+
+            content.style.maxHeight = null;
+
+            content.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+        }
 
     }
 
-    accordions.forEach((accordion) => {
+    function openAccordion(accordion) {
+
+        accordion.classList.add("active");
 
         const header =
-        accordion.querySelector(".accordion-header");
+            accordion.querySelector(".accordion-header");
 
         const content =
-        accordion.querySelector(".accordion-content");
+            accordion.querySelector(".accordion-content");
 
-        if(!header || !content) return;
+        if (header) {
 
-        header.addEventListener("click", () => {
+            header.setAttribute(
+                "aria-expanded",
+                "true"
+            );
+
+        }
+
+        if (content) {
+
+            content.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+            content.style.maxHeight =
+                content.scrollHeight + "px";
+
+        }
+
+    }
+
+    accordions.forEach((accordion, index) => {
+
+        const header =
+            accordion.querySelector(".accordion-header");
+
+        const content =
+            accordion.querySelector(".accordion-content");
+
+        if (!header || !content) return;
+
+        const contentId =
+            content.id ||
+            `${groupName}-content-${index + 1}`;
+
+        content.id = contentId;
+
+        header.setAttribute(
+            "aria-controls",
+            contentId
+        );
+
+        header.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+        content.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+        /*
+         * Temporary accessibility support for any
+         * accordion headers that are still div elements.
+         */
+        if (header.tagName !== "BUTTON") {
+
+            header.setAttribute(
+                "role",
+                "button"
+            );
+
+            header.setAttribute(
+                "tabindex",
+                "0"
+            );
+
+        }
+
+        function toggleAccordion() {
 
             const isActive =
-            accordion.classList.contains("active");
+                accordion.classList.contains("active");
 
             accordions.forEach((item) => {
 
-                item.classList.remove("active");
-
-                const itemContent =
-                item.querySelector(".accordion-content");
-
-                if(itemContent) {
-
-                    itemContent.style.maxHeight = null;
-
-                }
+                closeAccordion(item);
 
             });
 
             if (!isActive) {
 
-                accordion.classList.add("active");
+                openAccordion(accordion);
 
-                content.style.maxHeight =
-                content.scrollHeight + "px";
             }
 
-        });
+        }
+
+        header.addEventListener(
+            "click",
+            toggleAccordion
+        );
+
+        if (header.tagName !== "BUTTON") {
+
+            header.addEventListener(
+                "keydown",
+                (event) => {
+
+                    if (
+                        event.key !== "Enter" &&
+                        event.key !== " "
+                    ) {
+                        return;
+                    }
+
+                    event.preventDefault();
+                    toggleAccordion();
+
+                }
+            );
+
+        }
 
     });
+
+    openAccordion(accordions[0]);
 
 }
 
@@ -622,6 +736,64 @@ if (typeof emailjs !== "undefined") {
 initializeAccordionGroup(".service-accordion");
 
 initializeAccordionGroup(".faq-accordion");
+
+observeActiveAccordionHeights(
+    ".service-accordion .accordion-content"
+);
+
+observeActiveAccordionHeights(
+    ".faq-accordion .accordion-content"
+);
+
+window.addEventListener("resize", () => {
+
+    updateActiveAccordionHeights(
+        ".service-accordion.active .accordion-content"
+    );
+
+    updateActiveAccordionHeights(
+        ".faq-accordion.active .accordion-content"
+    );
+
+});
+
+function observeActiveAccordionHeights(selector) {
+
+    if (!("ResizeObserver" in window)) return;
+
+    const contents =
+        document.querySelectorAll(selector);
+
+    contents.forEach((content) => {
+
+        const accordion =
+            content.closest(
+                ".service-accordion, .faq-accordion"
+            );
+
+        if (!accordion) return;
+
+        const observer =
+            new ResizeObserver(() => {
+
+                if (
+                    !accordion.classList.contains(
+                        "active"
+                    )
+                ) {
+                    return;
+                }
+
+                content.style.maxHeight =
+                    content.scrollHeight + "px";
+
+            });
+
+        observer.observe(content);
+
+    });
+
+}
 
 /* Recalculate FAQ heights after page is fully rendered */
 

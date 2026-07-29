@@ -16,6 +16,23 @@
 }
 
 /* =========================
+   GLOBAL SMOOTH SCROLL
+========================= */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+}
+
+/* =========================
    ROOT VARIABLES
 ========================= */
 
@@ -115,7 +132,7 @@ button {
 
 .hero-button {
     display: inline-block;
-    padding: 16px 34px;
+    padding: 15px 17px;
     border-radius: 14px;
     background: linear-gradient(
     135deg,
@@ -193,7 +210,6 @@ button:hover {
 }
 
 .about-service-card:hover {
-    transform: translateY(-6px);
     border-color: #8b5cf6;
 }
 
@@ -1444,7 +1460,6 @@ section,
 }
 
 .preview-card:hover {
-    transform: translateY(-8px);
     border-color: var(--accent-blue);
 }
 
@@ -1519,7 +1534,6 @@ section,
 }
 
 .workflow-card:hover {
-    transform: translateY(-8px);
     border-color: var(--accent-blue);
 }
 
@@ -1617,7 +1631,7 @@ section,
 .primary-btn {
     background-color: var(--primary-color);
     color: #ffffff;
-    padding: 14px 28px;
+    padding: 14px 8px;
     border-radius: 12px;
     font-weight: 600;
     transition: 0.3s ease;
@@ -1798,11 +1812,7 @@ section,
 }
 
 .mini-product-card:hover {
-    transform: translateY(-8px);
     border-color: var(--accent-blue);
-    box-shadow:
-    0 20px 40px rgba(0,0,0,0.25),
-    0 0 25px var(--blue-glow);
 }
 
 /* Icon */
@@ -2399,6 +2409,7 @@ section,
     display: flex;
     flex-direction: column;
     transition:
+    translate 0.3s ease,
     border-color 0.3s ease,
     box-shadow 0.3s ease;
 }
@@ -3089,9 +3100,19 @@ body.light-mode .selected-plan-box {
     color: var(--text-color);
     text-align: left;
     cursor: pointer;
+    font: inherit;
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 0;
+}
+
+.accordion-header:focus-visible {
+    outline: 3px solid currentColor;
+    outline-offset: 4px;
+}
+
+.accordion-heading {
+    margin: 0;
 }
 
 .accordion-content {
@@ -3363,12 +3384,12 @@ body.light-mode .selected-plan-box {
 }
 
 .highlight-item {
-    text-align:center;
-    padding:1rem;
-    border:1px solid var(--border-color);
-    border-radius:12px;
-    background:var(--card-color);
-    font-weight:600;
+    text-align: center;
+    padding: 1.25rem;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    background: var(--card-color);
+    font-weight: 600;
 }
 
 @media(max-width:768px) {
@@ -3380,7 +3401,7 @@ body.light-mode .selected-plan-box {
 .result-card {
     background: var(--card-color);
     border: 1px solid var(--border-color);
-    border-radius: 12px;
+    border-radius: 20px;
     padding: 1.5rem;
     text-align: center;
 }
@@ -4545,7 +4566,7 @@ body.light-mode .case-study-image {
         min-height: 50px;
         height: auto;
         flex: 0 0 auto;
-        padding: 14px 20px;
+        padding: 14px 10px;
         line-height: 1.3;
     }
 
@@ -5554,8 +5575,490 @@ body.light-mode .case-study-step-header {
     text-align: center;
 }
 
+/* ========================================
+   PRICING PAGE — SHARED CARD INTERACTIONS
+======================================== */
+
+.pricing-page .highlight-item,
+.pricing-page .pricing-scope-note,
+.pricing-page .result-card,
+.pricing-page .compare-column,
+.pricing-page .enterprise-card,
+.pricing-page .benefit-card {
+    transition:
+        translate 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.pricing-page .highlight-item i,
+.pricing-page .result-card i {
+    display: block;
+    margin-bottom: 0.85rem;
+}
+
+.pricing-page .highlight-item span {
+    display: block;
+    line-height: 1.45;
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+    .pricing-page .highlight-item:hover,
+    .pricing-page .pricing-scope-note:hover,
+    .pricing-page .result-card:hover,
+    .pricing-page .compare-column:hover,
+    .pricing-page .enterprise-card:hover,
+    .pricing-page .benefit-card:hover {
+        translate: 0 -6px;
+        border-color: var(--accent-blue);
+        box-shadow:
+            0 20px 40px rgba(0, 0, 0, 0.25),
+            0 0 25px var(--blue-glow);
+    }
+
+}
+
 .pricing-starting-reference {
     color: var(--text-secondary);
     font-size: 0.92rem;
     line-height: 1.5;
+}
+
+/* ========================================
+   HOME PAGE — SHARED CARD INTERACTIONS
+======================================== */
+
+.home-page .preview-card,
+.home-page .workflow-card,
+.home-page .mini-product-card {
+    transition:
+        translate 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+    .home-page .preview-card:hover,
+    .home-page .workflow-card:hover,
+    .home-page .mini-product-card:hover {
+        translate: 0 -8px;
+        border-color: var(--accent-blue);
+        box-shadow:
+            0 20px 40px rgba(0, 0, 0, 0.25),
+            0 0 25px var(--blue-glow);
+    }
+
+}
+
+.home-page .preview-icon,
+.home-page .workflow-icon i,
+.home-page .mini-product-icon {
+    transition:
+        transform 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+    .home-page .preview-card:hover .preview-icon,
+    .home-page .workflow-card:hover .workflow-icon i,
+    .home-page .mini-product-card:hover .mini-product-icon {
+        transform: scale(1.06);
+    }
+
+}
+
+.home-page .services-preview-grid,
+.home-page .workflow-grid,
+.home-page .home-products-grid {
+    align-items: stretch;
+}
+
+.home-page .preview-card,
+.home-page .workflow-card,
+.home-page .mini-product-card {
+    height: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .home-page .preview-card,
+    .home-page .workflow-card,
+    .home-page .mini-product-card,
+    .home-page .preview-icon,
+    .home-page .workflow-icon i,
+    .home-page .mini-product-icon {
+        transition: none;
+    }
+
+    .home-page .preview-card:hover,
+    .home-page .workflow-card:hover,
+    .home-page .mini-product-card:hover {
+        translate: none;
+    }
+
+}
+
+/* ========================================
+   HOME PAGE — GET STARTED CTA POLISH
+======================================== */
+
+.home-page .cta-section .cta-box {
+    border-color: rgba(124, 77, 255, 0.28);
+    transition:
+        translate 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.home-page .cta-section .cta-buttons a {
+    min-width: 190px;
+    min-height: 52px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-page .cta-section .cta-buttons a:focus-visible {
+    outline: 3px solid var(--accent-blue);
+    outline-offset: 4px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+    .home-page .cta-section .cta-box:hover {
+        translate: 0 -5px;
+        border-color: var(--accent-blue);
+        box-shadow:
+            0 24px 55px rgba(0, 0, 0, 0.24),
+            0 0 28px var(--blue-glow);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .home-page .cta-section .cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .home-page .cta-section .cta-buttons a {
+        width: 100%;
+        min-width: 0;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .home-page .cta-section .cta-box {
+        transition: none;
+    }
+
+    .home-page .cta-section .cta-box:hover {
+        translate: none;
+    }
+
+}
+
+/* ========================================
+   HOME PAGE — NEWSLETTER BOX POLISH
+======================================== */
+
+.home-page .newsletter-box {
+    position: relative;
+    overflow: hidden;
+    border-color: rgba(124, 77, 255, 0.24);
+    transition:
+        translate 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.home-page .newsletter-form input {
+    min-height: 54px;
+    margin-top: 0;
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.home-page .newsletter-form input:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    box-shadow:
+        0 0 0 4px rgba(0, 195, 255, 0.12);
+}
+
+.home-page .newsletter-form button {
+    min-height: 54px;
+    min-width: 150px;
+    font-weight: 600;
+    background: var(--gradient-primary);
+    transition:
+        translate 0.3s ease,
+        box-shadow 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.home-page .newsletter-form button:focus-visible {
+    outline: 3px solid var(--accent-blue);
+    outline-offset: 4px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+    .home-page .newsletter-box:hover {
+        translate: 0 -5px;
+        border-color: var(--accent-blue);
+        box-shadow:
+            0 24px 55px rgba(0, 0, 0, 0.24),
+            0 0 28px var(--blue-glow);
+    }
+
+    .home-page .newsletter-form button:hover {
+        translate: 0 -2px;
+        opacity: 1;
+        box-shadow:
+            0 10px 25px rgba(124, 77, 255, 0.35);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .home-page .newsletter-form {
+        align-items: stretch;
+    }
+
+    .home-page .newsletter-form input,
+    .home-page .newsletter-form button {
+        width: 100%;
+        min-width: 0;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .home-page .newsletter-box,
+    .home-page .newsletter-form input,
+    .home-page .newsletter-form button {
+        transition: none;
+    }
+
+    .home-page .newsletter-box:hover,
+    .home-page .newsletter-form button:hover {
+        translate: none;
+    }
+
+}
+
+/* ========================================
+   ABOUT PAGE — SHARED CARD INTERACTIONS
+======================================== */
+
+.about-page .about-service-card,
+.about-page .workflow-card {
+    height: 100%;
+    transition:
+        translate 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.about-page .about-services-grid,
+.about-page .workflow-grid {
+    align-items: stretch;
+}
+
+.about-page .about-service-icon,
+.about-page .workflow-icon i {
+    transition: transform 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+    .about-page .about-service-card:hover,
+    .about-page .workflow-card:hover {
+        translate: 0 -6px;
+        border-color: var(--accent-blue);
+        box-shadow:
+            0 20px 40px rgba(0, 0, 0, 0.22),
+            0 0 24px var(--blue-glow);
+    }
+
+    .about-page .about-service-card:hover .about-service-icon,
+    .about-page .workflow-card:hover .workflow-icon i {
+        transform: scale(1.06);
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .about-page .about-service-card,
+    .about-page .workflow-card,
+    .about-page .about-service-icon,
+    .about-page .workflow-icon i {
+        transition: none;
+    }
+
+    .about-page .about-service-card:hover,
+    .about-page .workflow-card:hover {
+        translate: none;
+    }
+
+}
+
+/* ========================================
+   ABOUT PAGE — MOBILE CARD BORDER FIX
+======================================== */
+
+@media (hover: none), (pointer: coarse) {
+
+    .about-page .about-service-card,
+    .about-page .workflow-card {
+        translate: none;
+        border-color: var(--border-color);
+        box-shadow: none;
+    }
+
+    .about-page .about-service-card:hover,
+    .about-page .workflow-card:hover {
+        translate: none;
+        border-color: var(--border-color);
+        box-shadow: none;
+    }
+
+    .about-page .about-service-card:hover .about-service-icon,
+    .about-page .workflow-card:hover .workflow-icon i {
+        transform: none;
+    }
+
+}
+
+/* ========================================
+   ABOUT PAGE — FINAL CTA POLISH
+======================================== */
+
+.about-page .about-cta .cta-box {
+    border-color: rgba(124, 77, 255, 0.28);
+    transition:
+        translate 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.about-page .about-cta .hero-buttons a {
+    min-width: 190px;
+    min-height: 52px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-page .about-cta .hero-buttons a:focus-visible {
+    outline: 3px solid var(--accent-blue);
+    outline-offset: 4px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+    .about-page .about-cta .cta-box:hover {
+        translate: 0 -5px;
+        border-color: var(--accent-blue);
+        box-shadow:
+            0 24px 55px rgba(0, 0, 0, 0.24),
+            0 0 28px var(--blue-glow);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .about-page .about-cta {
+        padding: 70px 0;
+    }
+
+    .about-page .about-cta .cta-box {
+        padding: 50px 22px;
+        border-radius: 24px;
+    }
+
+    .about-page .about-cta .cta-box h2 {
+        font-size: 2rem;
+        line-height: 1.3;
+    }
+
+    .about-page .about-cta .cta-box p {
+        margin-bottom: 30px;
+        font-size: 1rem;
+    }
+
+    .about-page .about-cta .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .about-page .about-cta .hero-buttons a {
+        width: 100%;
+        min-width: 0;
+    }
+
+}
+
+@media (hover: none), (pointer: coarse) {
+
+    .about-page .about-cta .cta-box,
+    .about-page .about-cta .cta-box:hover {
+        translate: none;
+        border-color: rgba(124, 77, 255, 0.28);
+        box-shadow: none;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .about-page .about-cta .cta-box,
+    .about-page .about-cta .hero-buttons a {
+        transition: none;
+    }
+
+    .about-page .about-cta .cta-box:hover {
+        translate: none;
+    }
+
+}
+
+/* ========================================
+   PRICING CTA — BILINGUAL SIZE CONSISTENCY
+======================================== */
+
+.pricing-card .primary-btn {
+    min-height: 58px;
+    padding: 14px 20px;
+    text-align: center;
+    line-height: 1.35;
+    white-space: normal;
+}
+
+@media (max-width: 600px) {
+
+    .pricing-card .primary-btn {
+        min-height: 76px;
+        padding: 14px 18px;
+    }
+
 }
