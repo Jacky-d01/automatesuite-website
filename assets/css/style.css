@@ -1362,7 +1362,6 @@ button {
 }
 
 .benefit-card:hover {
-    transform: translateY(-5px);
     border-color: rgba(124,77,255,.4);
 }
 
@@ -4972,13 +4971,6 @@ body.lightbox-open {
         box-shadow 0.3s ease;
 }
 
-.before-after-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary-color);
-    box-shadow:
-        0 18px 36px rgba(0, 0, 0, 0.15);
-}
-
 .before-after-card h3 {
     margin-bottom: 20px;
     font-size: 1.45rem;
@@ -5256,11 +5248,6 @@ body.lightbox-open {
         border-color 0.3s ease;
 }
 
-.case-study-benefit-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--accent-blue);
-}
-
 .case-study-benefit-card i {
     margin-bottom: 18px;
     color: var(--primary-color);
@@ -5285,7 +5272,7 @@ body.lightbox-open {
 
 .case-study-stack-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 24px;
 }
 
@@ -6232,6 +6219,74 @@ body.light-mode .case-study-step-header {
     .pricing-card .primary-btn {
         min-height: 76px;
         padding: 14px 18px;
+    }
+
+}
+
+/* =========================
+   SIM01 CARD INTERACTION POLISH
+========================= */
+
+.case-study-meta-item,
+.before-after-card,
+.annotation-legend li,
+.validated-result-card,
+.case-study-benefit-card,
+.case-study-stack-card,
+.related-case-study-card,
+.implementation-level-card,
+.growth-process-grid article,
+.growth-evidence-grid .case-study-figure,
+.growth-validation-summary {
+    translate: 0 0;
+    transition:
+        translate 0.28s ease,
+        border-color 0.28s ease,
+        box-shadow 0.28s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+    .case-study-meta-item:hover,
+    .before-after-card:hover,
+    .annotation-legend li:hover,
+    .validated-result-card:hover,
+    .case-study-benefit-card:hover,
+    .case-study-stack-card:hover,
+    .related-case-study-card:hover,
+    .implementation-level-card:hover,
+    .growth-process-grid article:hover,
+    .growth-evidence-grid .case-study-figure:hover,
+    .growth-validation-summary:hover {
+        translate: 0 -5px;
+        border-color: var(--accent-blue);
+        box-shadow:
+            0 20px 40px rgba(0, 0, 0, 0.25),
+            0 0 25px var(--blue-glow);
+    }
+
+}
+
+.growth-evidence-grid .case-study-figure {
+    height: auto;
+    align-self: start;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .case-study-meta-item,
+    .before-after-card,
+    .annotation-legend li,
+    .validated-result-card,
+    .case-study-benefit-card,
+    .case-study-stack-card,
+    .related-case-study-card,
+    .implementation-level-card,
+    .growth-process-grid article,
+    .growth-evidence-grid .case-study-figure,
+    .growth-validation-summary {
+        translate: 0 0;
+        transition: none;
     }
 
 }

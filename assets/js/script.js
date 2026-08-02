@@ -95,11 +95,26 @@ function applySavedTheme() {
     themeToggle.textContent =
         isLight ? "🌙" : "☀️";
 
-    themeToggle.setAttribute(
-        "aria-label",
-        isLight
-            ? "Switch to dark mode"
-            : "Switch to light mode"
+    updateThemeToggleAccessibility(themeToggle);
+
+}
+
+function updateHamburgerAccessibility(hamburger, isOpen) {
+
+    if (!hamburger) return;
+
+    hamburger.dataset.ariaEn =
+        isOpen
+            ? "Close navigation menu"
+            : "Open navigation menu";
+
+    hamburger.dataset.ariaFr =
+        isOpen
+            ? "Fermer le menu de navigation"
+            : "Ouvrir le menu de navigation";
+
+    updateBilingualAriaLabels(
+        getCurrentLanguage()
     );
 
 }
@@ -411,11 +426,9 @@ document.addEventListener("DOMContentLoaded", () => {
         String(isOpen)
     );
 
-    hamburger.setAttribute(
-        "aria-label",
-        isOpen
-            ? "Close navigation menu"
-            : "Open navigation menu"
+    updateHamburgerAccessibility(
+    hamburger,
+    isOpen
     );
 
     });
@@ -433,9 +446,9 @@ document.addEventListener("DOMContentLoaded", () => {
         "false"
     );
 
-    hamburger.setAttribute(
-        "aria-label",
-        "Open navigation menu"
+    updateHamburgerAccessibility(
+    hamburger,
+    false
     );
 
     });
@@ -457,9 +470,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 "false"
             );
 
-            hamburger.setAttribute(
-                "aria-label",
-                "Open navigation menu"
+            updateHamburgerAccessibility(
+                hamburger,
+                false
             );
 
         });
@@ -867,3 +880,65 @@ window.addEventListener("load", () => {
     }, { passive: true });
 
 });
+
+function updateThemeToggleAccessibility(themeToggle) {
+
+    if (!themeToggle) return;
+
+    const isLight =
+        document.body.classList.contains("light-mode");
+
+    themeToggle.dataset.ariaEn =
+        isLight
+            ? "Switch to dark mode"
+            : "Switch to light mode";
+
+    themeToggle.dataset.ariaFr =
+        isLight
+            ? "Passer au mode sombre"
+            : "Passer au mode clair";
+
+    updateBilingualAriaLabels(getCurrentLanguage());
+
+}
+
+function updateHamburgerAccessibility(hamburger, isOpen) {
+
+    if (!hamburger) return;
+
+    hamburger.dataset.ariaEn =
+        isOpen
+            ? "Close navigation menu"
+            : "Open navigation menu";
+
+    hamburger.dataset.ariaFr =
+        isOpen
+            ? "Fermer le menu de navigation"
+            : "Ouvrir le menu de navigation";
+
+    updateBilingualAriaLabels(getCurrentLanguage());
+
+}
+
+function updateThemeToggleAccessibility(themeToggle) {
+
+    if (!themeToggle) return;
+
+    const isLight =
+        document.body.classList.contains("light-mode");
+
+    themeToggle.dataset.ariaEn =
+        isLight
+            ? "Switch to dark mode"
+            : "Switch to light mode";
+
+    themeToggle.dataset.ariaFr =
+        isLight
+            ? "Passer au mode sombre"
+            : "Passer au mode clair";
+
+    updateBilingualAriaLabels(
+        getCurrentLanguage()
+    );
+
+}

@@ -87,8 +87,8 @@
             "@type": "WebPage",
             "@id": "https://automatesuite.io/case-study-lead-capture-crm.html#webpage",
             "url": "https://automatesuite.io/case-study-lead-capture-crm.html",
-            "name": "Automated Lead Capture and HubSpot CRM Enrichment | AutomateSuite",
-            "description": "Explore a validated AutomateSuite workflow that checks incoming lead data, sends complete records to HubSpot and flags incomplete leads for manual review.",
+            "name": "AI-Assisted Lead Qualification and CRM Enrichment | AutomateSuite",
+            "description": "Explore validated Core and Growth lead workflows for rule-based validation, AI-assisted qualification, explainable scoring, manual review and HubSpot CRM synchronization.",
             "inLanguage": [
                 "en",
                 "fr"
@@ -116,9 +116,9 @@
             "mainEntityOfPage": {
                 "@id": "https://automatesuite.io/case-study-lead-capture-crm.html#webpage"
             },
-            "headline": "Automated Lead Capture and HubSpot CRM Enrichment",
-            "alternativeHeadline": "Validated Lead Capture and CRM Enrichment Automation Simulation",
-            "description": "A controlled AutomateSuite simulation demonstrating lead validation, HubSpot CRM synchronization and manual-review routing for incomplete records.",
+            "headline": "AI-Assisted Lead Qualification and CRM Enrichment",
+            "alternativeHeadline": "Validated Core and Growth Lead Qualification Automation Simulation",
+            "description": "A controlled AutomateSuite simulation demonstrating rule-based validation and five AI-assisted qualification outcomes: High Fit, Medium Fit, Low Fit, Manual Review and Incomplete.",
             "image": {
                 "@id": "https://automatesuite.io/case-study-lead-capture-crm.html#primaryimage"
             },
@@ -153,6 +153,10 @@
                 {
                     "@type": "Thing",
                     "name": "Manual review routing"
+                },
+                {
+                    "@type": "Thing",
+                    "name": "AI-assisted lead qualification"
                 }
             ],
             "mentions": [
@@ -170,6 +174,11 @@
                     "@type": "SoftwareApplication",
                     "name": "HubSpot",
                     "applicationCategory": "BusinessApplication"
+                },
+                {
+                    "@type": "SoftwareApplication",
+                    "name": "OpenAI",
+                    "applicationCategory": "BusinessApplication"
                 }
             ],
             "keywords": [
@@ -180,14 +189,18 @@
                 "Make automation",
                 "CRM synchronization",
                 "manual lead review"
+                "AI-assisted lead qualification",
+                "ICP lead scoring",
+                "explainable AI scoring",
+                "lead qualification confidence score"
             ]
         },
         {
             "@type": "ImageObject",
             "@id": "https://automatesuite.io/case-study-lead-capture-crm.html#primaryimage",
-            "url": "https://automatesuite.io/assets/images/case-studies/sim01/sim01-lead-capture-crm-workflow-overview.png",
-            "contentUrl": "https://automatesuite.io/assets/images/case-studies/sim01/sim01-lead-capture-crm-workflow-overview.png",
-            "caption": "AutomateSuite lead capture and HubSpot CRM enrichment workflow",
+            "url": "https://automatesuite.io/assets/images/case-studies/sim01/sim01-growth-ai-assisted-qualification-workflow.png",
+            "contentUrl": "https://automatesuite.io/assets/images/case-studies/sim01/sim01-growth-ai-assisted-qualification-workflow.png",
+            "caption": "AutomateSuite AI-assisted lead qualification and HubSpot CRM enrichment workflow",
             "inLanguage": "en"
         },
         {
@@ -222,7 +235,10 @@
 
 <body id="top">
 
-<nav class="navbar">
+<nav class="navbar"
+    aria-label="Primary navigation"
+    data-aria-en="Primary navigation"
+    data-aria-fr="Navigation principale">
 
     <div class="nav-container">
 
@@ -288,31 +304,36 @@
         <!-- Right Controls -->
         <div class="menu-controls">
 
-            <button id="theme-toggle" aria-label="Toggle dark mode">
-                ☀️
+            <button
+                id="theme-toggle"
+                type="button"
+                aria-label="Toggle dark mode"
+                data-aria-en="Toggle dark mode"
+                data-aria-fr="Basculer au mode sombre">
+                    ☀️
             </button>
 
             <div class="language-selector">
 
                 <button
-                type="button"
-                class="language-btn"
-                onclick="setLanguage('en')"
-                aria-label="Switch language to English">
+                    type="button"
+                    class="language-btn"
+                    onclick="setLanguage('en')"
+                    aria-label="Switch language to English">
 
-                EN
+                    EN
 
                 </button>
 
                 <span>|</span>
 
                 <button
-                type="button"
-                class="language-btn"
-                onclick="setLanguage('fr')"
-                aria-label="Passer le site en français">
+                    type="button"
+                    class="language-btn"
+                    onclick="setLanguage('fr')"
+                    aria-label="Passer le site en français">
 
-                FR
+                    FR
 
                 </button>
 
@@ -326,9 +347,11 @@
             class="hamburger"
             id="hamburger"
             aria-label="Open navigation menu"
+            data-aria-en="Open navigation menu"
+            data-aria-fr="Ouvrir le menu de navigation"
             aria-controls="nav-menu"
             aria-expanded="false">
-                ☰
+            ☰
         </button>
 
         <!-- Overlay -->
@@ -2037,7 +2060,7 @@
                     <button
                         class="case-study-image-open"
                         type="button"
-                        data-image-src="assets/images/case-studies/sim01/sim01-growth-low-fit-airtable-result.png"
+                        data-image-src="assets/images/case-studies/sim01/sim01-growth-incomplete-vs-ai-manual-review.png"
                         data-image-alt-en="Incomplete-lead safeguard compared with AI-assisted review of conflicting lead information"
                         data-image-alt-fr="Garde-fou pour prospect incomplet comparé à la révision assistée par l’IA d’informations contradictoires"
                         aria-label="Open exception-handling comparison in a larger view"
@@ -2045,7 +2068,7 @@
                         data-aria-fr="Ouvrir la comparaison de la gestion des exceptions en grand">
 
                         <img
-                            src="assets/images/case-studies/sim01/sim01-growth-low-fit-airtable-result.png"
+                            src="assets/images/case-studies/sim01/sim01-growth-incomplete-vs-ai-manual-review.png"
                             alt="Incomplete-lead safeguard compared with AI-assisted review of conflicting lead information"
                             data-alt-en="Incomplete-lead safeguard compared with AI-assisted review of conflicting lead information"
                             data-alt-fr="Garde-fou pour prospect incomplet comparé à la révision assistée par l’IA d’informations contradictoires"
@@ -2062,6 +2085,56 @@
                         a human-review route.
 
                     </figcaption>
+
+                    <ol class="annotation-legend growth-exception-legend">
+
+                        <li>
+
+                            <span class="annotation-number" aria-hidden="true">1</span>
+
+                            <div>
+
+                                <strong
+                                    data-lang-en="Incomplete Lead Safeguard"
+                                    data-lang-fr="Garde-fou pour prospect incomplet">
+                                    Incomplete Lead Safeguard
+                                </strong>
+
+                                <p
+                                    data-lang-en="Missing required information is detected by rule-based validation, stopping the lead before AI qualification."
+                                    data-lang-fr="Les informations obligatoires manquantes sont détectées par une validation basée sur des règles, interrompant le prospect avant la qualification par l’IA.">
+                                    Missing required information is detected by rule-based
+                                    validation, stopping the lead before AI qualification.
+                                </p>
+
+                            </div>
+
+                        </li>
+
+                        <li>
+
+                            <span class="annotation-number" aria-hidden="true">2</span>
+
+                            <div>
+
+                                <strong
+                                    data-lang-en="AI-Assisted Manual Review"
+                                    data-lang-fr="Révision humaine assistée par l’IA">
+                                    AI-Assisted Manual Review
+                                </strong>
+
+                                <p
+                                    data-lang-en="Conflicting complete information receives an AI-generated score and explanation before being routed for human review."
+                                    data-lang-fr="Les informations complètes mais contradictoires reçoivent un score et une explication générés par l’IA avant d’être orientées vers une révision humaine.">
+                                    Conflicting complete information receives an AI-generated
+                                    score and explanation before being routed for human review.
+                                </p>
+
+                            </div>
+
+                        </li>
+
+                    </ol>
 
                 </figure>
 
@@ -2584,6 +2657,26 @@
 
                         Orchestrates record monitoring, validation routes and
                         connected actions.
+
+                    </p>
+
+                </article>
+
+                <article class="case-study-stack-card">
+
+                    <i
+                        class="fa-solid fa-brain"
+                        aria-hidden="true"></i>
+
+                    <h3>OpenAI</h3>
+
+                    <p
+                        data-lang-en="Evaluates complete leads against the approved ICP criteria and returns a structured score, fit level, confidence value and concise explanation."
+                        data-lang-fr="Évalue les prospects complets selon les critères ICP approuvés et renvoie un score structuré, un niveau de potentiel, un indice de confiance et une explication concise.">
+
+                        Evaluates complete leads against the approved ICP criteria and
+                        returns a structured score, fit level, confidence value and
+                        concise explanation.
 
                     </p>
 
@@ -3248,9 +3341,10 @@
 <!-- BACK TO TOP -->
 
 <a href="#top"
-   class="back-to-top-btn"
-   aria-label="Back to Top">
-
+    class="back-to-top-btn"
+    aria-label="Back to Top"
+    data-aria-en="Back to top"
+    data-aria-fr="Retour en haut">
    ↑
 
 </a>
