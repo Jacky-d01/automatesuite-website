@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body id="top">
+<body id="top" class="whatsapp-service-page">
 <nav class="navbar">
 
     <div class="nav-container">
@@ -211,12 +211,11 @@
             </h2>
 
             <p
-            data-lang-en="AutomateSuite workflows can integrate with messaging platforms, CRMs, spreadsheets and AI-powered tools."
-            data-lang-fr="Les workflows AutomateSuite peuvent s'intégrer aux plateformes de messagerie, CRM, feuilles de calcul et outils IA.">
-
-            AutomateSuite workflows can integrate with messaging platforms,
-            CRMs, spreadsheets and AI-powered tools.
-
+                data-lang-en="The validated SIM-03 workflow connects Airtable, Make and Twilio WhatsApp. Customer implementations can also connect approved CRMs, databases and communication systems."
+                data-lang-fr="Le workflow SIM-03 validé connecte Airtable, Make et Twilio WhatsApp. Les implémentations client peuvent également connecter des CRM, bases de données et systèmes de communication approuvés.">
+                The validated SIM-03 workflow connects Airtable, Make and Twilio
+                WhatsApp. Customer implementations can also connect approved CRMs,
+                databases and communication systems.
             </p>
 
         </div>
@@ -230,23 +229,18 @@
             </div>
 
             <div class="integration-card">
-                <i class="fa-brands fa-google google-icon"></i>
-                <h3>Google Sheets</h3>
+                <i class="fa-solid fa-diagram-project"></i>
+                <h3>Make</h3>
             </div>
 
             <div class="integration-card">
-                <i class="fa-solid fa-brain openai-icon"></i>
-                <h3>OpenAI</h3>
+                <i class="fa-solid fa-table"></i>
+                <h3>Airtable</h3>
             </div>
 
             <div class="integration-card">
-                <i class="fa-solid fa-note-sticky notion-icon"></i>
-                <h3>Notion</h3>
-            </div>
-
-            <div class="integration-card">
-                <i class="fa-brands fa-slack slack-icon"></i>
-                <h3>Slack</h3>
+                <i class="fa-solid fa-comment-sms"></i>
+                <h3>Twilio</h3>
             </div>
 
             <div class="integration-card">
@@ -254,7 +248,192 @@
                 <h3>HubSpot</h3>
             </div>
 
+            <div class="integration-card">
+                <i class="fa-solid fa-code"></i>
+                <h3>APIs</h3>
+            </div>
+
         </div>
+
+    </div>
+
+</section>
+
+<!-- IMPLEMENTATION STACK -->
+<section
+    class="page-section whatsapp-platform-section"
+    aria-labelledby="whatsapp-platform-title">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <span
+                class="section-badge"
+                data-lang-en="Implementation Architecture"
+                data-lang-fr="Architecture d’implémentation">
+                Implementation Architecture
+            </span>
+
+            <h2
+                id="whatsapp-platform-title"
+                data-lang-en="Validated Reminder Stack and Production Options"
+                data-lang-fr="Stack de rappel validée et options de production">
+                Validated Reminder Stack and Production Options
+            </h2>
+
+            <p
+                data-lang-en="The published SIM-03 case study documents controlled 1-day and expiration-day WhatsApp reminder routes built and validated in Make. Production architecture is selected after reviewing the customer’s data, messaging account and operating requirements."
+                data-lang-fr="L’étude de cas SIM-03 publiée documente des routes contrôlées de rappels WhatsApp à J-1 et le jour de l’expiration, conçues et validées dans Make. L’architecture de production est sélectionnée après analyse des données, du compte de messagerie et des besoins opérationnels du client.">
+                The published SIM-03 case study documents controlled 1-day
+                and expiration-day WhatsApp reminder routes built and validated
+                in Make. Production architecture is selected after reviewing
+                the customer’s data, messaging account and operating requirements.
+            </p>
+
+        </div>
+
+        <div class="whatsapp-platform-grid">
+
+            <article
+                class="whatsapp-platform-card validated-stack-card reveal delay-1">
+
+                <span
+                    class="whatsapp-platform-status"
+                    data-lang-en="Validated Simulation Stack"
+                    data-lang-fr="Stack validée en simulation">
+                    Validated Simulation Stack
+                </span>
+
+                <h3
+                    data-lang-en="SIM-03 Renewal Reminder Validation"
+                    data-lang-fr="Validation des rappels SIM-03">
+                    SIM-03 Renewal Reminder Validation
+                </h3>
+
+                <p
+                    data-lang-en="The controlled simulation uses Airtable, Make and the Twilio WhatsApp Sandbox to identify eligible renewals, route 1-day and expiration-day reminders, send the configured message and record the processing result."
+                    data-lang-fr="La simulation contrôlée utilise Airtable, Make et le Sandbox WhatsApp de Twilio pour identifier les renouvellements éligibles, router les rappels à J-1 et le jour de l’expiration, envoyer le message configuré et enregistrer le résultat du traitement.">
+                    The controlled simulation uses Airtable, Make and the
+                    Twilio WhatsApp Sandbox to identify eligible renewals,
+                    route 1-day and expiration-day reminders, send the configured
+                    message and record the processing result.
+                </p>
+
+                <ul>
+                    <li>
+                        <strong
+                            data-lang-en="Renewal data:"
+                            data-lang-fr="Données de renouvellement :">
+                            Renewal data:
+                        </strong>
+                        Airtable
+                    </li>
+
+                    <li>
+                        <strong
+                            data-lang-en="Workflow orchestration:"
+                            data-lang-fr="Orchestration du workflow :">
+                            Workflow orchestration:
+                        </strong>
+                        Make
+                    </li>
+
+                    <li>
+                        <strong
+                            data-lang-en="Messaging validation:"
+                            data-lang-fr="Validation de la messagerie :">
+                            Messaging validation:
+                        </strong>
+                        Twilio WhatsApp Sandbox
+                    </li>
+
+                    <li
+                        data-lang-en="Validated 1-day reminder route"
+                        data-lang-fr="Route de rappel à J-1 validée">
+                        Validated 1-day reminder route
+                    </li>
+
+                    <li
+                        data-lang-en="Validated expiration-day reminder route"
+                        data-lang-fr="Route de rappel le jour de l’expiration validée">
+                        Validated expiration-day reminder route
+                    </li>
+
+                    <li
+                        data-lang-en="Airtable status and processing-result updates"
+                        data-lang-fr="Mises à jour du statut et du résultat dans Airtable">
+                        Airtable status and processing-result updates
+                    </li>
+                </ul>
+
+            </article>
+
+            <article class="whatsapp-platform-card reveal delay-2">
+
+                <span
+                    class="whatsapp-platform-status option-status"
+                    data-lang-en="Production Implementation Options"
+                    data-lang-fr="Options d’implémentation en production">
+                    Production Implementation Options
+                </span>
+
+                <h3>Make · n8n · Zapier · APIs</h3>
+
+                <p
+                    data-lang-en="The reminder architecture can be adapted to Make, n8n, Zapier or custom APIs according to the customer’s data source, WhatsApp provider, CRM, message volume, security requirements and approved scope."
+                    data-lang-fr="L’architecture de rappel peut être adaptée à Make, n8n, Zapier ou à des API personnalisées selon la source de données, le fournisseur WhatsApp, le CRM, le volume de messages, les exigences de sécurité et le périmètre approuvé du client.">
+                    The reminder architecture can be adapted to Make, n8n,
+                    Zapier or custom APIs according to the customer’s data
+                    source, WhatsApp provider, CRM, message volume, security
+                    requirements and approved scope.
+                </p>
+
+                <ul>
+                    <li
+                        data-lang-en="Approved WhatsApp Business provider and templates"
+                        data-lang-fr="Fournisseur WhatsApp Business et modèles approuvés">
+                        Approved WhatsApp Business provider and templates
+                    </li>
+
+                    <li
+                        data-lang-en="Customer-specific reminder timing and eligibility rules"
+                        data-lang-fr="Délais de rappel et règles d’éligibilité propres au client">
+                        Customer-specific reminder timing and eligibility rules
+                    </li>
+
+                    <li
+                        data-lang-en="CRM, billing or database connections"
+                        data-lang-fr="Connexions au CRM, à la facturation ou à la base de données">
+                        CRM, billing or database connections
+                    </li>
+
+                    <li
+                        data-lang-en="Optional fallback and escalation workflows"
+                        data-lang-fr="Workflows optionnels de relais et d’escalade">
+                        Optional fallback and escalation workflows
+                    </li>
+
+                    <li
+                        data-lang-en="Monitoring, message volume and maintenance"
+                        data-lang-fr="Supervision, volume de messages et maintenance">
+                        Monitoring, message volume and maintenance
+                    </li>
+                </ul>
+
+            </article>
+
+        </div>
+
+        <p
+            class="whatsapp-platform-disclosure reveal"
+            data-lang-en="Make is the validated orchestration platform for the published SIM-03 routes. n8n, Zapier, custom APIs, SMS fallback and CRM escalation remain scope-dependent production options unless separately tested and documented."
+            data-lang-fr="Make est la plateforme d’orchestration validée pour les routes SIM-03 publiées. n8n, Zapier, les API personnalisées, le relais SMS et l’escalade CRM restent des options de production dépendantes du périmètre, sauf s’ils sont testés et documentés séparément.">
+            Make is the validated orchestration platform for the published
+            SIM-03 routes. n8n, Zapier, custom APIs, SMS fallback and CRM
+            escalation remain scope-dependent production options unless
+            separately tested and documented.
+        </p>
 
     </div>
 
@@ -398,12 +577,11 @@
             </h2>
 
             <p
-            data-lang-en="The system automatically tracks subscription activity and sends WhatsApp reminders before expiration dates."
-            data-lang-fr="Le système suit automatiquement les abonnements et envoie des rappels WhatsApp avant expiration.">
-
-            The system automatically tracks subscription activity
-            and sends WhatsApp reminders before expiration dates.
-
+                data-lang-en="The configured workflow checks eligible renewal records, selects the appropriate reminder route, sends the approved WhatsApp message and records the result."
+                data-lang-fr="Le workflow configuré vérifie les renouvellements éligibles, sélectionne la route de rappel appropriée, envoie le message WhatsApp approuvé et enregistre le résultat.">
+                The configured workflow checks eligible renewal records, selects
+                the appropriate reminder route, sends the approved WhatsApp message
+                and records the result.
             </p>
 
         </div>
@@ -476,11 +654,10 @@
                 </h3>
 
                 <p
-                data-lang-en="Customers receive personalized WhatsApp reminders instantly."
-                data-lang-fr="Les clients reçoivent instantanément des rappels WhatsApp personnalisés.">
-
-                Customers receive personalized WhatsApp reminders instantly.
-
+                    data-lang-en="The configured 1-day or expiration-day message is sent through the connected WhatsApp channel."
+                    data-lang-fr="Le message configuré à J-1 ou le jour de l’expiration est envoyé via le canal WhatsApp connecté.">
+                    The configured 1-day or expiration-day message is sent through
+                    the connected WhatsApp channel.
                 </p>
 
             </div>
@@ -493,19 +670,16 @@
                 </div>
 
                 <h3
-                data-lang-en="Improve Renewals"
-                data-lang-fr="Améliorer les renouvellements">
-
-                Improve Renewals
-
+                    data-lang-en="Record the Result"
+                    data-lang-fr="Enregistrer le résultat">
+                    Record the Result
                 </h3>
 
                 <p
-                data-lang-en="Increase retention and reduce missed renewals."
-                data-lang-fr="Augmentez la rétention et réduisez les renouvellements oubliés.">
-
-                Increase retention and reduce missed renewals.
-
+                    data-lang-en="The renewal stage, WhatsApp status, processing result and reminder timestamp are updated in the operational record."
+                    data-lang-fr="L’étape de renouvellement, le statut WhatsApp, le résultat du traitement et l’horodatage du rappel sont mis à jour dans le dossier opérationnel.">
+                    The renewal stage, WhatsApp status, processing result and reminder
+                    timestamp are updated in the operational record.
                 </p>
 
             </div>
@@ -744,101 +918,8 @@
 
 </div>
 
-<!-- TESTIMONIALS SECTION -->
-<section class="page-section">
-
-    <div class="container">
-
-        <!-- HEADING -->
-        <div class="section-heading reveal">
-
-            <span
-            class="section-badge"
-            data-lang-en="Testimonials"
-            data-lang-fr="Témoignages">
-
-            Testimonials
-
-            </span>
-
-            <h2
-            data-lang-en="What Businesses Say About AutomateSuite"
-            data-lang-fr="Ce que les entreprises disent d'AutomateSuite">
-
-            What Businesses Say About AutomateSuite
-
-            </h2>
-
-            <p
-            data-lang-en="Automation workflows designed to simplify customer communication and operational tasks."
-            data-lang-fr="Des workflows automatisés conçus pour simplifier la communication client et les tâches opérationnelles.">
-
-            Automation workflows designed to simplify customer communication
-            and operational tasks.
-
-            </p>
-
-        </div>
-
-        <!-- TESTIMONIAL GRID -->
-        <div class="services-grid">
-
-            <!-- TESTIMONIAL 1 -->
-            <div class="service-card reveal delay-1">
-
-                <div class="service-icon">⭐</div>
-
-                <p
-                data-lang-en="AutomateSuite helped streamline our customer renewal reminders and reduced manual follow-ups significantly."
-                data-lang-fr="AutomateSuite nous a aidés à automatiser les rappels clients et à réduire considérablement les suivis manuels.">
-
-                AutomateSuite helped streamline our customer renewal reminders
-                and reduced manual follow-ups significantly.
-
-                </p>
-
-                <h3
-                data-lang-en="Digital Service Business"
-                data-lang-fr="Entreprise de services digitaux">
-
-                Digital Service Business
-
-                </h3>
-
-            </div>
-
-            <!-- TESTIMONIAL 2 -->
-            <div class="service-card reveal delay-2">
-
-                <div class="service-icon">⭐</div>
-
-                <p
-                data-lang-en="The WhatsApp automation workflows improved our communication speed and customer retention."
-                data-lang-fr="Les workflows WhatsApp ont amélioré notre rapidité de communication et la fidélisation client.">
-
-                The WhatsApp automation workflows improved our communication speed
-                and customer retention.
-
-                </p>
-
-                <h3
-                data-lang-en="Subscription-Based Platform"
-                data-lang-fr="Plateforme par abonnement">
-
-                Subscription-Based Platform
-
-                </h3>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
 <!-- FAQ SECTION -->
-<section class="page-section">
+<section class="page-section" id="whatsapp-service-faq">
 
     <div class="container">
 
@@ -910,11 +991,11 @@
                 <div class="accordion-content">      
 
                     <p
-                    data-lang-en="Yes. The automation system can send reminders worldwide through supported WhatsApp integrations."
-                    data-lang-fr="Oui. Le système peut envoyer des rappels dans le monde entier via les intégrations WhatsApp compatibles.">
-
-                    Yes. The automation system can send reminders worldwide.
-
+                        data-lang-en="The system can support international delivery where the selected WhatsApp provider, destination, customer consent and approved message templates permit it. Availability is confirmed during technical assessment."
+                        data-lang-fr="Le système peut prendre en charge l’envoi international lorsque le fournisseur WhatsApp sélectionné, la destination, le consentement du client et les modèles de message approuvés le permettent. La disponibilité est confirmée lors de l’évaluation technique.">
+                        The system can support international delivery where the selected
+                        WhatsApp provider, destination, customer consent and approved message
+                        templates permit it. Availability is confirmed during technical assessment.
                     </p>
                 </div>     
 
@@ -964,11 +1045,11 @@
                 <div class="accordion-content">
 
                     <p
-                    data-lang-en="Most WhatsApp reminder systems can be configured and tested within a few business days depending on workflow complexity."
-                    data-lang-fr="La plupart des systèmes de rappel WhatsApp peuvent être configurés et testés en quelques jours ouvrables selon la complexité du workflow.">
-
-                    Most WhatsApp reminder systems can be configured and tested within a few business days depending on workflow complexity.
-
+                        data-lang-en="Timing depends on workflow complexity, data readiness, integrations and WhatsApp Business onboarding or template approvals. A delivery estimate is provided after the technical assessment."
+                        data-lang-fr="Le délai dépend de la complexité du workflow, de la préparation des données, des intégrations et de l’intégration WhatsApp Business ou de l’approbation des modèles. Une estimation est fournie après l’évaluation technique.">
+                        Timing depends on workflow complexity, data readiness, integrations
+                        and WhatsApp Business onboarding or template approvals. A delivery
+                        estimate is provided after the technical assessment.
                     </p>
 
                 </div>
@@ -1020,11 +1101,12 @@
                 <div class="accordion-content">
 
                     <p
-                    data-lang-en="No. The system can operate independently after deployment, although optional maintenance and updates are available."
-                    data-lang-fr="Non. Le système peut fonctionner de manière autonome après son déploiement, bien qu'une maintenance et des mises à jour optionnelles soient disponibles.">
-
-                    No. The system can operate independently after deployment, although optional maintenance and updates are available.
-
+                        data-lang-en="Periodic monitoring is recommended because provider policies, message templates, APIs, credentials and connected systems can change. Optional maintenance plans can include monitoring, troubleshooting and controlled updates."
+                        data-lang-fr="Une supervision périodique est recommandée, car les politiques des fournisseurs, les modèles de message, les API, les identifiants et les systèmes connectés peuvent évoluer. Les plans de maintenance optionnels peuvent inclure la supervision, le dépannage et les mises à jour contrôlées.">
+                        Periodic monitoring is recommended because provider policies,
+                        message templates, APIs, credentials and connected systems can change.
+                        Optional maintenance plans can include monitoring, troubleshooting
+                        and controlled updates.
                     </p>
 
                 </div>
@@ -1047,23 +1129,34 @@
 
             <span
                 class="section-badge"
-                data-lang-en="Validated Workflow"
-                data-lang-fr="Workflow validé">
-                Validated Workflow
+                data-lang-en="SIM-03 · Validated Automation Simulation"
+                data-lang-fr="SIM-03 · Simulation d’automatisation validée">
+                SIM-03 · Validated Automation Simulation
             </span>
 
             <h2
-                data-lang-en="See Automated Renewal Reminders in Action"
-                data-lang-fr="Découvrez les rappels automatisés de renouvellement en action">
-                See Automated Renewal Reminders in Action
+                data-lang-en="See WhatsApp Renewal Reminders in Action"
+                data-lang-fr="Découvrez les rappels WhatsApp de renouvellement en action">
+                See WhatsApp Renewal Reminders in Action
             </h2>
 
             <p
-                data-lang-en="Explore a controlled AutomateSuite simulation showing staged WhatsApp reminders, configured SMS fallback branches and HubSpot escalation for unresolved renewal incidents."
-                data-lang-fr="Découvrez une simulation contrôlée d’AutomateSuite présentant des rappels WhatsApp progressifs, des branches de relais SMS configurées et une escalade vers HubSpot pour les incidents de renouvellement non résolus.">
-                Explore a controlled AutomateSuite simulation showing staged
-                WhatsApp reminders, configured SMS fallback branches and
-                HubSpot escalation for unresolved renewal incidents.
+                data-lang-en="Explore a controlled workflow built and validated in Make. It demonstrates Airtable eligibility checks, 1-day and expiration-day routing, WhatsApp delivery through the Twilio Sandbox and operational status updates."
+                data-lang-fr="Découvrez un workflow contrôlé, conçu et validé dans Make. Il présente les vérifications d’éligibilité dans Airtable, le routage à J-1 et le jour de l’expiration, l’envoi WhatsApp via le Sandbox Twilio et les mises à jour des statuts opérationnels.">
+                Explore a controlled workflow built and validated in Make. It
+                demonstrates Airtable eligibility checks, 1-day and expiration-day
+                routing, WhatsApp delivery through the Twilio Sandbox and operational
+                status updates.
+            </p>
+
+            <p
+                class="case-study-scope-note"
+                data-lang-en="The case study validates the documented SIM-03 reminder routes in a controlled environment. Production WhatsApp onboarding, customer-specific timing, additional reminder stages, SMS fallback and CRM escalation remain dependent on the approved project scope."
+                data-lang-fr="L’étude de cas valide les routes de rappel SIM-03 documentées dans un environnement contrôlé. L’intégration WhatsApp en production, les délais propres au client, les étapes de rappel supplémentaires, le relais SMS et l’escalade CRM restent dépendants du périmètre approuvé du projet.">
+                The case study validates the documented SIM-03 reminder routes in a
+                controlled environment. Production WhatsApp onboarding, customer-specific
+                timing, additional reminder stages, SMS fallback and CRM escalation remain
+                dependent on the approved project scope.
             </p>
 
             <a

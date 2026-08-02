@@ -1285,7 +1285,6 @@ button {
 }
 
 .service-card:hover {
-    transform: translateY(-8px);
     border-color: var(--accent-blue);
     box-shadow:
     0 20px 40px rgba(0,0,0,0.25),
@@ -1430,6 +1429,344 @@ section,
 .products-grid-section,
 .services-grid-section {
     background-color: inherit;
+}
+
+/* =========================
+   HOMEPAGE PLATFORM FLEXIBILITY
+========================= */
+
+.home-platform-section {
+    padding: 10px 0 70px;
+}
+
+.home-platform-card {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1.45fr)
+        minmax(280px, 0.75fr);
+    gap: 48px;
+    align-items: center;
+    padding: 48px;
+    border: 1px solid var(--border-color);
+    border-radius: 28px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(124, 77, 255, 0.12),
+            rgba(0, 195, 255, 0.05)
+        ),
+        var(--card-color);
+    translate: 0 0;
+    transition:
+        translate 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.home-platform-copy h2 {
+    max-width: 760px;
+    margin-bottom: 20px;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.home-platform-copy > p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.home-platform-disclosure {
+    margin-top: 24px;
+    padding: 16px 18px;
+    border-left: 3px solid var(--accent-blue);
+    border-radius: 0 14px 14px 0;
+    background: rgba(0, 195, 255, 0.06);
+    font-size: 0.94rem;
+}
+
+.home-platform-list {
+    display: grid;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.home-platform-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    background: var(--background-color);
+}
+
+.home-platform-option strong {
+    font-size: 1.25rem;
+    color: var(--text-color);
+}
+
+.home-platform-option span {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+.home-platform-option.validated-platform {
+    border-color: rgba(124, 77, 255, 0.55);
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+    .home-platform-card:hover {
+        translate: 0 -5px;
+        border-color: var(--accent-blue);
+        box-shadow:
+            0 20px 40px rgba(0, 0, 0, 0.25),
+            0 0 25px var(--blue-glow);
+    }
+
+}
+
+@media (max-width: 900px) {
+
+    .home-platform-card {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .home-platform-section {
+        padding: 0 0 60px;
+    }
+
+    .home-platform-card {
+        padding: 28px 22px;
+        border-radius: 22px;
+    }
+
+    .home-platform-option {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .home-platform-option span {
+        text-align: left;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .home-platform-card {
+        translate: 0 0;
+        transition: none;
+    }
+
+}
+
+/* =========================
+   SERVICES PLATFORM FLEXIBILITY
+========================= */
+
+.services-platform-section {
+    padding: 100px 0;
+}
+
+.services-platform-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    margin-top: 55px;
+}
+
+.services-platform-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px;
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    background: var(--card-color);
+    translate: 0 0;
+    transition:
+        translate 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.services-platform-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 22px;
+    border-radius: 18px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(124, 77, 255, 0.16),
+            rgba(0, 195, 255, 0.1)
+        );
+    color: var(--primary-color);
+    font-size: 1.6rem;
+}
+
+.services-platform-status {
+    display: inline-flex;
+    align-items: center;
+    min-height: 30px;
+    margin-bottom: 18px;
+    padding: 6px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.validated-status {
+    border-color: rgba(124, 77, 255, 0.5);
+    background: rgba(124, 77, 255, 0.1);
+}
+
+.option-status {
+    border-color: rgba(0, 195, 255, 0.4);
+    background: rgba(0, 195, 255, 0.07);
+}
+
+.services-platform-card h3 {
+    margin-bottom: 14px;
+    font-size: 1.55rem;
+}
+
+.services-platform-card p {
+    margin: 0;
+    color: var(--text-secondary);
+    line-height: 1.75;
+}
+
+.platform-selection-note {
+    margin-top: 32px;
+    padding: 32px;
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--accent-blue);
+    border-radius: 20px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(124, 77, 255, 0.08),
+            rgba(0, 195, 255, 0.05)
+        ),
+        var(--card-color);
+    translate: 0 0;
+    transition:
+        translate 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.platform-selection-note-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.platform-selection-note-heading i {
+    color: var(--accent-blue);
+    font-size: 1.25rem;
+}
+
+.platform-selection-note-heading h3 {
+    margin: 0;
+}
+
+.platform-selection-criteria {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+    margin: 0 0 22px;
+    padding: 0;
+    list-style: none;
+}
+
+.platform-selection-criteria li {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background: var(--background-color);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.platform-selection-note > p {
+    margin: 0;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+    .services-platform-card:hover,
+    .platform-selection-note:hover {
+        translate: 0 -5px;
+        border-color: var(--accent-blue);
+        box-shadow:
+            0 20px 40px rgba(0, 0, 0, 0.25),
+            0 0 25px var(--blue-glow);
+    }
+
+}
+
+@media (max-width: 950px) {
+
+    .services-platform-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .platform-selection-criteria {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .services-platform-section {
+        padding: 75px 0;
+    }
+
+    .services-platform-card,
+    .platform-selection-note {
+        padding: 25px 22px;
+        border-radius: 20px;
+    }
+
+    .platform-selection-criteria {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .services-platform-card,
+    .platform-selection-note {
+        translate: 0 0;
+        transition: none;
+    }
+
 }
 
 /* =========================
@@ -2237,7 +2574,6 @@ section,
 }
 
 .integration-card:hover {
-    transform: translateY(-8px);
     border-color: var(--accent-blue);
     box-shadow:
     0 10px 30px rgba(0, 195, 255, 0.15);
@@ -2312,7 +2648,6 @@ section,
 }
 
 .feature-card:hover {
-    transform: translateY(-5px);
     border-color: var(--accent-blue);
     box-shadow:
     0 20px 40px rgba(0,0,0,0.25),
@@ -3636,7 +3971,6 @@ img {
 }
 
 .automation-workflow-card:hover {
-    transform: translateY(-6px);
     border-color: var(--primary-color);
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
 }
@@ -4757,6 +5091,238 @@ body.lightbox-open {
    case-study-lead-capture-crm.html
 ========================================================= */
 
+/* =========================
+   LEAD SERVICE PLATFORM STACK
+========================= */
+
+.lead-platform-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    margin-top: 50px;
+}
+
+.lead-platform-card {
+    padding: 34px;
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    background: var(--card-color);
+    translate: 0 0;
+    transition:
+        translate 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.validated-stack-card {
+    border-color: rgba(124, 77, 255, 0.48);
+}
+
+.lead-platform-status {
+    display: inline-flex;
+    margin-bottom: 20px;
+    padding: 7px 13px;
+    border: 1px solid rgba(124, 77, 255, 0.5);
+    border-radius: 999px;
+    background: rgba(124, 77, 255, 0.1);
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.lead-platform-status.option-status {
+    border-color: rgba(0, 195, 255, 0.45);
+    background: rgba(0, 195, 255, 0.08);
+}
+
+.lead-platform-card h3 {
+    margin-bottom: 16px;
+}
+
+.lead-platform-card p,
+.lead-platform-card li {
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.lead-platform-card ul {
+    display: grid;
+    gap: 10px;
+    margin: 22px 0 0;
+    padding-left: 20px;
+}
+
+.lead-platform-disclosure {
+    margin: 28px 0 0;
+    padding: 18px 20px;
+    border-left: 4px solid var(--accent-blue);
+    border-radius: 0 16px 16px 0;
+    background: rgba(0, 195, 255, 0.06);
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+    .lead-platform-card:hover {
+        translate: 0 -5px;
+        border-color: var(--accent-blue);
+        box-shadow:
+            0 20px 40px rgba(0, 0, 0, 0.24),
+            0 0 25px var(--blue-glow);
+    }
+
+}
+
+@media (max-width: 800px) {
+
+    .lead-platform-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .lead-platform-card {
+        padding: 26px 22px;
+        border-radius: 20px;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .lead-platform-card {
+        translate: 0 0;
+        transition: none;
+    }
+
+}
+
+/* =========================
+   SUPPORT SERVICE PLATFORM STACK
+========================= */
+
+.support-platform-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    margin-top: 50px;
+}
+
+.support-platform-card {
+    height: 100%;
+    padding: 34px;
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    background: var(--card-color);
+    translate: 0 0;
+    transition:
+        translate 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.support-platform-card.validated-stack-card {
+    border-color: rgba(124, 77, 255, 0.48);
+}
+
+.support-platform-status {
+    display: inline-flex;
+    margin-bottom: 20px;
+    padding: 7px 13px;
+    border: 1px solid rgba(124, 77, 255, 0.5);
+    border-radius: 999px;
+    background: rgba(124, 77, 255, 0.1);
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.support-platform-status.option-status {
+    border-color: rgba(0, 195, 255, 0.45);
+    background: rgba(0, 195, 255, 0.08);
+}
+
+.support-platform-card h3 {
+    margin-bottom: 16px;
+}
+
+.support-platform-card p,
+.support-platform-card li {
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.support-platform-card ul {
+    display: grid;
+    gap: 10px;
+    margin: 22px 0 0;
+    padding-left: 20px;
+}
+
+.support-platform-disclosure {
+    max-width: 800px;
+    margin: 38px auto 0;
+    padding: 20px 24px;
+    border: 1px solid rgba(0, 195, 255, 0.2);
+    border-left: 4px solid var(--accent-blue);
+    border-radius: 0 16px 16px 0;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 195, 255, 0.075),
+            rgba(124, 77, 255, 0.035)
+        ),
+        var(--card-color);
+    color: var(--text-secondary);
+    line-height: 1.75;
+    text-align: center;
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+    .support-platform-card:hover {
+        translate: 0 -5px;
+        border-color: var(--accent-blue);
+        box-shadow:
+            0 20px 40px rgba(0, 0, 0, 0.24),
+            0 0 25px var(--blue-glow);
+    }
+
+}
+
+@media (max-width: 800px) {
+
+    .support-platform-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .support-platform-card {
+        padding: 26px 22px;
+        border-radius: 20px;
+    }
+
+    .support-platform-disclosure {
+        margin-top: 28px;
+        padding: 17px 18px;
+        text-align: left;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .support-platform-card {
+        translate: 0 0;
+        transition: none;
+    }
+
+}
 
 /* =========================
    BREADCRUMB
@@ -6287,6 +6853,2149 @@ body.light-mode .case-study-step-header {
     .growth-validation-summary {
         translate: 0 0;
         transition: none;
+    }
+
+}
+
+/* ========================================
+   SERVICES PAGE — COMPLETE VISUAL POLISH
+======================================== */
+
+/* SECTION RHYTHM */
+
+.services-page .page-illustration {
+    margin: 35px auto 15px;
+    padding: 0 20px;
+}
+
+.services-page .page-illustration-image {
+    border-radius: 28px;
+    filter:
+        drop-shadow(0 22px 42px rgba(0, 0, 0, 0.2));
+}
+
+.services-page .why-section,
+.services-page .automation-workflows-section,
+.services-page .services-platform-section,
+.services-page .benefits-section,
+.services-page .how-it-works-section,
+.services-page .seo-services-section,
+.services-page .faq-section {
+    padding: 90px 0;
+}
+
+.services-page .page-section {
+    min-height: auto;
+    padding: 85px 20px 35px;
+}
+
+.services-page .services-grid-section {
+    padding: 25px 0 90px;
+}
+
+.services-page .section-heading {
+    max-width: 860px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+/* EQUAL-HEIGHT GRIDS */
+
+.services-page .features-grid,
+.services-page .automation-workflows-grid,
+.services-page .services-grid,
+.services-page .services-platform-grid,
+.services-page .benefits-grid {
+    align-items: stretch;
+}
+
+.services-page .feature-card,
+.services-page .automation-workflow-card,
+.services-page .service-card,
+.services-page .services-platform-card,
+.services-page .benefit-card {
+    height: 100%;
+}
+
+
+/* SHARED CARD FOUNDATION */
+
+.services-page .feature-card,
+.services-page .automation-workflow-card,
+.services-page .service-card,
+.services-page .services-platform-card,
+.services-page .benefit-card,
+.services-page .platform-selection-criteria li {
+    border-color: var(--border-color);
+    background-color: var(--card-color);
+    translate: 0 0;
+    transition:
+        translate 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+
+/* CORRECT WORKFLOW CARD BACKGROUND */
+
+.services-page .automation-workflow-card,
+.services-page .automation-workflows-cta {
+    background: var(--card-color);
+}
+
+
+/* MAIN CARD HOVER */
+
+@media (hover: hover) and (pointer: fine) {
+
+    .services-page .feature-card:hover,
+    .services-page .automation-workflow-card:hover,
+    .services-page .service-card:hover,
+    .services-page .services-platform-card:hover,
+    .services-page .benefit-card:hover {
+        translate: 0 -6px;
+        border-color: var(--accent-blue);
+        box-shadow:
+            0 20px 40px rgba(0, 0, 0, 0.24),
+            0 0 25px var(--blue-glow);
+    }
+
+    .services-page .platform-selection-criteria li:hover {
+        translate: 0 -3px;
+        border-color: var(--accent-blue);
+        box-shadow:
+            0 12px 25px rgba(0, 0, 0, 0.18),
+            0 0 18px var(--blue-glow);
+    }
+
+}
+
+
+/* ICON POLISH */
+
+.services-page .feature-icon,
+.services-page .automation-workflow-icon,
+.services-page .service-icon,
+.services-page .services-platform-icon,
+.services-page .benefit-icon {
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+    .services-page .feature-card:hover .feature-icon,
+    .services-page .automation-workflow-card:hover
+        .automation-workflow-icon,
+    .services-page .service-card:hover .service-icon,
+    .services-page .services-platform-card:hover
+        .services-platform-icon,
+    .services-page .benefit-card:hover .benefit-icon {
+        transform: scale(1.06);
+        background-color: rgba(0, 195, 255, 0.1);
+        box-shadow:
+            0 0 20px rgba(0, 195, 255, 0.12);
+    }
+
+}
+
+
+/* SERVICE CARD BUTTON ALIGNMENT */
+
+.services-page .service-card {
+    max-width: none;
+}
+
+.services-page .service-card > p {
+    flex-grow: 1;
+}
+
+.services-page .service-card .hero-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 52px;
+    text-align: center;
+}
+
+.services-page .service-card .case-study-link {
+    width: 100%;
+    min-height: 48px;
+    margin-top: 0;
+}
+
+
+/* INFORMATION AND CTA PANELS */
+
+.services-page .automation-workflows-cta,
+.services-page .platform-selection-note,
+.services-page .seo-services-content,
+.services-page .services-preview-button {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(124, 77, 255, 0.25);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(124, 77, 255, 0.09),
+            rgba(0, 195, 255, 0.045)
+        ),
+        var(--card-color);
+    translate: 0 0;
+    transition:
+        translate 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.services-page .automation-workflows-cta {
+    border-radius: 24px;
+}
+
+.services-page .seo-services-content {
+    max-width: 900px;
+    padding: 42px;
+    border-left: 4px solid var(--accent-blue);
+    border-radius: 24px;
+    text-align: left;
+}
+
+.services-page .seo-services-content p:last-child {
+    margin-bottom: 0;
+}
+
+.services-page .services-preview-button {
+    max-width: 900px;
+    margin: 20px auto 100px;
+    padding: 48px 32px;
+    border-radius: 26px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+    .services-page .automation-workflows-cta:hover,
+    .services-page .platform-selection-note:hover,
+    .services-page .seo-services-content:hover,
+    .services-page .services-preview-button:hover {
+        translate: 0 -5px;
+        border-color: var(--accent-blue);
+        box-shadow:
+            0 24px 50px rgba(0, 0, 0, 0.24),
+            0 0 28px var(--blue-glow);
+    }
+
+}
+
+
+/* PRICING CTA BUTTONS */
+
+.services-page .services-pricing-cta .hero-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 210px;
+    min-height: 52px;
+}
+
+.services-page .services-pricing-cta .hero-button:focus-visible,
+.services-page .service-card a:focus-visible,
+.services-page .services-preview-button a:focus-visible {
+    outline: 3px solid var(--accent-blue);
+    outline-offset: 4px;
+}
+
+
+/* FAQ POLISH */
+
+.services-page .faq-container {
+    max-width: 900px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.services-page .faq-accordion {
+    margin-bottom: 16px;
+}
+
+.services-page .accordion-header {
+    border-color: var(--border-color);
+    border-radius: 14px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(124, 77, 255, 0.08),
+            rgba(0, 195, 255, 0.025)
+        ),
+        var(--card-color);
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.services-page .faq-accordion.active .accordion-header {
+    border-color: var(--accent-blue);
+    box-shadow:
+        0 0 20px rgba(0, 195, 255, 0.1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+    .services-page .accordion-header:hover {
+        border-color: var(--accent-blue);
+        box-shadow:
+            0 10px 26px rgba(0, 0, 0, 0.16),
+            0 0 18px var(--blue-glow);
+    }
+
+}
+
+
+/* FOOTER HEADING ALIGNMENT */
+
+.services-page .footer-column h4 {
+    min-height: 2.8em;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+
+/* LIGHT MODE */
+
+body.services-page.light-mode
+    .seo-services-content,
+body.services-page.light-mode
+    .services-preview-button,
+body.services-page.light-mode
+    .automation-workflows-cta,
+body.services-page.light-mode
+    .platform-selection-note {
+    box-shadow:
+        0 14px 34px rgba(15, 23, 42, 0.06);
+}
+
+
+/* TABLET */
+
+@media (max-width: 950px) {
+
+    .services-page .why-section,
+    .services-page .automation-workflows-section,
+    .services-page .services-platform-section,
+    .services-page .benefits-section,
+    .services-page .how-it-works-section,
+    .services-page .seo-services-section,
+    .services-page .faq-section {
+        padding: 75px 0;
+    }
+
+    .services-page .services-grid {
+        grid-template-columns: 1fr;
+        max-width: 620px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .services-page .page-illustration {
+        margin-top: 18px;
+        margin-bottom: 5px;
+    }
+
+    .services-page .page-illustration-image {
+        border-radius: 20px;
+    }
+
+    .services-page .page-section {
+        padding: 65px 20px 25px;
+    }
+
+    .services-page .why-section,
+    .services-page .automation-workflows-section,
+    .services-page .services-platform-section,
+    .services-page .benefits-section,
+    .services-page .how-it-works-section,
+    .services-page .seo-services-section,
+    .services-page .faq-section {
+        padding: 65px 0;
+    }
+
+    .services-page .feature-card,
+    .services-page .automation-workflow-card,
+    .services-page .service-card,
+    .services-page .services-platform-card,
+    .services-page .benefit-card {
+        padding: 26px 22px;
+        border-radius: 20px;
+    }
+
+    .services-page .seo-services-content,
+    .services-page .services-preview-button,
+    .services-page .automation-workflows-cta,
+    .services-page .platform-selection-note {
+        padding: 30px 22px;
+        border-radius: 20px;
+    }
+
+    .services-page .services-pricing-cta {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .services-page .services-pricing-cta .hero-button {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .services-page .footer-column h4 {
+        min-height: 0;
+    }
+
+}
+
+
+/* TOUCH DEVICES */
+
+@media (hover: none), (pointer: coarse) {
+
+    .services-page .feature-card,
+    .services-page .automation-workflow-card,
+    .services-page .service-card,
+    .services-page .services-platform-card,
+    .services-page .benefit-card,
+    .services-page .platform-selection-criteria li,
+    .services-page .automation-workflows-cta,
+    .services-page .platform-selection-note,
+    .services-page .seo-services-content,
+    .services-page .services-preview-button {
+        translate: 0 0;
+    }
+
+}
+
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .services-page .feature-card,
+    .services-page .automation-workflow-card,
+    .services-page .service-card,
+    .services-page .services-platform-card,
+    .services-page .benefit-card,
+    .services-page .platform-selection-criteria li,
+    .services-page .automation-workflows-cta,
+    .services-page .platform-selection-note,
+    .services-page .seo-services-content,
+    .services-page .services-preview-button,
+    .services-page .feature-icon,
+    .services-page .automation-workflow-icon,
+    .services-page .service-icon,
+    .services-page .services-platform-icon,
+    .services-page .benefit-icon,
+    .services-page .accordion-header {
+        transition: none;
+    }
+
+}
+
+/* ========================================
+   LEAD SERVICE PAGE — COMPLETE POLISH
+======================================== */
+
+/* SECTION RHYTHM */
+
+.lead-service-page main > .page-section {
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+.lead-service-page .lead-service-hero {
+    padding-top: 105px;
+}
+
+.lead-service-page .services-grid-section {
+    padding: 90px 0;
+}
+
+.lead-service-page .section-heading {
+    max-width: 880px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+/* HERO BOUNDARY NOTE */
+
+.lead-service-page .lead-service-boundary {
+    max-width: 820px;
+    margin: 28px auto 0;
+    padding: 18px 22px;
+    border: 1px solid rgba(0, 195, 255, 0.22);
+    border-left: 4px solid var(--accent-blue);
+    border-radius: 0 16px 16px 0;
+    background: rgba(0, 195, 255, 0.055);
+    color: var(--text-secondary);
+    line-height: 1.75;
+}
+
+
+/* SHARED CARD FOUNDATION */
+
+.lead-service-page .integration-card,
+.lead-service-page .service-card,
+.lead-service-page .lead-platform-card {
+    height: 100%;
+    border-color: var(--border-color);
+    background-color: var(--card-color);
+    translate: 0 0;
+    transition:
+        translate 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.lead-service-page .services-grid,
+.lead-service-page .integrations-grid,
+.lead-service-page .lead-platform-grid {
+    align-items: stretch;
+}
+
+.lead-service-page .service-card {
+    max-width: none;
+}
+
+
+/* INTEGRATION CARDS */
+
+.lead-service-page .integration-card {
+    cursor: default;
+}
+
+.lead-service-page .integration-card i {
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* SERVICE CARD ICONS */
+
+.lead-service-page .service-icon {
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* PLATFORM DISCLOSURE — UNSTICK FROM CARDS */
+
+.lead-service-page .lead-platform-disclosure {
+    max-width: 800px;
+    margin: 38px auto 0;
+    padding: 20px 24px;
+    border: 1px solid rgba(0, 195, 255, 0.2);
+    border-left: 4px solid var(--accent-blue);
+    border-radius: 0 16px 16px 0;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 195, 255, 0.075),
+            rgba(124, 77, 255, 0.035)
+        ),
+        var(--card-color);
+    color: var(--text-secondary);
+    line-height: 1.75;
+    text-align: center;
+}
+
+
+/* PRICING CTA */
+
+.lead-service-page .service-cta {
+    max-width: 860px;
+    margin: 40px auto;
+    padding: 52px 38px;
+    border: 1px solid rgba(124, 77, 255, 0.25);
+    border-left: 4px solid var(--accent-blue);
+    border-radius: 26px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(124, 77, 255, 0.1),
+            rgba(0, 195, 255, 0.045)
+        ),
+        var(--card-color);
+    translate: 0 0;
+    transition:
+        translate 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.lead-service-page .service-cta .primary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 235px;
+    min-height: 54px;
+    text-align: center;
+}
+
+
+/* FAQ POLISH */
+
+.lead-service-page #lead-service-faq .faq-container {
+    max-width: 900px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.lead-service-page #lead-service-faq .faq-accordion {
+    margin-bottom: 16px;
+}
+
+.lead-service-page #lead-service-faq .accordion-header {
+    border-color: var(--border-color);
+    border-radius: 14px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(124, 77, 255, 0.075),
+            rgba(0, 195, 255, 0.025)
+        ),
+        var(--card-color);
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.lead-service-page
+#lead-service-faq
+.faq-accordion.active
+.accordion-header {
+    border-color: var(--accent-blue);
+    box-shadow:
+        0 0 20px rgba(0, 195, 255, 0.1);
+}
+
+.lead-service-page #lead-service-faq .accordion-content p {
+    padding: 18px 22px 22px;
+    line-height: 1.75;
+}
+
+
+/* RELATED CASE STUDY */
+
+.lead-service-page
+.related-case-study-service-section
+.cta-box {
+    border-color: rgba(124, 77, 255, 0.26);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(124, 77, 255, 0.11),
+            rgba(0, 195, 255, 0.045)
+        ),
+        var(--card-color);
+    translate: 0 0;
+    transition:
+        translate 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.lead-service-page .case-study-scope-note {
+    max-width: 780px;
+    padding: 18px 20px;
+    border-left: 4px solid var(--accent-blue);
+    border-radius: 0 14px 14px 0;
+    background: rgba(0, 195, 255, 0.055);
+    font-size: 0.96rem;
+}
+
+
+/* FINAL CTA */
+
+.lead-service-page .final-cta-section .newsletter-box {
+    position: relative;
+    overflow: hidden;
+    border-color: rgba(124, 77, 255, 0.26);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(124, 77, 255, 0.08),
+            rgba(0, 195, 255, 0.035)
+        ),
+        var(--card-color);
+    translate: 0 0;
+    transition:
+        translate 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.lead-service-page .final-cta-section .hero-buttons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 215px;
+    min-height: 54px;
+    text-align: center;
+}
+
+
+/* KEYBOARD ACCESSIBILITY */
+
+.lead-service-page .hero-buttons a:focus-visible,
+.lead-service-page .service-cta a:focus-visible,
+.lead-service-page
+.related-case-study-service-section
+a:focus-visible {
+    outline: 3px solid var(--accent-blue);
+    outline-offset: 4px;
+}
+
+
+/* DESKTOP HOVER */
+
+@media (hover: hover) and (pointer: fine) {
+
+    .lead-service-page .integration-card:hover,
+    .lead-service-page .service-card:hover,
+    .lead-service-page .lead-platform-card:hover {
+        translate: 0 -6px;
+        border-color: var(--accent-blue);
+        box-shadow:
+            0 20px 40px rgba(0, 0, 0, 0.24),
+            0 0 25px var(--blue-glow);
+    }
+
+    .lead-service-page .integration-card:hover i,
+    .lead-service-page .service-card:hover .service-icon {
+        transform: scale(1.06);
+        background-color: rgba(0, 195, 255, 0.1);
+        box-shadow:
+            0 0 20px rgba(0, 195, 255, 0.12);
+    }
+
+    .lead-service-page .service-cta:hover,
+    .lead-service-page
+    .related-case-study-service-section
+    .cta-box:hover,
+    .lead-service-page
+    .final-cta-section
+    .newsletter-box:hover {
+        translate: 0 -5px;
+        border-color: var(--accent-blue);
+        box-shadow:
+            0 24px 50px rgba(0, 0, 0, 0.24),
+            0 0 28px var(--blue-glow);
+    }
+
+    .lead-service-page
+    #lead-service-faq
+    .accordion-header:hover {
+        border-color: var(--accent-blue);
+        box-shadow:
+            0 10px 26px rgba(0, 0, 0, 0.16),
+            0 0 18px var(--blue-glow);
+    }
+
+}
+
+
+/* FOOTER HEADING ALIGNMENT */
+
+.lead-service-page .footer-column h4 {
+    min-height: 2.8em;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+    .lead-service-page main > .page-section,
+    .lead-service-page .services-grid-section {
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+
+    .lead-service-page .lead-service-hero {
+        padding-top: 90px;
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .lead-service-page main > .page-section,
+    .lead-service-page .services-grid-section {
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+
+    .lead-service-page .lead-service-hero {
+        padding-top: 75px;
+    }
+
+    .lead-service-page .lead-service-boundary,
+    .lead-service-page .lead-platform-disclosure {
+        padding: 17px 18px;
+        text-align: left;
+    }
+
+    .lead-service-page .lead-platform-disclosure {
+        margin-top: 28px;
+    }
+
+    .lead-service-page .service-card,
+    .lead-service-page .lead-platform-card {
+        padding: 26px 22px;
+        border-radius: 20px;
+    }
+
+    .lead-service-page .service-cta,
+    .lead-service-page
+    .related-case-study-service-section
+    .cta-box,
+    .lead-service-page
+    .final-cta-section
+    .newsletter-box {
+        padding: 38px 22px;
+        border-radius: 22px;
+    }
+
+    .lead-service-page .service-cta {
+        width: calc(100% - 40px);
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+
+    .lead-service-page .final-cta-section .hero-buttons {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .lead-service-page .final-cta-section .hero-buttons a,
+    .lead-service-page .service-cta .primary-btn {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .lead-service-page .footer-column h4 {
+        min-height: 0;
+    }
+
+}
+
+
+/* TOUCH DEVICES */
+
+@media (hover: none), (pointer: coarse) {
+
+    .lead-service-page .integration-card,
+    .lead-service-page .service-card,
+    .lead-service-page .lead-platform-card,
+    .lead-service-page .service-cta,
+    .lead-service-page
+    .related-case-study-service-section
+    .cta-box,
+    .lead-service-page
+    .final-cta-section
+    .newsletter-box {
+        translate: 0 0;
+    }
+
+}
+
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .lead-service-page .integration-card,
+    .lead-service-page .integration-card i,
+    .lead-service-page .service-card,
+    .lead-service-page .service-icon,
+    .lead-service-page .lead-platform-card,
+    .lead-service-page .service-cta,
+    .lead-service-page
+    .related-case-study-service-section
+    .cta-box,
+    .lead-service-page
+    .final-cta-section
+    .newsletter-box,
+    .lead-service-page
+    #lead-service-faq
+    .accordion-header {
+        transition: none;
+    }
+
+}
+
+/* ========================================
+   SUPPORT SERVICE PAGE — COMPLETE POLISH
+======================================== */
+
+
+/* SECTION RHYTHM */
+
+.support-service-page main > .page-section,
+.support-service-page main > .services-grid-section {
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+.support-service-page main > .page-section:first-child {
+    padding-top: 105px;
+}
+
+.support-service-page .section-heading {
+    max-width: 880px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+/* SHARED CARD FOUNDATION */
+
+.support-service-page .integration-card,
+.support-service-page .support-platform-card,
+.support-service-page .service-card,
+.support-service-page .workflow-card {
+    height: 100%;
+    border-color: var(--border-color);
+    background-color: var(--card-color);
+    translate: 0 0;
+    transition:
+        translate 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.support-service-page .integrations-grid,
+.support-service-page .support-platform-grid,
+.support-service-page .services-grid,
+.support-service-page .workflow-grid {
+    align-items: stretch;
+}
+
+.support-service-page .service-card {
+    max-width: none;
+}
+
+
+/* PREVENT OLD TRANSFORM HOVER FROM COMBINING WITH TRANSLATE */
+
+.support-service-page .integration-card:hover,
+.support-service-page .service-card:hover {
+    transform: none;
+}
+
+
+/* INTEGRATION CARDS */
+
+.support-service-page .integration-card {
+    cursor: default;
+}
+
+.support-service-page .integration-card i {
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* SERVICE ICONS */
+
+.support-service-page .service-icon {
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* WORKFLOW CARDS */
+
+.support-service-page .workflow-number {
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease,
+        text-shadow 0.3s ease;
+}
+
+
+/* PLATFORM DISCLOSURE — SEPARATE FROM CARDS */
+
+.support-service-page .support-platform-disclosure {
+    max-width: 800px;
+    margin: 38px auto 0;
+    padding: 20px 24px;
+    border: 1px solid rgba(0, 195, 255, 0.2);
+    border-left: 4px solid var(--accent-blue);
+    border-radius: 0 16px 16px 0;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 195, 255, 0.075),
+            rgba(124, 77, 255, 0.035)
+        ),
+        var(--card-color);
+    color: var(--text-secondary);
+    line-height: 1.75;
+    text-align: center;
+}
+
+
+/* PRICING CTA */
+
+.support-service-page .service-cta {
+    max-width: 860px;
+    margin: 40px auto;
+    padding: 52px 38px;
+    border: 1px solid rgba(124, 77, 255, 0.25);
+    border-left: 4px solid var(--accent-blue);
+    border-radius: 26px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(124, 77, 255, 0.1),
+            rgba(0, 195, 255, 0.045)
+        ),
+        var(--card-color);
+    translate: 0 0;
+    transition:
+        translate 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.support-service-page .service-cta .primary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 235px;
+    min-height: 54px;
+    text-align: center;
+}
+
+
+/* FAQ POLISH */
+
+.support-service-page #support-service-faq .faq-container {
+    max-width: 900px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.support-service-page #support-service-faq .faq-accordion {
+    margin-bottom: 16px;
+}
+
+.support-service-page #support-service-faq .accordion-header {
+    border-color: var(--border-color);
+    border-radius: 14px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(124, 77, 255, 0.075),
+            rgba(0, 195, 255, 0.025)
+        ),
+        var(--card-color);
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.support-service-page
+#support-service-faq
+.faq-accordion.active
+.accordion-header {
+    border-color: var(--accent-blue);
+    box-shadow:
+        0 0 20px rgba(0, 195, 255, 0.1);
+}
+
+.support-service-page
+#support-service-faq
+.accordion-content p {
+    padding: 18px 22px 22px;
+    line-height: 1.75;
+}
+
+
+/* RELATED CASE STUDY */
+
+.support-service-page
+.related-case-study-service-section
+.cta-box {
+    border-color: rgba(124, 77, 255, 0.26);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(124, 77, 255, 0.11),
+            rgba(0, 195, 255, 0.045)
+        ),
+        var(--card-color);
+    translate: 0 0;
+    transition:
+        translate 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.support-service-page .case-study-scope-note {
+    max-width: 780px;
+    margin: 24px auto 30px;
+    padding: 18px 20px;
+    border: 1px solid rgba(0, 195, 255, 0.18);
+    border-left: 4px solid var(--accent-blue);
+    border-radius: 0 14px 14px 0;
+    background: rgba(0, 195, 255, 0.055);
+    color: var(--text-secondary);
+    font-size: 0.96rem;
+    line-height: 1.75;
+}
+
+
+/* FINAL CTA */
+
+.support-service-page
+.final-cta-section
+.newsletter-box {
+    position: relative;
+    overflow: hidden;
+    border-color: rgba(124, 77, 255, 0.26);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(124, 77, 255, 0.08),
+            rgba(0, 195, 255, 0.035)
+        ),
+        var(--card-color);
+    translate: 0 0;
+    transition:
+        translate 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.support-service-page
+.final-cta-section
+.hero-buttons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 215px;
+    min-height: 54px;
+    text-align: center;
+}
+
+
+/* KEYBOARD ACCESSIBILITY */
+
+.support-service-page .hero-buttons a:focus-visible,
+.support-service-page .service-cta a:focus-visible,
+.support-service-page
+.related-case-study-service-section
+a:focus-visible {
+    outline: 3px solid var(--accent-blue);
+    outline-offset: 4px;
+}
+
+
+/* DESKTOP HOVER */
+
+@media (hover: hover) and (pointer: fine) {
+
+    .support-service-page .integration-card:hover,
+    .support-service-page .support-platform-card:hover,
+    .support-service-page .service-card:hover,
+    .support-service-page .workflow-card:hover {
+        translate: 0 -6px;
+        border-color: var(--accent-blue);
+        box-shadow:
+            0 20px 40px rgba(0, 0, 0, 0.24),
+            0 0 25px var(--blue-glow);
+    }
+
+    .support-service-page .integration-card:hover i,
+    .support-service-page
+    .service-card:hover
+    .service-icon {
+        transform: scale(1.06);
+        background-color: rgba(0, 195, 255, 0.1);
+        box-shadow:
+            0 0 20px rgba(0, 195, 255, 0.12);
+    }
+
+    .support-service-page
+    .workflow-card:hover
+    .workflow-number {
+        color: rgba(0, 195, 255, 0.7);
+        transform: scale(1.04);
+        text-shadow:
+            0 0 18px rgba(0, 195, 255, 0.18);
+    }
+
+    .support-service-page .service-cta:hover,
+    .support-service-page
+    .related-case-study-service-section
+    .cta-box:hover,
+    .support-service-page
+    .final-cta-section
+    .newsletter-box:hover {
+        translate: 0 -5px;
+        border-color: var(--accent-blue);
+        box-shadow:
+            0 24px 50px rgba(0, 0, 0, 0.24),
+            0 0 28px var(--blue-glow);
+    }
+
+    .support-service-page
+    #support-service-faq
+    .accordion-header:hover {
+        border-color: var(--accent-blue);
+        box-shadow:
+            0 10px 26px rgba(0, 0, 0, 0.16),
+            0 0 18px var(--blue-glow);
+    }
+
+}
+
+
+/* LIGHT MODE */
+
+body.support-service-page.light-mode
+    .support-platform-disclosure,
+body.support-service-page.light-mode
+    .service-cta,
+body.support-service-page.light-mode
+    .related-case-study-service-section
+    .cta-box,
+body.support-service-page.light-mode
+    .final-cta-section
+    .newsletter-box {
+    box-shadow:
+        0 14px 34px rgba(15, 23, 42, 0.06);
+}
+
+
+/* FOOTER HEADING ALIGNMENT */
+
+.support-service-page .footer-column h4 {
+    min-height: 2.8em;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+    .support-service-page main > .page-section,
+    .support-service-page main > .services-grid-section {
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+
+    .support-service-page
+    main > .page-section:first-child {
+        padding-top: 90px;
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .support-service-page main > .page-section,
+    .support-service-page main > .services-grid-section {
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+
+    .support-service-page
+    main > .page-section:first-child {
+        padding-top: 75px;
+    }
+
+    .support-service-page .integration-card {
+        padding: 22px 16px;
+        border-radius: 18px;
+    }
+
+    .support-service-page .support-platform-card,
+    .support-service-page .service-card,
+    .support-service-page .workflow-card {
+        padding: 26px 22px;
+        border-radius: 20px;
+    }
+
+    .support-service-page
+    .support-platform-disclosure {
+        margin-top: 28px;
+        padding: 17px 18px;
+        text-align: left;
+    }
+
+    .support-service-page .service-cta,
+    .support-service-page
+    .related-case-study-service-section
+    .cta-box,
+    .support-service-page
+    .final-cta-section
+    .newsletter-box {
+        padding: 38px 22px;
+        border-radius: 22px;
+    }
+
+    .support-service-page .service-cta {
+        width: calc(100% - 40px);
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+
+    .support-service-page
+    .case-study-scope-note {
+        padding: 17px 18px;
+        text-align: left;
+    }
+
+    .support-service-page
+    .final-cta-section
+    .hero-buttons {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .support-service-page
+    .final-cta-section
+    .hero-buttons a,
+    .support-service-page
+    .service-cta
+    .primary-btn {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .support-service-page .footer-column h4 {
+        min-height: auto;
+    }
+
+}
+
+
+/* TOUCH DEVICES */
+
+@media (hover: none), (pointer: coarse) {
+
+    .support-service-page .integration-card,
+    .support-service-page .support-platform-card,
+    .support-service-page .service-card,
+    .support-service-page .workflow-card,
+    .support-service-page .service-cta,
+    .support-service-page
+    .related-case-study-service-section
+    .cta-box,
+    .support-service-page
+    .final-cta-section
+    .newsletter-box {
+        translate: 0 0;
+    }
+
+    .support-service-page .integration-card:hover,
+    .support-service-page .service-card:hover {
+        transform: none;
+    }
+
+}
+
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .support-service-page .integration-card,
+    .support-service-page .integration-card i,
+    .support-service-page .support-platform-card,
+    .support-service-page .service-card,
+    .support-service-page .service-icon,
+    .support-service-page .workflow-card,
+    .support-service-page .workflow-number,
+    .support-service-page .service-cta,
+    .support-service-page
+    .related-case-study-service-section
+    .cta-box,
+    .support-service-page
+    .final-cta-section
+    .newsletter-box,
+    .support-service-page
+    #support-service-faq
+    .accordion-header {
+        transition: none;
+    }
+
+    .support-service-page .integration-card,
+    .support-service-page .support-platform-card,
+    .support-service-page .service-card,
+    .support-service-page .workflow-card,
+    .support-service-page .service-cta,
+    .support-service-page
+    .related-case-study-service-section
+    .cta-box,
+    .support-service-page
+    .final-cta-section
+    .newsletter-box {
+        translate: 0 0;
+    }
+
+}
+
+/* =========================
+   WHATSAPP SERVICE PLATFORM STACK
+========================= */
+
+.whatsapp-platform-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    margin-top: 50px;
+    align-items: stretch;
+}
+
+.whatsapp-platform-card {
+    height: 100%;
+    padding: 34px;
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    background: var(--card-color);
+    translate: 0 0;
+    transition:
+        translate 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.whatsapp-platform-card.validated-stack-card {
+    border-color: rgba(124, 77, 255, 0.48);
+}
+
+.whatsapp-platform-status {
+    display: inline-flex;
+    margin-bottom: 20px;
+    padding: 7px 13px;
+    border: 1px solid rgba(124, 77, 255, 0.5);
+    border-radius: 999px;
+    background: rgba(124, 77, 255, 0.1);
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.whatsapp-platform-status.option-status {
+    border-color: rgba(0, 195, 255, 0.45);
+    background: rgba(0, 195, 255, 0.08);
+}
+
+.whatsapp-platform-card h3 {
+    margin-bottom: 16px;
+}
+
+.whatsapp-platform-card p,
+.whatsapp-platform-card li {
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.whatsapp-platform-card ul {
+    display: grid;
+    gap: 10px;
+    margin: 22px 0 0;
+    padding-left: 20px;
+}
+
+.whatsapp-platform-disclosure {
+    max-width: 800px;
+    margin: 38px auto 0;
+    padding: 20px 24px;
+    border: 1px solid rgba(0, 195, 255, 0.2);
+    border-left: 4px solid var(--accent-blue);
+    border-radius: 0 16px 16px 0;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 195, 255, 0.075),
+            rgba(124, 77, 255, 0.035)
+        ),
+        var(--card-color);
+    color: var(--text-secondary);
+    line-height: 1.75;
+    text-align: center;
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+    .whatsapp-platform-card:hover {
+        translate: 0 -5px;
+        border-color: var(--accent-blue);
+        box-shadow:
+            0 20px 40px rgba(0, 0, 0, 0.24),
+            0 0 25px var(--blue-glow);
+    }
+
+}
+
+@media (max-width: 800px) {
+
+    .whatsapp-platform-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .whatsapp-platform-card {
+        padding: 26px 22px;
+        border-radius: 20px;
+    }
+
+    .whatsapp-platform-disclosure {
+        margin-top: 28px;
+        padding: 17px 18px;
+        text-align: left;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .whatsapp-platform-card {
+        translate: 0 0;
+        transition: none;
+    }
+
+}
+
+/* ========================================
+   WHATSAPP SERVICE PAGE — COMPLETE POLISH
+======================================== */
+
+
+/* SECTION RHYTHM */
+
+.whatsapp-service-page main > .page-section,
+.whatsapp-service-page main > .services-grid-section {
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+.whatsapp-service-page .section-heading {
+    max-width: 880px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.whatsapp-service-page .section-heading h1,
+.whatsapp-service-page .section-heading h2 {
+    text-wrap: balance;
+}
+
+
+/* HERO SECTION */
+
+.whatsapp-service-page main > .page-section:first-child {
+    position: relative;
+    overflow: hidden;
+    padding-top: 110px;
+    padding-bottom: 100px;
+    background:
+        radial-gradient(
+            circle at 18% 22%,
+            rgba(0, 195, 255, 0.13),
+            transparent 34%
+        ),
+        radial-gradient(
+            circle at 82% 35%,
+            rgba(124, 77, 255, 0.12),
+            transparent 36%
+        );
+}
+
+.whatsapp-service-page
+main > .page-section:first-child::after {
+    position: absolute;
+    right: 8%;
+    bottom: -115px;
+    width: 280px;
+    height: 280px;
+    border: 1px solid rgba(0, 195, 255, 0.14);
+    border-radius: 50%;
+    box-shadow:
+        0 0 70px rgba(0, 195, 255, 0.08);
+    content: "";
+    pointer-events: none;
+}
+
+.whatsapp-service-page
+main > .page-section:first-child
+.section-heading {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+}
+
+
+/* SUBTLE SECTION BACKGROUNDS */
+
+.whatsapp-service-page .integrations-section,
+.whatsapp-service-page .whatsapp-platform-section,
+.whatsapp-service-page #whatsapp-service-faq,
+.whatsapp-service-page .final-cta-section {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 195, 255, 0.025),
+            rgba(124, 77, 255, 0.025)
+        );
+}
+
+
+/* SHARED REVEAL-SAFE CARD FOUNDATION */
+
+.whatsapp-service-page .integration-card,
+.whatsapp-service-page .whatsapp-platform-card,
+.whatsapp-service-page .service-card,
+.whatsapp-service-page .workflow-card {
+    height: 100%;
+    border-color: var(--border-color);
+    background-color: var(--card-color);
+    translate: 0 0;
+    transition:
+        translate 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.whatsapp-service-page .integrations-grid,
+.whatsapp-service-page .whatsapp-platform-grid,
+.whatsapp-service-page .services-grid,
+.whatsapp-service-page .workflow-grid {
+    align-items: stretch;
+}
+
+.whatsapp-service-page .service-card {
+    max-width: none;
+}
+
+
+/* PREVENT OLD TRANSFORM HOVERS */
+
+.whatsapp-service-page .integration-card:hover,
+.whatsapp-service-page .service-card:hover {
+    transform: none;
+}
+
+
+/* INTEGRATION CARDS */
+
+.whatsapp-service-page .integration-card {
+    cursor: default;
+}
+
+.whatsapp-service-page .integration-card i {
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* FEATURE AND USE-CASE CARDS */
+
+.whatsapp-service-page .service-icon {
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.whatsapp-service-page
+.services-grid-section
+.service-card {
+    border-top: 3px solid rgba(0, 195, 255, 0.48);
+}
+
+.whatsapp-service-page
+.use-cases-grid
+.service-card {
+    border-top: 1px solid var(--border-color);
+    border-left: 3px solid rgba(0, 195, 255, 0.4);
+}
+
+
+/* WORKFLOW CARDS */
+
+.whatsapp-service-page .workflow-card {
+    border-bottom: 3px solid rgba(124, 77, 255, 0.42);
+}
+
+.whatsapp-service-page .workflow-number {
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease,
+        text-shadow 0.3s ease;
+}
+
+
+/* PRICING CTA */
+
+.whatsapp-service-page .service-cta {
+    max-width: 860px;
+    margin: 40px auto;
+    padding: 52px 38px;
+    border: 1px solid rgba(124, 77, 255, 0.25);
+    border-left: 4px solid var(--accent-blue);
+    border-radius: 26px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(124, 77, 255, 0.1),
+            rgba(0, 195, 255, 0.045)
+        ),
+        var(--card-color);
+    translate: 0 0;
+    transition:
+        translate 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.whatsapp-service-page
+.service-cta
+.primary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 235px;
+    min-height: 54px;
+    text-align: center;
+}
+
+
+/* FAQ */
+
+.whatsapp-service-page
+#whatsapp-service-faq
+.faq-container {
+    max-width: 900px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.whatsapp-service-page
+#whatsapp-service-faq
+.faq-accordion {
+    margin-bottom: 16px;
+}
+
+.whatsapp-service-page
+#whatsapp-service-faq
+.accordion-header {
+    border-color: var(--border-color);
+    border-radius: 14px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(124, 77, 255, 0.075),
+            rgba(0, 195, 255, 0.025)
+        ),
+        var(--card-color);
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.whatsapp-service-page
+#whatsapp-service-faq
+.faq-accordion.active
+.accordion-header {
+    border-color: var(--accent-blue);
+    box-shadow:
+        0 0 20px rgba(0, 195, 255, 0.1);
+}
+
+.whatsapp-service-page
+#whatsapp-service-faq
+.accordion-content p {
+    padding: 18px 22px 22px;
+    line-height: 1.75;
+}
+
+
+/* RELATED CASE STUDY */
+
+.whatsapp-service-page
+.related-case-study-service-section
+.cta-box {
+    border-color: rgba(124, 77, 255, 0.26);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(124, 77, 255, 0.11),
+            rgba(0, 195, 255, 0.045)
+        ),
+        var(--card-color);
+    translate: 0 0;
+    transition:
+        translate 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.whatsapp-service-page .case-study-scope-note {
+    max-width: 780px;
+    margin: 24px auto 30px;
+    padding: 18px 20px;
+    border: 1px solid rgba(0, 195, 255, 0.18);
+    border-left: 4px solid var(--accent-blue);
+    border-radius: 0 14px 14px 0;
+    background: rgba(0, 195, 255, 0.055);
+    color: var(--text-secondary);
+    font-size: 0.96rem;
+    line-height: 1.75;
+}
+
+
+/* FINAL CTA */
+
+.whatsapp-service-page
+.final-cta-section
+.newsletter-box {
+    position: relative;
+    overflow: hidden;
+    border-color: rgba(124, 77, 255, 0.26);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(124, 77, 255, 0.08),
+            rgba(0, 195, 255, 0.035)
+        ),
+        var(--card-color);
+    translate: 0 0;
+    transition:
+        translate 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.whatsapp-service-page
+.final-cta-section
+.hero-buttons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 215px;
+    min-height: 54px;
+    text-align: center;
+}
+
+
+/* KEYBOARD ACCESSIBILITY */
+
+.whatsapp-service-page .hero-buttons a:focus-visible,
+.whatsapp-service-page .service-cta a:focus-visible,
+.whatsapp-service-page
+.related-case-study-service-section
+a:focus-visible {
+    outline: 3px solid var(--accent-blue);
+    outline-offset: 4px;
+}
+
+
+/* DESKTOP HOVER EFFECTS */
+
+@media (hover: hover) and (pointer: fine) {
+
+    .whatsapp-service-page .integration-card:hover,
+    .whatsapp-service-page .whatsapp-platform-card:hover,
+    .whatsapp-service-page .service-card:hover,
+    .whatsapp-service-page .workflow-card:hover {
+        translate: 0 -6px;
+        border-color: var(--accent-blue);
+        box-shadow:
+            0 20px 40px rgba(0, 0, 0, 0.24),
+            0 0 25px var(--blue-glow);
+    }
+
+    .whatsapp-service-page
+    .integration-card:hover i,
+    .whatsapp-service-page
+    .service-card:hover
+    .service-icon {
+        transform: scale(1.06);
+        background-color: rgba(0, 195, 255, 0.1);
+        box-shadow:
+            0 0 20px rgba(0, 195, 255, 0.12);
+    }
+
+    .whatsapp-service-page
+    .workflow-card:hover
+    .workflow-number {
+        color: rgba(0, 195, 255, 0.7);
+        transform: scale(1.04);
+        text-shadow:
+            0 0 18px rgba(0, 195, 255, 0.18);
+    }
+
+    .whatsapp-service-page .service-cta:hover,
+    .whatsapp-service-page
+    .related-case-study-service-section
+    .cta-box:hover,
+    .whatsapp-service-page
+    .final-cta-section
+    .newsletter-box:hover {
+        translate: 0 -5px;
+        border-color: var(--accent-blue);
+        box-shadow:
+            0 24px 50px rgba(0, 0, 0, 0.24),
+            0 0 28px var(--blue-glow);
+    }
+
+    .whatsapp-service-page
+    #whatsapp-service-faq
+    .accordion-header:hover {
+        border-color: var(--accent-blue);
+        box-shadow:
+            0 10px 26px rgba(0, 0, 0, 0.16),
+            0 0 18px var(--blue-glow);
+    }
+
+}
+
+
+/* LIGHT MODE */
+
+body.whatsapp-service-page.light-mode
+.whatsapp-platform-disclosure,
+body.whatsapp-service-page.light-mode
+.service-cta,
+body.whatsapp-service-page.light-mode
+.related-case-study-service-section
+.cta-box,
+body.whatsapp-service-page.light-mode
+.final-cta-section
+.newsletter-box {
+    box-shadow:
+        0 14px 34px rgba(15, 23, 42, 0.06);
+}
+
+
+/* FOOTER HEADING ALIGNMENT */
+
+.whatsapp-service-page .footer-column h4 {
+    min-height: 2.8em;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+    .whatsapp-service-page main > .page-section,
+    .whatsapp-service-page main > .services-grid-section {
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+
+    .whatsapp-service-page
+    main > .page-section:first-child {
+        padding-top: 90px;
+        padding-bottom: 85px;
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .whatsapp-service-page main > .page-section,
+    .whatsapp-service-page main > .services-grid-section {
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+
+    .whatsapp-service-page
+    main > .page-section:first-child {
+        padding-top: 75px;
+        padding-bottom: 70px;
+    }
+
+    .whatsapp-service-page .integration-card {
+        padding: 22px 16px;
+        border-radius: 18px;
+    }
+
+    .whatsapp-service-page .whatsapp-platform-card,
+    .whatsapp-service-page .service-card,
+    .whatsapp-service-page .workflow-card {
+        padding: 26px 22px;
+        border-radius: 20px;
+    }
+
+    .whatsapp-service-page
+    .whatsapp-platform-disclosure {
+        margin-top: 28px;
+        padding: 17px 18px;
+        text-align: left;
+    }
+
+    .whatsapp-service-page .service-cta,
+    .whatsapp-service-page
+    .related-case-study-service-section
+    .cta-box,
+    .whatsapp-service-page
+    .final-cta-section
+    .newsletter-box {
+        padding: 38px 22px;
+        border-radius: 22px;
+    }
+
+    .whatsapp-service-page .service-cta {
+        width: calc(100% - 40px);
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+
+    .whatsapp-service-page
+    .case-study-scope-note {
+        padding: 17px 18px;
+        text-align: left;
+    }
+
+    .whatsapp-service-page
+    .final-cta-section
+    .hero-buttons {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .whatsapp-service-page
+    .final-cta-section
+    .hero-buttons a,
+    .whatsapp-service-page
+    .service-cta
+    .primary-btn {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .whatsapp-service-page .footer-column h4 {
+        min-height: auto;
+    }
+
+}
+
+
+/* TOUCH DEVICES */
+
+@media (hover: none), (pointer: coarse) {
+
+    .whatsapp-service-page .integration-card,
+    .whatsapp-service-page .whatsapp-platform-card,
+    .whatsapp-service-page .service-card,
+    .whatsapp-service-page .workflow-card,
+    .whatsapp-service-page .service-cta,
+    .whatsapp-service-page
+    .related-case-study-service-section
+    .cta-box,
+    .whatsapp-service-page
+    .final-cta-section
+    .newsletter-box {
+        translate: 0 0;
+    }
+
+    .whatsapp-service-page .integration-card:hover,
+    .whatsapp-service-page .service-card:hover {
+        transform: none;
+    }
+
+}
+
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .whatsapp-service-page .integration-card,
+    .whatsapp-service-page .integration-card i,
+    .whatsapp-service-page .whatsapp-platform-card,
+    .whatsapp-service-page .service-card,
+    .whatsapp-service-page .service-icon,
+    .whatsapp-service-page .workflow-card,
+    .whatsapp-service-page .workflow-number,
+    .whatsapp-service-page .service-cta,
+    .whatsapp-service-page
+    .related-case-study-service-section
+    .cta-box,
+    .whatsapp-service-page
+    .final-cta-section
+    .newsletter-box,
+    .whatsapp-service-page
+    #whatsapp-service-faq
+    .accordion-header {
+        transition: none;
+    }
+
+    .whatsapp-service-page .integration-card,
+    .whatsapp-service-page .whatsapp-platform-card,
+    .whatsapp-service-page .service-card,
+    .whatsapp-service-page .workflow-card,
+    .whatsapp-service-page .service-cta,
+    .whatsapp-service-page
+    .related-case-study-service-section
+    .cta-box,
+    .whatsapp-service-page
+    .final-cta-section
+    .newsletter-box {
+        translate: 0 0;
     }
 
 }
