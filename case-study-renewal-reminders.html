@@ -232,7 +232,7 @@
 
 </head>
 
-<body id="top">
+<body id="top" class="case-study-detail-page">
 
 <nav class="navbar">
 
@@ -300,7 +300,7 @@
         <!-- Right Controls -->
         <div class="menu-controls">
 
-            <button id="theme-toggle" aria-label="Toggle dark mode">
+            <button type="button" id="theme-toggle" aria-label="Toggle dark mode">
                 ☀️
             </button>
 
@@ -3347,12 +3347,13 @@
 
 <!-- BACK TO TOP -->
 
-<a href="#top"
-   class="back-to-top-btn"
-   aria-label="Back to Top">
-
-   ↑
-
+<a
+    href="#top"
+    class="back-to-top-btn"
+    aria-label="Back to top"
+    data-aria-en="Back to top"
+    data-aria-fr="Retour en haut">
+    ↑
 </a>
 
 <script src="assets/js/script.js"></script>
@@ -3429,12 +3430,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.addEventListener("keydown", (event) => {
 
-        if (
-            event.key === "Escape" &&
-            lightbox.classList.contains("active")
-        ) {
-            closeLightbox();
-        }
+    if (!lightbox.classList.contains("active")) {
+        return;
+    }
+
+    if (event.key === "Escape") {
+        closeLightbox();
+        return;
+    }
+
+    if (event.key === "Tab") {
+        event.preventDefault();
+        closeButton.focus();
+    }
 
     });
 

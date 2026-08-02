@@ -1312,7 +1312,8 @@ button {
 
 /* Service Titles */
 
-.service-card h2 {
+.service-card h2,
+.service-card h3 {
     font-size: 1.5rem;
     line-height: 1.4;
 }
@@ -1401,7 +1402,8 @@ button {
         padding: 25px;
     }
 
-    .service-card h2 {
+    .service-card h2,
+    .service-card h3 {
         font-size: 1.3rem;
     }
 }
@@ -2644,7 +2646,7 @@ section,
     border: 1px solid var(--border-color);
     transition:
     border-color 0.3s ease,
-    box-shadow 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .feature-card:hover {
@@ -6885,7 +6887,7 @@ body.light-mode .case-study-step-header {
 }
 
 .services-page .page-section {
-    min-height: auto;
+    min-height: 0;
     padding: 85px 20px 35px;
 }
 
@@ -8210,7 +8212,7 @@ body.support-service-page.light-mode
     }
 
     .support-service-page .footer-column h4 {
-        min-height: auto;
+        min-height: 0;
     }
 
 }
@@ -8928,7 +8930,7 @@ body.whatsapp-service-page.light-mode
     }
 
     .whatsapp-service-page .footer-column h4 {
-        min-height: auto;
+        min-height: 0;
     }
 
 }
@@ -8996,6 +8998,110 @@ body.whatsapp-service-page.light-mode
     .final-cta-section
     .newsletter-box {
         translate: 0 0;
+    }
+
+}
+
+.whatsapp-service-page
+#whatsapp-service-faq
+.accordion-heading {
+    display: block;
+    margin: 0;
+    font-size: 1.15rem;
+    line-height: 1.4;
+}
+
+/* ========================================
+   CASE STUDIES — FINAL VISUAL POLISH
+======================================== */
+
+.case-studies-page .case-study-card,
+.case-studies-page .validation-step,
+.case-studies-page .transparency-card,
+.case-studies-page .production-adaptation-card,
+.case-studies-page .case-studies-cta .cta-box,
+.case-study-detail-page .case-study-notice,
+.case-study-detail-page .case-study-objective-card,
+.case-study-detail-page .case-study-step-header,
+.case-study-detail-page .result-boundary-note,
+.case-study-detail-page .production-adaptation-card,
+.case-study-detail-page .faq-accordion,
+.case-study-detail-page .case-study-final-cta .cta-box {
+    translate: 0 0;
+    transition:
+        translate 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+/* Replace older transform-based card movement */
+
+.case-studies-page .case-study-card,
+.case-studies-page .validation-step,
+.case-studies-page .case-study-card:hover,
+.case-studies-page .validation-step:hover {
+    transform: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+    .case-studies-page .case-study-card:hover,
+    .case-studies-page .validation-step:hover,
+    .case-studies-page .transparency-card:hover,
+    .case-studies-page .production-adaptation-card:hover,
+    .case-studies-page .case-studies-cta .cta-box:hover,
+    .case-study-detail-page .case-study-notice:hover,
+    .case-study-detail-page .case-study-objective-card:hover,
+    .case-study-detail-page .case-study-step-header:hover,
+    .case-study-detail-page .result-boundary-note:hover,
+    .case-study-detail-page .production-adaptation-card:hover,
+    .case-study-detail-page .faq-accordion:hover,
+    .case-study-detail-page .case-study-final-cta .cta-box:hover {
+        translate: 0 -5px;
+        border-color: var(--accent-blue);
+        box-shadow:
+            0 20px 40px rgba(0, 0, 0, 0.24),
+            0 0 25px var(--blue-glow);
+    }
+
+}
+
+@media (hover: none), (pointer: coarse) {
+
+    .case-studies-page .case-study-card,
+    .case-studies-page .validation-step,
+    .case-studies-page .transparency-card,
+    .case-studies-page .production-adaptation-card,
+    .case-studies-page .case-studies-cta .cta-box,
+    .case-study-detail-page .case-study-notice,
+    .case-study-detail-page .case-study-objective-card,
+    .case-study-detail-page .case-study-step-header,
+    .case-study-detail-page .result-boundary-note,
+    .case-study-detail-page .production-adaptation-card,
+    .case-study-detail-page .faq-accordion,
+    .case-study-detail-page .case-study-final-cta .cta-box {
+        translate: none;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .case-studies-page .case-study-card,
+    .case-studies-page .validation-step,
+    .case-studies-page .transparency-card,
+    .case-studies-page .production-adaptation-card,
+    .case-studies-page .case-studies-cta .cta-box,
+    .case-study-detail-page .case-study-notice,
+    .case-study-detail-page .case-study-objective-card,
+    .case-study-detail-page .case-study-step-header,
+    .case-study-detail-page .result-boundary-note,
+    .case-study-detail-page .production-adaptation-card,
+    .case-study-detail-page .faq-accordion,
+    .case-study-detail-page .case-study-final-cta .cta-box {
+        translate: none;
+        transition: none;
     }
 
 }

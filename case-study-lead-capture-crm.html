@@ -188,7 +188,7 @@
                 "Airtable automation",
                 "Make automation",
                 "CRM synchronization",
-                "manual lead review"
+                "manual lead review",
                 "AI-assisted lead qualification",
                 "ICP lead scoring",
                 "explainable AI scoring",
@@ -233,7 +233,7 @@
 
 </head>
 
-<body id="top">
+<body id="top" class="case-study-detail-page">
 
 <nav class="navbar"
     aria-label="Primary navigation"
@@ -3340,13 +3340,13 @@
 
 <!-- BACK TO TOP -->
 
-<a href="#top"
+<a
+    href="#top"
     class="back-to-top-btn"
-    aria-label="Back to Top"
+    aria-label="Back to top"
     data-aria-en="Back to top"
     data-aria-fr="Retour en haut">
-   ↑
-
+    ↑
 </a>
 
 <script src="assets/js/script.js"></script>
@@ -3423,12 +3423,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.addEventListener("keydown", (event) => {
 
-        if (
-            event.key === "Escape" &&
-            lightbox.classList.contains("active")
-        ) {
-            closeLightbox();
-        }
+    if (!lightbox.classList.contains("active")) {
+        return;
+    }
+
+    if (event.key === "Escape") {
+        closeLightbox();
+        return;
+    }
+
+    if (event.key === "Tab") {
+        event.preventDefault();
+        closeButton.focus();
+    }
 
     });
 
