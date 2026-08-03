@@ -258,6 +258,7 @@
   }
 
   const lang = detectLanguage();
+  document.documentElement.lang = lang;
   document.body.classList.remove("lang-fr", "lang-en");
   document.body.classList.add("lang-" + lang);
 

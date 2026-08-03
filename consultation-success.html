@@ -193,8 +193,8 @@
 
     }
 
-  </style></head>
- </head>
+  </style>
+</head>
  <body class="lang-fr">
   <main>
   <div class="thank-you-container">
@@ -258,6 +258,7 @@
   }
 
   const lang = detectLanguage();
+  document.documentElement.lang = lang;
   document.body.classList.remove("lang-fr", "lang-en");
   document.body.classList.add("lang-" + lang);
 

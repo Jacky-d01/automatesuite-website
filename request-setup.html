@@ -403,7 +403,7 @@ content="website">
             <label for="setup-current-tools">
                     <i class="fa-solid fa-toolbox"></i>
                 <span
-                    data-lang-en="Current Tools & Software (Optional)"
+                    data-lang-en="Current Tools &amp; Software (Optional)"
                     data-lang-fr="Outils et logiciels actuels (Optionnel)">
                     Current Tools & Software (Optional)
                 </span>
@@ -432,10 +432,20 @@ content="website">
 
         </button>
 
-        <p class="form-security-note"
-            data-lang-en="Your information is used only to respond to your request and is handled in accordance with our Privacy Policy."
-            data-lang-fr="Vos informations sont utilisées uniquement pour traiter votre demande et sont gérées conformément à notre Politique de confidentialité.">
-            Your information is used only to respond to your request and is handled in accordance with our Privacy Policy.
+        <p class="form-security-note">
+            <span
+                data-lang-en="Your information is used only to respond to your request and is handled in accordance with our "
+                data-lang-fr="Vos informations sont utilisées uniquement pour traiter votre demande et sont gérées conformément à notre ">
+                Your information is used only to respond to your request and is handled in accordance with our
+            </span>
+
+            <a href="privacy-policy.html">
+                <span
+                    data-lang-en="Privacy Policy"
+                    data-lang-fr="Politique de confidentialité">
+                    Privacy Policy
+                </span>
+            </a>.
         </p>
 
     </form>
@@ -479,6 +489,9 @@ let selectedText = "";
 
 const currentLanguage =
 localStorage.getItem("language") || "en";
+
+document.documentElement.lang =
+currentLanguage;
 
 /* BUNDLES */
 
@@ -725,7 +738,7 @@ document
     .then(function() {
 
         window.location.href =
-        "setup-success.html";
+        `setup-success.html?lang=${currentLanguage}`;
 
     })
 

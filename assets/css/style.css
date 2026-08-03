@@ -9105,3 +9105,61 @@ body.whatsapp-service-page.light-mode
     }
 
 }
+
+.form-disclaimer a,
+.form-security-note a {
+    color: #7c4dff;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition:
+        color 0.3s ease,
+        text-decoration-thickness 0.3s ease;
+}
+
+.form-disclaimer a:hover,
+.form-security-note a:hover {
+    color: #9b6dff;
+    text-decoration-thickness: 2px;
+}
+
+.request-setup-section .form-group input:focus-visible,
+.request-setup-section .form-group select:focus-visible,
+.request-setup-section .form-group textarea:focus-visible {
+    outline: 3px solid rgba(124, 77, 255, 0.25);
+    outline-offset: 2px;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 1px var(--primary-color);
+}
+
+.request-setup-section .submit-btn {
+    translate: 0 0;
+    transition:
+        translate 0.25s ease,
+        box-shadow 0.25s ease,
+        opacity 0.25s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .request-setup-section .submit-btn:hover:not(:disabled) {
+        translate: 0 -2px;
+        box-shadow: 0 12px 25px rgba(124, 77, 255, 0.22);
+    }
+}
+
+.request-setup-section .submit-btn:focus-visible {
+    outline: 3px solid rgba(124, 77, 255, 0.35);
+    outline-offset: 3px;
+}
+
+.request-setup-section .submit-btn:disabled {
+    cursor: wait;
+    opacity: 0.7;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .request-setup-section .submit-btn {
+        translate: none;
+        transition: none;
+    }
+}

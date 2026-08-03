@@ -201,11 +201,10 @@
     </p>
 
       <p
-    data-lang-en="Our team will review your request within 1 business day."
-    data-lang-fr="Notre équipe examinera votre demande sous 1 jour ouvré.">
-    Our team will review your request within 1 business day.
-
-    </p>
+    data-lang-en="Our team will review your request and respond within 24–48 hours."
+    data-lang-fr="Notre équipe examinera votre demande et vous répondra sous 24 à 48 heures.">
+    Our team will review your request and respond within 24–48 hours.
+      </p>
 
     <p data-lang-en="Reference: Contact Request"
     data-lang-fr="Référence : Demande de contact">
@@ -245,6 +244,7 @@
   }
 
   const lang = detectLanguage();
+  document.documentElement.lang = lang;
   const savedTheme =
   localStorage.getItem("theme");
 

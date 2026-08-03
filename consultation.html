@@ -482,7 +482,7 @@
 
             <label
                 for="consultation-current-tools"
-                data-lang-en="Current Tools & Software (Optional)"
+                data-lang-en="Current Tools &amp; Software (Optional)"
                 data-lang-fr="Outils et logiciels actuels (Optionnel)">
                 Current Tools & Software (Optional)
                 </label>
@@ -510,6 +510,22 @@
 
         </button>
 
+        <p class="form-security-note">
+            <span
+                data-lang-en="Your information is used only to respond to your request and is handled in accordance with our "
+                data-lang-fr="Vos informations sont utilisées uniquement pour traiter votre demande et sont gérées conformément à notre ">
+                Your information is used only to respond to your request and is handled in accordance with our
+            </span>
+
+            <a href="privacy-policy.html">
+                <span
+                    data-lang-en="Privacy Policy"
+                    data-lang-fr="Politique de confidentialité">
+                    Privacy Policy
+                </span>
+            </a>.
+        </p>
+
     </form>
 
 </div>
@@ -536,6 +552,9 @@
 
 const currentLanguage =
 localStorage.getItem("language") || "en";
+
+document.documentElement.lang =
+currentLanguage;
 
 document
 .querySelectorAll("[data-lang-en]")
@@ -614,7 +633,7 @@ document
     .then(function() {
 
         window.location.href =
-        "consultation-success.html";
+        `consultation-success.html?lang=${currentLanguage}`;
 
     })
 
