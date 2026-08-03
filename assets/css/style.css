@@ -2394,6 +2394,22 @@ section,
     transition-delay: 1.15s;
 }
 
+.delay-7 {
+    transition-delay: 1.35s;
+}
+
+.delay-8 {
+    transition-delay: 1.55s;
+}
+
+.delay-9 {
+    transition-delay: 1.75s;
+}
+
+.delay-10 {
+    transition-delay: 1.95s;
+}
+
 /* =========================
    CONTACT FORM
 ========================= */
@@ -5647,12 +5663,6 @@ body.lightbox-open {
     margin-bottom: 16px;
     font-size: clamp(2rem, 4vw, 3rem);
     line-height: 1.2;
-}
-
-.page-section .case-study-step-header p {
-    max-width: 760px;
-    margin: 0;
-    text-align: left;
 }
 
 .alternate-section {
