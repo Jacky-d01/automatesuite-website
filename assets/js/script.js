@@ -900,7 +900,7 @@ function updateThemeToggleAccessibility(themeToggle) {
 
 /* Case-study screenshot lightbox */
 
-document.addEventListener("DOMContentLoaded", () => {
+function initializeCaseStudyLightbox() {
 
     const lightbox =
         document.getElementById("case-study-lightbox");
@@ -928,10 +928,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let lastFocusedElement = null;
 
-    const openLightbox = (button) => {
+    function openLightbox(button) {
 
-        const imageSource =
-            button.dataset.imageSrc;
+        const imageSource = button.dataset.imageSrc;
 
         const currentLanguage =
             getCurrentLanguage();
@@ -941,9 +940,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 ? button.dataset.imageAltFr || ""
                 : button.dataset.imageAltEn || "";
 
-        if (!imageSource) {
-            return;
-        }
+        if (!imageSource) return;
 
         lastFocusedElement =
             document.activeElement;
@@ -951,6 +948,7 @@ document.addEventListener("DOMContentLoaded", () => {
         lightboxImage.src = imageSource;
         lightboxImage.alt = imageAlt;
 
+        lightbox.removeAttribute("inert");
         lightbox.classList.add("active");
         lightbox.setAttribute("aria-hidden", "false");
 
@@ -958,23 +956,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
         closeButton.focus();
 
-    };
+    }
 
-    const closeLightbox = () => {
+    function closeLightbox() {
 
         lightbox.classList.remove("active");
         lightbox.setAttribute("aria-hidden", "true");
+        lightbox.setAttribute("inert", "");
 
         document.body.classList.remove("lightbox-open");
 
-        lightboxImage.src = "";
+        lightboxImage.removeAttribute("src");
         lightboxImage.alt = "";
 
         if (lastFocusedElement) {
             lastFocusedElement.focus();
         }
 
-    };
+    }
 
     imageButtons.forEach((button) => {
 
@@ -1002,7 +1001,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (event.key === "Escape") {
             closeLightbox();
-            return;
         }
 
         if (event.key === "Tab") {
@@ -1012,4 +1010,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-});
+}
+
+initializeCaseStudyLightbox();
