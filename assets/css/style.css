@@ -909,7 +909,7 @@ button {
         font-size: 1rem;
     }
 
-    .accordion-header h3 {
+    .accordion-header .accordion-title {
         font-size: 1.15rem;
         line-height: 1.4;
         margin: 0;

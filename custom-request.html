@@ -797,6 +797,44 @@ else if (
 
 }
 
+/* =========================
+   NON-TIER CASE-STUDY REQUESTS
+========================= */
+
+else if (
+    service === "whatsapp"
+) {
+
+    selectedSolutionText =
+        currentLanguage === "fr"
+            ? "Automatisation personnalisée des rappels de renouvellement et d'expiration"
+            : "Custom Renewal and Expiration Reminder Automation";
+
+}
+
+else if (
+    service === "ai-lead-enrichment" ||
+    service === "lead-enrichment"
+) {
+
+    selectedSolutionText =
+        currentLanguage === "fr"
+            ? "Qualification personnalisée des prospects et enrichissement CRM"
+            : "Custom Lead Qualification and CRM Enrichment";
+
+}
+
+else if (
+    service === "email-triage"
+) {
+
+    selectedSolutionText =
+        currentLanguage === "fr"
+            ? "Automatisation personnalisée du tri des e-mails de support"
+            : "Custom Support Email Triage Automation";
+
+}
+
 const selectedSolutionDisplay =
 document.getElementById("custom-selected-plan");
 
