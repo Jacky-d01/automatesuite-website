@@ -9701,3 +9701,105 @@ body.light-mode
         margin-left: 24px;
     }
 }
+
+/* ========================================
+   SITE-WIDE FAQ VISUAL POLISH
+======================================== */
+
+.faq-section .faq-container,
+.case-study-faq-section .faq-container {
+    max-width: 900px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.faq-section .faq-accordion,
+.case-study-faq-section .faq-accordion {
+    margin-bottom: 16px;
+}
+
+.faq-section .accordion-header,
+.case-study-faq-section .accordion-header {
+    border-color: var(--border-color);
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(124, 77, 255, 0.08),
+            rgba(0, 195, 255, 0.025)
+        ),
+        var(--card-color);
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.faq-section .faq-accordion.active .accordion-header,
+.case-study-faq-section .faq-accordion.active .accordion-header {
+    border-color: var(--accent-blue);
+
+    box-shadow:
+        0 0 20px rgba(0, 195, 255, 0.1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+    .faq-section .accordion-header:hover,
+    .case-study-faq-section .accordion-header:hover {
+        border-color: var(--accent-blue);
+
+        box-shadow:
+            0 10px 26px rgba(0, 0, 0, 0.16),
+            0 0 18px var(--blue-glow);
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .faq-section .accordion-header,
+    .case-study-faq-section .accordion-header {
+        transition: none;
+    }
+
+}
+
+/* ========================================
+   REVEAL + VISUAL-POLISH COMPATIBILITY
+======================================== */
+
+.delay-1  { --reveal-delay: 0.15s; }
+.delay-2  { --reveal-delay: 0.35s; }
+.delay-3  { --reveal-delay: 0.55s; }
+.delay-4  { --reveal-delay: 0.75s; }
+.delay-5  { --reveal-delay: 0.95s; }
+.delay-6  { --reveal-delay: 1.15s; }
+.delay-7  { --reveal-delay: 1.35s; }
+.delay-8  { --reveal-delay: 1.55s; }
+.delay-9  { --reveal-delay: 1.75s; }
+.delay-10 { --reveal-delay: 1.95s; }
+
+.js .reveal {
+    transition:
+        opacity 0.8s ease var(--reveal-delay, 0s),
+        transform 0.8s ease var(--reveal-delay, 0s),
+        translate 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .js .reveal,
+    .js .reveal.active {
+        opacity: 1;
+        transform: none;
+        translate: none;
+        transition: none;
+    }
+
+}
