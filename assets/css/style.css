@@ -9768,6 +9768,49 @@ body.light-mode
 }
 
 /* ========================================
+   SERVICE DISCLOSURE SPACING
+======================================== */
+
+/* Separate the lead-service scope note from its CTA buttons */
+.lead-service-page
+.lead-service-boundary + .hero-buttons {
+    margin-top: 28px;
+}
+
+/* Separate platform disclosures from architecture cards */
+.lead-service-page
+.lead-platform-grid + .lead-platform-disclosure,
+
+.support-service-page
+.support-platform-grid + .support-platform-disclosure,
+
+.whatsapp-service-page
+.whatsapp-platform-grid + .whatsapp-platform-disclosure {
+    display: block;
+    margin: 38px auto 0 !important;
+}
+
+@media (max-width: 600px) {
+
+    .lead-service-page
+    .lead-service-boundary + .hero-buttons {
+        margin-top: 24px;
+    }
+
+    .lead-service-page
+    .lead-platform-grid + .lead-platform-disclosure,
+
+    .support-service-page
+    .support-platform-grid + .support-platform-disclosure,
+
+    .whatsapp-service-page
+    .whatsapp-platform-grid + .whatsapp-platform-disclosure {
+        margin-top: 28px !important;
+    }
+
+}
+
+/* ========================================
    REVEAL + VISUAL-POLISH COMPATIBILITY
 ======================================== */
 
