@@ -30,9 +30,7 @@ content="noindex, follow">
       href="assets/css/style.css">
 
 <!-- FONT AWESOME -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">      
-
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>      
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">            
 
 </head>
 
@@ -127,6 +125,24 @@ content="noindex, follow">
     <!-- FORM -->
 
     <form id="setupForm" aria-label="Custom automation request form">
+
+        <!-- Spam honeypot -->
+        <div
+            class="form-honeypot"
+            aria-hidden="true">
+
+            <label for="custom-website">
+                Website
+            </label>
+
+            <input
+                type="text"
+                id="custom-website"
+                name="website"
+                tabindex="-1"
+                autocomplete="off">
+
+        </div>
 
         <!-- Hidden field -->
 
@@ -895,61 +911,176 @@ document
 </script>
 
 <script>
-
-emailjs.init({
-    publicKey: "rY5u_6m_UtVfQsO5G"
-});
-
 document
 .getElementById("setupForm")
-.addEventListener("submit", function(e) {
+.addEventListener("submit", async function(e) {
 
     e.preventDefault();
 
     const submitBtn =
-    document.querySelector(".submit-btn");
+        document.querySelector(".submit-btn");
 
     submitBtn.disabled = true;
 
     submitBtn.textContent =
-    currentLanguage === "fr"
-    ? "Envoi en cours..."
-    : "Sending...";
+        currentLanguage === "fr"
+            ? "Envoi en cours..."
+            : "Sending...";
 
-    emailjs.sendForm(
-        "service_fnchujr",
-        "template_cqii9iu",
-        this
-    )
+    const formData =
+        new FormData(this);
 
-    .then(function() {
+    const payload = {
+
+        name:
+            formData.get("user_name") || "",
+
+        email:
+            formData.get("user_email") || "",
+
+        company:
+            formData.get("company") || "",
+
+        industry:
+            formData.get("industry") || "",
+
+        teamSize:
+            formData.get("teamSize") || "",
+
+        budget:
+            formData.get("budget") || "",
+
+        timeline:
+            formData.get("timeline") || "",
+
+        challenge:
+            formData.get("challenge") || "",
+
+        expectedOutcome:
+            formData.get("expectedOutcome") || "",
+
+        automationGoal:
+            formData.get("automationGoal") || "",
+
+        currentTools:
+            formData.get("currentTools") || "",
+
+        leadType:
+            formData.get("leadType")
+            || "Custom Automation Request",
+
+        selectedSolution:
+            formData.get("selectedSolution")
+            || "Custom Automation Request",
+
+        sourcePage:
+            formData.get("sourcePage")
+            || "Custom Request",
+
+        website:
+            formData.get("website") || "",
+
+        language:
+            currentLanguage
+    };
+
+    
+    const controller =
+        new AbortController();
+
+    const timeoutId =
+        setTimeout(() => {
+
+            controller.abort();
+
+        }, 15000);
+    
+    try {
+
+        const response =
+            await fetch(
+                "/api/custom-request.php",
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type":
+                            "application/json",
+
+                        "Accept":
+                            "application/json"
+                    },
+
+                    body:
+                        JSON.stringify(payload),
+
+                    signal:
+                        controller.signal
+                }
+            );
+
+        const result =
+            await response.json();
+
+        if (
+            !response.ok
+            || !result.success
+        ) {
+
+            throw new Error(
+                result.message
+                || "Custom request failed."
+            );
+
+        }
+
+        this.reset();
 
         window.location.href =
-        `custom-request-success.html?lang=${currentLanguage}`;
+            `custom-request-success.html?lang=${currentLanguage}`;
 
-    })
+    } catch (error) {
 
-    .catch(function(error) {
+        console.error(
+            "Custom request error:",
+            error
+        );
 
-    console.error(error);
+        submitBtn.disabled = false;
 
-    submitBtn.disabled = false;
+        submitBtn.textContent =
+            currentLanguage === "fr"
+                ? "Demander ma solution sur mesure"
+                : "Request My Custom Solution";
 
-    submitBtn.textContent =
-    currentLanguage === "fr"
-    ? "Demander ma solution sur mesure"
-    : "Request My Custom Solution";
+        if (error.name === "AbortError") {
 
-    alert(
-        currentLanguage === "fr"
-        ? "Une erreur est survenue lors de l'envoi."
-        : "An error occurred while sending your request."
-    );
+            alert(
+                currentLanguage === "fr"
+                    ? "La demande a pris trop de temps. Veuillez réessayer."
+                    : "The request took too long. Please try again."
+            );
 
-    });
+        } else {
+
+            alert(
+                error.message
+                || (
+                    currentLanguage === "fr"
+                        ? "Une erreur est survenue lors de l'envoi."
+                        : "An error occurred while sending your request."
+                )
+            );
+
+        }
+
+    } finally {
+
+        clearTimeout(timeoutId);
+
+    }
 
 });
-
 </script>
 <script>
 const savedTheme =

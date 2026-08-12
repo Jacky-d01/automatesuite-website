@@ -541,57 +541,128 @@ if ("IntersectionObserver" in window) {
 }
 
 /* =========================
-   EMAILJS CONTACT FORM
+   CONTACT FORM
 ========================= */
 
-if (typeof emailjs !== "undefined") {
-
-    emailjs.init("rY5u_6m_UtVfQsO5G");
-
-    const contactForm =
+const contactForm =
     document.getElementById("contact-form");
 
-    if(contactForm) {
+if (contactForm) {
 
-        contactForm.addEventListener("submit", function(e) {
+    contactForm.addEventListener(
+        "submit",
+        async function (e) {
 
             e.preventDefault();
 
             const currentLang =
-            getCurrentLanguage();
+                getCurrentLanguage();
 
             const submitBtn =
-            contactForm.querySelector("button[type='submit']");
+                contactForm.querySelector(
+                    "button[type='submit']"
+                );
 
             setSubmitState(
                 submitBtn,
                 true,
                 currentLang === "fr"
-                ? "Envoi en cours..."
-                : "Sending..."
+                    ? "Envoi en cours..."
+                    : "Sending..."
             );
 
-            emailjs.sendForm(
-                "service_fnchujr",
-                "template_cqii9iu",
-                this
-            )
+            const formData =
+                new FormData(contactForm);
 
-            .then(() => {
+            const payload = {
+                name:
+                    formData.get("user_name") || "",
 
-                const currentLang =
-                getCurrentLanguage();
+                email:
+                    formData.get("user_email") || "",
 
-                window.location.href =
-                `contact-success.html?lang=${currentLang}`;
+                message:
+                    formData.get("message") || "",
+
+                leadType:
+                    formData.get("leadType")
+                    || "General Contact",
+
+                selectedSolution:
+                    formData.get("selectedSolution")
+                    || "Contact Page",
+
+                sourcePage:
+                    formData.get("sourcePage")
+                    || "Contact",
+
+                website:
+                    formData.get("website") || "",
+
+                language:
+                    currentLang
+            };
+
+            const controller =
+                new AbortController();
+
+            const timeoutId =
+                setTimeout(() => {
+
+                    controller.abort();
+
+                }, 15000);
+            
+            try {
+
+            const response =
+                await fetch(
+                    "/api/contact.php",
+                    {
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type":
+                                "application/json",
+
+                            "Accept":
+                                "application/json"
+                        },
+
+                        body:
+                            JSON.stringify(payload),
+
+                        signal:
+                            controller.signal
+                    }
+                );
+
+            const result =
+                await response.json();
+
+                if (
+                    !response.ok
+                    || !result.success
+                ) {
+
+                    throw new Error(
+                        result.message
+                        || "Contact request failed."
+                    );
+
+                }
 
                 contactForm.reset();
 
-            })
+                window.location.href =
+                    `contact-success.html?lang=${currentLang}`;
 
-            .catch((error) => {
+            } catch (error) {
 
-                console.error("EmailJS contact error:", error);
+                console.error(
+                    "Contact form error:",
+                    error
+                );
 
                 setSubmitState(
                     submitBtn,
@@ -601,17 +672,35 @@ if (typeof emailjs !== "undefined") {
                         : "Discuss My Project"
                 );
 
-                alert(
-                    currentLang === "fr"
-                        ? "Une erreur est survenue lors de l'envoi. Veuillez réessayer ou nous contacter à hello@automatesuite.io."
-                        : "An error occurred while sending your message. Please try again or contact us at hello@automatesuite.io."
-                );
+                if (error.name === "AbortError") {
 
-            });
+                    alert(
+                        currentLang === "fr"
+                            ? "La demande a pris trop de temps. Veuillez réessayer."
+                            : "The request took too long. Please try again."
+                    );
 
-        });
+                } else {
 
-    }
+                    alert(
+                        error.message
+                        || (
+                            currentLang === "fr"
+                                ? "Une erreur est survenue lors de l'envoi. Veuillez réessayer ou nous contacter à hello@automatesuite.io."
+                                : "An error occurred while sending your message. Please try again or contact us at hello@automatesuite.io."
+                        )
+                    );
+
+                }
+
+            } finally {
+
+                clearTimeout(timeoutId);
+
+            }
+
+        }
+    );
 
 }
 
@@ -619,14 +708,14 @@ if (typeof emailjs !== "undefined") {
    NEWSLETTER FORM
 ========================= */
 
-if (typeof emailjs !== "undefined") {
+const newsletterForm =
+    document.getElementById("newsletter-form");
 
-    const newsletterForm =
-        document.getElementById("newsletter-form");
+if (newsletterForm) {
 
-    if (newsletterForm) {
-
-        newsletterForm.addEventListener("submit", async function (e) {
+    newsletterForm.addEventListener(
+        "submit",
+        async function (e) {
 
             e.preventDefault();
 
@@ -648,6 +737,16 @@ if (typeof emailjs !== "undefined") {
                     "notification-message"
                 );
 
+            const emailInput =
+                document.getElementById(
+                    "newsletter-email"
+                );
+
+            const honeypot =
+                newsletterForm.querySelector(
+                    "input[name='website']"
+                );
+
             setSubmitState(
                 submitBtn,
                 true,
@@ -658,47 +757,97 @@ if (typeof emailjs !== "undefined") {
 
             try {
 
-                const emailRequest =
-                    emailjs.sendForm(
-                        "service_fnchujr",
-                        "template_ipivbnt",
-                        newsletterForm
+                const controller =
+                    new AbortController();
+
+                const timeoutId =
+                    setTimeout(() => {
+
+                        controller.abort();
+
+                    }, 15000);
+
+                const response =
+                    await fetch(
+                        "/api/newsletter/subscribe.php",
+                        {
+                            method: "POST",
+
+                            headers: {
+                                "Content-Type":
+                                    "application/json",
+
+                                "Accept":
+                                    "application/json"
+                            },
+
+                            body: JSON.stringify({
+                                email:
+                                    emailInput.value.trim(),
+
+                                language:
+                                    currentLang,
+
+                                website:
+                                    honeypot
+                                        ? honeypot.value
+                                        : ""
+                            }),
+
+                            signal:
+                                controller.signal
+                        }
                     );
 
-                const timeout =
-                    new Promise((_, reject) => {
+                clearTimeout(timeoutId);
 
-                        setTimeout(() => {
+                let data;
 
-                            reject(
-                                new Error(
-                                    "Newsletter request timed out"
-                                )
-                            );
+                try {
 
-                        }, 15000);
+                    data =
+                        await response.json();
 
-                    });
+                } catch {
 
-                await Promise.race([
-                    emailRequest,
-                    timeout
-                ]);
+                    throw new Error(
+                        "Invalid server response"
+                    );
+
+                }
+
+                if (!response.ok || !data.success) {
+
+                    const error =
+                        new Error(
+                            data.message ||
+                            "Newsletter request failed"
+                        );
+
+                    error.status =
+                        response.status;
+
+                    throw error;
+                }
 
                 if (notification && message) {
 
                     message.textContent =
                         currentLang === "fr"
-                            ? "Votre inscription a bien été enregistrée."
-                            : "Your subscription has been successfully recorded.";
+                            ? "Veuillez consulter votre boîte de réception pour confirmer votre inscription."
+                            : "Please check your inbox to confirm your subscription.";
 
-                    notification.classList.add("show");
+                    notification.classList.add(
+                        "show"
+                    );
 
                     setTimeout(() => {
 
-                        notification.classList.remove("show");
+                        notification.classList.remove(
+                            "show"
+                        );
 
-                    }, 5000);
+                    }, 7000);
 
                 }
 
@@ -707,24 +856,53 @@ if (typeof emailjs !== "undefined") {
             } catch (error) {
 
                 console.error(
-                    "EmailJS newsletter error:",
+                    "Newsletter API error:",
                     error
                 );
 
                 if (notification && message) {
 
-                    message.textContent =
-                        currentLang === "fr"
-                            ? "L'inscription n'a pas pu être envoyée. Veuillez réessayer."
-                            : "Your subscription could not be submitted. Please try again.";
+                    if (error.name === "AbortError") {
 
-                    notification.classList.add("show");
+                        message.textContent =
+                            currentLang === "fr"
+                                ? "La demande a pris trop de temps. Veuillez réessayer."
+                                : "The request took too long. Please try again.";
+
+                    } else if (error.status === 429) {
+
+                        message.textContent =
+                            currentLang === "fr"
+                                ? "Trop de tentatives. Veuillez réessayer plus tard."
+                                : "Too many attempts. Please try again later.";
+
+                    } else if (error.status === 422) {
+
+                        message.textContent =
+                            currentLang === "fr"
+                                ? "Veuillez saisir une adresse e-mail valide."
+                                : "Please enter a valid email address.";
+
+                    } else {
+
+                        message.textContent =
+                            currentLang === "fr"
+                                ? "L'inscription n'a pas pu être traitée. Veuillez réessayer."
+                                : "Your subscription could not be processed. Please try again.";
+
+                    }
+
+                    notification.classList.add(
+                        "show"
+                    );
 
                     setTimeout(() => {
 
-                        notification.classList.remove("show");
+                        notification.classList.remove(
+                            "show"
+                        );
 
-                    }, 5000);
+                    }, 7000);
 
                 }
 
@@ -740,9 +918,8 @@ if (typeof emailjs !== "undefined") {
 
             }
 
-        });
-
-    }
+        }
+    );
 
 }
 

@@ -831,37 +831,38 @@
                 </label>
 
                 <input
-                id="newsletter-email"
-                type="email"
-                name="user_email"
-                autocomplete="email"
-                required
-                placeholder="Enter your email"
-                data-placeholder-en="Enter your email"
-                data-placeholder-fr="Saisissez votre adresse e-mail">
+                    id="newsletter-email"
+                    type="email"
+                    name="email"
+                    autocomplete="email"
+                    required
+                    placeholder="Enter your email"
+                    data-placeholder-en="Enter your email"
+                    data-placeholder-fr="Saisissez votre adresse e-mail">
 
+                <!-- Anti-bot honeypot -->
                 <input
-                type="hidden"
-                name="sourcePage"
-                value="Homepage">
+                    type="text"
+                    name="website"
+                    class="newsletter-honeypot"
+                    tabindex="-1"
+                    autocomplete="off"
+                    aria-hidden="true">
 
-                <input
-                type="hidden"
-                name="leadType"
-                value="Newsletter">
-
-                <button type="submit"
-                aria-label="Subscribe to newsletter"
-                data-lang-en="Subscribe"
-                data-lang-fr="S'abonner">
-                Subscribe
+                <button
+                    type="submit"
+                    aria-label="Subscribe to newsletter"
+                    data-lang-en="Subscribe"
+                    data-lang-fr="S'abonner">
+                    Subscribe
                 </button>
 
             </form>
 
-            <p class="newsletter-note"
-            data-lang-en="No spam. Unsubscribe anytime."
-            data-lang-fr="Pas de spam. Désinscrivez-vous à tout moment.">
+            <p
+                class="newsletter-note"
+                data-lang-en="No spam. Unsubscribe anytime."
+                data-lang-fr="Pas de spam. Désinscrivez-vous à tout moment.">
                 No spam. Unsubscribe anytime.
             </p>
 
@@ -871,7 +872,11 @@
 
 </section>
 
-<div id="newsletter-notification" class="notification">
+<div
+    id="newsletter-notification"
+    class="notification newsletter-notification"
+    role="status"
+    aria-live="polite">
 
     <span id="notification-message"></span>
 
@@ -1316,319 +1321,203 @@
 
 </a>
 
-    <script
-    type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-    </script>
-
     <script src="assets/js/script.js"></script>
     <script type="application/ld+json">
-    {
+{
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": "https://automatesuite.io/#organization",
-    "name": "AutomateSuite",
-    "url": "https://automatesuite.io/",
-    "logo": "https://automatesuite.io/assets/images/logo.png",
-    "email": "hello@automatesuite.io",
-    "description": "AutomateSuite provides business automation services, connected workflow solutions and process optimization for modern businesses.",
-    "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "sales",
-        "email": "hello@automatesuite.io",
-        "availableLanguage": [
-        "English",
-        "French"
-        ],
-        "areaServed": "Worldwide"
-    }
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": "https://automatesuite.io/#website",
-    "url": "https://automatesuite.io/",
-    "name": "AutomateSuite",
-    "publisher": {
-        "@id": "https://automatesuite.io/#organization"
-    },
-    "inLanguage": [
-        "en",
-        "fr"
+    "@graph": [
+        {
+            "@type": "Organization",
+            "@id": "https://automatesuite.io/#organization",
+            "name": "AutomateSuite",
+            "url": "https://automatesuite.io/",
+            "logo": "https://automatesuite.io/assets/images/logo.png",
+            "email": "hello@automatesuite.io",
+            "description": "AutomateSuite provides business automation services, connected workflow solutions and process optimization for modern businesses.",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "sales",
+                "email": "hello@automatesuite.io",
+                "availableLanguage": [
+                    "English",
+                    "French"
+                ],
+                "areaServed": "Worldwide"
+            }
+        },
+        {
+            "@type": "WebSite",
+            "@id": "https://automatesuite.io/#website",
+            "url": "https://automatesuite.io/",
+            "name": "AutomateSuite",
+            "publisher": {
+                "@id": "https://automatesuite.io/#organization"
+            },
+            "inLanguage": [
+                "en",
+                "fr"
+            ]
+        },
+        {
+            "@type": "WebPage",
+            "@id": "https://automatesuite.io/#webpage",
+            "url": "https://automatesuite.io/",
+            "name": "AutomateSuite",
+            "description": "AutomateSuite helps businesses automate workflows, connect CRM processes and improve operational efficiency with practical, scalable automation solutions.",
+            "inLanguage": [
+                "en",
+                "fr"
+            ],
+            "isPartOf": {
+                "@id": "https://automatesuite.io/#website"
+            },
+            "publisher": {
+                "@id": "https://automatesuite.io/#organization"
+            },
+            "mainEntity": [
+                {
+                    "@id": "https://automatesuite.io/services.html#whatsapp-automation"
+                },
+                {
+                    "@id": "https://automatesuite.io/services.html#ai-lead-enrichment"
+                },
+                {
+                    "@id": "https://automatesuite.io/services.html#support-email-triage"
+                }
+            ]
+        },
+        {
+            "@type": "Service",
+            "@id": "https://automatesuite.io/services.html#whatsapp-automation",
+            "name": "Renewal and Expiration Reminder Automation",
+            "description": "Automated WhatsApp reminders, customer notifications and renewal workflows designed to improve retention and response efficiency.",
+            "serviceType": "Renewal and expiration reminder automation",
+            "provider": {
+                "@id": "https://automatesuite.io/#organization"
+            }
+        },
+        {
+            "@type": "Service",
+            "@id": "https://automatesuite.io/services.html#ai-lead-enrichment",
+            "name": "Intelligent Lead Qualification and CRM Enrichment",
+            "description": "Lead validation, qualification and CRM enrichment using transparent business rules and controlled AI-assisted analysis where included.",
+            "serviceType": "Lead qualification and CRM enrichment automation",
+            "provider": {
+                "@id": "https://automatesuite.io/#organization"
+            }
+        },
+        {
+            "@type": "Service",
+            "@id": "https://automatesuite.io/services.html#support-email-triage",
+            "name": "AI Support Email Triage",
+            "description": "AI-assisted classification, prioritization and routing of incoming support emails with human-review safeguards.",
+            "serviceType": "AI-assisted support email triage automation",
+            "provider": {
+                "@id": "https://automatesuite.io/#organization"
+            }
+        },
+        {
+            "@type": "FAQPage",
+            "@id": "https://automatesuite.io/#faq-en",
+            "isPartOf": {
+                "@id": "https://automatesuite.io/#webpage"
+            },
+            "inLanguage": "en",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "What is business automation?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Business automation uses software and workflows to reduce repetitive tasks, improve efficiency and streamline operations."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How can automation help my business?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Automation helps businesses save time, reduce manual work, improve customer communication and increase productivity."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Do I need technical knowledge?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "No. AutomateSuite handles implementation and provides guidance throughout the automation process."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can automation integrate with my existing tools?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Many automation systems can integrate with CRMs, APIs, spreadsheets and communication platforms."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How do I get started?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Contact AutomateSuite to discuss your business goals and determine the most suitable automation solution."
+                    }
+                }
+            ]
+        },
+        {
+            "@type": "FAQPage",
+            "@id": "https://automatesuite.io/#faq-fr",
+            "isPartOf": {
+                "@id": "https://automatesuite.io/#webpage"
+            },
+            "inLanguage": "fr",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Qu'est-ce que l'automatisation des entreprises ?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "L'automatisation des entreprises utilise des logiciels et des workflows pour réduire les tâches répétitives, améliorer l'efficacité et optimiser les opérations."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Comment l'automatisation peut-elle aider mon entreprise ?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "L'automatisation permet de gagner du temps, de réduire les tâches manuelles, d'améliorer la communication client et d'augmenter la productivité."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Ai-je besoin de connaissances techniques ?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Non. AutomateSuite gère l'implémentation et vous accompagne tout au long du processus d'automatisation."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "L'automatisation peut-elle s'intégrer à mes outils existants ?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "De nombreux systèmes d'automatisation peuvent s'intégrer aux CRM, API, feuilles de calcul et plateformes de communication."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Comment puis-je commencer ?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Contactez AutomateSuite pour discuter de vos objectifs et déterminer la solution d'automatisation la plus adaptée."
+                    }
+                }
+            ]
+        }
     ]
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-    "@context":"https://schema.org",
-    "@type":"WebPage",
-    "@id":"https://automatesuite.io/#webpage",
-    "breadcrumb":{
-    "@id":"https://automatesuite.io/#breadcrumb"
-    },
-    "url":"https://automatesuite.io/",
-    "name":"AutomateSuite",
-    "description":"AutomateSuite helps businesses automate workflows, connect CRM processes and improve operational efficiency with practical, scalable automation solutions.",
-    "inLanguage":[
-    "en",
-    "fr"
-    ],
-    "isPartOf":{
-    "@id":"https://automatesuite.io/#website"
-    },
-    "publisher":{
-    "@id":"https://automatesuite.io/#organization"
-    },
-    "mainEntity":[
-    {
-        "@id":"https://automatesuite.io/services.html#whatsapp-automation"
-    },
-    {
-        "@id":"https://automatesuite.io/services.html#ai-lead-enrichment"
-    },
-    {
-        "@id":"https://automatesuite.io/services.html#support-email-triage"
-    },
-    {
-        "@id":"https://automatesuite.io/tools.html#whatsapp-expiration-trigger"
-    },
-    {
-        "@id":"https://automatesuite.io/tools.html#ai-lead-enrichment-pipeline"
-    },
-    {
-        "@id":"https://automatesuite.io/tools.html#support-email-triage-system"
-    }
-    ]
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-    "@context":"https://schema.org",
-    "@type":"Service",
-    "@id":"https://automatesuite.io/services.html#whatsapp-automation",
-    "name":"Renewal and Expiration Reminder Automation",
-    "description":"Automate WhatsApp reminders, customer notifications and subscription workflows.",
-    "provider":{
-        "@id":"https://automatesuite.io/#organization"
-    },
-    "isPartOf":{
-        "@id":"https://automatesuite.io/#webpage"
-    },
-    "mainEntityOfPage":{
-        "@id":"https://automatesuite.io/#webpage"
-    }
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-    "@context":"https://schema.org",
-    "@type":"Service",
-    "@id":"https://automatesuite.io/services.html#ai-lead-enrichment",
-    "name":"Intelligent Lead Qualification and CRM Enrichment",
-    "description": "Lead validation, qualification and CRM enrichment using transparent business rules and controlled AI-assisted analysis where included.",
-    "provider":{
-        "@id":"https://automatesuite.io/#organization"
-    },
-    "isPartOf":{
-        "@id":"https://automatesuite.io/#webpage"
-    },
-    "mainEntityOfPage":{
-        "@id":"https://automatesuite.io/#webpage"
-    }
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-    "@context":"https://schema.org",
-    "@type":"Service",
-    "@id":"https://automatesuite.io/services.html#support-email-triage",
-    "name":"AI Support Email Triage",
-    "description": "AI-assisted classification, prioritization and routing of incoming support emails with human-review safeguards.",
-    "provider":{
-    "@id":"https://automatesuite.io/#organization"
-    },
-    "isPartOf":{
-    "@id":"https://automatesuite.io/#webpage"
-    },
-    "mainEntityOfPage":{
-    "@id":"https://automatesuite.io/#webpage"
-    }
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-    "@context":"https://schema.org",
-    "@type":"SoftwareApplication",
-    "@id":"https://automatesuite.io/tools.html#whatsapp-expiration-trigger",
-    "name":"WhatsApp Expiration Trigger",
-    "description":"Automated reminders and expiration notifications delivered through WhatsApp.",
-    "brand":{
-    "@id":"https://automatesuite.io/#organization"
-    },
-    "manufacturer":{
-    "@id":"https://automatesuite.io/#organization"
-    },
-    "mainEntityOfPage":{
-    "@id":"https://automatesuite.io/#webpage"
-    }
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-    "@context":"https://schema.org",
-    "@type":"SoftwareApplication",
-    "@id":"https://automatesuite.io/tools.html#ai-lead-enrichment-pipeline",
-    "name": "Lead Qualification and CRM Pipeline",
-    "description": "AI-assisted lead qualification, CRM routing and customer intelligence.",
-    "brand":{
-    "@id":"https://automatesuite.io/#organization"
-    },
-    "manufacturer":{
-    "@id":"https://automatesuite.io/#organization"
-    },
-    "mainEntityOfPage":{
-    "@id":"https://automatesuite.io/#webpage"
-    }
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-    "@context":"https://schema.org",
-    "@type":"SoftwareApplication",
-    "@id":"https://automatesuite.io/tools.html#support-email-triage-system",
-    "name":"Support Email Triage System",
-    "description":"Automatically categorize and prioritize support requests using AI.",
-    "brand":{
-    "@id":"https://automatesuite.io/#organization"
-    },
-    "manufacturer":{
-    "@id":"https://automatesuite.io/#organization"
-    },
-    "mainEntityOfPage":{
-    "@id":"https://automatesuite.io/#webpage"
-    }
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "@id":"https://automatesuite.io/#faq-en",
-    "isPartOf":{
-        "@id":"https://automatesuite.io/#webpage"
-    },
-    "inLanguage":"en",
-    "mainEntity":[
-
-        {
-        "@type":"Question",
-        "name":"What is business automation?",
-        "acceptedAnswer":{
-            "@type":"Answer",
-            "text":"Business automation uses software and workflows to reduce repetitive tasks, improve efficiency and streamline operations."
-        }
-        },
-
-        {
-        "@type":"Question",
-        "name":"How can automation help my business?",
-        "acceptedAnswer":{
-            "@type":"Answer",
-            "text":"Automation helps businesses save time, reduce manual work, improve customer communication and increase productivity."
-        }
-        },
-
-        {
-        "@type":"Question",
-        "name":"Do I need technical knowledge?",
-        "acceptedAnswer":{
-            "@type":"Answer",
-            "text":"No. AutomateSuite handles implementation and provides guidance throughout the automation process."
-        }
-        },
-
-        {
-        "@type":"Question",
-        "name":"Can automation integrate with my existing tools?",
-        "acceptedAnswer":{
-            "@type":"Answer",
-            "text":"Many automation systems can integrate with CRMs, APIs, spreadsheets and communication platforms."
-        }
-        },
-
-        {
-        "@type":"Question",
-        "name":"How do I get started?",
-        "acceptedAnswer":{
-            "@type":"Answer",
-            "text":"Contact AutomateSuite to discuss your business goals and determine the most suitable automation solution."
-        }
-        }
-
-    ]
-    }
-</script>
-<script type="application/ld+json">
-    {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "@id":"https://automatesuite.io/#faq-fr",
-    "isPartOf":{
-        "@id":"https://automatesuite.io/#webpage"
-    },
-    "inLanguage":"fr",
-    "mainEntity":[
-
-        {
-        "@type":"Question",
-        "name":"Qu'est-ce que l'automatisation des entreprises ?",
-        "acceptedAnswer":{
-            "@type":"Answer",
-            "text":"L'automatisation des entreprises utilise des logiciels et des workflows pour réduire les tâches répétitives, améliorer l'efficacité et optimiser les opérations."
-        }
-        },
-
-        {
-        "@type":"Question",
-        "name":"Comment l'automatisation peut-elle aider mon entreprise ?",
-        "acceptedAnswer":{
-            "@type":"Answer",
-            "text":"L'automatisation permet de gagner du temps, de réduire les tâches manuelles, d'améliorer la communication client et d'augmenter la productivité."
-        }
-        },
-
-        {
-        "@type":"Question",
-        "name":"Ai-je besoin de connaissances techniques ?",
-        "acceptedAnswer":{
-            "@type":"Answer",
-            "text":"Non. AutomateSuite gère l'implémentation et vous accompagne tout au long du processus d'automatisation."
-        }
-        },
-
-        {
-        "@type":"Question",
-        "name":"L'automatisation peut-elle s'intégrer à mes outils existants ?",
-        "acceptedAnswer":{
-            "@type":"Answer",
-            "text":"De nombreux systèmes d'automatisation peuvent s'intégrer aux CRM, API, feuilles de calcul et plateformes de communication."
-        }
-        },
-
-        {
-        "@type":"Question",
-        "name":"Comment puis-je commencer ?",
-        "acceptedAnswer":{
-            "@type":"Answer",
-            "text":"Contactez AutomateSuite pour discuter de vos objectifs et déterminer la solution d'automatisation la plus adaptée."
-        }
-        }
-
-    ]
-    }
+}
 </script>
 
 </body>

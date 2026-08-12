@@ -295,6 +295,24 @@
             autocomplete="email"
             required>
 
+            <!-- Spam honeypot -->
+            <div
+                class="form-honeypot"
+                aria-hidden="true">
+
+                <label for="contact-website">
+                    Website
+                </label>
+
+                <input
+                    type="text"
+                    id="contact-website"
+                    name="website"
+                    tabindex="-1"
+                    autocomplete="off">
+
+            </div>
+
             <input 
             type="hidden"
             name="leadType"
@@ -581,11 +599,6 @@
     </div>
 
 </footer>
-
-    <script
-    type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-    </script>
 
     <script src="assets/js/script.js"></script>
     <script type="application/ld+json">
